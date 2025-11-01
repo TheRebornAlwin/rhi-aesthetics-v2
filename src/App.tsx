@@ -247,29 +247,29 @@ function App() {
               </h2>
               <p className="text-xl text-black/70">Witness the power of precision plasma treatments</p>
             </div>
-            <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-6">
-              <GlareCard className="relative">
+            <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto px-6">
+              <GlareCard className="relative w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
                   alt="Skin treatment result"
                 />
               </GlareCard>
-              <GlareCard className="relative">
+              <GlareCard className="relative w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansJ3To3ecVXzGmdTHBK2gaqowhD8ubcMpkWnA7"
                   alt="Plasma pen treatment"
                 />
               </GlareCard>
-              <GlareCard className="relative">
+              <GlareCard className="relative w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnc4JjmIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2k"
                   alt="Treatment room"
                 />
               </GlareCard>
-              <GlareCard className="relative">
+              <GlareCard className="relative w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans9cfuDhwHvBk0FM54DR6T7haPjcVdE8o3ZfIw"
