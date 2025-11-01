@@ -247,7 +247,7 @@ function App() {
               </h2>
               <p className="text-xl text-black/70">Witness the power of precision plasma treatments</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto px-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-6">
               <GlareCard className="flex flex-col items-center justify-center mx-auto">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"

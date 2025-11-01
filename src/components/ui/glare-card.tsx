@@ -71,9 +71,8 @@ export const GlareCard = ({
     <div
       style={containerStyle}
       className={cn(
-        // NOTE: tiny horizontal margin so a stray card still has breathing room
-        "mx-3",
-        "relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[320px] [aspect-ratio:17/21]"
+        "relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[320px] [aspect-ratio:17/21]",
+        className
       )}
       ref={refElement}
       onPointerMove={(event) => {
