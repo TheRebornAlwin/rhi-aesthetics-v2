@@ -11,7 +11,6 @@ import {
   Award,
   Building2,
   Droplet,
-  Sparkles,
   Heart,
   ChevronDown,
   MessageCircle,
@@ -20,12 +19,10 @@ import {
   Play,
   Zap,
   Users,
-  Clock,
   User,
   Pill,
   History,
-  Sun,
-  FileText
+  Sun
 } from 'lucide-react';
 import { AuroraBackground } from './components/ui/aurora-background';
 import { Timeline } from './components/ui/timeline';
@@ -38,11 +35,15 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsHeaderScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -93,13 +94,13 @@ function App() {
 
 
   const healingTimeline = [
-    { day: "Pre-Treatment", description: "Full consultation, medical history review, and pigmentation risk screening. We assess your skin and ensure plasma treatment is safe and suitable for you.", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" },
-    { day: "Treatment", description: "Area is fully numbed before we begin. The plasma pen creates precise micro-points on the skin surface. You'll feel warmth, not pain. Treatment typically takes 30-60 minutes depending on the area.", image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" },
-    { day: "Day 1", description: "Treatment complete. Skin feels warm and tight. Small dots are visible where the plasma contacted the skin. Mild swelling begins.", image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" },
-    { day: "Day 2", description: "Swelling peaks — most visible under eyes. This is completely normal and expected. Dots darken slightly as the healing process begins.", image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=600&q=80" },
-    { day: "Day 3–4", description: "Swelling eases significantly. Tiny dots darken further and begin to crust. Avoid picking or scratching — let them fall naturally.", image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" },
-    { day: "Day 5–6", description: "Dots fall off naturally. Redness begins to fade. Skin underneath is pink and new. Continue following aftercare instructions carefully.", image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80" },
-    { day: "Day 7+", description: "Skin tone evens out, light makeup OK. Healing progresses beautifully. Collagen production continues beneath the surface for weeks to come.", image: "https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=600&q=80" }
+    { day: "Pre-Treatment", description: "Full consultation, medical history review, and pigmentation risk screening. We assess your skin and ensure plasma treatment is safe and suitable for you.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansx1VNHZYj7ghxUT0Ry8DfXk9KamOCNAuW12ML" },
+    { day: "Treatment", description: "Area is fully numbed before we begin. The plasma pen creates precise micro-points on the skin surface. You'll feel warmth, not pain. Treatment typically takes 30-60 minutes depending on the area.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans7PxdNs38MLZ8BjbFlapw42zWhdu7D1XryRQI" },
+    { day: "Day 1", description: "Treatment complete. Skin feels warm and tight. Small dots are visible where the plasma contacted the skin. Mild swelling begins.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansVJQl3YsFVUwgoZMhOsNaYPvRxcu28A0rf1b5" },
+    { day: "Day 2", description: "Swelling peaks — most visible under eyes. This is completely normal and expected. Dots darken slightly as the healing process begins.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansVRjfzCsFVUwgoZMhOsNaYPvRxcu28A0rf1b5" },
+    { day: "Day 3–4", description: "Swelling eases significantly. Tiny dots darken further and begin to crust. Avoid picking or scratching — let them fall naturally.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZKh1t8cEpuNyB4c5UP1OD9z8GXJlTsjiKSL" },
+    { day: "Day 5–6", description: "Dots fall off naturally. Redness begins to fade. Skin underneath is pink and new. Continue following aftercare instructions carefully.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansB3LukPXAT70DbI3p4EqW1ve6ijGVXNYd8hwf" },
+    { day: "Day 7+", description: "Skin tone evens out, light makeup OK. Healing progresses beautifully. Collagen production continues beneath the surface for weeks to come.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansmHIdXGEvIL2Qu3fNjFstHoVDamzgMXZvnwb1" }
   ];
 
 
@@ -114,9 +115,12 @@ function App() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
-            <div className="relative">
-              <Sparkles className="text-teal-400 w-7 sm:w-9 h-7 sm:h-9 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-teal-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10">
+              <img
+                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans0iqVKkBZmf2arIMiUH3nS4jP6K8OLs0thCzV"
+                alt="Rhi's Aesthetics Logo"
+                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+              />
             </div>
             <span className={`text-lg sm:text-2xl font-bold transition-colors duration-300 ${isHeaderScrolled ? 'text-white' : 'text-black'}`}>
               Rhi's Aesthetics
@@ -165,7 +169,7 @@ function App() {
       <AuroraBackground className="relative min-h-screen flex items-center overflow-hidden bg-white">
         <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-48 pb-20 sm:pb-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
-            <div className="space-y-6 sm:space-y-8 fade-in-up">
+            <div className="space-y-6 sm:space-y-8 fade-in-up text-center lg:text-left">
               <div className="inline-block">
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-xs sm:text-sm font-semibold uppercase tracking-wider">
                   Non-Surgical Skin Tightening
@@ -197,7 +201,7 @@ function App() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8, ease: "easeInOut" }}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-5 pt-4 sm:pt-6"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-5 pt-4 sm:pt-6 justify-center lg:justify-start"
               >
                 <button
                   onClick={() => scrollToSection('cta')}
@@ -251,32 +255,80 @@ function App() {
               <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
-                  alt="Skin treatment result"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansYITsSXcmMa7NBSypFmPq9WJnje0DE4gr8R1A"
+                  alt="Treatment result 1"
                   loading="lazy"
                 />
               </GlareCard>
               <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansJ3To3ecVXzGmdTHBK2gaqowhD8ubcMpkWnA7"
-                  alt="Plasma pen treatment"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansfkweXWDJuMR1SytWIdgA9xsk8eLD2ZPNqzrf"
+                  alt="Treatment result 2"
                   loading="lazy"
                 />
               </GlareCard>
               <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnc4JjmIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2k"
-                  alt="Treatment room"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansgBUEXKy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
+                  alt="Treatment result 3"
                   loading="lazy"
                 />
               </GlareCard>
               <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans9cfuDhwHvBk0FM54DR6T7haPjcVdE8o3ZfIw"
-                  alt="Natural Lifting Results"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansP2YVCbplansMeUbGIOLF6SBXiAE1CKD5xpJ0"
+                  alt="Treatment result 4"
+                  loading="lazy"
+                />
+              </GlareCard>
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
+                <img
+                  className="h-full w-full absolute inset-0 object-cover opacity-90"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansOWLi5VAwPqZhND8kpUK40TVgGEMsnxv2atlY"
+                  alt="Treatment result 5"
+                  loading="lazy"
+                />
+              </GlareCard>
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
+                <img
+                  className="h-full w-full absolute inset-0 object-cover opacity-90"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansDBrqUMFlbUg7HiPYe8pNhaWf5E4dG26xVuXJ"
+                  alt="Treatment result 6"
+                  loading="lazy"
+                />
+              </GlareCard>
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
+                <img
+                  className="h-full w-full absolute inset-0 object-cover opacity-90"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansn1adYIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg"
+                  alt="Treatment result 7"
+                  loading="lazy"
+                />
+              </GlareCard>
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
+                <img
+                  className="h-full w-full absolute inset-0 object-cover opacity-90"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLiieE7cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw"
+                  alt="Treatment result 8"
+                  loading="lazy"
+                />
+              </GlareCard>
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
+                <img
+                  className="h-full w-full absolute inset-0 object-cover opacity-90"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZKjaqycEpuNyB4c5UP1OD9z8GXJlTsjiKSL"
+                  alt="Treatment result 9"
+                  loading="lazy"
+                />
+              </GlareCard>
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
+                <img
+                  className="h-full w-full absolute inset-0 object-cover opacity-90"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansyLPATlSnOIJPwhi3Q9WsA61ykCl5eRHLYpVS"
+                  alt="Treatment result 10"
                   loading="lazy"
                 />
               </GlareCard>
@@ -309,33 +361,26 @@ function App() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
-            <div className="order-2 lg:order-1 space-y-6 sm:space-y-8">
+            <div className="order-2 lg:order-1 space-y-6 sm:space-y-8 text-center lg:text-left">
               <div className="inline-block">
                 <span className="px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full text-teal-700 text-xs sm:text-sm font-bold uppercase tracking-wider">
                   Meet Rhi
                 </span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight bg-gradient-to-r from-black via-teal-900 to-black bg-clip-text text-transparent">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] bg-gradient-to-r from-black via-teal-900 to-black bg-clip-text text-transparent pb-2">
                 You're not crazy for wanting something that actually works.
               </h2>
 
-              <div className="space-y-4 text-base sm:text-lg text-black/70 leading-relaxed">
-                <p className="flex items-start space-x-3">
-                  <span className="text-teal-500 mt-1.5 flex-shrink-0">✓</span>
-                  <span>You've tried facials and creams that felt relaxing but changed nothing.</span>
+              <div className="space-y-5 text-base sm:text-lg text-black/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                <p>
+                  You've tried facials and creams that felt relaxing but changed nothing. Every mirror reminds you — you look tired even when you're not.
                 </p>
-                <p className="flex items-start space-x-3">
-                  <span className="text-teal-500 mt-1.5 flex-shrink-0">✓</span>
-                  <span>Every mirror reminds you — you look tired even when you're not.</span>
+                <p>
+                  Surgery feels too much. "Miracle creams" seem too fake. You just want a safe, proven way to tighten the skin you already have.
                 </p>
-                <p className="flex items-start space-x-3">
-                  <span className="text-teal-500 mt-1.5 flex-shrink-0">✓</span>
-                  <span>Surgery feels too much. "Miracle creams" seem too fake.</span>
-                </p>
-                <p className="flex items-start space-x-3">
-                  <span className="text-teal-500 mt-1.5 flex-shrink-0">✓</span>
-                  <span className="font-semibold text-black">You just want a safe, proven way to tighten the skin you already have.</span>
+                <p className="font-semibold text-teal-700 text-lg sm:text-xl">
+                  That's exactly what plasma fibroblast offers — real results, without surgery, backed by medical expertise.
                 </p>
               </div>
 
@@ -462,7 +507,7 @@ function App() {
                 imagePlaceholder: true
               },
               {
-                icon: Sparkles,
+                icon: Heart,
                 title: "Natural Tightening",
                 description: "In 6–12 weeks, your skin looks smoother, lifted, and rested — without injections or surgery.",
                 number: "03",
@@ -471,10 +516,10 @@ function App() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift overflow-hidden"
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift overflow-visible"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 text-5xl sm:text-6xl font-black text-teal-100 group-hover:text-teal-200 transition-colors duration-500 select-none">
+                <div className="absolute -top-4 -right-4 text-6xl sm:text-7xl font-black text-teal-500/20 group-hover:text-teal-500/30 transition-colors duration-500 select-none z-0">
                   {step.number}
                 </div>
 
@@ -516,11 +561,8 @@ function App() {
         </div>
       </section>
 
-      <section id="timeline" className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
-        <div className="text-center mb-8 sm:mb-12">
-          <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
-            Your Healing Journey
-          </span>
+      <section id="timeline" className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
+        <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black">
             Day-by-Day Timeline
           </h2>
@@ -541,28 +583,35 @@ function App() {
         }))} />
 
         <div className="max-w-6xl mx-auto mt-12 sm:mt-16">
-          <div className="relative bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 text-white rounded-3xl p-8 sm:p-12 text-center shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTAgMTBjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTEwLTEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
+          <div className="relative bg-white border-4 border-teal-500 text-black rounded-3xl p-8 sm:p-12 text-center shadow-xl overflow-hidden">
+            <div className="absolute top-0 left-0 w-24 h-24 bg-teal-500/10 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-teal-600/10 rounded-full blur-2xl"></div>
 
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
-                <FileText className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+              <div className="inline-flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-teal-500 rounded-2xl mb-6 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 sm:w-10 h-8 sm:h-10 text-white">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-black mb-4">Complete Aftercare Support</h3>
-              <p className="text-base sm:text-lg mb-8 leading-relaxed text-white/90 max-w-2xl mx-auto">
+              <h3 className="text-2xl sm:text-3xl font-black mb-4 text-teal-900">Complete Aftercare Support</h3>
+              <p className="text-base sm:text-lg mb-8 leading-relaxed text-black/80 max-w-2xl mx-auto">
                 Every client receives a detailed aftercare PDF — including what to expect, what to avoid, and how to protect your results.
               </p>
 
               <button
                 onClick={() => scrollToSection('cta')}
-                className="relative bg-white text-teal-600 px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-teal-50 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:scale-105 uppercase tracking-wide overflow-hidden group"
+                className="relative bg-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:scale-105 uppercase tracking-wide overflow-hidden group"
               >
                 <span className="relative z-10 flex items-center space-x-3">
                   <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
                   <span>Book Now</span>
                 </span>
-                <div className="absolute inset-0 bg-teal-100 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </button>
             </div>
           </div>
@@ -572,9 +621,6 @@ function App() {
       <section className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
-              Testimonials
-            </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
               What Our Customers Say
             </h2>
@@ -704,9 +750,6 @@ function App() {
       <section className="bg-white py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-20">
-            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
-              Your Safety First
-            </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
               Safety & Screening
             </h2>
@@ -764,9 +807,6 @@ function App() {
       <section id="faqs" className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 sm:mb-20">
-            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
-              Questions?
-            </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
               Frequently Asked Questions
             </h2>
@@ -804,72 +844,79 @@ function App() {
         </div>
       </section>
 
-      <section id="cta" className="bg-gradient-to-br from-teal-600 via-teal-500 to-teal-600 py-16 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTAgMTBjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTEwLTEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
-        <div className="absolute top-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-black/10 rounded-full blur-3xl"></div>
+      <section id="cta" className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-teal-100"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        </div>
 
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="text-center space-y-6 sm:space-y-8 mb-8 sm:mb-12">
-            <div className="inline-block">
-              <span className="px-4 sm:px-6 py-2 sm:py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-white text-xs sm:text-sm font-bold uppercase tracking-wider">
-                Ready to Transform?
-              </span>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="bg-white/80 backdrop-blur-xl rounded-3xl sm:rounded-[3rem] shadow-2xl border border-teal-200/50 overflow-hidden">
+            <div className="p-8 sm:p-16 text-center">
+              <div className="mb-8 sm:mb-12">
+                <div className="inline-flex items-center justify-center w-20 sm:w-24 h-20 sm:h-24 bg-gradient-to-br from-teal-500 to-teal-600 rounded-3xl shadow-lg mb-6 sm:mb-8">
+                  <Calendar className="w-10 sm:w-12 h-10 sm:h-12 text-white" />
+                </div>
+
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 sm:mb-8">
+                  <span className="bg-gradient-to-r from-teal-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
+                    Start Your Journey to
+                  </span>
+                  <br />
+                  <span className="text-black mt-2 block">
+                    Confident, Lifted Skin
+                  </span>
+                </h2>
+
+                <p className="text-lg sm:text-2xl text-black/70 max-w-2xl mx-auto leading-relaxed font-light">
+                  Professional care • Proven results • Complete transparency
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-14 max-w-4xl mx-auto">
+                <div className="group bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border-2 border-teal-200 hover:border-teal-500 hover:shadow-xl transition-all duration-300">
+                  <Shield className="w-12 sm:w-14 h-12 sm:h-14 text-teal-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <p className="font-bold text-base sm:text-lg text-black">Medical-Grade Safety</p>
+                </div>
+                <div className="group bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border-2 border-teal-200 hover:border-teal-500 hover:shadow-xl transition-all duration-300">
+                  <Heart className="w-12 sm:w-14 h-12 sm:h-14 text-teal-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <p className="font-bold text-base sm:text-lg text-black">Personal Care</p>
+                </div>
+                <div className="group bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border-2 border-teal-200 hover:border-teal-500 hover:shadow-xl transition-all duration-300">
+                  <Award className="w-12 sm:w-14 h-12 sm:h-14 text-teal-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <p className="font-bold text-base sm:text-lg text-black">Natural Results</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+                <button
+                  onClick={() => scrollToSection('cta')}
+                  className="group w-full sm:w-auto bg-gradient-to-r from-teal-500 to-teal-600 text-white px-10 sm:px-14 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 hover:scale-105 uppercase tracking-wide relative overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center justify-center space-x-3">
+                    <Calendar className="w-6 sm:w-7 h-6 sm:h-7 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Book Now</span>
+                  </span>
+                  <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                </button>
+
+                <a
+                  href="https://wa.me/441234567890"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-full sm:w-auto border-3 border-teal-600 text-teal-600 px-10 sm:px-14 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-xl hover:bg-teal-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 uppercase tracking-wide shadow-lg"
+                >
+                  <MessageCircle className="w-6 sm:w-7 h-6 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+                  <span>Get in Touch</span>
+                </a>
+              </div>
+
+              <p className="text-center text-black/60 mt-8 sm:mt-10 text-sm sm:text-base font-medium">
+                £50 consultation deposit • Fully redeemable toward treatment
+              </p>
             </div>
-
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white">
-              Start Your Journey to
-              <span className="block mt-2 sm:mt-3">
-                Confident, Lifted Skin
-              </span>
-            </h2>
-
-            <p className="text-lg sm:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto">
-              Professional care, proven results, complete transparency
-            </p>
           </div>
-
-          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300">
-              <Shield className="w-8 sm:w-10 h-8 sm:h-10 text-white mx-auto mb-2 sm:mb-3" />
-              <p className="text-white font-semibold text-sm sm:text-base">Medical-Grade Safety</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300">
-              <Heart className="w-8 sm:w-10 h-8 sm:h-10 text-white mx-auto mb-2 sm:mb-3" />
-              <p className="text-white font-semibold text-sm sm:text-base">Personal Care</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300">
-              <Sparkles className="w-8 sm:w-10 h-8 sm:h-10 text-white mx-auto mb-2 sm:mb-3" />
-              <p className="text-white font-semibold text-sm sm:text-base">Natural Results</p>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <button
-              onClick={() => scrollToSection('cta')}
-              className="group bg-white text-teal-600 px-10 sm:px-12 py-5 sm:py-6 rounded-full font-bold text-base sm:text-lg hover:bg-teal-50 transition-all duration-300 shadow-2xl hover:scale-105 uppercase tracking-wide relative overflow-hidden"
-            >
-              <span className="relative z-10 flex items-center justify-center space-x-3">
-                <Calendar className="w-5 sm:w-6 h-5 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Book Now</span>
-              </span>
-              <div className="absolute inset-0 bg-teal-100 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </button>
-
-            <a
-              href="https://wa.me/441234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group border-2 border-white text-white px-10 sm:px-12 py-5 sm:py-6 rounded-full font-bold text-base sm:text-lg hover:bg-white hover:text-teal-600 transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 uppercase tracking-wide"
-            >
-              <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6 group-hover:scale-110 transition-transform duration-300" />
-              <span>Get in Touch</span>
-            </a>
-          </div>
-
-          <p className="text-center text-white/80 mt-8 sm:mt-10 text-sm">
-            £50 consultation deposit • Fully redeemable toward treatment
-          </p>
         </div>
       </section>
 
@@ -878,7 +925,13 @@ function App() {
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center space-x-2 sm:space-x-3 group">
-                <Sparkles className="text-teal-400 w-8 sm:w-10 h-8 sm:h-10 group-hover:rotate-12 transition-transform duration-300" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10">
+                  <img
+                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans0iqVKkBZmf2arIMiUH3nS4jP6K8OLs0thCzV"
+                    alt="Rhi's Aesthetics Logo"
+                    className="w-full h-full object-contain brightness-0 invert group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
                 <span className="text-xl sm:text-2xl font-black">Rhi's Aesthetics</span>
               </div>
               <p className="text-white/60 leading-relaxed text-sm sm:text-base">
