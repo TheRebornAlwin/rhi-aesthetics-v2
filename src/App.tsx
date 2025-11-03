@@ -24,7 +24,8 @@ import {
   User,
   Pill,
   History,
-  Sun
+  Sun,
+  FileText
 } from 'lucide-react';
 import { AuroraBackground } from './components/ui/aurora-background';
 import { Timeline } from './components/ui/timeline';
@@ -54,7 +55,7 @@ function App() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'auto'
       });
     }
   };
@@ -111,13 +112,13 @@ function App() {
             : 'bg-transparent py-8'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center space-x-3 group cursor-pointer">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+          <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
             <div className="relative">
-              <Sparkles className="text-teal-400 w-9 h-9 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+              <Sparkles className="text-teal-400 w-7 sm:w-9 h-7 sm:h-9 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
               <div className="absolute inset-0 bg-teal-400 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
             </div>
-            <span className={`text-2xl font-bold transition-colors duration-300 ${isHeaderScrolled ? 'text-white' : 'text-black'}`}>
+            <span className={`text-lg sm:text-2xl font-bold transition-colors duration-300 ${isHeaderScrolled ? 'text-white' : 'text-black'}`}>
               Rhi's Aesthetics
             </span>
           </div>
@@ -137,22 +138,22 @@ function App() {
             ))}
           </nav>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <a
               href="https://wa.me/441234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2.5 rounded-full transition-all duration-300 ${
+              className={`p-2 sm:p-2.5 rounded-full transition-all duration-300 ${
                 isHeaderScrolled
                   ? 'text-teal-400 hover:bg-teal-400/10 hover:scale-110'
                   : 'text-black hover:bg-black/10 hover:scale-110'
               }`}
             >
-              <MessageCircle className="w-6 h-6" />
+              <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6" />
             </a>
             <button
               onClick={() => scrollToSection('cta')}
-              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-full font-semibold hover:from-teal-400 hover:to-teal-500 transition-all duration-300 uppercase text-xs tracking-wider shadow-lg shadow-teal-500/30 hover:shadow-xl hover:shadow-teal-500/40 hover:scale-105 overflow-hidden group"
+              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:from-teal-400 hover:to-teal-500 transition-all duration-300 uppercase text-xs tracking-wider shadow-lg shadow-teal-500/30 hover:shadow-xl hover:shadow-teal-500/40 hover:scale-105 overflow-hidden group"
             >
               <span className="relative z-10">Book Now</span>
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -162,11 +163,11 @@ function App() {
       </header>
 
       <AuroraBackground className="relative min-h-screen flex items-center overflow-hidden bg-white">
-        <div className="hero-content max-w-7xl mx-auto px-6 pt-48 pb-32 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 fade-in-up">
+        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-48 pb-20 sm:pb-32 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+            <div className="space-y-6 sm:space-y-8 fade-in-up">
               <div className="inline-block">
-                <span className="px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-semibold uppercase tracking-wider">
+                <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-xs sm:text-sm font-semibold uppercase tracking-wider">
                   Non-Surgical Skin Tightening
                 </span>
               </div>
@@ -175,7 +176,7 @@ function App() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
-                className="text-5xl lg:text-6xl font-black leading-[1.1] text-black"
+                className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-black"
               >
                 Doctor-Led <span className="text-teal-600">Plasma Fibroblast</span> in Southampton
               </motion.h1>
@@ -184,7 +185,7 @@ function App() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8, ease: "easeInOut" }}
-                className="text-xl lg:text-2xl text-black/80 leading-relaxed font-light"
+                className="text-lg sm:text-xl lg:text-2xl text-black/80 leading-relaxed font-light"
               >
                 Doctor-led, trusted by 300+ women in Southampton for safe, natural skin tightening.
                 <span className="block mt-3 text-black/70">
@@ -196,14 +197,17 @@ function App() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8, ease: "easeInOut" }}
-                className="flex flex-col sm:flex-row gap-5 pt-6"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-5 pt-4 sm:pt-6"
               >
                 <button
                   onClick={() => scrollToSection('cta')}
-                  className="group relative bg-teal-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-teal-500 transition-all duration-500 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105"
+                  className="group relative bg-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-teal-500 transition-all duration-500 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 overflow-hidden"
                 >
-                  <Calendar className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-                  <span>Book Consultation</span>
+                  <span className="relative z-10 flex items-center space-x-3">
+                    <Calendar className="w-5 sm:w-6 h-5 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Book Consultation</span>
+                  </span>
+                  <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </button>
               </motion.div>
             </div>
@@ -217,16 +221,12 @@ function App() {
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-teal-600/20 blur-3xl rounded-full"></div>
               <div className="relative rounded-3xl overflow-hidden">
                 <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden relative">
-                  <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-cover bg-center opacity-30"></div>
-                  <div className="relative text-center space-y-4 z-10">
-                    <div className="w-32 h-32 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full mx-auto flex items-center justify-center shadow-2xl shadow-teal-500/50">
-                      <Heart className="w-16 h-16 text-white" />
-                    </div>
-                    <div className="bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800 backdrop-blur-md px-6 py-4 rounded-xl">
-                      <p className="font-bold text-2xl text-white">Rhi</p>
-                      <p className="text-teal-100 text-sm">Qualified Aesthetic Practitioner</p>
-                    </div>
-                  </div>
+                  <img
+                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P"
+                    alt="Rhi - Aesthetic Practitioner"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
                 </div>
               </div>
             </motion.div>
@@ -235,51 +235,55 @@ function App() {
 
       </AuroraBackground>
 
-      <section id="trust-strip" className="bg-white py-20 px-6 border-t border-teal-500/20">
+      <section id="trust-strip" className="bg-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-black mb-4">
+          <div className="mb-12 sm:mb-20">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">
                 Real Results,{' '}
                 <span className="bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
                   Real Transformations
                 </span>
               </h2>
-              <p className="text-xl text-black/70">Witness the power of precision plasma treatments</p>
+              <p className="text-lg sm:text-xl text-black/70">Witness the power of precision plasma treatments</p>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto px-6">
-              <GlareCard className="relative w-[280px] lg:w-[260px]">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-7xl mx-auto px-2 sm:px-6">
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
                   alt="Skin treatment result"
+                  loading="lazy"
                 />
               </GlareCard>
-              <GlareCard className="relative w-[280px] lg:w-[260px]">
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansJ3To3ecVXzGmdTHBK2gaqowhD8ubcMpkWnA7"
                   alt="Plasma pen treatment"
+                  loading="lazy"
                 />
               </GlareCard>
-              <GlareCard className="relative w-[280px] lg:w-[260px]">
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnc4JjmIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2k"
                   alt="Treatment room"
+                  loading="lazy"
                 />
               </GlareCard>
-              <GlareCard className="relative w-[280px] lg:w-[260px]">
+              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans9cfuDhwHvBk0FM54DR6T7haPjcVdE8o3ZfIw"
                   alt="Natural Lifting Results"
+                  loading="lazy"
                 />
               </GlareCard>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {[
               { icon: Award, text: "Qualified Aesthetic Practitioner" },
               { icon: Droplet, text: "Medical-grade Plasma IQ Device" },
@@ -288,70 +292,86 @@ function App() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-teal-50 to-white p-8 rounded-2xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift text-center space-y-4 overflow-hidden"
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-4 sm:p-8 rounded-2xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift text-center space-y-3 sm:space-y-4 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/10 group-hover:to-teal-500/5 transition-all duration-500"></div>
-                <item.icon className="w-14 h-14 text-teal-600 mx-auto relative z-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
-                <p className="font-semibold text-black relative z-10 leading-tight">{item.text}</p>
+                <item.icon className="w-10 sm:w-14 h-10 sm:h-14 text-teal-600 mx-auto relative z-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
+                <p className="font-semibold text-sm sm:text-base text-black relative z-10 leading-tight">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 text-lg leading-relaxed">
-              <h2 className="text-5xl lg:text-6xl font-black mb-8 leading-tight">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-white via-teal-50/30 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(20,184,166,0.05),transparent_50%)]"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+            <div className="order-2 lg:order-1 space-y-6 sm:space-y-8">
+              <div className="inline-block">
+                <span className="px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full text-teal-700 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                  Meet Rhi
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight bg-gradient-to-r from-black via-teal-900 to-black bg-clip-text text-transparent">
                 You're not crazy for wanting something that actually works.
               </h2>
 
-              <p className="text-black/70 text-xl">
-                You've tried the facials and creams that felt relaxing but changed nothing.
-              </p>
-
-              <p className="text-black/70 text-xl">
-                Every mirror, every photo, reminds you...you look tired even when you're not. You look older than you are, and you really don't like it.
-              </p>
-
-              <p className="text-black/70 text-xl">
-                And yet… the idea of surgery feels too much. The idea of a "miracle cream" seems too fake.
-              </p>
-
-              <p className="text-black/70 text-xl">
-                You just want a safe, proven way to tighten the skin you already have, and that's it.
-              </p>
+              <div className="space-y-4 text-base sm:text-lg text-black/70 leading-relaxed">
+                <p className="flex items-start space-x-3">
+                  <span className="text-teal-500 mt-1.5 flex-shrink-0">✓</span>
+                  <span>You've tried facials and creams that felt relaxing but changed nothing.</span>
+                </p>
+                <p className="flex items-start space-x-3">
+                  <span className="text-teal-500 mt-1.5 flex-shrink-0">✓</span>
+                  <span>Every mirror reminds you — you look tired even when you're not.</span>
+                </p>
+                <p className="flex items-start space-x-3">
+                  <span className="text-teal-500 mt-1.5 flex-shrink-0">✓</span>
+                  <span>Surgery feels too much. "Miracle creams" seem too fake.</span>
+                </p>
+                <p className="flex items-start space-x-3">
+                  <span className="text-teal-500 mt-1.5 flex-shrink-0">✓</span>
+                  <span className="font-semibold text-black">You just want a safe, proven way to tighten the skin you already have.</span>
+                </p>
+              </div>
 
               <button
                 onClick={() => scrollToSection('cta')}
-                className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide"
+                className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide overflow-hidden group"
               >
-                <Calendar className="w-6 h-6" />
-                <span>Book Now</span>
+                <span className="relative z-10 flex items-center space-x-3">
+                  <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <span>Book Now</span>
+                </span>
+                <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </button>
             </div>
 
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-teal-600/20 blur-3xl"></div>
+            <div className="order-1 lg:order-2 relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-teal-500/20 to-teal-600/20 blur-3xl rounded-full"></div>
               <div className="relative">
-                <div className="rounded-3xl overflow-hidden relative">
-                  <div className="rounded-2xl aspect-[3/4] overflow-hidden relative">
+                <div className="rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/20">
+                  <div className="aspect-[3/4] overflow-hidden relative group">
                     <img
                       src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansRdrLHs1NnPqXUigWtzfTd60QMsIbeE2vVLYu"
                       alt="Rhi - Aesthetic Practitioner"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-br from-teal-600 to-teal-700 text-white p-8">
-
-                      <p className="text-sm leading-relaxed mb-4">
-                        Hey, I'm Rhi. I started this clinic because I was tired of people being misled by beauty promises that weren't real. I wanted a calm, honest, medical-standard space where you actually know what's happening every step of the way, and for you to LOVE your transformation.
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
+                      <div className="mb-4 inline-block px-4 py-1.5 bg-teal-500/90 backdrop-blur-sm rounded-full">
+                        <p className="text-xs sm:text-sm font-bold">Rhi • Qualified Aesthetic Practitioner</p>
+                      </div>
+                      <p className="text-xs sm:text-sm leading-relaxed mb-3">
+                        "I started this clinic because I was tired of people being misled by beauty promises that weren't real."
                       </p>
-                      <p className="text-sm leading-relaxed mb-4">
-My goal is simple — natural, safe, and lasting results that you'll enjoy forever ❤️
-                      </p>
-                      <p className="text-sm leading-relaxed mb-4">
-I'm fully qualified, insured, and I continue to learn and develop my knowledge with CPD training annually to make sure you get the best results possible!
+                      <p className="text-xs sm:text-sm leading-relaxed font-semibold">
+                        My goal: natural, safe, and lasting results that you'll enjoy forever ❤️
                       </p>
                     </div>
                   </div>
@@ -362,23 +382,70 @@ I'm fully qualified, insured, and I continue to learn and develop my knowledge w
         </div>
       </section>
 
-      <section id="how-it-works" className="bg-white py-24 px-6 relative overflow-hidden">
+      <section id="results" className="bg-white py-12 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 sm:mb-20">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
+              Proven Results
+            </span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
+              Real Results
+            </h2>
+            <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto">
+              Consistent lighting, real clients, visible transformation
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+            {[
+              { area: "Upper Eyelids", weeks: "6 Weeks", name: "Sarah, 48" },
+              { area: "Under-Eye Crepiness", weeks: "8 Weeks", name: "Michelle, 52" },
+              { area: "Smile Lines", weeks: "10 Weeks", name: "Emma, 45" },
+              { area: "Neck Lift", weeks: "12 Weeks", name: "Janet, 56" },
+              { area: "Crow's Feet", weeks: "8 Weeks", name: "Lisa, 43" },
+              { area: "Upper Lip Lines", weeks: "6 Weeks", name: "Rebecca, 50" }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group bg-gradient-to-br from-teal-50 to-white rounded-2xl sm:rounded-3xl overflow-hidden border border-teal-200 hover:border-teal-500/50 hover-lift"
+              >
+                <div className="relative bg-gradient-to-br from-teal-100 to-teal-50 aspect-[4/3] flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-center opacity-20"></div>
+                  <div className="relative text-center bg-black/80 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-xl">
+                    <Play className="w-8 sm:w-12 h-8 sm:h-12 text-teal-400 mx-auto mb-2" />
+                    <p className="font-semibold text-sm sm:text-lg text-white">Before/After</p>
+                    <p className="text-xs sm:text-sm text-teal-300">{item.area}</p>
+                  </div>
+                </div>
+                <div className="p-4 sm:p-6 bg-gradient-to-br from-white to-teal-50">
+                  <p className="font-bold text-teal-600 mb-2 sm:mb-3 text-sm sm:text-lg">{item.area} — {item.weeks}</p>
+                  <p className="text-xs sm:text-sm text-black/70 italic leading-relaxed">
+                    "{item.name} — 'I was nervous at first. By week {item.weeks.split(' ')[0]}, I couldn't believe how smooth my eyes looked.'"
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" className="bg-white py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
               The Process
             </span>
-            <h2 className="text-5xl lg:text-6xl font-black text-black mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
               How It Works
             </h2>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto font-light">
+            <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto font-light">
               Three simple steps to naturally tighten and lift your skin
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 icon: Zap,
@@ -404,190 +471,210 @@ I'm fully qualified, insured, and I continue to learn and develop my knowledge w
             ].map((step, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-teal-50 to-white p-10 rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift overflow-hidden"
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift overflow-hidden"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="absolute top-4 right-4 text-8xl font-black text-teal-100 group-hover:text-teal-200 transition-colors duration-500">
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 text-5xl sm:text-6xl font-black text-teal-100 group-hover:text-teal-200 transition-colors duration-500 select-none">
                   {step.number}
                 </div>
 
-                <div className="relative z-10 space-y-6">
+                <div className="relative z-10 space-y-4 sm:space-y-6">
                   <div className="bg-gradient-to-br from-teal-100 to-teal-50 rounded-2xl aspect-video flex items-center justify-center border-2 border-teal-200 overflow-hidden relative mb-4">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full mx-auto flex items-center justify-center mb-2">
-                        <step.icon className="w-8 h-8 text-white" />
+                      <div className="w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full mx-auto flex items-center justify-center mb-2">
+                        <step.icon className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
                       </div>
-                      <p className="text-sm text-teal-600 font-medium">Image Placeholder</p>
+                      <p className="text-xs sm:text-sm text-teal-600 font-medium">Image Placeholder</p>
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-black">{step.title}</h3>
-                  <p className="text-black/70 leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-black">{step.title}</h3>
+                  <p className="text-sm sm:text-base text-black/70 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <button
-              onClick={() => scrollToSection('cta')}
-              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide"
-            >
-              <Calendar className="w-6 h-6" />
-              <span>Book Now</span>
-            </button>
-          </div>
-
-          <div className="mt-16 bg-gradient-to-r from-teal-50 to-teal-100/50 border border-teal-500/20 rounded-2xl p-8 max-w-3xl mx-auto text-center">
-            <p className="text-xl text-black">
+          <div className="mt-12 sm:mt-16 bg-gradient-to-r from-teal-50 to-teal-100/50 border border-teal-500/20 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-center">
+            <p className="text-lg sm:text-xl text-black">
               <strong className="text-teal-600 font-bold">You'll feel warmth, not pain</strong> — we fully numb the area beforehand.
             </p>
           </div>
+
+          <div className="mt-8 sm:mt-12 text-center">
+            <button
+              onClick={() => scrollToSection('cta')}
+              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide overflow-hidden group"
+            >
+              <span className="relative z-10 flex items-center space-x-3">
+                <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
+                <span>Book Now</span>
+              </span>
+              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </button>
+          </div>
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white relative overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl lg:text-6xl font-black leading-tight text-black">
-            It's your time to feel confident again. Safety, naturally, and without surgery.
+      <section id="timeline" className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
+        <div className="text-center mb-8 sm:mb-12">
+          <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
+            Your Healing Journey
+          </span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black">
+            Day-by-Day Timeline
           </h2>
         </div>
-      </section>
 
-      <section id="timeline" className="py-24 px-6 bg-white">
         <Timeline data={healingTimeline.map((item) => ({
           title: item.day,
           content: (
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl overflow-hidden border-2 border-teal-200 shadow-lg aspect-[4/5]">
-                <img src={item.image} alt={item.day} className="w-full h-full object-cover" />
+                <img src={item.image} alt={item.day} className="w-full h-full object-cover" loading="lazy" />
               </div>
-              <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8 border-2 border-teal-200 shadow-lg flex items-center aspect-[4/5]">
-                <p className="text-lg text-black/80 leading-relaxed">{item.description}</p>
+              <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-6 sm:p-8 border-2 border-teal-200 shadow-lg flex items-center aspect-[4/5]">
+                <p className="text-sm sm:text-lg text-black/80 leading-relaxed">{item.description}</p>
               </div>
             </div>
           )
         }))} />
 
-        <div className="max-w-6xl mx-auto mt-16">
-          <div className="bg-white text-black rounded-3xl p-12 text-center hover-lift border-2 border-teal-200">
-            <Clock className="w-16 h-16 text-teal-600 mx-auto mb-6" />
-            <p className="text-xl mb-8 leading-relaxed text-black">
-              Every client receives a detailed aftercare PDF — including what to expect, what to avoid, and how to protect your results.
-            </p>
-            <button
-              onClick={() => scrollToSection('cta')}
-              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide"
-            >
-              <Calendar className="w-6 h-6" />
-              <span>Book Now</span>
-            </button>
-          </div>
-        </div>
-      </section>
+        <div className="max-w-6xl mx-auto mt-12 sm:mt-16">
+          <div className="relative bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 text-white rounded-3xl p-8 sm:p-12 text-center shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTAgMTBjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTEwLTEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
 
-      <section id="results" className="bg-white py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
-              Proven Results
-            </span>
-            <h2 className="text-5xl lg:text-6xl font-black text-black mb-6">
-              Real Results
-            </h2>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              Consistent lighting, real clients, visible transformation
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { area: "Upper Eyelids", weeks: "6 Weeks", name: "Sarah, 48" },
-              { area: "Under-Eye Crepiness", weeks: "8 Weeks", name: "Michelle, 52" },
-              { area: "Smile Lines", weeks: "10 Weeks", name: "Emma, 45" },
-              { area: "Neck Lift", weeks: "12 Weeks", name: "Janet, 56" },
-              { area: "Crow's Feet", weeks: "8 Weeks", name: "Lisa, 43" },
-              { area: "Upper Lip Lines", weeks: "6 Weeks", name: "Rebecca, 50" }
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-teal-50 to-white rounded-3xl overflow-hidden border border-teal-200 hover:border-teal-500/50 hover-lift"
-              >
-                <div className="relative bg-gradient-to-br from-teal-100 to-teal-50 aspect-[4/3] flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-center opacity-20"></div>
-                  <div className="relative text-center bg-black/80 backdrop-blur-sm px-6 py-4 rounded-xl">
-                    <Play className="w-12 h-12 text-teal-400 mx-auto mb-2" />
-                    <p className="font-semibold text-lg text-white">Before/After</p>
-                    <p className="text-sm text-teal-300">{item.area}</p>
-                  </div>
-                </div>
-                <div className="p-6 bg-gradient-to-br from-white to-teal-50">
-                  <p className="font-bold text-teal-600 mb-3 text-lg">{item.area} — {item.weeks}</p>
-                  <p className="text-sm text-black/70 italic leading-relaxed">
-                    "{item.name} — 'I was nervous at first. By week {item.weeks.split(' ')[0]}, I couldn't believe how smooth my eyes looked.'"
-                  </p>
-                </div>
+            <div className="relative z-10">
+              <div className="inline-flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
+                <FileText className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
               </div>
-            ))}
+
+              <h3 className="text-2xl sm:text-3xl font-black mb-4">Complete Aftercare Support</h3>
+              <p className="text-base sm:text-lg mb-8 leading-relaxed text-white/90 max-w-2xl mx-auto">
+                Every client receives a detailed aftercare PDF — including what to expect, what to avoid, and how to protect your results.
+              </p>
+
+              <button
+                onClick={() => scrollToSection('cta')}
+                className="relative bg-white text-teal-600 px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-teal-50 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:scale-105 uppercase tracking-wide overflow-hidden group"
+              >
+                <span className="relative z-10 flex items-center space-x-3">
+                  <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <span>Book Now</span>
+                </span>
+                <div className="absolute inset-0 bg-teal-100 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-white">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
+              Testimonials
+            </span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
+              What Our Customers Say
+            </h2>
+          </div>
+
+          <div className="relative z-0">
+            <AnimatedTestimonials
+              testimonials={[
+                {
+                  quote: "I was terrified before my treatment, but Rhi explained everything. The swelling lasted 3 days, dots gone in a week, results by week 8 — incredible.",
+                  name: "Christene",
+                  designation: "Age 46, Southampton",
+                  src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop"
+                },
+                {
+                  quote: "I'd wasted money on creams and gadgets. This actually worked. My eyelids feel lifted and I look awake again.",
+                  name: "Sophie",
+                  designation: "Age 52, Southampton",
+                  src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3540&auto=format&fit=crop"
+                },
+                {
+                  quote: "The honesty and care were unmatched. No fake promises, just results. I finally feel confident again.",
+                  name: "Karen",
+                  designation: "Age 40, Southampton",
+                  src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=3540&auto=format&fit=crop"
+                },
+                {
+                  quote: "Professional, safe, and the results speak for themselves. Best decision I've made for my skin in years.",
+                  name: "Michelle",
+                  designation: "Age 48, Southampton",
+                  src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=3540&auto=format&fit=crop"
+                },
+                {
+                  quote: "Rhi's expertise gave me confidence from day one. The healing was exactly as described, and my skin looks naturally refreshed.",
+                  name: "Emma",
+                  designation: "Age 55, Southampton",
+                  src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=3540&auto=format&fit=crop"
+                }
+              ]}
+              autoplay={true}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl lg:text-6xl font-black text-center mb-20">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center mb-12 sm:mb-20">
             Is This Right For You?
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="relative bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-3xl p-10 border-2 border-teal-500 overflow-hidden group hover-lift">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-teal-500/10 rounded-full blur-3xl"></div>
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
+            <div className="relative bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-teal-500 overflow-hidden group hover-lift">
+              <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-teal-500/10 rounded-full blur-3xl"></div>
 
               <div className="relative z-10">
-                <div className="flex items-center space-x-3 mb-8">
-                  <div className="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-7 h-7 text-white" />
+                <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-black text-teal-900">Perfect For You If:</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-teal-900">Perfect For You If:</h3>
                 </div>
 
-                <ul className="space-y-5">
+                <ul className="space-y-4 sm:space-y-5">
                   {[
                     "You're noticing sagging or loose eyelid skin",
                     "You want results without surgery or filler",
                     "You're realistic about 5–7 days of healing",
                     "You value expertise, safety, and guidance"
                   ].map((item, index) => (
-                    <li key={index} className="flex items-start space-x-4">
-                      <CheckCircle className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1" />
-                      <span className="text-black/80 text-lg leading-relaxed">{item}</span>
+                    <li key={index} className="flex items-start space-x-3 sm:space-x-4">
+                      <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-teal-600 flex-shrink-0 mt-0.5 sm:mt-1" />
+                      <span className="text-black/80 text-sm sm:text-lg leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
 
-            <div className="relative bg-gradient-to-br from-neutral-50 to-neutral-100/50 rounded-3xl p-10 border-2 border-neutral-400 overflow-hidden group hover-lift">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-neutral-400/10 rounded-full blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-neutral-50 to-neutral-100/50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-neutral-400 overflow-hidden group hover-lift">
+              <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-neutral-400/10 rounded-full blur-3xl"></div>
 
               <div className="relative z-10">
-                <div className="flex items-center space-x-3 mb-8">
-                  <div className="w-12 h-12 bg-neutral-500 rounded-full flex items-center justify-center">
-                    <XCircle className="w-7 h-7 text-white" />
+                <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-neutral-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <XCircle className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-black text-neutral-900">Not For You If:</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-neutral-900">Not For You If:</h3>
                 </div>
 
-                <ul className="space-y-5">
+                <ul className="space-y-4 sm:space-y-5">
                   {[
                     "You've had recent sun exposure or skin flare-ups",
                     "You expect surgery-level results overnight",
                     "You can't commit to aftercare",
                     "You're looking for a 'cheap quick fix'"
                   ].map((item, index) => (
-                    <li key={index} className="flex items-start space-x-4">
-                      <XCircle className="w-6 h-6 text-neutral-600 flex-shrink-0 mt-1" />
-                      <span className="text-black/80 text-lg leading-relaxed">{item}</span>
+                    <li key={index} className="flex items-start space-x-3 sm:space-x-4">
+                      <XCircle className="w-5 sm:w-6 h-5 sm:h-6 text-neutral-600 flex-shrink-0 mt-0.5 sm:mt-1" />
+                      <span className="text-black/80 text-sm sm:text-lg leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -595,50 +682,53 @@ I'm fully qualified, insured, and I continue to learn and develop my knowledge w
             </div>
           </div>
 
-          <div className="mt-16 text-center bg-gradient-to-r from-teal-50 to-teal-100/50 p-10 rounded-3xl">
-            <Users className="w-16 h-16 text-teal-600 mx-auto mb-6" />
-            <p className="text-2xl font-semibold text-black max-w-3xl mx-auto leading-relaxed mb-8">
+          <div className="mt-12 sm:mt-16 text-center bg-gradient-to-r from-teal-50 to-teal-100/50 p-6 sm:p-10 rounded-2xl sm:rounded-3xl">
+            <Users className="w-12 sm:w-16 h-12 sm:h-16 text-teal-600 mx-auto mb-4 sm:mb-6" />
+            <p className="text-lg sm:text-2xl font-semibold text-black max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8">
               If you're unsure, book a consultation. We'll assess your skin and decide if this treatment is right for you.
             </p>
             <button
               onClick={() => scrollToSection('cta')}
-              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide"
+              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide overflow-hidden group"
             >
-              <Calendar className="w-6 h-6" />
-              <span>Book Now</span>
+              <span className="relative z-10 flex items-center space-x-3">
+                <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
+                <span>Book Now</span>
+              </span>
+              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-24 px-6">
+      <section className="bg-white py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
               Your Safety First
             </span>
-            <h2 className="text-5xl lg:text-6xl font-black text-black mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
               Safety & Screening
             </h2>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto">
               Your safety is always the first step. Every client receives a full consultation, including pigment risk screening and medical history review.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-teal-50 to-white rounded-3xl p-12 border border-teal-200">
-            <p className="text-xl text-black/80 mb-12 text-center font-semibold">
+          <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-teal-200">
+            <p className="text-lg sm:text-xl text-black/80 mb-6 sm:mb-8 text-center font-semibold">
               We check for:
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {[
-                { icon: User, text: "Skin tone & pigmentation risk (Fitzpatrick scale)" },
+                { icon: User, text: "Skin tone & pigmentation risk" },
                 { icon: Pill, text: "Current medications" },
                 { icon: History, text: "Healing history" },
-                { icon: Sun, text: "Lifestyle factors like sun exposure" }
+                { icon: Sun, text: "Sun exposure factors" }
               ].map((item, index) => (
-                <div key={index} className="min-h-[12rem] list-none">
-                  <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+                <div key={index} className="min-h-[8rem] sm:min-h-[10rem] list-none">
+                  <div className="relative h-full rounded-xl sm:rounded-[1.25rem] border-[0.75px] border-border p-2 sm:p-3">
                     <GlowingEffect
                       spread={40}
                       glow={true}
@@ -647,13 +737,13 @@ I'm fully qualified, insured, and I continue to learn and develop my knowledge w
                       inactiveZone={0.01}
                       borderWidth={3}
                     />
-                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-white p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-                      <div className="relative flex flex-1 flex-col justify-between gap-3">
-                        <div className="w-fit rounded-lg border-[0.75px] border-teal-200 bg-teal-50 p-2">
-                          <item.icon className="h-6 w-6 text-teal-600" />
+                    <div className="relative flex h-full flex-col justify-between gap-4 sm:gap-6 overflow-hidden rounded-lg sm:rounded-xl border-[0.75px] bg-white p-4 sm:p-6 shadow-sm">
+                      <div className="relative flex flex-1 flex-col justify-between gap-2 sm:gap-3">
+                        <div className="w-fit rounded-lg border-[0.75px] border-teal-200 bg-teal-50 p-1.5 sm:p-2">
+                          <item.icon className="h-5 sm:h-6 w-5 sm:w-6 text-teal-600" />
                         </div>
-                        <div className="space-y-3">
-                          <p className="text-lg leading-relaxed text-black/80">
+                        <div>
+                          <p className="text-sm sm:text-base leading-relaxed text-black/80 font-medium">
                             {item.text}
                           </p>
                         </div>
@@ -664,92 +754,37 @@ I'm fully qualified, insured, and I continue to learn and develop my knowledge w
               ))}
             </div>
 
-            <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-8 text-center mb-8">
-              <p className="text-3xl font-bold text-white leading-relaxed">
-                "It's not about speed, it's about precision."
-              </p>
-            </div>
-
-            <p className="text-center text-black/70 text-lg">
-              Patch tests or micro-tests are available — and redeemable toward your full treatment.
+            <p className="text-center text-black/70 text-sm sm:text-lg">
+              Patch tests or micro-tests are available.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
-              Testimonials
-            </span>
-            <h2 className="text-5xl lg:text-6xl font-black text-black mb-6">
-              What Clients Say
-            </h2>
-          </div>
-
-          <AnimatedTestimonials
-            testimonials={[
-              {
-                quote: "I was terrified before my treatment, but Rhi explained everything. The swelling lasted 3 days, dots gone in a week, results by week 8 — incredible.",
-                name: "Christene",
-                designation: "Age 46, Southampton",
-                src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop"
-              },
-              {
-                quote: "I'd wasted money on creams and gadgets. This actually worked. My eyelids feel lifted and I look awake again.",
-                name: "Sophie",
-                designation: "Age 52, Southampton",
-                src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3540&auto=format&fit=crop"
-              },
-              {
-                quote: "The honesty and care were unmatched. No fake promises, just results. I finally feel confident again.",
-                name: "Karen",
-                designation: "Age 40, Southampton",
-                src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=3540&auto=format&fit=crop"
-              },
-              {
-                quote: "Professional, safe, and the results speak for themselves. Best decision I've made for my skin in years.",
-                name: "Michelle",
-                designation: "Age 48, Southampton",
-                src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=3540&auto=format&fit=crop"
-              },
-              {
-                quote: "Rhi's expertise gave me confidence from day one. The healing was exactly as described, and my skin looks naturally refreshed.",
-                name: "Emma",
-                designation: "Age 55, Southampton",
-                src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=3540&auto=format&fit=crop"
-              }
-            ]}
-            autoplay={true}
-          />
-        </div>
-      </section>
-
-      <section id="faqs" className="py-24 px-6 bg-white">
+      <section id="faqs" className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-20">
-            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+          <div className="text-center mb-12 sm:mb-20">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
               Questions?
             </span>
-            <h2 className="text-5xl lg:text-6xl font-black mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
               Frequently Asked Questions
             </h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-teal-50 to-white rounded-2xl overflow-hidden shadow-lg border-2 border-teal-500/20 hover:border-teal-500/40 transition-all duration-300"
+                className="bg-gradient-to-br from-teal-50 to-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border-2 border-teal-500/20 hover:border-teal-500/40 transition-all duration-300"
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full text-left p-8 flex items-center justify-between hover:bg-teal-50/50 transition-colors"
+                  className="w-full text-left p-4 sm:p-8 flex items-center justify-between hover:bg-teal-50/50 transition-colors"
                 >
-                  <span className="text-xl font-bold text-black pr-4">{faq.question}</span>
+                  <span className="text-base sm:text-xl font-bold text-black pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-7 h-7 text-teal-600 flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-6 sm:w-7 h-6 sm:h-7 text-teal-600 flex-shrink-0 transition-transform duration-300 ${
                       openFaq === index ? 'transform rotate-180' : ''
                     }`}
                   />
@@ -759,8 +794,8 @@ I'm fully qualified, insured, and I continue to learn and develop my knowledge w
                     openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-8 pb-8">
-                    <p className="text-lg text-black/70 leading-relaxed">{faq.answer}</p>
+                  <div className="px-4 sm:px-8 pb-4 sm:pb-8">
+                    <p className="text-sm sm:text-lg text-black/70 leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
               </div>
@@ -769,124 +804,127 @@ I'm fully qualified, insured, and I continue to learn and develop my knowledge w
         </div>
       </section>
 
-      <section id="cta" className="bg-white py-28 px-6 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl"></div>
-        </div>
+      <section id="cta" className="bg-gradient-to-br from-teal-600 via-teal-500 to-teal-600 py-16 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTAgMTBjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bTEwLTEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDEwYzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
+        <div className="absolute top-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-black/10 rounded-full blur-3xl"></div>
 
         <div className="max-w-5xl mx-auto relative z-10">
-          <div className="text-center space-y-8 mb-12">
+          <div className="text-center space-y-6 sm:space-y-8 mb-8 sm:mb-12">
             <div className="inline-block">
-              <span className="px-6 py-3 bg-teal-500/20 backdrop-blur-sm border border-teal-500/30 rounded-full text-teal-600 text-sm font-bold uppercase tracking-wider">
+              <span className="px-4 sm:px-6 py-2 sm:py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-white text-xs sm:text-sm font-bold uppercase tracking-wider">
                 Ready to Transform?
               </span>
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black leading-tight text-black">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white">
               Start Your Journey to
-              <span className="block mt-3 bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
+              <span className="block mt-2 sm:mt-3">
                 Confident, Lifted Skin
               </span>
             </h2>
 
-            <p className="text-xl leading-relaxed text-black/70 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto">
               Professional care, proven results, complete transparency
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-gradient-to-br from-teal-50 to-white backdrop-blur-sm border border-teal-200 rounded-2xl p-6 text-center hover:border-teal-500/50 transition-all duration-300">
-              <Shield className="w-10 h-10 text-teal-600 mx-auto mb-3" />
-              <p className="text-black font-semibold">Medical-Grade Safety</p>
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300">
+              <Shield className="w-8 sm:w-10 h-8 sm:h-10 text-white mx-auto mb-2 sm:mb-3" />
+              <p className="text-white font-semibold text-sm sm:text-base">Medical-Grade Safety</p>
             </div>
-            <div className="bg-gradient-to-br from-teal-50 to-white backdrop-blur-sm border border-teal-200 rounded-2xl p-6 text-center hover:border-teal-500/50 transition-all duration-300">
-              <Heart className="w-10 h-10 text-teal-600 mx-auto mb-3" />
-              <p className="text-black font-semibold">Personal Care</p>
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300">
+              <Heart className="w-8 sm:w-10 h-8 sm:h-10 text-white mx-auto mb-2 sm:mb-3" />
+              <p className="text-white font-semibold text-sm sm:text-base">Personal Care</p>
             </div>
-            <div className="bg-gradient-to-br from-teal-50 to-white backdrop-blur-sm border border-teal-200 rounded-2xl p-6 text-center hover:border-teal-500/50 transition-all duration-300">
-              <Sparkles className="w-10 h-10 text-teal-600 mx-auto mb-3" />
-              <p className="text-black font-semibold">Natural Results</p>
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-all duration-300">
+              <Sparkles className="w-8 sm:w-10 h-8 sm:h-10 text-white mx-auto mb-2 sm:mb-3" />
+              <p className="text-white font-semibold text-sm sm:text-base">Natural Results</p>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="group bg-gradient-to-r from-teal-500 to-teal-600 text-white px-12 py-6 rounded-full font-bold text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 hover:scale-105 uppercase tracking-wide">
-              <span className="flex items-center justify-center space-x-3">
-                <Calendar className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+            <button
+              onClick={() => scrollToSection('cta')}
+              className="group bg-white text-teal-600 px-10 sm:px-12 py-5 sm:py-6 rounded-full font-bold text-base sm:text-lg hover:bg-teal-50 transition-all duration-300 shadow-2xl hover:scale-105 uppercase tracking-wide relative overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center justify-center space-x-3">
+                <Calendar className="w-5 sm:w-6 h-5 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
                 <span>Book Now</span>
               </span>
+              <div className="absolute inset-0 bg-teal-100 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
 
             <a
               href="https://wa.me/441234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="group border-2 border-teal-500 text-teal-600 px-12 py-6 rounded-full font-bold text-lg hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 uppercase tracking-wide"
+              className="group border-2 border-white text-white px-10 sm:px-12 py-5 sm:py-6 rounded-full font-bold text-base sm:text-lg hover:bg-white hover:text-teal-600 transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 uppercase tracking-wide"
             >
-              <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+              <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6 group-hover:scale-110 transition-transform duration-300" />
               <span>Get in Touch</span>
             </a>
           </div>
 
-          <p className="text-center text-black/60 mt-10 text-sm">
+          <p className="text-center text-white/80 mt-8 sm:mt-10 text-sm">
             £50 consultation deposit • Fully redeemable toward treatment
           </p>
         </div>
       </section>
 
-      <footer className="bg-black text-white py-20 px-6 border-t border-teal-500/20">
+      <footer className="bg-black text-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-16">
-            <div className="space-y-6">
-              <div className="flex items-center space-x-3 group">
-                <Sparkles className="text-teal-400 w-10 h-10 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="text-2xl font-black">Rhi's Aesthetics</span>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center space-x-2 sm:space-x-3 group">
+                <Sparkles className="text-teal-400 w-8 sm:w-10 h-8 sm:h-10 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="text-xl sm:text-2xl font-black">Rhi's Aesthetics</span>
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-white/60 leading-relaxed text-sm sm:text-base">
                 Safe, natural skin tightening in Southampton.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-3 sm:space-x-4">
                 <a
                   href="#"
-                  className="bg-white/10 p-3 rounded-full hover:bg-teal-500 transition-all duration-300 hover:scale-110"
+                  className="bg-white/10 p-2.5 sm:p-3 rounded-full hover:bg-teal-500 transition-all duration-300 hover:scale-110"
                 >
-                  <Instagram className="w-6 h-6" />
+                  <Instagram className="w-5 sm:w-6 h-5 sm:h-6" />
                 </a>
                 <a
                   href="#"
-                  className="bg-white/10 p-3 rounded-full hover:bg-teal-500 transition-all duration-300 hover:scale-110"
+                  className="bg-white/10 p-2.5 sm:p-3 rounded-full hover:bg-teal-500 transition-all duration-300 hover:scale-110"
                 >
-                  <Facebook className="w-6 h-6" />
+                  <Facebook className="w-5 sm:w-6 h-5 sm:h-6" />
                 </a>
               </div>
             </div>
 
             <div>
-              <h3 className="font-black text-lg mb-6 text-teal-400">Contact</h3>
-              <div className="space-y-4 text-white/70">
-                <p className="flex items-center space-x-3 hover:text-teal-400 transition-colors duration-300">
-                  <MapPin className="w-5 h-5 flex-shrink-0" />
+              <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Contact</h3>
+              <div className="space-y-3 sm:space-y-4 text-white/70 text-sm sm:text-base">
+                <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
+                  <MapPin className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
                   <span>Southampton, UK</span>
                 </p>
-                <p className="flex items-center space-x-3 hover:text-teal-400 transition-colors duration-300">
-                  <Phone className="w-5 h-5 flex-shrink-0" />
+                <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
+                  <Phone className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
                   <span>01234 567890</span>
                 </p>
-                <p className="flex items-center space-x-3 hover:text-teal-400 transition-colors duration-300">
-                  <Mail className="w-5 h-5 flex-shrink-0" />
+                <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
+                  <Mail className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
                   <span>info@rhisesthetics.co.uk</span>
                 </p>
-                <p className="flex items-center space-x-3 hover:text-teal-400 transition-colors duration-300">
-                  <Building2 className="w-5 h-5 flex-shrink-0" />
+                <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
+                  <Building2 className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
                   <span>reesesthetics.co.uk</span>
                 </p>
               </div>
             </div>
 
             <div>
-              <h3 className="font-black text-lg mb-6 text-teal-400">Quick Links</h3>
-              <ul className="space-y-3 text-white/70">
+              <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Quick Links</h3>
+              <ul className="space-y-2 sm:space-y-3 text-white/70 text-sm sm:text-base">
                 {['about', 'how-it-works', 'faqs', 'timeline'].map((link) => (
                   <li key={link}>
                     <button
@@ -906,35 +944,35 @@ I'm fully qualified, insured, and I continue to learn and develop my knowledge w
             </div>
 
             <div>
-              <h3 className="font-black text-lg mb-6 text-teal-400">Hours</h3>
-              <div className="space-y-3 text-white/70">
+              <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Hours</h3>
+              <div className="space-y-2 sm:space-y-3 text-white/70 text-sm sm:text-base">
                 <p>Monday - Friday</p>
                 <p className="text-white font-semibold">9:00 AM - 6:00 PM</p>
-                <p className="mt-4">Saturday</p>
+                <p className="mt-3 sm:mt-4">Saturday</p>
                 <p className="text-white font-semibold">10:00 AM - 4:00 PM</p>
-                <p className="mt-4">Sunday: Closed</p>
+                <p className="mt-3 sm:mt-4">Sunday: Closed</p>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/50 text-sm">
+          <div className="border-t border-white/10 pt-8 sm:pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-white/50 text-xs sm:text-sm text-center md:text-left">
               &copy; 2025 Rhi's Aesthetics — All rights reserved.
             </p>
-            <p className="text-white/50 text-sm">
+            <p className="text-white/50 text-xs sm:text-sm text-center md:text-right">
               Designed with precision and care
             </p>
           </div>
         </div>
       </footer>
 
-      <div className="fixed bottom-8 right-8 lg:hidden z-50">
+      <div className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 lg:hidden z-40">
         <button
           onClick={() => scrollToSection('cta')}
-          className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-5 rounded-full font-bold shadow-2xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 flex items-center space-x-3 hover:scale-110 teal-glow"
+          className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-full font-bold shadow-2xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 flex items-center space-x-2 sm:space-x-3 hover:scale-110 teal-glow"
         >
-          <Calendar className="w-6 h-6" />
-          <span>Book Now</span>
+          <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
+          <span className="text-sm sm:text-base">Book Now</span>
         </button>
       </div>
     </div>
