@@ -205,7 +205,7 @@ function App() {
               >
                 <button
                   onClick={() => scrollToSection('cta')}
-                  className="group relative bg-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-teal-500 transition-all duration-500 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 overflow-hidden"
+                  className="group relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center space-x-3">
                     <Calendar className="w-5 sm:w-6 h-5 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
@@ -255,24 +255,24 @@ function App() {
               <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansYITsSXcmMa7NBSypFmPq9WJnje0DE4gr8R1A"
-                  alt="Treatment result 1"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
+                  alt="Skin treatment result"
                   loading="lazy"
                 />
               </GlareCard>
               <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansfkweXWDJuMR1SytWIdgA9xsk8eLD2ZPNqzrf"
-                  alt="Treatment result 2"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansJ3To3ecVXzGmdTHBK2gaqowhD8ubcMpkWnA7"
+                  alt="Plasma pen treatment"
                   loading="lazy"
                 />
               </GlareCard>
               <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansgBUEXKy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
-                  alt="Treatment result 3"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnc4JjmIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2k"
+                  alt="Treatment room"
                   loading="lazy"
                 />
               </GlareCard>
@@ -280,55 +280,7 @@ function App() {
                 <img
                   className="h-full w-full absolute inset-0 object-cover opacity-90"
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansP2YVCbplansMeUbGIOLF6SBXiAE1CKD5xpJ0"
-                  alt="Treatment result 4"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansOWLi5VAwPqZhND8kpUK40TVgGEMsnxv2atlY"
-                  alt="Treatment result 5"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansDBrqUMFlbUg7HiPYe8pNhaWf5E4dG26xVuXJ"
-                  alt="Treatment result 6"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansn1adYIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg"
-                  alt="Treatment result 7"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLiieE7cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw"
-                  alt="Treatment result 8"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZKjaqycEpuNyB4c5UP1OD9z8GXJlTsjiKSL"
-                  alt="Treatment result 9"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansyLPATlSnOIJPwhi3Q9WsA61ykCl5eRHLYpVS"
-                  alt="Treatment result 10"
+                  alt="Natural Lifting Results"
                   loading="lazy"
                 />
               </GlareCard>
@@ -562,12 +514,6 @@ function App() {
       </section>
 
       <section id="timeline" className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
-        <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black">
-            Day-by-Day Timeline
-          </h2>
-        </div>
-
         <Timeline data={healingTimeline.map((item) => ({
           title: item.day,
           content: (
@@ -605,7 +551,7 @@ function App() {
 
               <button
                 onClick={() => scrollToSection('cta')}
-                className="relative bg-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:scale-105 uppercase tracking-wide overflow-hidden group"
+                className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:scale-105 uppercase tracking-wide overflow-hidden group"
               >
                 <span className="relative z-10 flex items-center space-x-3">
                   <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
@@ -633,31 +579,61 @@ function App() {
                   quote: "I was terrified before my treatment, but Rhi explained everything. The swelling lasted 3 days, dots gone in a week, results by week 8 — incredible.",
                   name: "Christene",
                   designation: "Age 46, Southampton",
-                  src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop"
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansYITsSXcmMa7NBSypFmPq9WJnje0DE4gr8R1A"
                 },
                 {
                   quote: "I'd wasted money on creams and gadgets. This actually worked. My eyelids feel lifted and I look awake again.",
                   name: "Sophie",
                   designation: "Age 52, Southampton",
-                  src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3540&auto=format&fit=crop"
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansfkweXWDJuMR1SytWIdgA9xsk8eLD2ZPNqzrf"
                 },
                 {
                   quote: "The honesty and care were unmatched. No fake promises, just results. I finally feel confident again.",
                   name: "Karen",
                   designation: "Age 40, Southampton",
-                  src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=3540&auto=format&fit=crop"
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansgBUEXKy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
                 },
                 {
                   quote: "Professional, safe, and the results speak for themselves. Best decision I've made for my skin in years.",
                   name: "Michelle",
                   designation: "Age 48, Southampton",
-                  src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=3540&auto=format&fit=crop"
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans4rxsHjZlV9LZ7rOzhpUH0MiuGACRPD3jNeQk"
                 },
                 {
                   quote: "Rhi's expertise gave me confidence from day one. The healing was exactly as described, and my skin looks naturally refreshed.",
                   name: "Emma",
                   designation: "Age 55, Southampton",
-                  src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=3540&auto=format&fit=crop"
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansOWLi5VAwPqZhND8kpUK40TVgGEMsnxv2atlY"
+                },
+                {
+                  quote: "The results exceeded my expectations. My skin feels tighter and looks years younger without any surgery.",
+                  name: "Rebecca",
+                  designation: "Age 50, Southampton",
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansDBrqUMFlbUg7HiPYe8pNhaWf5E4dG26xVuXJ"
+                },
+                {
+                  quote: "I was skeptical at first, but the transformation is real. My friends can't believe how natural it looks.",
+                  name: "Lisa",
+                  designation: "Age 43, Southampton",
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansn1adYIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg"
+                },
+                {
+                  quote: "The entire process was professional and caring. I feel like I've turned back the clock on my skin aging.",
+                  name: "Janet",
+                  designation: "Age 56, Southampton",
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLiieE7cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw"
+                },
+                {
+                  quote: "Best investment in myself. The confidence boost is incredible and the results keep getting better.",
+                  name: "Sarah",
+                  designation: "Age 48, Southampton",
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZKjaqycEpuNyB4c5UP1OD9z8GXJlTsjiKSL"
+                },
+                {
+                  quote: "I wish I had done this sooner. The care and attention to detail made all the difference in my results.",
+                  name: "Amanda",
+                  designation: "Age 51, Southampton",
+                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansyLPATlSnOIJPwhi3Q9WsA61ykCl5eRHLYpVS"
                 }
               ]}
               autoplay={true}
@@ -939,13 +915,17 @@ function App() {
               </p>
               <div className="flex space-x-3 sm:space-x-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/rhi.aesthetics?igsh=MWhvMjFqb3Zscms0aw%3D%3D&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white/10 p-2.5 sm:p-3 rounded-full hover:bg-teal-500 transition-all duration-300 hover:scale-110"
                 >
                   <Instagram className="w-5 sm:w-6 h-5 sm:h-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=61575636000105"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white/10 p-2.5 sm:p-3 rounded-full hover:bg-teal-500 transition-all duration-300 hover:scale-110"
                 >
                   <Facebook className="w-5 sm:w-6 h-5 sm:h-6" />
@@ -1022,10 +1002,13 @@ function App() {
       <div className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 lg:hidden z-40">
         <button
           onClick={() => scrollToSection('cta')}
-          className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-full font-bold shadow-2xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 flex items-center space-x-2 sm:space-x-3 hover:scale-110 teal-glow"
+          className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-full font-bold shadow-2xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 flex items-center space-x-2 sm:space-x-3 hover:scale-110 overflow-hidden group"
         >
-          <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
-          <span className="text-sm sm:text-base">Book Now</span>
+          <span className="relative z-10 flex items-center space-x-2 sm:space-x-3">
+            <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
+            <span className="text-sm sm:text-base">Book Now</span>
+          </span>
+          <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
         </button>
       </div>
     </div>
