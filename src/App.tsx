@@ -22,7 +22,9 @@ import {
   User,
   Pill,
   History,
-  Sun
+  Sun,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { AuroraBackground } from './components/ui/aurora-background';
 import { Timeline } from './components/ui/timeline';
@@ -33,6 +35,22 @@ import { GlowingEffect } from './components/ui/glowing-effect';
 function App() {
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  const glareCardImages = [
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansJ3To3ecVXzGmdTHBK2gaqowhD8ubcMpkWnA7",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansnc4JjmIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2k",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansP2YVCbplansMeUbGIOLF6SBXiAE1CKD5xpJ0",
+    "https://placehold.co/400x500/14b8a6/white?text=Result+5",
+    "https://placehold.co/400x500/14b8a6/white?text=Result+6",
+    "https://placehold.co/400x500/14b8a6/white?text=Result+7",
+    "https://placehold.co/400x500/14b8a6/white?text=Result+8",
+    "https://placehold.co/400x500/14b8a6/white?text=Result+9",
+    "https://placehold.co/400x500/14b8a6/white?text=Result+10",
+    "https://placehold.co/400x500/14b8a6/white?text=Result+11",
+    "https://placehold.co/400x500/14b8a6/white?text=Result+12"
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,6 +81,23 @@ function App() {
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const nextCarousel = () => {
+    setCarouselIndex((prev) => (prev + 1) % glareCardImages.length);
+  };
+
+  const prevCarousel = () => {
+    setCarouselIndex((prev) => (prev - 1 + glareCardImages.length) % glareCardImages.length);
+  };
+
+  const getVisibleCards = (count: number) => {
+    const cards = [];
+    for (let i = 0; i < count; i++) {
+      const index = (carouselIndex + i) % glareCardImages.length;
+      cards.push(glareCardImages[index]);
+    }
+    return cards;
   };
 
   const faqs = [
@@ -128,7 +163,7 @@ function App() {
           </div>
 
           <nav className="hidden lg:flex items-center space-x-8">
-            {['how-it-works', 'results', 'timeline', 'pricing', 'about', 'faqs'].map((section) => (
+            {['how-it-works', 'results', 'timeline', 'faqs'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -251,39 +286,59 @@ function App() {
               </h2>
               <p className="text-lg sm:text-xl text-black/70">Witness the power of precision plasma treatments</p>
             </div>
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-7xl mx-auto px-2 sm:px-6">
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
-                  alt="Skin treatment result"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansJ3To3ecVXzGmdTHBK2gaqowhD8ubcMpkWnA7"
-                  alt="Plasma pen treatment"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnc4JjmIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2k"
-                  alt="Treatment room"
-                  loading="lazy"
-                />
-              </GlareCard>
-              <GlareCard className="relative w-[160px] sm:w-[280px] lg:w-[260px]">
-                <img
-                  className="h-full w-full absolute inset-0 object-cover opacity-90"
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansP2YVCbplansMeUbGIOLF6SBXiAE1CKD5xpJ0"
-                  alt="Natural Lifting Results"
-                  loading="lazy"
-                />
-              </GlareCard>
+            {/* Desktop Carousel */}
+            <div className="hidden lg:block relative max-w-7xl mx-auto">
+              <div className="flex items-center justify-center gap-4 px-12">
+                <button
+                  onClick={prevCarousel}
+                  className="absolute left-0 z-10 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+                  aria-label="Previous"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+
+                <div className="flex gap-4 justify-center overflow-hidden">
+                  {getVisibleCards(4).map((image, index) => (
+                    <GlareCard key={`${carouselIndex}-${index}`} className="relative w-[260px] flex-shrink-0">
+                      <img
+                        className="h-full w-full absolute inset-0 object-cover opacity-90"
+                        src={image}
+                        alt={`Treatment result ${index + 1}`}
+                        loading="lazy"
+                      />
+                    </GlareCard>
+                  ))}
+                </div>
+
+                <button
+                  onClick={nextCarousel}
+                  className="absolute right-0 z-10 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+                  aria-label="Next"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+
+            {/* Mobile Carousel */}
+            <div className="lg:hidden relative max-w-7xl mx-auto overflow-hidden px-4">
+              <div className="flex items-center justify-center gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {glareCardImages.map((image, index) => (
+                  <GlareCard
+                    key={index}
+                    className={`relative flex-shrink-0 snap-center transition-all duration-300 ${
+                      index === carouselIndex ? 'w-[280px]' : 'w-[80px] opacity-50'
+                    }`}
+                  >
+                    <img
+                      className="h-full w-full absolute inset-0 object-cover opacity-90"
+                      src={image}
+                      alt={`Treatment result ${index + 1}`}
+                      loading="lazy"
+                    />
+                  </GlareCard>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -887,10 +942,6 @@ function App() {
                   <span>Get in Touch</span>
                 </a>
               </div>
-
-              <p className="text-center text-black/60 mt-8 sm:mt-10 text-sm sm:text-base font-medium">
-                £50 consultation deposit • Fully redeemable toward treatment
-              </p>
             </div>
           </div>
         </div>
