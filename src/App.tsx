@@ -84,11 +84,11 @@ function App() {
   };
 
   const nextCarousel = () => {
-    setCarouselIndex((prev) => (prev + 1) % glareCardImages.length);
+    setCarouselIndex((prev) => (prev + 4) % glareCardImages.length);
   };
 
   const prevCarousel = () => {
-    setCarouselIndex((prev) => (prev - 1 + glareCardImages.length) % glareCardImages.length);
+    setCarouselIndex((prev) => (prev - 4 + glareCardImages.length) % glareCardImages.length);
   };
 
   const getVisibleCards = (count: number) => {
@@ -129,13 +129,13 @@ function App() {
 
 
   const healingTimeline = [
-    { day: "Pre-Treatment", description: "Full consultation, medical history review, and pigmentation risk screening. We assess your skin and ensure plasma treatment is safe and suitable for you.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansx1VNHZYj7ghxUT0Ry8DfXk9KamOCNAuW12ML" },
-    { day: "Treatment", description: "Area is fully numbed before we begin. The plasma pen creates precise micro-points on the skin surface. You'll feel warmth, not pain. Treatment typically takes 30-60 minutes depending on the area.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans7PxdNs38MLZ8BjbFlapw42zWhdu7D1XryRQI" },
-    { day: "Day 1", description: "Treatment complete. Skin feels warm and tight. Small dots are visible where the plasma contacted the skin. Mild swelling begins.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansVJQl3YsFVUwgoZMhOsNaYPvRxcu28A0rf1b5" },
-    { day: "Day 2", description: "Swelling peaks — most visible under eyes. This is completely normal and expected. Dots darken slightly as the healing process begins.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansVRjfzCsFVUwgoZMhOsNaYPvRxcu28A0rf1b5" },
-    { day: "Day 3–4", description: "Swelling eases significantly. Tiny dots darken further and begin to crust. Avoid picking or scratching — let them fall naturally.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZKh1t8cEpuNyB4c5UP1OD9z8GXJlTsjiKSL" },
-    { day: "Day 5–6", description: "Dots fall off naturally. Redness begins to fade. Skin underneath is pink and new. Continue following aftercare instructions carefully.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansB3LukPXAT70DbI3p4EqW1ve6ijGVXNYd8hwf" },
-    { day: "Day 7+", description: "Skin tone evens out, light makeup OK. Healing progresses beautifully. Collagen production continues beneath the surface for weeks to come.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansmHIdXGEvIL2Qu3fNjFstHoVDamzgMXZvnwb1" }
+    { day: "Pre-Treatment", description: "We'll sit down together and go through everything - your medical history, what you're hoping to achieve, and make absolutely sure your skin is ready for this. No rushing, just honest answers to all your questions.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansx1VNHZYj7ghxUT0Ry8DfXk9KamOCNAuW12ML" },
+    { day: "Treatment", description: "You'll be fully numbed before I even start - promise! The plasma pen creates tiny little dots on your skin. Most people say it feels warm, maybe a bit tingly, but definitely not painful. Usually takes about 30-60 minutes depending on what we're treating.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans7PxdNs38MLZ8BjbFlapw42zWhdu7D1XryRQI" },
+    { day: "Day 1", description: "You did it! Your skin will feel warm and a bit tight - that's totally normal. You'll see those little dots where the plasma touched your skin, and some mild puffiness might start to show up.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansVJQl3YsFVUwgoZMhOsNaYPvRxcu28A0rf1b5" },
+    { day: "Day 2", description: "Okay, this is usually the puffiest day, especially under your eyes. I know it looks dramatic but this is exactly what we expect! The dots might get a bit darker as your skin starts its natural healing magic.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansVRjfzCsFVUwgoZMhOsNaYPvRxcu28A0rf1b5" },
+    { day: "Day 3–4", description: "The swelling's calming down now - see? Those tiny dots will get darker and start to crust over. I know it's tempting, but please don't pick at them! Let them do their thing and fall off naturally.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZKh1t8cEpuNyB4c5UP1OD9z8GXJlTsjiKSL" },
+    { day: "Day 5–6", description: "The dots are starting to flake away on their own - exciting! The redness is fading and underneath you'll see fresh, pink skin. Keep following those aftercare steps I gave you, you're doing amazing.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansB3LukPXAT70DbI3p4EqW1ve6ijGVXNYd8hwf" },
+    { day: "Day 7+", description: "Your skin tone's evening out beautifully! You can start wearing light makeup again if you want. The surface healing is pretty much done, but the real magic - all that collagen building - that's still happening deep beneath the surface for weeks to come.", image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansmHIdXGEvIL2Qu3fNjFstHoVDamzgMXZvnwb1" }
   ];
 
 
@@ -274,7 +274,7 @@ function App() {
 
       </AuroraBackground>
 
-      <section id="trust-strip" className="bg-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
+      <section id="results" className="bg-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 sm:mb-20">
             <div className="text-center mb-8 sm:mb-12">
@@ -351,11 +351,15 @@ function App() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-teal-50 to-white p-4 sm:p-8 rounded-2xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift text-center space-y-3 sm:space-y-4 overflow-hidden"
+                className="group relative bg-gradient-to-br from-white via-teal-50 to-teal-100 p-6 sm:p-10 rounded-3xl border-2 border-teal-300 hover:border-teal-500 transition-all duration-500 hover-lift text-center space-y-4 sm:space-y-5 overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-teal-500/30"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/0 to-teal-500/0 group-hover:from-teal-500/10 group-hover:to-teal-500/5 transition-all duration-500"></div>
-                <item.icon className="w-10 sm:w-14 h-10 sm:h-14 text-teal-600 mx-auto relative z-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
-                <p className="font-semibold text-sm sm:text-base text-black relative z-10 leading-tight">{item.text}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-teal-500/10 group-hover:from-teal-500/20 group-hover:to-teal-500/10 transition-all duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-teal-400/20 rounded-full blur-2xl group-hover:blur-3xl group-hover:bg-teal-400/40 transition-all duration-500"></div>
+                <div className="relative z-10 bg-gradient-to-br from-teal-500 to-teal-600 w-16 sm:w-20 h-16 sm:h-20 rounded-2xl mx-auto flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-teal-500/50 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                  <item.icon className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+                </div>
+                <p className="font-bold text-sm sm:text-base text-black relative z-10 leading-tight group-hover:text-teal-900 transition-colors duration-300">{item.text}</p>
               </div>
             ))}
           </div>
@@ -434,7 +438,7 @@ function App() {
         </div>
       </section>
 
-      <section id="results" className="bg-white py-12 sm:py-24 px-4 sm:px-6">
+      <section className="bg-white py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-20">
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
@@ -523,14 +527,14 @@ function App() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift overflow-visible"
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift overflow-hidden"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="absolute -top-4 -right-4 text-6xl sm:text-7xl font-black text-teal-500/20 group-hover:text-teal-500/30 transition-colors duration-500 select-none z-0">
-                  {step.number}
+                <div className="absolute top-4 left-4 w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 z-10">
+                  <span className="text-2xl sm:text-3xl font-black text-white">{step.number}</span>
                 </div>
 
-                <div className="relative z-10 space-y-4 sm:space-y-6">
+                <div className="relative z-10 space-y-4 sm:space-y-6 pt-16 sm:pt-20">
                   <div className="bg-gradient-to-br from-teal-100 to-teal-50 rounded-2xl aspect-video flex items-center justify-center border-2 border-teal-200 overflow-hidden relative mb-4">
                     <div className="text-center">
                       <div className="w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full mx-auto flex items-center justify-center mb-2">
@@ -569,6 +573,11 @@ function App() {
       </section>
 
       <section id="timeline" className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
+        <div className="max-w-7xl mx-auto mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center text-black">
+            Your Journey
+          </h2>
+        </div>
         <Timeline data={healingTimeline.map((item) => ({
           title: item.day,
           content: (
@@ -631,61 +640,61 @@ function App() {
             <AnimatedTestimonials
               testimonials={[
                 {
-                  quote: "I was terrified before my treatment, but Rhi explained everything. The swelling lasted 3 days, dots gone in a week, results by week 8 — incredible.",
+                  quote: "Honestly I was SO nervous before! But Rhi sat with me and explained every single thing. The swelling was only bad for like 3 days, dots were gone in a week, and by week 8... WOW. Just incredible.",
                   name: "Christene",
                   designation: "Age 46, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansYITsSXcmMa7NBSypFmPq9WJnje0DE4gr8R1A"
                 },
                 {
-                  quote: "I'd wasted money on creams and gadgets. This actually worked. My eyelids feel lifted and I look awake again.",
+                  quote: "I've literally wasted hundreds on creams and weird gadgets that did absolutely nothing. This ACTUALLY worked! My eyelids feel lifted again and people keep telling me I look so much more awake now 😊",
                   name: "Sophie",
                   designation: "Age 52, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansfkweXWDJuMR1SytWIdgA9xsk8eLD2ZPNqzrf"
                 },
                 {
-                  quote: "The honesty and care were unmatched. No fake promises, just results. I finally feel confident again.",
+                  quote: "What I loved most was the honesty. No fake promises or overselling, just straight talk about what to expect. And the results? Yeah, they delivered. I feel like myself again, just... better.",
                   name: "Karen",
                   designation: "Age 40, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansgBUEXKy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
                 },
                 {
-                  quote: "Professional, safe, and the results speak for themselves. Best decision I've made for my skin in years.",
+                  quote: "Best decision I've made for my skin in YEARS. The whole thing felt so professional and safe, you can tell Rhi really knows what she's doing. The results honestly speak for themselves!",
                   name: "Michelle",
                   designation: "Age 48, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans4rxsHjZlV9LZ7rOzhpUH0MiuGACRPD3jNeQk"
                 },
                 {
-                  quote: "Rhi's expertise gave me confidence from day one. The healing was exactly as described, and my skin looks naturally refreshed.",
+                  quote: "From day one I felt in such good hands. Rhi's expertise just gave me this confidence that everything would be okay. And it was! The healing went exactly how she said it would, and my skin looks naturally refreshed - not overdone or fake looking at all.",
                   name: "Emma",
                   designation: "Age 55, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansOWLi5VAwPqZhND8kpUK40TVgGEMsnxv2atlY"
                 },
                 {
-                  quote: "The results exceeded my expectations. My skin feels tighter and looks years younger without any surgery.",
+                  quote: "I had pretty high expectations going in but honestly? This exceeded them. My skin genuinely feels tighter and I look years younger - WITHOUT SURGERY! Still can't quite believe it 😅",
                   name: "Rebecca",
                   designation: "Age 50, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansDBrqUMFlbUg7HiPYe8pNhaWf5E4dG26xVuXJ"
                 },
                 {
-                  quote: "I was skeptical at first, but the transformation is real. My friends can't believe how natural it looks.",
+                  quote: "Not gonna lie, I was super skeptical at first. But the transformation is actually real?? My friends keep asking if I've had work done because it looks so natural. Thank you Rhi! 💕",
                   name: "Lisa",
                   designation: "Age 43, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansn1adYIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg"
                 },
                 {
-                  quote: "The entire process was professional and caring. I feel like I've turned back the clock on my skin aging.",
+                  quote: "The entire journey was just... caring. That's the word. Professional yes, but also really caring. I genuinely feel like I've turned back the clock on my skin aging and I'm here for it!",
                   name: "Janet",
                   designation: "Age 56, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLiieE7cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw"
                 },
                 {
-                  quote: "Best investment in myself. The confidence boost is incredible and the results keep getting better.",
+                  quote: "Hands down the best investment I've ever made in myself. The confidence boost alone is worth it but the results just keep getting better and better as time goes on!",
                   name: "Sarah",
                   designation: "Age 48, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZKjaqycEpuNyB4c5UP1OD9z8GXJlTsjiKSL"
                 },
                 {
-                  quote: "I wish I had done this sooner. The care and attention to detail made all the difference in my results.",
+                  quote: "Why did I wait so long to do this?! The care and attention to every little detail made all the difference. If you're on the fence just book a consultation, seriously.",
                   name: "Amanda",
                   designation: "Age 51, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansyLPATlSnOIJPwhi3Q9WsA61ykCl5eRHLYpVS"
@@ -778,59 +787,73 @@ function App() {
         </div>
       </section>
 
-      <section className="bg-white py-12 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-20">
+      <section className="bg-gradient-to-br from-white via-teal-50/30 to-white py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.08),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(20,184,166,0.08),transparent_50%)]"></div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl mb-6 shadow-lg">
+              <Shield className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+            </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
               Safety & Screening
             </h2>
-            <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto leading-relaxed">
               Your safety is always the first step. Every client receives a full consultation, including pigment risk screening and medical history review.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-teal-200">
-            <p className="text-lg sm:text-xl text-black/80 mb-6 sm:mb-8 text-center font-semibold">
-              We check for:
-            </p>
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-3xl blur-2xl opacity-20"></div>
+            <div className="relative bg-gradient-to-br from-white to-teal-50/50 rounded-3xl p-8 sm:p-12 border-2 border-teal-300 shadow-2xl">
+              <div className="text-center mb-8 sm:mb-12">
+                <h3 className="text-2xl sm:text-3xl font-black text-teal-900 mb-3">
+                  What We Check For
+                </h3>
+                <p className="text-base sm:text-lg text-black/60">
+                  A thorough assessment to ensure you're a perfect candidate
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-              {[
-                { icon: User, text: "Skin tone & pigmentation risk" },
-                { icon: Pill, text: "Current medications" },
-                { icon: History, text: "Healing history" },
-                { icon: Sun, text: "Sun exposure factors" }
-              ].map((item, index) => (
-                <div key={index} className="min-h-[8rem] sm:min-h-[10rem] list-none">
-                  <div className="relative h-full rounded-xl sm:rounded-[1.25rem] border-[0.75px] border-border p-2 sm:p-3">
-                    <GlowingEffect
-                      spread={40}
-                      glow={true}
-                      disabled={false}
-                      proximity={64}
-                      inactiveZone={0.01}
-                      borderWidth={3}
-                    />
-                    <div className="relative flex h-full flex-col justify-between gap-4 sm:gap-6 overflow-hidden rounded-lg sm:rounded-xl border-[0.75px] bg-white p-4 sm:p-6 shadow-sm">
-                      <div className="relative flex flex-1 flex-col justify-between gap-2 sm:gap-3">
-                        <div className="w-fit rounded-lg border-[0.75px] border-teal-200 bg-teal-50 p-1.5 sm:p-2">
-                          <item.icon className="h-5 sm:h-6 w-5 sm:w-6 text-teal-600" />
-                        </div>
-                        <div>
-                          <p className="text-sm sm:text-base leading-relaxed text-black/80 font-medium">
-                            {item.text}
-                          </p>
-                        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10">
+                {[
+                  { icon: User, title: "Skin Assessment", text: "Skin tone & pigmentation risk evaluation" },
+                  { icon: Pill, title: "Medical Review", text: "Current medications and contraindications" },
+                  { icon: History, title: "Healing History", text: "Your body's natural healing patterns" },
+                  { icon: Sun, title: "Lifestyle Factors", text: "Sun exposure and skincare routines" }
+                ].map((item, index) => (
+                  <div key={index} className="group relative bg-white rounded-2xl p-6 sm:p-8 border-2 border-teal-200 hover:border-teal-500 transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/20 hover:-translate-y-1">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-teal-400/10 rounded-full blur-2xl group-hover:bg-teal-400/20 transition-all duration-300"></div>
+                    <div className="relative flex items-start gap-4">
+                      <div className="flex-shrink-0 w-14 sm:w-16 h-14 sm:h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <item.icon className="w-7 sm:w-8 h-7 sm:h-8 text-white" />
+                      </div>
+                      <div className="flex-1 pt-1">
+                        <h4 className="text-lg sm:text-xl font-bold text-black mb-2 group-hover:text-teal-900 transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm sm:text-base text-black/70 leading-relaxed">
+                          {item.text}
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <p className="text-center text-black/70 text-sm sm:text-lg">
-              Patch tests or micro-tests are available.
-            </p>
+              <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-center shadow-xl">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <CheckCircle className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
+                  <p className="text-lg sm:text-xl font-bold text-white">
+                    Patch Tests Available
+                  </p>
+                </div>
+                <p className="text-sm sm:text-base text-white/90">
+                  Not sure how your skin will react? We offer patch tests and micro-tests for complete peace of mind.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1009,21 +1032,21 @@ function App() {
             <div>
               <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Quick Links</h3>
               <ul className="space-y-2 sm:space-y-3 text-white/70 text-sm sm:text-base">
-                {['about', 'how-it-works', 'faqs', 'timeline'].map((link) => (
+                {['how-it-works', 'results', 'timeline', 'faqs'].map((link) => (
                   <li key={link}>
                     <button
-                      onClick={() => scrollToSection(link)}
-                      className="hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block"
+                      onClick={() => {
+                        const element = document.getElementById(link);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className="hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block text-left"
                     >
                       {link.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
                     </button>
                   </li>
                 ))}
-                <li>
-                  <a href="#" className="hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block">
-                    Privacy Policy
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -1039,12 +1062,9 @@ function App() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 sm:pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/50 text-xs sm:text-sm text-center md:text-left">
+          <div className="border-t border-white/10 pt-8 sm:pt-10 text-center">
+            <p className="text-white/50 text-xs sm:text-sm">
               &copy; 2025 Rhi's Aesthetics — All rights reserved.
-            </p>
-            <p className="text-white/50 text-xs sm:text-sm text-center md:text-right">
-              Designed with precision and care
             </p>
           </div>
         </div>
