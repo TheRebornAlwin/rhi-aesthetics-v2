@@ -151,9 +151,7 @@ function App() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
-            <div className={`relative w-8 h-8 sm:w-10 sm:h-10 rounded-lg p-1.5 transition-all duration-300 ${
-              isHeaderScrolled ? 'bg-transparent' : 'bg-gradient-to-br from-teal-500 to-teal-600 shadow-md'
-            }`}>
+            <div className="w-8 h-8 sm:w-10 sm:h-10">
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansRdepWwHNnPqXUigWtzfTd60QMsIbeE2vVLYu"
                 alt="Rhi's Aesthetics Logo"
@@ -334,14 +332,12 @@ function App() {
             </div>
 
             {/* Mobile Carousel */}
-            <div className="lg:hidden relative max-w-7xl mx-auto overflow-hidden px-4">
-              <div className="flex items-center justify-center gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="lg:hidden relative max-w-7xl mx-auto overflow-hidden">
+              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-8" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                 {glareCardImages.map((image, index) => (
                   <GlareCard
                     key={index}
-                    className={`relative flex-shrink-0 snap-center transition-all duration-300 ${
-                      index === carouselIndex ? 'w-[280px]' : 'w-[80px] opacity-50'
-                    }`}
+                    className="relative flex-shrink-0 snap-center w-[280px] sm:w-[320px]"
                   >
                     <img
                       className="h-full w-full absolute inset-0 object-cover opacity-90"
@@ -1033,11 +1029,7 @@ function App() {
                 </p>
                 <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
                   <Mail className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
-                  <span>info@rhisesthetics.co.uk</span>
-                </p>
-                <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
-                  <Building2 className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
-                  <span>reesesthetics.co.uk</span>
+                  <span>rhiaesthetics@mail.com</span>
                 </p>
               </div>
             </div>
@@ -1066,11 +1058,34 @@ function App() {
             <div>
               <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Hours</h3>
               <div className="space-y-2 sm:space-y-3 text-white/70 text-sm sm:text-base">
-                <p>Monday - Friday</p>
-                <p className="text-white font-semibold">9:00 AM - 6:00 PM</p>
-                <p className="mt-3 sm:mt-4">Saturday</p>
-                <p className="text-white font-semibold">10:00 AM - 4:00 PM</p>
-                <p className="mt-3 sm:mt-4">Sunday: Closed</p>
+                <div className="flex justify-between gap-8">
+                  <p>Monday:</p>
+                  <p className="text-white font-semibold">11am-8pm</p>
+                </div>
+                <div className="flex justify-between gap-8">
+                  <p>Tuesday:</p>
+                  <p className="text-white font-semibold">11am-8pm</p>
+                </div>
+                <div className="flex justify-between gap-8">
+                  <p>Wednesday:</p>
+                  <p className="text-white font-semibold">11am-8pm</p>
+                </div>
+                <div className="flex justify-between gap-8">
+                  <p>Thursday:</p>
+                  <p className="text-white font-semibold">11am-8pm</p>
+                </div>
+                <div className="flex justify-between gap-8">
+                  <p>Friday:</p>
+                  <p className="text-white font-semibold">10am-3pm</p>
+                </div>
+                <div className="flex justify-between gap-8">
+                  <p>Saturday:</p>
+                  <p className="text-white font-semibold">Appointments on Request</p>
+                </div>
+                <div className="flex justify-between gap-8">
+                  <p>Sunday:</p>
+                  <p className="text-white font-semibold">Appointments on Request</p>
+                </div>
               </div>
             </div>
           </div>
