@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Calendar,
@@ -152,7 +153,7 @@ function App() {
           <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
             <div className="relative w-8 h-8 sm:w-10 sm:h-10">
               <img
-                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans0iqVKkBZmf2arIMiUH3nS4jP6K8OLs0thCzV"
+                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansoUKdnP5Kd6UZLc8ozSIHCbRu7DkWQpJ2sfq3"
                 alt="Rhi's Aesthetics Logo"
                 className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
               />
@@ -205,12 +206,6 @@ function App() {
         <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-48 pb-20 sm:pb-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <div className="space-y-6 sm:space-y-8 fade-in-up text-center lg:text-left">
-              <div className="inline-block">
-                <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-xs sm:text-sm font-semibold uppercase tracking-wider">
-                  Non-Surgical Skin Tightening
-                </span>
-              </div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -255,18 +250,25 @@ function App() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8, duration: 0.8, ease: "easeInOut" }}
-              className="relative fade-in mt-6"
+              className="relative fade-in mt-6 space-y-6"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-teal-600/20 blur-3xl rounded-full"></div>
-              <div className="relative rounded-3xl overflow-hidden">
-                <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden relative">
-                  <img
-                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P"
-                    alt="Rhi - Aesthetic Practitioner"
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                  />
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-teal-600/20 blur-3xl rounded-full"></div>
+                <div className="relative rounded-3xl overflow-hidden">
+                  <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden relative">
+                    <img
+                      src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P"
+                      alt="Rhi - Aesthetic Practitioner"
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                    />
+                  </div>
                 </div>
+              </div>
+              <div className="flex justify-center">
+                <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-700 text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                  Non-Surgical Skin Tightening
+                </span>
               </div>
             </motion.div>
           </div>
@@ -297,17 +299,26 @@ function App() {
                   <ChevronLeft className="w-6 h-6" />
                 </button>
 
-                <div className="flex gap-4 justify-center overflow-hidden">
-                  {getVisibleCards(4).map((image, index) => (
-                    <GlareCard key={`${carouselIndex}-${index}`} className="relative w-[260px] flex-shrink-0">
-                      <img
-                        className="h-full w-full absolute inset-0 object-cover opacity-90"
-                        src={image}
-                        alt={`Treatment result ${index + 1}`}
-                        loading="lazy"
-                      />
-                    </GlareCard>
-                  ))}
+                <div className="overflow-hidden">
+                  <motion.div
+                    key={carouselIndex}
+                    initial={{ x: 300, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -300, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="flex gap-4 justify-center"
+                  >
+                    {getVisibleCards(4).map((image, index) => (
+                      <GlareCard key={`${carouselIndex}-${index}`} className="relative w-[260px] flex-shrink-0">
+                        <img
+                          className="h-full w-full absolute inset-0 object-cover opacity-90"
+                          src={image}
+                          alt={`Treatment result ${index + 1}`}
+                          loading="lazy"
+                        />
+                      </GlareCard>
+                    ))}
+                  </motion.div>
                 </div>
 
                 <button
@@ -977,7 +988,7 @@ function App() {
               <div className="flex items-center space-x-2 sm:space-x-3 group">
                 <div className="w-8 h-8 sm:w-10 sm:h-10">
                   <img
-                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans0iqVKkBZmf2arIMiUH3nS4jP6K8OLs0thCzV"
+                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansoUKdnP5Kd6UZLc8ozSIHCbRu7DkWQpJ2sfq3"
                     alt="Rhi's Aesthetics Logo"
                     className="w-full h-full object-contain brightness-0 invert group-hover:scale-110 transition-transform duration-300"
                   />
@@ -1062,10 +1073,34 @@ function App() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 sm:pt-10 text-center">
-            <p className="text-white/50 text-xs sm:text-sm">
-              &copy; 2025 Rhi's Aesthetics — All rights reserved.
-            </p>
+          <div className="border-t border-white/10 pt-8 sm:pt-10">
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
+              <p className="text-white/50 text-xs sm:text-sm">
+                &copy; 2025 Rhi's Aesthetics. All rights reserved.
+              </p>
+              <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
+                <Link
+                  to="/privacy-policy"
+                  className="text-white/50 hover:text-teal-400 transition-colors duration-300"
+                >
+                  Privacy Policy
+                </Link>
+                <span className="text-white/30">•</span>
+                <Link
+                  to="/terms-of-service"
+                  className="text-white/50 hover:text-teal-400 transition-colors duration-300"
+                >
+                  Terms of Service
+                </Link>
+                <span className="text-white/30">•</span>
+                <Link
+                  to="/cookie-policy"
+                  className="text-white/50 hover:text-teal-400 transition-colors duration-300"
+                >
+                  Cookie Policy
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
