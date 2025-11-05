@@ -151,9 +151,11 @@ function App() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
-            <div className="relative w-8 h-8 sm:w-10 sm:h-10">
+            <div className={`relative w-8 h-8 sm:w-10 sm:h-10 rounded-lg p-1.5 transition-all duration-300 ${
+              isHeaderScrolled ? 'bg-transparent' : 'bg-gradient-to-br from-teal-500 to-teal-600 shadow-md'
+            }`}>
               <img
-                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansoUKdnP5Kd6UZLc8ozSIHCbRu7DkWQpJ2sfq3"
+                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansRdepWwHNnPqXUigWtzfTd60QMsIbeE2vVLYu"
                 alt="Rhi's Aesthetics Logo"
                 className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
               />
@@ -988,9 +990,9 @@ function App() {
               <div className="flex items-center space-x-2 sm:space-x-3 group">
                 <div className="w-8 h-8 sm:w-10 sm:h-10">
                   <img
-                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansoUKdnP5Kd6UZLc8ozSIHCbRu7DkWQpJ2sfq3"
+                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansRdepWwHNnPqXUigWtzfTd60QMsIbeE2vVLYu"
                     alt="Rhi's Aesthetics Logo"
-                    className="w-full h-full object-contain brightness-0 invert group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
                 <span className="text-xl sm:text-2xl font-black">Rhi's Aesthetics</span>
