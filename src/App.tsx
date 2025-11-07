@@ -428,7 +428,7 @@ function App() {
                 <div className="rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/20">
                   <div className="aspect-[3/4] overflow-hidden relative group">
                     <img
-                      src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansRdrLHs1NnPqXUigWtzfTd60QMsIbeE2vVLYu"
+                      src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
                       alt="Rhi - Aesthetic Practitioner"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
