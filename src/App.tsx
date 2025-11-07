@@ -37,6 +37,7 @@ function App() {
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [showAllResults, setShowAllResults] = useState(false);
 
   const glareCardImages = [
     "https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu",
@@ -291,7 +292,7 @@ function App() {
                   Real Transformations
                 </span>
               </h2>
-              <p className="text-lg sm:text-xl text-black/70">Witness the power of precision plasma treatments</p>
+              <p className="text-lg sm:text-xl text-black/70">Witness the power of<br className="lg:hidden" /> precision plasma treatments.</p>
             </div>
             {/* Desktop Carousel */}
             <div className="hidden lg:block relative max-w-7xl mx-auto">
@@ -467,14 +468,18 @@ function App() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-            {[
-              { area: "Upper Eyelids", weeks: "6 Weeks", name: "Sarah, 48" },
-              { area: "Under-Eye Crepiness", weeks: "8 Weeks", name: "Michelle, 52" },
-              { area: "Smile Lines", weeks: "10 Weeks", name: "Emma, 45" },
-              { area: "Neck Lift", weeks: "12 Weeks", name: "Janet, 56" },
-              { area: "Crow's Feet", weeks: "8 Weeks", name: "Lisa, 43" },
-              { area: "Upper Lip Lines", weeks: "6 Weeks", name: "Rebecca, 50" }
-            ].map((item, index) => (
+            {(() => {
+              const allItems = [
+                { area: "Upper Eyelids", weeks: "6 Weeks", name: "Sarah, 48" },
+                { area: "Under-Eye Crepiness", weeks: "8 Weeks", name: "Michelle, 52" },
+                { area: "Smile Lines", weeks: "10 Weeks", name: "Emma, 45" },
+                { area: "Neck Lift", weeks: "12 Weeks", name: "Janet, 56" },
+                { area: "Crow's Feet", weeks: "8 Weeks", name: "Lisa, 43" },
+                { area: "Upper Lip Lines", weeks: "6 Weeks", name: "Rebecca, 50" }
+              ];
+              const itemsToShow = showAllResults ? allItems : allItems.slice(0, 3);
+              return itemsToShow;
+            })().map((item, index) => (
               <div
                 key={index}
                 className="group bg-gradient-to-br from-teal-50 to-white rounded-2xl sm:rounded-3xl overflow-hidden border border-teal-200 hover:border-teal-500/50 hover-lift"
@@ -496,6 +501,17 @@ function App() {
               </div>
             ))}
           </div>
+
+          {!showAllResults && (
+            <div className="mt-8 text-center lg:hidden">
+              <button
+                onClick={() => setShowAllResults(true)}
+                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-3 rounded-full font-semibold hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                Show More
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -639,7 +655,7 @@ function App() {
 
       <section className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-12 sm:mb-12">
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
               What Our Customers Say
             </h2>
@@ -1096,19 +1112,6 @@ function App() {
           </div>
         </div>
       </footer>
-
-      <div className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 lg:hidden z-40">
-        <button
-          onClick={() => scrollToSection('cta')}
-          className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 sm:px-8 py-4 sm:py-5 rounded-full font-bold shadow-2xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 flex items-center space-x-2 sm:space-x-3 hover:scale-110 overflow-hidden group"
-        >
-          <span className="relative z-10 flex items-center space-x-2 sm:space-x-3">
-            <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
-            <span className="text-sm sm:text-base">Book Now</span>
-          </span>
-          <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-        </button>
-      </div>
     </div>
   );
 }

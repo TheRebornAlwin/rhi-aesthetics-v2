@@ -35,7 +35,7 @@ export const AnimatedTestimonials = ({
 
   useEffect(() => {
     if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
+      const interval = setInterval(handleNext, 10000);
       return () => clearInterval(interval);
     }
   }, [autoplay, handleNext]);
@@ -112,12 +112,30 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold text-black">
-              {testimonials[active].name}
-            </h3>
-            <p className="text-sm text-black/60">
-              {testimonials[active].designation}
-            </p>
+            <div className="flex items-start justify-between">
+              <div>
+                <h3 className="text-2xl font-bold text-black">
+                  {testimonials[active].name}
+                </h3>
+                <p className="text-sm text-black/60">
+                  {testimonials[active].designation}
+                </p>
+              </div>
+              <div className="flex gap-4 md:hidden">
+                <button
+                  onClick={handlePrev}
+                  className="h-7 w-7 rounded-full bg-black/5 flex items-center justify-center group/button flex-shrink-0"
+                >
+                  <IconArrowLeft className="h-5 w-5 text-black group-hover/button:rotate-12 transition-transform duration-300" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="h-7 w-7 rounded-full bg-black/5 flex items-center justify-center group/button flex-shrink-0"
+                >
+                  <IconArrowRight className="h-5 w-5 text-black group-hover/button:-rotate-12 transition-transform duration-300" />
+                </button>
+              </div>
+            </div>
             <motion.p className="text-lg text-black/80 mt-8">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
@@ -144,7 +162,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="hidden md:flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
               className="h-7 w-7 rounded-full bg-black/5 flex items-center justify-center group/button"
