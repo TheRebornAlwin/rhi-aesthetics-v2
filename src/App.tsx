@@ -66,6 +66,14 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Preload all GlareCard images
+    glareCardImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -75,7 +83,7 @@ function App() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'auto'
+        behavior: 'smooth'
       });
     }
   };
