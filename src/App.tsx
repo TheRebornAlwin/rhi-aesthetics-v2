@@ -42,15 +42,15 @@ function App() {
     "https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu",
     "https://820i9wpaqi.ufs.sh/f/PwwcUidplansJ3To3ecVXzGmdTHBK2gaqowhD8ubcMpkWnA7",
     "https://820i9wpaqi.ufs.sh/f/PwwcUidplansnc4JjmIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2k",
-    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansP2YVCbplansMeUbGIOLF6SBXiAE1CKD5xpJ0",
-    "https://placehold.co/400x500/14b8a6/white?text=Result+5",
-    "https://placehold.co/400x500/14b8a6/white?text=Result+6",
-    "https://placehold.co/400x500/14b8a6/white?text=Result+7",
-    "https://placehold.co/400x500/14b8a6/white?text=Result+8",
-    "https://placehold.co/400x500/14b8a6/white?text=Result+9",
-    "https://placehold.co/400x500/14b8a6/white?text=Result+10",
-    "https://placehold.co/400x500/14b8a6/white?text=Result+11",
-    "https://placehold.co/400x500/14b8a6/white?text=Result+12"
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplans4b8WVbwZlV9LZ7rOzhpUH0MiuGACRPD3jNeQ",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansxdVd0JYj7ghxUT0Ry8DfXk9KamOCNAuW12ML",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansxHBoMsYj7ghxUT0Ry8DfXk9KamOCNAuW12ML",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansbKWsjXtOYpmXqDxfseSP45Qwn0azcOMUoCJi",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplanse4pxfsjL6QinpDZP2GqN4OBEU7XWxH5kjR30",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansFS8xsDj0GAmy2ZwjtQus7gKan49xlXPdebB6",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZOAMWMH6XwJuImFfqiz86x7V3CyK2odlaTv5",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplanskh2WII5oM8xhVQJusqtST06R5NiK7fcewbZ3",
+    "https://820i9wpaqi.ufs.sh/f/PwwcUidplansMIRcmXfF60kipOZwxPDGShftogB23RYsQ9cU"
   ];
 
   useEffect(() => {
@@ -172,7 +172,7 @@ function App() {
                   isHeaderScrolled ? 'text-white/80 hover:text-teal-400' : 'text-black/80 hover:text-teal-600'
                 }`}
               >
-                {section.split('-').join(' ')}
+                {section === 'timeline' ? 'your journey' : section.split('-').join(' ')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
@@ -512,23 +512,23 @@ function App() {
               {
                 icon: Zap,
                 title: "Precision Plasma",
-                description: "A tiny plasma arc creates micro-points on the skin surface, triggering your fibroblasts — the collagen-building cells — to wake up and rebuild elasticity.",
+                description: "A tiny plasma arc creates micro-points on the skin surface, triggering your fibroblasts (the collagen-building cells) to wake up and rebuild elasticity.",
                 number: "01",
-                imagePlaceholder: true
+                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans9BafFowHvBk0FM54DR6T7haPjcVdE8o3ZfIw"
               },
               {
                 icon: Heart,
                 title: "Controlled Healing",
                 description: "Over a few days, the skin naturally contracts and tightens. Those small dots fade as new collagen strengthens beneath.",
                 number: "02",
-                imagePlaceholder: true
+                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansB3LukPXAT70DbI3p4EqW1ve6ijGVXNYd8hwf"
               },
               {
                 icon: Heart,
                 title: "Natural Tightening",
-                description: "In 6–12 weeks, your skin looks smoother, lifted, and rested — without injections or surgery.",
+                description: "In 6-12 days, your skin looks smoother, lifted, and rested without injections or surgery.",
                 number: "03",
-                imagePlaceholder: true
+                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansxBjMKqYj7ghxUT0Ry8DfXk9KamOCNAuW12ML"
               }
             ].map((step, index) => (
               <div
@@ -542,12 +542,7 @@ function App() {
 
                 <div className="relative z-10 space-y-4 sm:space-y-6 pt-16 sm:pt-20">
                   <div className="bg-gradient-to-br from-teal-100 to-teal-50 rounded-2xl aspect-video flex items-center justify-center border-2 border-teal-200 overflow-hidden relative mb-4">
-                    <div className="text-center">
-                      <div className="w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full mx-auto flex items-center justify-center mb-2">
-                        <step.icon className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
-                      </div>
-                      <p className="text-xs sm:text-sm text-teal-600 font-medium">Image Placeholder</p>
-                    </div>
+                    <img src={step.image} alt={step.title} className="w-full h-full object-cover" loading="lazy" />
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-black">{step.title}</h3>
@@ -579,7 +574,7 @@ function App() {
       </section>
 
       <section id="timeline" className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
-        <div className="max-w-7xl mx-auto mb-12 sm:mb-16">
+        <div className="max-w-7xl mx-auto mb-4 sm:mb-6">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center text-black">
             Your Journey
           </h2>
@@ -983,7 +978,7 @@ function App() {
               <div className="flex items-center space-x-2 sm:space-x-3 group">
                 <div className="w-8 h-8 sm:w-10 sm:h-10">
                   <img
-                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansRdepWwHNnPqXUigWtzfTd60QMsIbeE2vVLYu"
+                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
                     alt="Rhi's Aesthetics Logo"
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
