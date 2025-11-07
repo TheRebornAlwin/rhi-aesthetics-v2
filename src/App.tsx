@@ -151,10 +151,10 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`relative lg:fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isHeaderScrolled
-            ? 'bg-black/95 backdrop-blur-xl shadow-2xl shadow-teal-500/10 py-4'
-            : 'bg-transparent py-8'
+            ? 'lg:bg-black/95 lg:backdrop-blur-xl lg:shadow-2xl lg:shadow-teal-500/10 py-4 lg:py-4 bg-white'
+            : 'bg-white lg:bg-transparent py-4 lg:py-8'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -211,7 +211,7 @@ function App() {
       </header>
 
       <AuroraBackground className="relative min-h-screen flex items-center overflow-hidden bg-white">
-        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-48 pb-20 sm:pb-32 relative z-10">
+        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-8 lg:pt-48 pb-20 sm:pb-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <div className="space-y-6 sm:space-y-8 fade-in-up text-center lg:text-left">
               <motion.h1
@@ -240,7 +240,7 @@ function App() {
               >
                 <button
                   onClick={() => scrollToSection('cta')}
-                  className="group relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 overflow-hidden"
+                  className="group relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 overflow-hidden w-auto mx-auto lg:mx-0"
                 >
                   <span className="relative z-10 flex items-center space-x-3">
                     <Calendar className="w-5 sm:w-6 h-5 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
@@ -982,8 +982,8 @@ function App() {
       <footer className="bg-black text-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
-            <div className="space-y-4 sm:space-y-6">
-              <div className="flex items-center space-x-2 sm:space-x-3 group">
+            <div className="space-y-4 sm:space-y-6 text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 group">
                 <div className="w-8 h-8 sm:w-10 sm:h-10">
                   <img
                     src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
@@ -996,7 +996,7 @@ function App() {
               <p className="text-white/60 leading-relaxed text-sm sm:text-base">
                 Safe, natural skin tightening in Southampton.
               </p>
-              <div className="flex space-x-3 sm:space-x-4">
+              <div className="flex space-x-3 sm:space-x-4 justify-center sm:justify-start">
                 <a
                   href="https://www.instagram.com/rhi.aesthetics?igsh=MWhvMjFqb3Zscms0aw%3D%3D&utm_source=qr"
                   target="_blank"
@@ -1016,29 +1016,29 @@ function App() {
               </div>
             </div>
 
-            <div>
+            <div className="text-center sm:text-left">
               <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Contact</h3>
               <div className="space-y-3 sm:space-y-4 text-white/70 text-sm sm:text-base">
-                <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
+                <p className="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
                   <MapPin className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
                   <span>Southampton, UK</span>
                 </p>
-                <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
+                <p className="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
                   <Phone className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
                   <span>01234 567890</span>
                 </p>
-                <p className="flex items-center space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
+                <p className="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
                   <Mail className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
                   <span>rhiaesthetics@mail.com</span>
                 </p>
               </div>
             </div>
 
-            <div>
+            <div className="text-center sm:text-left">
               <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Quick Links</h3>
               <ul className="space-y-2 sm:space-y-3 text-white/70 text-sm sm:text-base">
                 {['how-it-works', 'results', 'timeline', 'faqs'].map((link) => (
-                  <li key={link}>
+                  <li key={link} className="flex justify-center sm:justify-start">
                     <button
                       onClick={() => {
                         const element = document.getElementById(link);
@@ -1046,7 +1046,7 @@ function App() {
                           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                       }}
-                      className="hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block text-left"
+                      className="hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block"
                     >
                       {link.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
                     </button>
@@ -1055,7 +1055,7 @@ function App() {
               </ul>
             </div>
 
-            <div>
+            <div className="text-center sm:text-left">
               <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Hours</h3>
               <div className="space-y-2 sm:space-y-3 text-white/70 text-sm sm:text-base">
                 <p>Mon-Thurs: <span className="text-white font-semibold">11am-8pm</span></p>
