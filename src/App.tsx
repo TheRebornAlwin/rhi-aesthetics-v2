@@ -153,7 +153,7 @@ function App() {
           <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
             <div className="w-8 h-8 sm:w-10 sm:h-10">
               <img
-                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansRdepWwHNnPqXUigWtzfTd60QMsIbeE2vVLYu"
+                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
                 alt="Rhi's Aesthetics Logo"
                 className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
               />
@@ -222,9 +222,6 @@ function App() {
                 className="text-lg sm:text-xl lg:text-2xl text-black/80 leading-relaxed font-light"
               >
                 Doctor-led, trusted by 300+ women in Southampton for safe, natural skin tightening.
-                <span className="block mt-3 text-black/70">
-                  Professional plasma fibroblast treatments delivering proven results without surgery, backed by medical expertise and a commitment to your safety.
-                </span>
               </motion.p>
 
               <motion.div
@@ -1058,34 +1055,9 @@ function App() {
             <div>
               <h3 className="font-black text-base sm:text-lg mb-4 sm:mb-6 text-teal-400">Hours</h3>
               <div className="space-y-2 sm:space-y-3 text-white/70 text-sm sm:text-base">
-                <div className="flex justify-between gap-8">
-                  <p>Monday:</p>
-                  <p className="text-white font-semibold">11am-8pm</p>
-                </div>
-                <div className="flex justify-between gap-8">
-                  <p>Tuesday:</p>
-                  <p className="text-white font-semibold">11am-8pm</p>
-                </div>
-                <div className="flex justify-between gap-8">
-                  <p>Wednesday:</p>
-                  <p className="text-white font-semibold">11am-8pm</p>
-                </div>
-                <div className="flex justify-between gap-8">
-                  <p>Thursday:</p>
-                  <p className="text-white font-semibold">11am-8pm</p>
-                </div>
-                <div className="flex justify-between gap-8">
-                  <p>Friday:</p>
-                  <p className="text-white font-semibold">10am-3pm</p>
-                </div>
-                <div className="flex justify-between gap-8">
-                  <p>Saturday:</p>
-                  <p className="text-white font-semibold">Appointments on Request</p>
-                </div>
-                <div className="flex justify-between gap-8">
-                  <p>Sunday:</p>
-                  <p className="text-white font-semibold">Appointments on Request</p>
-                </div>
+                <p>Mon-Thurs: <span className="text-white font-semibold">11am-8pm</span></p>
+                <p>Friday: <span className="text-white font-semibold">10am-3pm</span></p>
+                <p>Sat-Sun: <span className="text-white font-semibold">Appointments on Request</span></p>
               </div>
             </div>
           </div>

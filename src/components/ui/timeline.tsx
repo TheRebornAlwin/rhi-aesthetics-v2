@@ -48,13 +48,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-5xl lg:text-6xl font-black mb-4 text-black text-center">
-          Your Healing Journey
-        </h2>
-      </div>
-
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 pt-8">
         {data.map((item, index) => {
           const isActive = index <= activeIndex;
           return (
