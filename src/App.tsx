@@ -211,7 +211,7 @@ function App() {
       </header>
 
       <AuroraBackground className="relative min-h-screen flex items-center overflow-hidden bg-white">
-        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-40 sm:pt-44 lg:pt-48 pb-20 sm:pb-32 relative z-10">
+        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-64 sm:pt-56 lg:pt-48 pb-20 sm:pb-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <div className="space-y-6 sm:space-y-8 fade-in-up text-center lg:text-left">
               <motion.h1
