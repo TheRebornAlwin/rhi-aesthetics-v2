@@ -151,9 +151,9 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <header
-        className={`relative lg:fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isHeaderScrolled
-            ? 'lg:bg-black/95 lg:backdrop-blur-xl lg:shadow-2xl lg:shadow-teal-500/10 py-4 lg:py-4 bg-white'
+            ? 'bg-black/95 backdrop-blur-xl shadow-2xl shadow-teal-500/10 py-4'
             : 'bg-white lg:bg-transparent py-4 lg:py-8'
         }`}
       >
@@ -211,7 +211,7 @@ function App() {
       </header>
 
       <AuroraBackground className="relative min-h-screen flex items-center overflow-hidden bg-white">
-        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-8 lg:pt-48 pb-20 sm:pb-32 relative z-10">
+        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 lg:pt-48 pb-20 sm:pb-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <div className="space-y-6 sm:space-y-8 fade-in-up text-center lg:text-left">
               <motion.h1
