@@ -230,7 +230,16 @@ function App() {
                 transition={{ delay: 0.4, duration: 0.8, ease: "easeInOut" }}
                 className="text-lg sm:text-xl lg:text-2xl text-black/80 leading-relaxed font-light"
               >
-                Doctor-led, trusted by 300+ women in Southampton for safe, natural skin tightening.
+                Clinically experienced practitioner trusted by 300+ women in Southampton for safe, natural skin tightening.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8, ease: "easeInOut" }}
+                className="text-base sm:text-lg lg:text-xl text-black/70 leading-relaxed font-light"
+              >
+                If you are looking for a treatment that will bring you surgical results but want to avoid the knife & the prices, you are in the right place!
               </motion.p>
 
               <motion.div
@@ -264,7 +273,7 @@ function App() {
                   <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden relative">
                     <img
                       src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P"
-                      alt="Rhi - Aesthetic Practitioner"
+                      alt="Rhia - Aesthetic Practitioner"
                       className="w-full h-full object-cover"
                       loading="eager"
                     />
@@ -361,7 +370,7 @@ function App() {
             {[
               { icon: Award, text: "Qualified Aesthetic Practitioner" },
               { icon: Droplet, text: "Medical-grade Plasma IQ Device" },
-              { icon: Shield, text: "Registered & Insured Clinic" },
+              { icon: Shield, text: "GDC Registered, CPD Accredited & Fully Insured Practitioner" },
               { icon: MapPin, text: "Located in Southampton" }
             ].map((item, index) => (
               <div
@@ -390,7 +399,7 @@ function App() {
             <div className="order-2 lg:order-1 space-y-6 sm:space-y-8 text-center lg:text-left">
               <div className="inline-block">
                 <span className="px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full text-teal-700 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                  Meet Rhi
+                  Meet Rhia
                 </span>
               </div>
 
@@ -429,20 +438,20 @@ function App() {
                   <div className="aspect-[3/4] overflow-hidden relative group">
                     <img
                       src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
-                      alt="Rhi - Aesthetic Practitioner"
+                      alt="Rhia - Aesthetic Practitioner"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
                       <div className="mb-4 inline-block px-4 py-1.5 bg-teal-500/90 backdrop-blur-sm rounded-full">
-                        <p className="text-xs sm:text-sm font-bold">Rhi • Qualified Aesthetic Practitioner</p>
+                        <p className="text-xs sm:text-sm font-bold">Rhia • Qualified Aesthetic Practitioner</p>
                       </div>
                       <p className="text-xs sm:text-sm leading-relaxed mb-3">
-                        "I started this clinic because I was tired of people being misled by beauty promises that weren't real."
+                        "I truly want to give all my clients the best possible results. With Plasma, I really feel like I can deliver on my promise."
                       </p>
                       <p className="text-xs sm:text-sm leading-relaxed font-semibold">
-                        My goal: natural, safe, and lasting results that you'll enjoy forever ❤️
+                        It's the perfect procedure that provides a 100% natural, safe & precise transformation to your appearance.
                       </p>
                     </div>
                   </div>
@@ -665,7 +674,7 @@ function App() {
             <AnimatedTestimonials
               testimonials={[
                 {
-                  quote: "Honestly I was SO nervous before! But Rhi sat with me and explained every single thing. The swelling was only bad for like 3 days, dots were gone in a week, and by week 8... WOW. Just incredible.",
+                  quote: "Honestly I was SO nervous before! But Rhia sat with me and explained every single thing. The swelling was only bad for like 3 days, dots were gone in a week, and by week 8... WOW. Just incredible.",
                   name: "Christene",
                   designation: "Age 46, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansYITsSXcmMa7NBSypFmPq9WJnje0DE4gr8R1A"
@@ -683,13 +692,13 @@ function App() {
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansgBUEXKy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
                 },
                 {
-                  quote: "Best decision I've made for my skin in YEARS. The whole thing felt so professional and safe, you can tell Rhi really knows what she's doing. The results honestly speak for themselves!",
+                  quote: "Best decision I've made for my skin in YEARS. The whole thing felt so professional and safe, you can tell Rhia really knows what she's doing. The results honestly speak for themselves!",
                   name: "Michelle",
                   designation: "Age 48, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans4rxsHjZlV9LZ7rOzhpUH0MiuGACRPD3jNeQk"
                 },
                 {
-                  quote: "From day one I felt in such good hands. Rhi's expertise just gave me this confidence that everything would be okay. And it was! The healing went exactly how she said it would, and my skin looks naturally refreshed - not overdone or fake looking at all.",
+                  quote: "From day one I felt in such good hands. Rhia's expertise just gave me this confidence that everything would be okay. And it was! The healing went exactly how she said it would, and my skin looks naturally refreshed - not overdone or fake looking at all.",
                   name: "Emma",
                   designation: "Age 55, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansOWLi5VAwPqZhND8kpUK40TVgGEMsnxv2atlY"
@@ -701,7 +710,7 @@ function App() {
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansDBrqUMFlbUg7HiPYe8pNhaWf5E4dG26xVuXJ"
                 },
                 {
-                  quote: "Not gonna lie, I was super skeptical at first. But the transformation is actually real?? My friends keep asking if I've had work done because it looks so natural. Thank you Rhi! 💕",
+                  quote: "Not gonna lie, I was super skeptical at first. But the transformation is actually real?? My friends keep asking if I've had work done because it looks so natural. Thank you Rhia! 💕",
                   name: "Lisa",
                   designation: "Age 43, Southampton",
                   src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansn1adYIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg"
@@ -1041,7 +1050,7 @@ function App() {
                 </p>
                 <p className="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
                   <Phone className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
-                  <span>01234 567890</span>
+                  <span>07307 762776</span>
                 </p>
                 <p className="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 hover:text-teal-400 transition-colors duration-300">
                   <Mail className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0" />
