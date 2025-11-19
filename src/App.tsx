@@ -168,7 +168,7 @@ function App() {
               />
             </div>
             <span className={`text-lg sm:text-2xl font-bold transition-colors duration-300 ${isHeaderScrolled ? 'text-white' : 'text-black'}`}>
-              Rhi's Aesthetics
+              RHI•AESTHETICS
             </span>
           </div>
 
