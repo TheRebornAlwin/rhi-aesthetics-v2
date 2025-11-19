@@ -415,7 +415,7 @@ function App() {
                   Surgery feels too much. "Miracle creams" seem too fake. You just want a safe, proven way to tighten the skin you already have.
                 </p>
                 <p className="font-semibold text-teal-700 text-lg sm:text-xl">
-                  That's exactly what plasma fibroblast offers — real results, without surgery, backed by medical expertise.
+                  That's exactly what plasma fibroblast offers — real results, without surgery, backed by clinical expertise.
                 </p>
               </div>
 
