@@ -38,6 +38,18 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [showAllResults, setShowAllResults] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
+    'how-it-works': true,
+    'timeline': true,
+    'is-right-for-you': true
+  });
+
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionId]: !prev[sectionId]
+    }));
+  };
 
   const glareCardImages = [
     "https://820i9wpaqi.ufs.sh/f/PwwcUidplansgXnFmzy5kj61DYzc70ZnwdPfCoh3IRx4Amiu",
@@ -113,27 +125,31 @@ function App() {
   const faqs = [
     {
       question: "Does it hurt?",
-      answer: "You'll be fully numbed before treatment. Most people describe it as a warm, tingling feeling rather than pain."
+      answer: "I'll be honest with you - you'll feel something, but I numb you up properly beforehand so it's totally manageable. Most of my clients say it feels warm and tingly, like a little zap. Nothing scary, I promise!"
     },
     {
       question: "How long will I look swollen?",
-      answer: "Swelling peaks on Day 2, especially under the eyes. By Day 5, dots begin to fall away naturally."
+      answer: "Day 2 is usually the puffiest, especially around the eyes - I won't lie, you might look a bit like you've had a cry! But by Day 5, those little dots start flaking off and you'll start seeing the magic happen."
     },
     {
       question: "When can I wear makeup again?",
-      answer: "Usually around Day 7, once the surface is fully healed."
+      answer: "Give it about a week to let everything heal properly. I know it's tempting to cover up, but trust me - your skin will thank you for the patience!"
     },
     {
       question: "How long do results last?",
-      answer: "Results typically last 2–3 years depending on your skin and lifestyle."
+      answer: "This is the good bit - you're looking at 2-3 years! Obviously it depends on your skin and how you look after yourself, but this isn't some temporary fix that disappears after a month."
     },
     {
       question: "Is it safe near the eyes?",
-      answer: "Yes, when performed by a trained practitioner using a medical-grade device. It's a controlled, superficial treatment, not surgery."
+      answer: "Absolutely! I use a medical-grade device and I've had proper training for delicate areas. It's a controlled treatment on the surface of your skin - nothing like surgery at all."
     },
     {
       question: "Can I go to work after?",
-      answer: "You can, but expect visible dots and mild swelling for several days — most clients prefer to schedule around their time off."
+      answer: "You can if you need to, but honestly? Most of my clients book a few days off. You'll have visible dots and some puffiness, and you deserve to rest and let your body do its thing without worrying about what colleagues might think!"
+    },
+    {
+      question: "What do you check for in the consultation?",
+      answer: "I do a proper assessment before we even think about treatment! I'll look at your skin tone and any pigmentation concerns, go through your medical history and medications, check how your skin usually heals, and chat about your lifestyle - sun exposure, skincare routine, that sort of thing. I need to make sure you're a good fit for this treatment, and if I don't think it's right for you, I'll tell you straight."
     }
   ];
 
@@ -159,17 +175,14 @@ function App() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-          <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
-            <div className="w-8 h-8 sm:w-10 sm:h-10">
+          <div className="flex items-center group cursor-pointer">
+            <div className="w-10 h-10 sm:w-12 sm:h-12">
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
-                alt="Rhi's Aesthetics Logo"
+                alt="RHI Aesthetics Logo"
                 className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
               />
             </div>
-            <span className={`text-lg sm:text-2xl font-bold transition-colors duration-300 ${isHeaderScrolled ? 'text-white' : 'text-black'}`}>
-              RHI•AESTHETICS
-            </span>
           </div>
 
           <nav className="hidden lg:flex items-center space-x-8">
@@ -221,7 +234,7 @@ function App() {
                 transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-black"
               >
-                Doctor-Led <span className="text-teal-600">Plasma Fibroblast</span> in Southampton
+                Clinically-Led <span className="text-teal-600">Plasma Fibroblast</span> in Southampton
               </motion.h1>
 
               <motion.p
@@ -230,7 +243,7 @@ function App() {
                 transition={{ delay: 0.4, duration: 0.8, ease: "easeInOut" }}
                 className="text-lg sm:text-xl lg:text-2xl text-black/80 leading-relaxed font-light"
               >
-                Clinically experienced practitioner trusted by 300+ women in Southampton for safe, natural skin tightening.
+                Clinically experienced practitioner trusted by 150+ women in Southampton for safe, natural skin tightening.
               </motion.p>
 
               <motion.p
@@ -404,18 +417,18 @@ function App() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] bg-gradient-to-r from-black via-teal-900 to-black bg-clip-text text-transparent pb-2">
-                You're not crazy for wanting something that actually works.
+                I get it - you just want something that actually works.
               </h2>
 
               <div className="space-y-5 text-base sm:text-lg text-black/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 <p>
-                  You've tried facials and creams that felt relaxing but changed nothing. Every mirror reminds you — you look tired even when you're not.
+                  I've been there too. Spending money on fancy creams that smell nice but do nothing. Trying every facial going and still seeing the same tired face looking back at me. It's frustrating, isn't it?
                 </p>
                 <p>
-                  Surgery feels too much. "Miracle creams" seem too fake. You just want a safe, proven way to tighten the skin you already have.
+                  Surgery? Too scary and way too expensive. Those "miracle" products on Instagram? Yeah, they're not fooling anyone. You just want something real - something that actually tightens and lifts without all the drama.
                 </p>
                 <p className="font-semibold text-teal-700 text-lg sm:text-xl">
-                  That's exactly what plasma fibroblast offers — real results, without surgery, backed by clinical expertise.
+                  That's exactly why I fell in love with plasma fibroblast. It's the real deal - proper results, no surgery, and I'll be with you every step of the way.
                 </p>
               </div>
 
@@ -472,7 +485,7 @@ function App() {
               Real Results
             </h2>
             <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto">
-              Consistent lighting, real clients, visible transformation
+              These are my actual clients - same lighting, no filters, just genuine transformations
             </p>
           </div>
 
@@ -528,38 +541,44 @@ function App() {
         <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12 sm:mb-20">
+          <button
+            onClick={() => toggleSection('how-it-works')}
+            className="w-full text-center mb-12 sm:mb-20 cursor-pointer group"
+          >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
               The Process
             </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6 flex items-center justify-center gap-4">
               How It Works
+              <ChevronDown className={`w-8 h-8 sm:w-10 sm:h-10 text-teal-600 transition-transform duration-300 ${expandedSections['how-it-works'] ? 'rotate-180' : ''}`} />
             </h2>
             <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto font-light">
-              Three simple steps to naturally tighten and lift your skin
+              Let me walk you through what actually happens - no confusing jargon, I promise!
             </p>
-          </div>
+          </button>
+
+          <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['how-it-works'] ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
 
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 icon: Zap,
-                title: "Precision Plasma",
-                description: "A tiny plasma arc creates micro-points on the skin surface, triggering your fibroblasts (the collagen-building cells) to wake up and rebuild elasticity.",
+                title: "The Plasma Magic",
+                description: "I use a special pen that creates tiny little dots on your skin. It sounds weird but these micro-points wake up your fibroblasts - basically the cells that build collagen. They get to work rebuilding your skin's elasticity from the inside out.",
                 number: "01",
                 image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans9BafFowHvBk0FM54DR6T7haPjcVdE8o3ZfIw"
               },
               {
                 icon: Heart,
-                title: "Controlled Healing",
-                description: "Over a few days, the skin naturally contracts and tightens. Those small dots fade as new collagen strengthens beneath.",
+                title: "Your Skin Does Its Thing",
+                description: "Over the next few days, your skin naturally contracts and tightens. Those little dots will fade as brand new collagen builds up underneath. Your body's doing all the hard work here - clever, right?",
                 number: "02",
                 image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansB3LukPXAT70DbI3p4EqW1ve6ijGVXNYd8hwf"
               },
               {
                 icon: Heart,
-                title: "Natural Tightening",
-                description: "In 6-12 days, your skin looks smoother, lifted, and rested without injections or surgery.",
+                title: "Hello, Lifted Skin!",
+                description: "Within 6-12 days you'll start seeing it - smoother, tighter, more lifted skin. And the best bit? No needles, no surgery, just your own natural collagen doing its job.",
                 number: "03",
                 image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansxBjMKqYj7ghxUT0Ry8DfXk9KamOCNAuW12ML"
               }
@@ -587,7 +606,7 @@ function App() {
 
           <div className="mt-12 sm:mt-16 bg-gradient-to-r from-teal-50 to-teal-100/50 border border-teal-500/20 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-center">
             <p className="text-lg sm:text-xl text-black">
-              <strong className="text-teal-600 font-bold">You'll feel warmth, not pain</strong> — we fully numb the area beforehand.
+              <strong className="text-teal-600 font-bold">Don't worry about pain</strong> — I numb you up properly first, so you'll just feel a warm, tingly sensation.
             </p>
           </div>
 
@@ -603,15 +622,24 @@ function App() {
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
           </div>
+          </div>
         </div>
       </section>
 
       <section id="timeline" className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
-        <div className="max-w-7xl mx-auto mb-4 sm:mb-6">
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center text-black">
-            Your Journey
-          </h2>
+        <div className="max-w-7xl mx-auto">
+          <button
+            onClick={() => toggleSection('timeline')}
+            className="w-full text-center mb-4 sm:mb-6 cursor-pointer"
+          >
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center text-black flex items-center justify-center gap-4">
+              Your Journey
+              <ChevronDown className={`w-8 h-8 sm:w-10 sm:h-10 text-teal-600 transition-transform duration-300 ${expandedSections['timeline'] ? 'rotate-180' : ''}`} />
+            </h2>
+          </button>
         </div>
+
+        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['timeline'] ? 'max-h-[10000px] opacity-100' : 'max-h-0 opacity-0'}`}>
         <Timeline data={healingTimeline.map((item) => ({
           title: item.day,
           content: (
@@ -642,9 +670,9 @@ function App() {
                 </svg>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-black mb-4 text-teal-900">Complete Aftercare Support</h3>
+              <h3 className="text-2xl sm:text-3xl font-black mb-4 text-teal-900">I've Got You Covered</h3>
               <p className="text-base sm:text-lg mb-8 leading-relaxed text-black/80 max-w-2xl mx-auto">
-                Every client receives a detailed aftercare PDF — including what to expect, what to avoid, and how to protect your results.
+                You won't be left wondering what to do next! I'll give you a proper aftercare guide - what's normal, what to avoid, and how to get the best results. And you can always message me if you're worried about anything.
               </p>
 
               <button
@@ -659,6 +687,7 @@ function App() {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -742,10 +771,17 @@ function App() {
 
       <section className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center mb-12 sm:mb-20">
-            Is This Right For You?
-          </h2>
+          <button
+            onClick={() => toggleSection('is-right-for-you')}
+            className="w-full text-center mb-12 sm:mb-20 cursor-pointer"
+          >
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center flex items-center justify-center gap-4">
+              Is This Right For You?
+              <ChevronDown className={`w-8 h-8 sm:w-10 sm:h-10 text-teal-600 transition-transform duration-300 ${expandedSections['is-right-for-you'] ? 'rotate-180' : ''}`} />
+            </h2>
+          </button>
 
+          <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['is-right-for-you'] ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
             <div className="relative bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-teal-500 overflow-hidden group hover-lift">
               <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-teal-500/10 rounded-full blur-3xl"></div>
@@ -755,15 +791,15 @@ function App() {
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-teal-900">Perfect For You If:</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-teal-900">You'll Love This If:</h3>
                 </div>
 
                 <ul className="space-y-4 sm:space-y-5">
                   {[
-                    "You're noticing sagging or loose eyelid skin",
-                    "You want results without surgery or filler",
-                    "You're realistic about 5–7 days of healing",
-                    "You value expertise, safety, and guidance"
+                    "You're fed up with saggy eyelids or loose skin that makes you look tired",
+                    "You want real results but surgery feels too extreme (and expensive!)",
+                    "You can take 5-7 days to let your skin heal properly",
+                    "You want someone who actually knows what they're doing and will look after you"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 sm:space-x-4">
                       <CheckCircle className="w-5 sm:w-6 h-5 sm:h-6 text-teal-600 flex-shrink-0 mt-0.5 sm:mt-1" />
@@ -782,15 +818,15 @@ function App() {
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-neutral-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <XCircle className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-neutral-900">Not For You If:</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-neutral-900">Maybe Not For You If:</h3>
                 </div>
 
                 <ul className="space-y-4 sm:space-y-5">
                   {[
-                    "You've had recent sun exposure or skin flare-ups",
-                    "You expect surgery-level results overnight",
-                    "You can't commit to aftercare",
-                    "You're looking for a 'cheap quick fix'"
+                    "You've been sunbathing recently or your skin's having a bit of a moment",
+                    "You're expecting to wake up looking 20 years younger overnight",
+                    "You can't be bothered with the aftercare (it's important, sorry!)",
+                    "You're after the cheapest option going - this is an investment in yourself"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 sm:space-x-4">
                       <XCircle className="w-5 sm:w-6 h-5 sm:h-6 text-neutral-600 flex-shrink-0 mt-0.5 sm:mt-1" />
@@ -805,7 +841,7 @@ function App() {
           <div className="mt-12 sm:mt-16 text-center bg-gradient-to-r from-teal-50 to-teal-100/50 p-6 sm:p-10 rounded-2xl sm:rounded-3xl">
             <Users className="w-12 sm:w-16 h-12 sm:h-16 text-teal-600 mx-auto mb-4 sm:mb-6" />
             <p className="text-lg sm:text-2xl font-semibold text-black max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8">
-              If you're unsure, book a consultation. We'll assess your skin and decide if this treatment is right for you.
+              Not sure if it's right for you? Just book a chat with me - no pressure, I'll take a look at your skin and give you my honest opinion.
             </p>
             <button
               onClick={() => scrollToSection('cta')}
@@ -818,76 +854,6 @@ function App() {
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-br from-white via-teal-50/30 to-white py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.08),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(20,184,166,0.08),transparent_50%)]"></div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl mb-6 shadow-lg">
-              <Shield className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
-            </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
-              Safety & Screening
-            </h2>
-            <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto leading-relaxed">
-              Your safety is always the first step. Every client receives a full consultation, including pigment risk screening and medical history review.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-3xl blur-2xl opacity-20"></div>
-            <div className="relative bg-gradient-to-br from-white to-teal-50/50 rounded-3xl p-8 sm:p-12 border-2 border-teal-300 shadow-2xl">
-              <div className="text-center mb-8 sm:mb-12">
-                <h3 className="text-2xl sm:text-3xl font-black text-teal-900 mb-3">
-                  What We Check For
-                </h3>
-                <p className="text-base sm:text-lg text-black/60">
-                  A thorough assessment to ensure you're a perfect candidate
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10">
-                {[
-                  { icon: User, title: "Skin Assessment", text: "Skin tone & pigmentation risk evaluation" },
-                  { icon: Pill, title: "Medical Review", text: "Current medications and contraindications" },
-                  { icon: History, title: "Healing History", text: "Your body's natural healing patterns" },
-                  { icon: Sun, title: "Lifestyle Factors", text: "Sun exposure and skincare routines" }
-                ].map((item, index) => (
-                  <div key={index} className="group relative bg-white rounded-2xl p-6 sm:p-8 border-2 border-teal-200 hover:border-teal-500 transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/20 hover:-translate-y-1">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-teal-400/10 rounded-full blur-2xl group-hover:bg-teal-400/20 transition-all duration-300"></div>
-                    <div className="relative flex items-start gap-4">
-                      <div className="flex-shrink-0 w-14 sm:w-16 h-14 sm:h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                        <item.icon className="w-7 sm:w-8 h-7 sm:h-8 text-white" />
-                      </div>
-                      <div className="flex-1 pt-1">
-                        <h4 className="text-lg sm:text-xl font-bold text-black mb-2 group-hover:text-teal-900 transition-colors">
-                          {item.title}
-                        </h4>
-                        <p className="text-sm sm:text-base text-black/70 leading-relaxed">
-                          {item.text}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-center shadow-xl">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <CheckCircle className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
-                  <p className="text-lg sm:text-xl font-bold text-white">
-                    Patch Tests Available
-                  </p>
-                </div>
-                <p className="text-sm sm:text-base text-white/90">
-                  Not sure how your skin will react? We offer patch tests and micro-tests for complete peace of mind.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -932,74 +898,35 @@ function App() {
         </div>
       </section>
 
-      <section id="cta" className="relative py-20 sm:py-32 px-4 sm:px-6 overflow-hidden">
+      <section id="cta" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-teal-100"></div>
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl sm:rounded-[3rem] shadow-2xl border border-teal-200/50 overflow-hidden">
-            <div className="p-8 sm:p-16 text-center">
-              <div className="mb-8 sm:mb-12">
-                <div className="inline-flex items-center justify-center w-20 sm:w-24 h-20 sm:h-24 bg-gradient-to-br from-teal-500 to-teal-600 rounded-3xl shadow-lg mb-6 sm:mb-8">
-                  <Calendar className="w-10 sm:w-12 h-10 sm:h-12 text-white" />
-                </div>
+        <div className="max-w-2xl mx-auto relative z-10">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+            <button
+              onClick={() => scrollToSection('cta')}
+              className="group w-full sm:w-auto bg-gradient-to-r from-teal-500 to-teal-600 text-white px-10 sm:px-14 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 hover:scale-105 uppercase tracking-wide relative overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center justify-center space-x-3">
+                <Calendar className="w-6 sm:w-7 h-6 sm:h-7 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Book Now</span>
+              </span>
+              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </button>
 
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 sm:mb-8">
-                  <span className="bg-gradient-to-r from-teal-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
-                    Start Your Journey to
-                  </span>
-                  <br />
-                  <span className="text-black mt-2 block">
-                    Confident, Lifted Skin
-                  </span>
-                </h2>
-
-                <p className="text-lg sm:text-2xl text-black/70 max-w-2xl mx-auto leading-relaxed font-light">
-                  Professional care • Proven results • Complete transparency
-                </p>
-              </div>
-
-              <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-14 max-w-4xl mx-auto">
-                <div className="group bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border-2 border-teal-200 hover:border-teal-500 hover:shadow-xl transition-all duration-300">
-                  <Shield className="w-12 sm:w-14 h-12 sm:h-14 text-teal-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <p className="font-bold text-base sm:text-lg text-black">Medical-Grade Safety</p>
-                </div>
-                <div className="group bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border-2 border-teal-200 hover:border-teal-500 hover:shadow-xl transition-all duration-300">
-                  <Heart className="w-12 sm:w-14 h-12 sm:h-14 text-teal-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <p className="font-bold text-base sm:text-lg text-black">Personal Care</p>
-                </div>
-                <div className="group bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border-2 border-teal-200 hover:border-teal-500 hover:shadow-xl transition-all duration-300">
-                  <Award className="w-12 sm:w-14 h-12 sm:h-14 text-teal-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <p className="font-bold text-base sm:text-lg text-black">Natural Results</p>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-                <button
-                  onClick={() => scrollToSection('cta')}
-                  className="group w-full sm:w-auto bg-gradient-to-r from-teal-500 to-teal-600 text-white px-10 sm:px-14 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 hover:scale-105 uppercase tracking-wide relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center justify-center space-x-3">
-                    <Calendar className="w-6 sm:w-7 h-6 sm:h-7 group-hover:rotate-12 transition-transform duration-300" />
-                    <span>Book Now</span>
-                  </span>
-                  <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                </button>
-
-                <a
-                  href="https://wa.me/441234567890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group w-full sm:w-auto border-3 border-teal-600 text-teal-600 px-10 sm:px-14 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-xl hover:bg-teal-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 uppercase tracking-wide shadow-lg"
-                >
-                  <MessageCircle className="w-6 sm:w-7 h-6 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
-                  <span>Get in Touch</span>
-                </a>
-              </div>
-            </div>
+            <a
+              href="https://wa.me/441234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-full sm:w-auto border-3 border-teal-600 text-teal-600 px-10 sm:px-14 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-xl hover:bg-teal-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 uppercase tracking-wide shadow-lg"
+            >
+              <MessageCircle className="w-6 sm:w-7 h-6 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+              <span>Get in Touch</span>
+            </a>
           </div>
         </div>
       </section>
@@ -1008,15 +935,14 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
             <div className="space-y-4 sm:space-y-6 text-center sm:text-left">
-              <div className="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 group">
-                <div className="w-8 h-8 sm:w-10 sm:h-10">
+              <div className="flex items-center justify-center sm:justify-start group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12">
                   <img
                     src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
-                    alt="Rhi's Aesthetics Logo"
+                    alt="RHI Aesthetics Logo"
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <span className="text-xl sm:text-2xl font-black">Rhi's Aesthetics</span>
               </div>
               <p className="text-white/60 leading-relaxed text-sm sm:text-base">
                 Safe, natural skin tightening in Southampton.
@@ -1093,7 +1019,7 @@ function App() {
           <div className="border-t border-white/10 pt-8 sm:pt-10">
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
               <p className="text-white/50 text-xs sm:text-sm">
-                &copy; 2025 Rhi's Aesthetics. All rights reserved.
+                &copy; 2025 RHI Aesthetics. All rights reserved.
               </p>
               <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
                 <Link
