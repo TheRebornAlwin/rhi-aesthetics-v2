@@ -225,7 +225,7 @@ function App() {
       </header>
 
       <AuroraBackground className="relative min-h-screen flex items-center overflow-hidden bg-white">
-        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-64 sm:pt-56 lg:pt-48 pb-20 sm:pb-32 relative z-10">
+        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-56 lg:pt-48 pb-20 sm:pb-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <div className="space-y-6 sm:space-y-8 fade-in-up text-center lg:text-left">
               <motion.h1
@@ -548,9 +548,9 @@ function App() {
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
               The Process
             </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6 flex items-center justify-center gap-4">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6 flex items-center justify-center gap-2 sm:gap-4">
               How It Works
-              <ChevronDown className={`w-8 h-8 sm:w-10 sm:h-10 text-teal-600 transition-transform duration-300 ${expandedSections['how-it-works'] ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-5 h-5 sm:w-8 sm:h-8 text-teal-600 transition-transform duration-300 ${expandedSections['how-it-works'] ? 'rotate-180' : ''}`} />
             </h2>
             <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto font-light">
               Let me walk you through what actually happens - no confusing jargon, I promise!
@@ -632,9 +632,9 @@ function App() {
             onClick={() => toggleSection('timeline')}
             className="w-full text-center mb-4 sm:mb-6 cursor-pointer"
           >
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center text-black flex items-center justify-center gap-4">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center text-black flex items-center justify-center gap-2 sm:gap-4">
               Your Journey
-              <ChevronDown className={`w-8 h-8 sm:w-10 sm:h-10 text-teal-600 transition-transform duration-300 ${expandedSections['timeline'] ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-5 h-5 sm:w-8 sm:h-8 text-teal-600 transition-transform duration-300 ${expandedSections['timeline'] ? 'rotate-180' : ''}`} />
             </h2>
           </button>
         </div>
@@ -693,7 +693,7 @@ function App() {
 
       <section className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-12">
+          <div className="text-center mb-4 sm:mb-12">
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
               What Our Customers Say
             </h2>
@@ -775,9 +775,9 @@ function App() {
             onClick={() => toggleSection('is-right-for-you')}
             className="w-full text-center mb-12 sm:mb-20 cursor-pointer"
           >
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center flex items-center justify-center gap-4">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center flex items-center justify-center gap-2 sm:gap-4">
               Is This Right For You?
-              <ChevronDown className={`w-8 h-8 sm:w-10 sm:h-10 text-teal-600 transition-transform duration-300 ${expandedSections['is-right-for-you'] ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-5 h-5 sm:w-8 sm:h-8 text-teal-600 transition-transform duration-300 ${expandedSections['is-right-for-you'] ? 'rotate-180' : ''}`} />
             </h2>
           </button>
 
@@ -898,21 +898,15 @@ function App() {
         </div>
       </section>
 
-      <section id="cta" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-teal-100"></div>
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        </div>
-
+      <section id="cta" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden bg-white">
         <div className="max-w-2xl mx-auto relative z-10">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <button
               onClick={() => scrollToSection('cta')}
-              className="group w-full sm:w-auto bg-gradient-to-r from-teal-500 to-teal-600 text-white px-10 sm:px-14 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 hover:scale-105 uppercase tracking-wide relative overflow-hidden"
+              className="group w-auto bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 sm:px-14 py-3 sm:py-6 rounded-full font-bold text-sm sm:text-xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 hover:scale-105 uppercase tracking-wide relative overflow-hidden"
             >
-              <span className="relative z-10 flex items-center justify-center space-x-3">
-                <Calendar className="w-6 sm:w-7 h-6 sm:h-7 group-hover:rotate-12 transition-transform duration-300" />
+              <span className="relative z-10 flex items-center justify-center space-x-2 sm:space-x-3">
+                <Calendar className="w-4 sm:w-7 h-4 sm:h-7 group-hover:rotate-12 transition-transform duration-300" />
                 <span>Book Now</span>
               </span>
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -922,9 +916,9 @@ function App() {
               href="https://wa.me/441234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full sm:w-auto border-3 border-teal-600 text-teal-600 px-10 sm:px-14 py-5 sm:py-6 rounded-full font-bold text-lg sm:text-xl hover:bg-teal-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-3 hover:scale-105 uppercase tracking-wide shadow-lg"
+              className="group w-auto border-3 border-teal-600 text-teal-600 px-6 sm:px-14 py-3 sm:py-6 rounded-full font-bold text-sm sm:text-xl hover:bg-teal-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 hover:scale-105 uppercase tracking-wide shadow-lg"
             >
-              <MessageCircle className="w-6 sm:w-7 h-6 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
+              <MessageCircle className="w-4 sm:w-7 h-4 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
               <span>Get in Touch</span>
             </a>
           </div>
