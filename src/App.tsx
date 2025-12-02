@@ -925,7 +925,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="bg-black text-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
+      <footer className="bg-black text-white py-12 sm:py-20 px-4 sm:px-6 pb-20 sm:pb-24 border-t border-teal-500/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
             <div className="space-y-4 sm:space-y-6 text-center sm:text-left">
@@ -1041,6 +1041,22 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Sticky Footer Banner */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 via-black to-gray-900 border-t border-teal-500/20 py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-center gap-3 sm:gap-4">
+          <Link
+            to="/"
+            className="text-teal-400 hover:text-teal-300 transition-colors duration-300 font-bold text-sm sm:text-base"
+          >
+            RHI Aesthetics
+          </Link>
+          <div className="w-px h-4 sm:h-5 bg-white/20"></div>
+          <p className="text-white/60 text-xs sm:text-sm">
+            Safe, Natural Skin Tightening in Southampton
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
