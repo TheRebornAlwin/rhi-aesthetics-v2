@@ -925,7 +925,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="bg-black text-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
+      <footer className="bg-black text-white pt-12 sm:pt-20 pb-4 sm:pb-6 px-4 sm:px-6 border-t border-teal-500/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
             <div className="space-y-4 sm:space-y-6 text-center sm:text-left">
@@ -1041,8 +1041,8 @@ function App() {
           </div>
 
           {/* Triple Ten Digits Banner */}
-          <div className="mt-8 pt-6 border-t border-white/10">
-            <div className="text-center pb-2">
+          <div className="mt-8 pt-4 border-t border-white/10">
+            <div className="text-center">
               <a
                 href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=alwin@tripletendigits.com"
                 target="_blank"
