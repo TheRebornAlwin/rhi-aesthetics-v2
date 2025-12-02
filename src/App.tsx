@@ -1041,8 +1041,8 @@ function App() {
           </div>
 
           {/* Triple Ten Digits Banner */}
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="text-center">
+          <div className="mt-8 pt-6 border-t border-white/10">
+            <div className="text-center pb-2">
               <a
                 href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=alwin@tripletendigits.com"
                 target="_blank"
@@ -1050,7 +1050,7 @@ function App() {
                 className="inline-block"
               >
                 <p className="text-white/60 text-xs sm:text-sm">
-                  <span className="text-teal-400 hover:text-teal-300 transition-colors font-semibold">Triple Ten Digits</span>
+                  <span className="text-teal-400 hover:text-teal-300 transition-colors font-semibold underline">Triple Ten Digits</span>
                   {' '}<span className="text-white/40">|</span>{' '}
                   Competition-crushing websites. Delivered in a week or less. Designed to convert.
                 </p>
