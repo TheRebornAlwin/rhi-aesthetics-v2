@@ -171,7 +171,7 @@ function App() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isHeaderScrolled
             ? 'bg-black/95 backdrop-blur-xl shadow-2xl shadow-teal-500/10 py-4'
-            : 'bg-white lg:bg-transparent py-4 lg:py-8'
+            : 'bg-white lg:bg-transparent py-3 lg:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -286,7 +286,7 @@ function App() {
           </div>
 
           {/* Luxury Gallery Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-16">
             {glareCardImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -347,25 +347,25 @@ function App() {
             <div className="flex items-center px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-teal-50/40 to-white">
               <div className="max-w-xl">
                 <span className="inline-block px-4 py-2 bg-white border border-teal-200 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-8">
-                  Our Philosophy
+                  Meet Rhia
                 </span>
 
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-8 leading-tight">
-                  Ethical Beauty,{' '}
-                  <span className="font-normal italic">Elevated Care</span>
+                  I get it—you just want{' '}
+                  <span className="font-normal italic">something that works</span>
                 </h2>
 
                 <div className="w-16 h-px bg-teal-500 mb-8"></div>
 
                 <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed mb-10">
                   <p>
-                    At RHI Aesthetics, we believe in honest, transparent treatments that deliver real results. No overselling, no false promises—just expert care tailored to your unique needs.
+                    I've been there too. Spending money on fancy creams that smell nice but do nothing. Trying every facial going and still seeing the same tired reflection. It's frustrating, isn't it?
                   </p>
                   <p>
-                    Our philosophy centers on enhancing your natural beauty through safe, clinically-proven techniques. We take the time to understand your concerns and create a personalized treatment plan that works for you.
+                    Surgery felt too scary and way too expensive. Those "miracle" products on Instagram? Yeah, not fooling anyone. You just want something real—something that actually tightens and lifts without all the drama.
                   </p>
                   <p className="text-teal-700 font-medium">
-                    Surgical results without the knife, delivered with expertise you can trust.
+                    That's exactly why I fell in love with plasma fibroblast. It's the real deal, and I'll be with you every step of the way.
                   </p>
                 </div>
 
@@ -757,29 +757,71 @@ function App() {
         </div>
       </section>
 
-      <section id="cta" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden bg-white">
-        <div className="max-w-2xl mx-auto relative z-10">
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-            <button
-              onClick={() => scrollToSection('cta')}
-              className="group w-auto bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 sm:px-14 py-3 sm:py-6 rounded-full font-bold text-sm sm:text-xl hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 hover:scale-105 uppercase tracking-wide relative overflow-hidden"
-            >
-              <span className="relative z-10 flex items-center justify-center space-x-2 sm:space-x-3">
-                <Calendar className="w-4 sm:w-7 h-4 sm:h-7 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Book Now</span>
-              </span>
-              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </button>
+      <section id="cta" className="relative py-20 sm:py-32 overflow-hidden bg-white">
+        {/* Background - Ready for video */}
+        <div className="absolute inset-0 bg-white z-0">
+          {/* Video background will go here */}
+        </div>
 
-            <a
-              href="https://wa.me/441234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group w-auto border-3 border-teal-600 text-teal-600 px-6 sm:px-14 py-3 sm:py-6 rounded-full font-bold text-sm sm:text-xl hover:bg-teal-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 sm:space-x-3 hover:scale-105 uppercase tracking-wide shadow-lg"
-            >
-              <MessageCircle className="w-4 sm:w-7 h-4 sm:h-7 group-hover:scale-110 transition-transform duration-300" />
-              <span>Get in Touch</span>
-            </a>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-teal-50/30 to-white z-10"></div>
+
+        {/* Content */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-20">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-8">
+              Ready to Transform?
+            </span>
+
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-light text-black mb-6 leading-tight">
+              Your Journey to{' '}
+              <span className="font-normal italic">Natural Confidence</span>
+              <br className="hidden sm:block" />
+              Starts Here
+            </h2>
+
+            <div className="w-20 h-px bg-teal-500 mx-auto mb-8"></div>
+
+            <p className="text-lg sm:text-xl text-black/60 max-w-3xl mx-auto leading-relaxed mb-12">
+              Book your free consultation and let's chat about how plasma fibroblast can help you achieve the natural, lifted look you've been dreaming of. No pressure, just honest advice tailored to you.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8">
+              <button
+                onClick={() => scrollToSection('cta')}
+                className="group bg-teal-600 text-white px-10 py-5 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider inline-flex items-center space-x-3 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                <Calendar className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Book Free Consultation</span>
+              </button>
+
+              <a
+                href="https://wa.me/441234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white border-2 border-teal-600 text-teal-600 px-10 py-5 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider inline-flex items-center space-x-3 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                <span>Send a Message</span>
+              </a>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm text-black/50">
+              <div className="flex items-center space-x-2">
+                <Shield className="w-4 h-4 text-teal-600" />
+                <span>GDC Registered</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Award className="w-4 h-4 text-teal-600" />
+                <span>Fully Insured</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Users className="w-4 h-4 text-teal-600" />
+                <span>150+ Happy Clients</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
