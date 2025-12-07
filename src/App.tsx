@@ -224,85 +224,58 @@ function App() {
         </div>
       </header>
 
-      <AuroraBackground className="relative min-h-screen flex items-center overflow-hidden bg-white">
-        <div className="hero-content max-w-7xl mx-auto px-4 sm:px-6 pt-80 sm:pt-56 lg:pt-48 pb-20 sm:pb-32 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
-            <div className="space-y-6 sm:space-y-8 fade-in-up text-center lg:text-left">
-              <motion.h1
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-black"
-              >
-                Clinically-Led <span className="text-teal-600">Plasma Fibroblast</span> in Southampton
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8, ease: "easeInOut" }}
-                className="text-lg sm:text-xl lg:text-2xl text-black/80 leading-relaxed font-light"
-              >
-                Clinically experienced practitioner trusted by 150+ women in Southampton for safe, natural skin tightening.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8, ease: "easeInOut" }}
-                className="text-base sm:text-lg lg:text-xl text-black/70 leading-relaxed font-light"
-              >
-                If you are looking for a treatment that will bring you surgical results but want to avoid the knife & the prices, you are in the right place!
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8, ease: "easeInOut" }}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-5 pt-4 sm:pt-6 justify-center lg:justify-start"
-              >
-                <button
-                  onClick={() => scrollToSection('cta')}
-                  className="group relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 overflow-hidden w-auto mx-auto lg:mx-0"
-                >
-                  <span className="relative z-10 flex items-center space-x-3">
-                    <Calendar className="w-5 sm:w-6 h-5 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
-                    <span>Book Consultation</span>
-                  </span>
-                  <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                </button>
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, duration: 0.8, ease: "easeInOut" }}
-              className="relative fade-in mt-6 space-y-6"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-teal-600/20 blur-3xl rounded-full"></div>
-                <div className="relative rounded-3xl overflow-hidden">
-                  <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden relative">
-                    <img
-                      src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P"
-                      alt="Rhia - Aesthetic Practitioner"
-                      className="w-full h-full object-cover"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-700 text-xs sm:text-sm font-semibold uppercase tracking-wider">
-                  Non-Surgical Skin Tightening
-                </span>
-              </div>
-            </motion.div>
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P"
+            alt="Plasma Fibroblast Treatment"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-      </AuroraBackground>
+        {/* Content */}
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-32 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
+            className="space-y-6 sm:space-y-8"
+          >
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-normal text-white leading-tight">
+              Plasma Fibroblast
+            </h1>
+
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-16 sm:w-20 h-px bg-teal-400"></div>
+            </div>
+
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-light">
+              in Southampton
+            </p>
+
+            <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Clinically experienced practitioner trusted by 150+ women for safe, natural skin tightening. Surgical results without the knife or the prices.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+              <button
+                onClick={() => scrollToSection('cta')}
+                className="bg-white text-gray-900 px-8 py-3 rounded font-semibold hover:bg-gray-100 transition-all duration-300 uppercase text-sm tracking-wider"
+              >
+                Free Consultation
+              </button>
+              <button
+                onClick={() => scrollToSection('how-it-works')}
+                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 uppercase text-sm tracking-wider"
+              >
+                View All Treatments
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       <section id="results" className="bg-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
         <div className="max-w-7xl mx-auto">
