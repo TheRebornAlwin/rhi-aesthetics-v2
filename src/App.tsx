@@ -190,9 +190,7 @@ function App() {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`relative text-sm font-medium uppercase tracking-wider transition-colors duration-300 group ${
-                  isHeaderScrolled ? 'text-white/80 hover:text-teal-400' : 'text-black/80 hover:text-teal-600'
-                }`}
+                className="relative text-sm font-medium uppercase tracking-wider transition-colors duration-300 group text-white/90 hover:text-teal-400"
               >
                 {section === 'timeline' ? 'your journey' : section.split('-').join(' ')}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 transition-all duration-300 group-hover:w-full"></span>
@@ -205,11 +203,7 @@ function App() {
               href="https://wa.me/441234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-2 sm:p-2.5 rounded-full transition-all duration-300 ${
-                isHeaderScrolled
-                  ? 'text-teal-400 hover:bg-teal-400/10 hover:scale-110'
-                  : 'text-black hover:bg-black/10 hover:scale-110'
-              }`}
+              className="p-2 sm:p-2.5 rounded-full transition-all duration-300 text-white hover:bg-white/10 hover:scale-110"
             >
               <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6" />
             </a>
@@ -277,82 +271,44 @@ function App() {
         </div>
       </section>
 
-      <section id="results" className="bg-white py-12 sm:py-20 px-4 sm:px-6 border-t border-teal-500/20">
+      <section id="results" className="bg-white py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12 sm:mb-20">
-            <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">
-                Real Results,{' '}
-                <span className="bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
-                  Real Transformations
-                </span>
-              </h2>
-              <p className="text-lg sm:text-xl text-black/70">Witness the power of<br className="lg:hidden" /> precision plasma treatments.</p>
-            </div>
-            {/* Desktop Carousel */}
-            <div className="hidden lg:block relative max-w-7xl mx-auto">
-              <div className="flex items-center justify-center gap-4 px-12">
-                <button
-                  onClick={prevCarousel}
-                  className="absolute left-0 z-10 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-                  aria-label="Previous"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-
-                <div className="overflow-hidden">
-                  <motion.div
-                    key={carouselIndex}
-                    initial={{ x: 300, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -300, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="flex gap-4 justify-center"
-                  >
-                    {getVisibleCards(4).map((image, index) => (
-                      <GlareCard key={`${carouselIndex}-${index}`} className="relative w-[260px] flex-shrink-0">
-                        <img
-                          className="h-full w-full absolute inset-0 object-cover opacity-90"
-                          src={image}
-                          alt={`Treatment result ${index + 1}`}
-                          loading="lazy"
-                        />
-                      </GlareCard>
-                    ))}
-                  </motion.div>
-                </div>
-
-                <button
-                  onClick={nextCarousel}
-                  className="absolute right-0 z-10 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-                  aria-label="Next"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-            </div>
-
-            {/* Mobile Carousel */}
-            <div className="lg:hidden relative max-w-7xl mx-auto overflow-hidden">
-              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-8" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                {glareCardImages.map((image, index) => (
-                  <GlareCard
-                    key={index}
-                    className="relative flex-shrink-0 snap-center w-[280px] sm:w-[320px]"
-                  >
-                    <img
-                      className="h-full w-full absolute inset-0 object-cover opacity-90"
-                      src={image}
-                      alt={`Treatment result ${index + 1}`}
-                      loading="lazy"
-                    />
-                  </GlareCard>
-                ))}
-              </div>
-            </div>
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+              Transformations
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4 text-black">
+              Real Results, Real Transformations
+            </h2>
+            <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
+              Witness the power of precision plasma treatments
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+          {/* Luxury Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-16">
+            {glareCardImages.slice(0, 8).map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group relative overflow-hidden rounded-lg aspect-[3/4] bg-gray-100"
+              >
+                <img
+                  src={image}
+                  alt={`Treatment result ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Trust Badges */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { icon: Award, text: "Qualified Aesthetic Practitioner" },
               { icon: Droplet, text: "Medical-grade Plasma IQ Device" },
@@ -361,152 +317,70 @@ function App() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-white via-teal-50 to-teal-100 p-6 sm:p-10 rounded-3xl border-2 border-teal-300 hover:border-teal-500 transition-all duration-500 hover-lift text-center space-y-4 sm:space-y-5 overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-teal-500/30"
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border border-teal-200 hover:border-teal-400 transition-all duration-300 text-center"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-teal-500/10 group-hover:from-teal-500/20 group-hover:to-teal-500/10 transition-all duration-500"></div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
-                <div className="absolute top-0 right-0 w-20 h-20 bg-teal-400/20 rounded-full blur-2xl group-hover:blur-3xl group-hover:bg-teal-400/40 transition-all duration-500"></div>
-                <div className="relative z-10 bg-gradient-to-br from-teal-500 to-teal-600 w-16 sm:w-20 h-16 sm:h-20 rounded-2xl mx-auto flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:shadow-teal-500/50 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
-                  <item.icon className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+                <div className="bg-teal-500 w-12 h-12 sm:w-14 sm:h-14 rounded-xl mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
                 </div>
-                <p className="font-bold text-sm sm:text-base text-black relative z-10 leading-tight group-hover:text-teal-900 transition-colors duration-300">{item.text}</p>
+                <p className="font-semibold text-xs sm:text-sm text-black/80">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-white via-teal-50/30 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(20,184,166,0.05),transparent_50%)]"></div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
-            <div className="order-2 lg:order-1 space-y-6 sm:space-y-8 text-center lg:text-left">
-              <div className="inline-block">
-                <span className="px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full text-teal-700 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                  Meet Rhia
-                </span>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] bg-gradient-to-r from-black via-teal-900 to-black bg-clip-text text-transparent pb-2">
-                I get it - you just want something that actually works.
-              </h2>
-
-              <div className="space-y-5 text-base sm:text-lg text-black/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                <p>
-                  I've been there too. Spending money on fancy creams that smell nice but do nothing. Trying every facial going and still seeing the same tired face looking back at me. It's frustrating, isn't it?
-                </p>
-                <p>
-                  Surgery? Too scary and way too expensive. Those "miracle" products on Instagram? Yeah, they're not fooling anyone. You just want something real - something that actually tightens and lifts without all the drama.
-                </p>
-                <p className="font-semibold text-teal-700 text-lg sm:text-xl">
-                  That's exactly why I fell in love with plasma fibroblast. It's the real deal - proper results, no surgery, and I'll be with you every step of the way.
-                </p>
-              </div>
-
-              <button
-                onClick={() => scrollToSection('cta')}
-                className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide overflow-hidden group"
-              >
-                <span className="relative z-10 flex items-center space-x-3">
-                  <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
-                  <span>Book Now</span>
-                </span>
-                <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              </button>
-            </div>
-
-            <div className="order-1 lg:order-2 relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-teal-500/20 to-teal-600/20 blur-3xl rounded-full"></div>
-              <div className="relative">
-                <div className="rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/20">
-                  <div className="aspect-[3/4] overflow-hidden relative group">
-                    <img
-                      src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
-                      alt="Rhia - Aesthetic Practitioner"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
-                      <div className="mb-4 inline-block px-4 py-1.5 bg-teal-500/90 backdrop-blur-sm rounded-full">
-                        <p className="text-xs sm:text-sm font-bold">Rhia • Qualified Aesthetic Practitioner</p>
-                      </div>
-                      <p className="text-xs sm:text-sm leading-relaxed mb-3">
-                        "I truly want to give all my clients the best possible results. With Plasma, I really feel like I can deliver on my promise."
-                      </p>
-                      <p className="text-xs sm:text-sm leading-relaxed font-semibold">
-                        It's the perfect procedure that provides a 100% natural, safe & precise transformation to your appearance.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-12 sm:py-24 px-4 sm:px-6">
+      <section className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-20">
-            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
-              Proven Results
-            </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
-              Real Results
-            </h2>
-            <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto">
-              These are my actual clients - same lighting, no filters, just genuine transformations
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* Image Side */}
+            <div className="relative h-[500px] lg:h-[700px]">
+              <img
+                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
+                alt="Rhia - Aesthetic Practitioner"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20"></div>
+            </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-            {(() => {
-              const allItems = [
-                { area: "Upper Eyelids", weeks: "6 Weeks", name: "Sarah, 48" },
-                { area: "Under-Eye Crepiness", weeks: "8 Weeks", name: "Michelle, 52" },
-                { area: "Smile Lines", weeks: "10 Weeks", name: "Emma, 45" },
-                { area: "Neck Lift", weeks: "12 Weeks", name: "Janet, 56" },
-                { area: "Crow's Feet", weeks: "8 Weeks", name: "Lisa, 43" },
-                { area: "Upper Lip Lines", weeks: "6 Weeks", name: "Rebecca, 50" }
-              ];
-              const itemsToShow = showAllResults ? allItems : allItems.slice(0, 3);
-              return itemsToShow;
-            })().map((item, index) => (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-teal-50 to-white rounded-2xl sm:rounded-3xl overflow-hidden border border-teal-200 hover:border-teal-500/50 hover-lift"
-              >
-                <div className="relative bg-gradient-to-br from-teal-100 to-teal-50 aspect-[4/3] flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-center opacity-20"></div>
-                  <div className="relative text-center bg-black/80 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-xl">
-                    <Play className="w-8 sm:w-12 h-8 sm:h-12 text-teal-400 mx-auto mb-2" />
-                    <p className="font-semibold text-sm sm:text-lg text-white">Before/After</p>
-                    <p className="text-xs sm:text-sm text-teal-300">{item.area}</p>
-                  </div>
-                </div>
-                <div className="p-4 sm:p-6 bg-gradient-to-br from-white to-teal-50">
-                  <p className="font-bold text-teal-600 mb-2 sm:mb-3 text-sm sm:text-lg">{item.area} — {item.weeks}</p>
-                  <p className="text-xs sm:text-sm text-black/70 italic leading-relaxed">
-                    "{item.name} — 'I was nervous at first. By week {item.weeks.split(' ')[0]}, I couldn't believe how smooth my eyes looked.'"
+            {/* Content Side */}
+            <div className="flex items-center px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-teal-50/40 to-white">
+              <div className="max-w-xl">
+                <span className="inline-block px-4 py-2 bg-white border border-teal-200 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-8">
+                  Our Philosophy
+                </span>
+
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-8 leading-tight">
+                  Ethical Beauty,{' '}
+                  <span className="font-normal italic">Elevated Care</span>
+                </h2>
+
+                <div className="w-16 h-px bg-teal-500 mb-8"></div>
+
+                <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed mb-10">
+                  <p>
+                    At RHI Aesthetics, we believe in honest, transparent treatments that deliver real results. No overselling, no false promises—just expert care tailored to your unique needs.
+                  </p>
+                  <p>
+                    Our philosophy centers on enhancing your natural beauty through safe, clinically-proven techniques. We take the time to understand your concerns and create a personalized treatment plan that works for you.
+                  </p>
+                  <p className="text-teal-700 font-medium">
+                    Surgical results without the knife, delivered with expertise you can trust.
                   </p>
                 </div>
-              </div>
-            ))}
-          </div>
 
-          {!showAllResults && (
-            <div className="mt-8 text-center lg:hidden">
-              <button
-                onClick={() => setShowAllResults(true)}
-                className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-3 rounded-full font-semibold hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                Show More
-              </button>
+                <button
+                  onClick={() => scrollToSection('cta')}
+                  className="bg-teal-600 text-white px-8 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider inline-flex items-center space-x-2"
+                >
+                  <span>Book Consultation</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
-          )}
+          </div>
         </div>
       </section>
 
@@ -664,80 +538,92 @@ function App() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-teal-50/30 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-4 sm:mb-12">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+              Testimonials
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
               What Our Customers Say
             </h2>
+            <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
+              Real feedback from real clients
+            </p>
           </div>
 
-          <div className="relative z-0">
-            <AnimatedTestimonials
-              testimonials={[
-                {
-                  quote: "Honestly I was SO nervous before! But Rhia sat with me and explained every single thing. The swelling was only bad for like 3 days, dots were gone in a week, and by week 8... WOW. Just incredible.",
-                  name: "Christene",
-                  designation: "Age 46, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansYITsSXcmMa7NBSypFmPq9WJnje0DE4gr8R1A"
-                },
-                {
-                  quote: "I've literally wasted hundreds on creams and weird gadgets that did absolutely nothing. This ACTUALLY worked! My eyelids feel lifted again and people keep telling me I look so much more awake now 😊",
-                  name: "Sophie",
-                  designation: "Age 52, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansfkweXWDJuMR1SytWIdgA9xsk8eLD2ZPNqzrf"
-                },
-                {
-                  quote: "What I loved most was the honesty. No fake promises or overselling, just straight talk about what to expect. And the results? Yeah, they delivered. I feel like myself again, just... better.",
-                  name: "Karen",
-                  designation: "Age 40, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansgBUEXKy5kj61DYzc70ZnwdPfCoh3IRx4Amiu"
-                },
-                {
-                  quote: "Best decision I've made for my skin in YEARS. The whole thing felt so professional and safe, you can tell Rhia really knows what she's doing. The results honestly speak for themselves!",
-                  name: "Michelle",
-                  designation: "Age 48, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans4rxsHjZlV9LZ7rOzhpUH0MiuGACRPD3jNeQk"
-                },
-                {
-                  quote: "From day one I felt in such good hands. Rhia's expertise just gave me this confidence that everything would be okay. And it was! The healing went exactly how she said it would, and my skin looks naturally refreshed - not overdone or fake looking at all.",
-                  name: "Emma",
-                  designation: "Age 55, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansOWLi5VAwPqZhND8kpUK40TVgGEMsnxv2atlY"
-                },
-                {
-                  quote: "I had pretty high expectations going in but honestly? This exceeded them. My skin genuinely feels tighter and I look years younger - WITHOUT SURGERY! Still can't quite believe it 😅",
-                  name: "Rebecca",
-                  designation: "Age 50, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansDBrqUMFlbUg7HiPYe8pNhaWf5E4dG26xVuXJ"
-                },
-                {
-                  quote: "Not gonna lie, I was super skeptical at first. But the transformation is actually real?? My friends keep asking if I've had work done because it looks so natural. Thank you Rhia! 💕",
-                  name: "Lisa",
-                  designation: "Age 43, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansn1adYIeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg"
-                },
-                {
-                  quote: "The entire journey was just... caring. That's the word. Professional yes, but also really caring. I genuinely feel like I've turned back the clock on my skin aging and I'm here for it!",
-                  name: "Janet",
-                  designation: "Age 56, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLiieE7cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw"
-                },
-                {
-                  quote: "Hands down the best investment I've ever made in myself. The confidence boost alone is worth it but the results just keep getting better and better as time goes on!",
-                  name: "Sarah",
-                  designation: "Age 48, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZKjaqycEpuNyB4c5UP1OD9z8GXJlTsjiKSL"
-                },
-                {
-                  quote: "Why did I wait so long to do this?! The care and attention to every little detail made all the difference. If you're on the fence just book a consultation, seriously.",
-                  name: "Amanda",
-                  designation: "Age 51, Southampton",
-                  src: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansyLPATlSnOIJPwhi3Q9WsA61ykCl5eRHLYpVS"
-                }
-              ]}
-              autoplay={true}
-            />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                quote: "Rhia is amazing! I got really bad acne scarring and had no idea who to trust. She's helped my skin get better with every treatment and truly isn't out to just make money. She's gone routes that help my face while not breaking the bank lol. Been coming for over 6 months and my skin is healing and looking better than when I first started. I trust & recommend RHI Aesthetics all the time!",
+                name: "Christine M.",
+                location: "Southampton"
+              },
+              {
+                quote: "I've been seeing Rhia for a little over 6 months now. I've always struggled with my skin but in just a few months I've noticed such a difference! Rhia is so knowledgeable and tailors my facial to what my skin needs. She answers any and all questions I have about skin treatments or products. She's the best, I highly recommend!",
+                name: "Sophie T.",
+                location: "Southampton"
+              },
+              {
+                quote: "Cannot say enough good things about this place! From the moment you walk in, you are greeted with a warm smile, such a friendly hello; you feel so welcome. I see Rhia for my facials and I absolutely love her! The care and attention to every little detail made all the difference. My skin looks naturally refreshed - not overdone or fake looking at all.",
+                name: "Karen P.",
+                location: "Southampton"
+              },
+              {
+                quote: "I mean, I can't say enough great things about this place! From the moment you walk in, you're greeted with such a friendly hello; you feel so welcome. I see Rhia for plasma treatments and I already see such great improvements in just a short few weeks. Already can't wait for my next appointment!",
+                name: "Michelle R.",
+                location: "Southampton"
+              },
+              {
+                quote: "From day one I felt in such good hands. Rhia's expertise just gave me this confidence that everything would be okay. And it was! The healing went exactly how she said it would. Best decision I've made for my skin in years. The confidence boost alone is worth it but the results just keep getting better!",
+                name: "Emma L.",
+                location: "Southampton"
+              },
+              {
+                quote: "Best decision I've ever made. The whole thing felt so professional and safe, you can tell Rhia really knows what she's doing. The results honestly speak for themselves! I had pretty high expectations going in but honestly? This exceeded them. My skin genuinely feels tighter and I look years younger!",
+                name: "Rebecca S.",
+                location: "Southampton"
+              },
+              {
+                quote: "Not gonna lie, I was super skeptical at first. But the transformation is actually real?? My friends keep asking if I've had work done because it looks so natural. What I loved most was the honesty. No fake promises or overselling, just straight talk about what to expect. I feel like myself again, just... better!",
+                name: "Lisa H.",
+                location: "Southampton"
+              },
+              {
+                quote: "The entire journey was just... caring. That's the word. Professional yes, but also really caring. I genuinely feel like I've turned back the clock on my skin aging and I'm here for it! Why did I wait so long to do this?! If you're on the fence just book a consultation, seriously. You won't regret it!",
+                name: "Janet M.",
+                location: "Southampton"
+              },
+              {
+                quote: "Honestly I was SO nervous before! But Rhia sat with me and explained every single thing. The swelling was only bad for like 3 days, dots were gone in a week, and by week 8... WOW. Just incredible. I've literally wasted hundreds on creams that did absolutely nothing. This ACTUALLY worked! Hands down the best investment!",
+                name: "Sarah B.",
+                location: "Southampton"
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-teal-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300"
+              >
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-black/80 text-sm sm:text-base leading-relaxed mb-6">
+                  "{testimonial.quote}"
+                </p>
+                <div className="border-t border-teal-100 pt-4">
+                  <p className="font-semibold text-black">{testimonial.name}</p>
+                  <p className="text-sm text-black/60">{testimonial.location}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -754,10 +640,10 @@ function App() {
             </h2>
           </button>
 
-          <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['is-right-for-you'] ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-10">
-            <div className="relative bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-teal-500 overflow-hidden group hover-lift">
-              <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-teal-500/10 rounded-full blur-3xl"></div>
+          <div className={`overflow-visible transition-all duration-500 ease-in-out ${expandedSections['is-right-for-you'] ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-10 py-4">
+            <div className="relative bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-teal-500 group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-teal-500/10 rounded-full blur-3xl -z-10"></div>
 
               <div className="relative z-10">
                 <div className="flex items-center space-x-3 mb-6 sm:mb-8">
@@ -783,8 +669,8 @@ function App() {
               </div>
             </div>
 
-            <div className="relative bg-gradient-to-br from-neutral-50 to-neutral-100/50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-neutral-400 overflow-hidden group hover-lift">
-              <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-neutral-400/10 rounded-full blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-neutral-50 to-neutral-100/50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-neutral-400 group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-neutral-400/10 rounded-full blur-3xl -z-10"></div>
 
               <div className="relative z-10">
                 <div className="flex items-center space-x-3 mb-6 sm:mb-8">
