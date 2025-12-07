@@ -747,14 +747,16 @@ function App() {
         </div>
       </section>
 
-      <section id="cta" className="relative py-20 sm:py-32 overflow-hidden bg-white">
-        {/* Background - Ready for video */}
-        <div className="absolute inset-0 bg-white z-0">
-          {/* Video background will go here */}
+      <section id="cta" className="relative py-20 sm:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansykJ9XUnOIJPwhi3Q9WsA61ykCl5eRHLYpVSN"
+            alt="Treatment background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-white/80"></div>
         </div>
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-teal-50/30 to-white z-10"></div>
 
         {/* Content */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-20">
@@ -770,8 +772,8 @@ function App() {
 
             <div className="w-20 h-px bg-teal-500 mx-auto mb-10"></div>
 
-            <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto mb-12">
-              Free consultation. Real results. No pressure.
+            <p className="text-lg sm:text-xl text-black/70 max-w-2xl mx-auto mb-12 leading-relaxed">
+              Imagine waking up feeling confident in your own skin again—naturally lifted, beautifully you.
             </p>
 
             {/* CTA Buttons */}
