@@ -209,10 +209,9 @@ function App() {
             </a>
             <button
               onClick={() => scrollToSection('cta')}
-              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:from-teal-400 hover:to-teal-500 transition-all duration-300 uppercase text-xs tracking-wider shadow-lg shadow-teal-500/30 hover:shadow-xl hover:shadow-teal-500/40 hover:scale-105 overflow-hidden group"
+              className="bg-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-xs tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
             >
-              <span className="relative z-10">Book Now</span>
-              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              Book Now
             </button>
           </div>
         </div>
@@ -256,13 +255,13 @@ function App() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <button
                 onClick={() => scrollToSection('cta')}
-                className="bg-white text-gray-900 px-8 py-3 rounded font-semibold hover:bg-gray-100 transition-all duration-300 uppercase text-sm tracking-wider"
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Free Consultation
               </button>
               <button
                 onClick={() => scrollToSection('how-it-works')}
-                className="bg-transparent border-2 border-white text-white px-8 py-3 rounded font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 uppercase text-sm tracking-wider"
+                className="bg-white border-2 border-teal-600 text-teal-600 px-10 py-4 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
               >
                 View All Treatments
               </button>
@@ -371,12 +370,9 @@ function App() {
 
                 <button
                   onClick={() => scrollToSection('cta')}
-                  className="bg-teal-600 text-white px-8 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider inline-flex items-center space-x-2"
+                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
                 >
-                  <span>Book Consultation</span>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  Book Consultation
                 </button>
               </div>
             </div>
@@ -460,13 +456,10 @@ function App() {
           <div className="mt-8 sm:mt-12 text-center">
             <button
               onClick={() => scrollToSection('cta')}
-              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide overflow-hidden group"
+              className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
             >
-              <span className="relative z-10 flex items-center space-x-3">
-                <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
-                <span>Book Now</span>
-              </span>
-              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <Calendar className="w-5 h-5" />
+              <span>Book Now</span>
             </button>
           </div>
           </div>
@@ -704,13 +697,10 @@ function App() {
             </p>
             <button
               onClick={() => scrollToSection('cta')}
-              className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:shadow-teal-400/50 hover:scale-105 uppercase tracking-wide overflow-hidden group"
+              className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
             >
-              <span className="relative z-10 flex items-center space-x-3">
-                <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
-                <span>Book Now</span>
-              </span>
-              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <Calendar className="w-5 h-5" />
+              <span>Book Now</span>
             </button>
           </div>
           </div>
@@ -767,43 +757,41 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-br from-white via-teal-50/30 to-white z-10"></div>
 
         {/* Content */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-20">
-          <div className="text-center mb-12 sm:mb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-20">
+          <div className="text-center">
             <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-8">
               Ready to Transform?
             </span>
 
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-light text-black mb-6 leading-tight">
-              Your Journey to{' '}
-              <span className="font-normal italic">Natural Confidence</span>
-              <br className="hidden sm:block" />
-              Starts Here
+              Start Your{' '}
+              <span className="font-normal italic">Journey</span>
             </h2>
 
-            <div className="w-20 h-px bg-teal-500 mx-auto mb-8"></div>
+            <div className="w-20 h-px bg-teal-500 mx-auto mb-10"></div>
 
-            <p className="text-lg sm:text-xl text-black/60 max-w-3xl mx-auto leading-relaxed mb-12">
-              Book your free consultation and let's chat about how plasma fibroblast can help you achieve the natural, lifted look you've been dreaming of. No pressure, just honest advice tailored to you.
+            <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto mb-12">
+              Free consultation. Real results. No pressure.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <button
                 onClick={() => scrollToSection('cta')}
-                className="group bg-teal-600 text-white px-10 py-5 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider inline-flex items-center space-x-3 shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
               >
-                <Calendar className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Book Free Consultation</span>
+                <Calendar className="w-5 h-5" />
+                <span>Book Consultation</span>
               </button>
 
               <a
                 href="https://wa.me/441234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white border-2 border-teal-600 text-teal-600 px-10 py-5 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider inline-flex items-center space-x-3 shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-white border-2 border-teal-600 text-teal-600 px-10 py-4 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
               >
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                <span>Send a Message</span>
+                <MessageCircle className="w-5 h-5" />
+                <span>Send Message</span>
               </a>
             </div>
 
