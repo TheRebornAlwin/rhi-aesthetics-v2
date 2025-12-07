@@ -287,7 +287,7 @@ function App() {
 
           {/* Luxury Gallery Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-16">
-            {glareCardImages.slice(0, 8).map((image, index) => (
+            {glareCardImages.map((image, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
