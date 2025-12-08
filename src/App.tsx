@@ -310,12 +310,12 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="group relative flex items-center justify-center"
+                className="group relative rounded-2xl overflow-hidden"
               >
                 <img
                   src={image}
                   alt={`Treatment result ${index + 1}`}
-                  className="h-80 lg:h-96 w-auto object-contain transition-transform duration-700 group-hover:scale-110 rounded-2xl"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
               </motion.div>
