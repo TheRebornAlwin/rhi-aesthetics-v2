@@ -302,7 +302,7 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center"
+                className="group relative overflow-hidden rounded-lg flex items-center justify-center"
               >
                 <img
                   src={image}
