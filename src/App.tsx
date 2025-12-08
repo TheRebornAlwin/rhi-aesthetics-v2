@@ -67,7 +67,16 @@ function App() {
   ];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, []);
 
   useEffect(() => {
@@ -185,7 +194,7 @@ function App() {
             </div>
           </div>
 
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center justify-center space-x-8 flex-1">
             {['how-it-works', 'results', 'timeline', 'faqs'].map((section) => (
               <button
                 key={section}
@@ -293,12 +302,12 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-lg aspect-[3/4] bg-gray-100"
+                className="group relative overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center"
               >
                 <img
                   src={image}
                   alt={`Treatment result ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="h-80 lg:h-96 w-auto object-contain transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -350,7 +359,7 @@ function App() {
                 </span>
 
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-8 leading-tight">
-                  I get it—you just want{' '}
+                  I get it - you just want{' '}
                   <span className="font-normal italic">something that works</span>
                 </h2>
 
@@ -361,7 +370,7 @@ function App() {
                     I've been there too. Spending money on fancy creams that smell nice but do nothing. Trying every facial going and still seeing the same tired reflection. It's frustrating, isn't it?
                   </p>
                   <p>
-                    Surgery felt too scary and way too expensive. Those "miracle" products on Instagram? Yeah, not fooling anyone. You just want something real—something that actually tightens and lifts without all the drama.
+                    Surgery felt too scary and way too expensive. Those "miracle" products on Instagram? Yeah, not fooling anyone. You just want something real - something that actually tightens and lifts without all the drama.
                   </p>
                   <p className="text-teal-700 font-medium">
                     That's exactly why I fell in love with plasma fibroblast. It's the real deal, and I'll be with you every step of the way.
@@ -755,7 +764,7 @@ function App() {
             alt="Treatment background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-white/80"></div>
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
 
         {/* Content */}
@@ -773,7 +782,7 @@ function App() {
             <div className="w-20 h-px bg-teal-500 mx-auto mb-10"></div>
 
             <p className="text-lg sm:text-xl text-black/70 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Imagine waking up feeling confident in your own skin again—naturally lifted, beautifully you.
+              Imagine waking up feeling confident in your own skin again - naturally lifted, beautifully you.
             </p>
 
             {/* CTA Buttons */}
