@@ -315,7 +315,7 @@ function App() {
                 <img
                   src={image}
                   alt={`Treatment result ${index + 1}`}
-                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-64 sm:h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
               </motion.div>
