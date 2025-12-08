@@ -239,7 +239,7 @@ function App() {
           <img
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P"
             alt="Plasma Fibroblast Treatment"
-            className="w-full h-full object-cover scale-110 sm:scale-100"
+            className="w-full h-full object-cover sm:object-center object-[center_30%]"
             loading="eager"
           />
           <div className="absolute inset-0 bg-black/40"></div>
@@ -302,7 +302,7 @@ function App() {
           </div>
 
           {/* Luxury Gallery Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-2 sm:gap-6 mb-16">
             {glareCardImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -360,7 +360,7 @@ function App() {
 
             {/* Content Side */}
             <div className="flex items-center px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-teal-50/40 to-white">
-              <div className="max-w-xl">
+              <div className="max-w-xl mx-auto text-center sm:text-left">
                 <span className="inline-block px-4 py-2 bg-white border border-teal-200 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-8">
                   Meet Rhia
                 </span>
@@ -370,7 +370,7 @@ function App() {
                   <span className="font-normal italic">something that works</span>
                 </h2>
 
-                <div className="w-16 h-px bg-teal-500 mb-8"></div>
+                <div className="w-16 h-px bg-teal-500 mb-8 mx-auto sm:mx-0"></div>
 
                 <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed mb-10">
                   <p>
@@ -386,7 +386,7 @@ function App() {
 
                 <button
                   onClick={() => scrollToSection('cta')}
-                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
+                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 mx-auto sm:mx-0"
                 >
                   Book Consultation
                 </button>
@@ -407,11 +407,10 @@ function App() {
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
               The Process
             </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-black mb-4 sm:mb-6 flex items-center justify-center gap-2 sm:gap-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-4 sm:mb-6">
               How It Works
-              <ChevronDown className={`w-5 h-5 sm:w-8 sm:h-8 text-teal-600 transition-transform duration-300 ${expandedSections['how-it-works'] ? 'rotate-180' : ''}`} />
             </h2>
-            <p className="text-base sm:text-xl text-black/70 max-w-3xl mx-auto font-light">
+            <p className="text-base sm:text-xl text-black/60 max-w-3xl mx-auto font-light">
               Let me walk you through what actually happens - no confusing jargon, I promise!
             </p>
           </button>
@@ -444,10 +443,10 @@ function App() {
             ].map((step, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift overflow-hidden"
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 hover-lift overflow-hidden text-center"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="absolute top-4 left-4 w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 z-10">
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 z-10">
                   <span className="text-2xl sm:text-3xl font-black text-white">{step.number}</span>
                 </div>
 
@@ -488,9 +487,8 @@ function App() {
             onClick={() => toggleSection('timeline')}
             className="w-full text-center mb-4 sm:mb-6 cursor-pointer"
           >
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center text-black flex items-center justify-center gap-2 sm:gap-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-center text-black mb-4">
               Your Journey
-              <ChevronDown className={`w-5 h-5 sm:w-8 sm:h-8 text-teal-600 transition-transform duration-300 ${expandedSections['timeline'] ? 'rotate-180' : ''}`} />
             </h2>
           </button>
         </div>
@@ -554,7 +552,7 @@ function App() {
               Testimonials
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
-              What Our Customers Say
+              What Our <br className="sm:hidden" />Customers Say
             </h2>
             <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
               Real feedback from real clients
@@ -643,9 +641,8 @@ function App() {
             onClick={() => toggleSection('is-right-for-you')}
             className="w-full text-center mb-12 sm:mb-20 cursor-pointer"
           >
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-center flex items-center justify-center gap-2 sm:gap-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-center text-black mb-4">
               Is This Right For You?
-              <ChevronDown className={`w-5 h-5 sm:w-8 sm:h-8 text-teal-600 transition-transform duration-300 ${expandedSections['is-right-for-you'] ? 'rotate-180' : ''}`} />
             </h2>
           </button>
 
@@ -726,7 +723,7 @@ function App() {
       <section id="faqs" className="py-12 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 sm:mb-20">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
               Frequently Asked Questions
             </h2>
           </div>
@@ -769,7 +766,7 @@ function App() {
           <img
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansykJ9XUnOIJPwhi3Q9WsA61ykCl5eRHLYpVSN"
             alt="Treatment background"
-            className="w-full h-full object-cover scale-110 sm:scale-100"
+            className="w-full h-full object-cover sm:object-center object-[center_30%]"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-black/40"></div>
@@ -815,7 +812,7 @@ function App() {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-8 text-xs sm:text-sm text-white/80">
+            <div className="hidden sm:flex flex-wrap items-center justify-center gap-3 sm:gap-8 text-xs sm:text-sm text-white/80">
               <div className="flex items-center space-x-1.5 sm:space-x-2">
                 <Shield className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-white" />
                 <span>GDC Registered</span>
