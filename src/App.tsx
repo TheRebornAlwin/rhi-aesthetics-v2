@@ -302,7 +302,7 @@ function App() {
           </div>
 
           {/* Luxury Gallery Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-2 sm:gap-6 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-1 sm:gap-6 mb-16">
             {glareCardImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -310,7 +310,7 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-md sm:rounded-lg flex items-center justify-center"
+                className="group relative overflow-hidden rounded-xl sm:rounded-lg flex items-center justify-center"
               >
                 <img
                   src={image}
@@ -531,13 +531,10 @@ function App() {
 
               <button
                 onClick={() => scrollToSection('cta')}
-                className="relative bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:from-teal-400 hover:to-teal-500 transition-all duration-500 inline-flex items-center justify-center space-x-3 shadow-2xl hover:scale-105 uppercase tracking-wide overflow-hidden group"
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
               >
-                <span className="relative z-10 flex items-center space-x-3">
-                  <Calendar className="w-5 sm:w-6 h-5 sm:h-6" />
-                  <span>Book Now</span>
-                </span>
-                <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <Calendar className="w-5 h-5" />
+                <span>Book Now</span>
               </button>
             </div>
           </div>

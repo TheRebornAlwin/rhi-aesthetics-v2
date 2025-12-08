@@ -26,7 +26,16 @@ import { chromium } from 'playwright';
   console.log('✅ Checking gallery image spacing...');
   const galleryGrid = page.locator('section#results').locator('div.grid').first();
   const gridGap = await galleryGrid.evaluate(el => window.getComputedStyle(el).gap);
+  const gridRowGap = await galleryGrid.evaluate(el => window.getComputedStyle(el).rowGap);
+  const gridColumnGap = await galleryGrid.evaluate(el => window.getComputedStyle(el).columnGap);
   console.log('   Gallery gap:', gridGap);
+  console.log('   Gallery row gap (vertical):', gridRowGap, '(should be 4px or less)');
+  console.log('   Gallery column gap (horizontal):', gridColumnGap);
+
+  console.log('✅ Checking gallery image border radius...');
+  const firstGalleryImage = page.locator('section#results').locator('div.grid > div').first();
+  const borderRadius = await firstGalleryImage.evaluate(el => window.getComputedStyle(el).borderRadius);
+  console.log('   Gallery image border-radius:', borderRadius, '(should be rounded)');
 
   console.log('✅ Checking Meet Rhia section text alignment...');
   const meetRhiaSection = page.locator('section').filter({ hasText: 'Meet Rhia' });
