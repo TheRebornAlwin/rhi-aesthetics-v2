@@ -302,7 +302,7 @@ function App() {
           </div>
 
           {/* Luxury Gallery Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-0 sm:gap-6 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-2 sm:gap-6 mb-16">
             {glareCardImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -310,7 +310,7 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="group relative rounded-2xl overflow-hidden"
+                className="group relative rounded-lg overflow-hidden"
               >
                 <img
                   src={image}
