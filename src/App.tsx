@@ -89,10 +89,17 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Preload all GlareCard images
-    glareCardImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
+    // Preload critical images only
+    const criticalImages = [
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansykJ9XUnOIJPwhi3Q9WsA61ykCl5eRHLYpVSN"
+    ];
+    criticalImages.forEach((src) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
     });
   }, []);
 
@@ -180,7 +187,7 @@ function App() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isHeaderScrolled
             ? 'bg-black/95 backdrop-blur-xl shadow-2xl shadow-teal-500/10 py-4'
-            : 'bg-white lg:bg-transparent py-3 lg:py-5'
+            : 'bg-black/95 lg:bg-transparent py-3 lg:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -232,7 +239,8 @@ function App() {
           <img
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZkeOPd6XwJuImFfqiz86x7V3CyK2odlaTv5P"
             alt="Plasma Fibroblast Treatment"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110 sm:scale-100"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
@@ -261,16 +269,16 @@ function App() {
               Clinically experienced practitioner trusted by 150+ women for safe, natural skin tightening. Surgical results without the knife or the prices.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
               <button
                 onClick={() => scrollToSection('cta')}
-                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto"
               >
                 Free Consultation
               </button>
               <button
                 onClick={() => scrollToSection('how-it-works')}
-                className="bg-white border-2 border-teal-600 text-teal-600 px-10 py-4 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-white border-2 border-teal-600 text-teal-600 px-10 py-4 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto"
               >
                 View All Treatments
               </button>
@@ -286,15 +294,15 @@ function App() {
               Transformations
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4 text-black">
-              Real Results, Real Transformations
+              Real Results, <br className="sm:hidden" />Real Transformations
             </h2>
             <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
-              Witness the power of precision plasma treatments
+              Witness the power of precision plasma treatments with proven results.
             </p>
           </div>
 
           {/* Luxury Gallery Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 mb-16">
             {glareCardImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -302,7 +310,7 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-lg flex items-center justify-center"
+                className="group relative overflow-hidden rounded-md sm:rounded-lg flex items-center justify-center"
               >
                 <img
                   src={image}
@@ -310,7 +318,6 @@ function App() {
                   className="h-80 lg:h-96 w-auto object-contain transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
             ))}
           </div>
@@ -608,9 +615,9 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-teal-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300"
+                className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-teal-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300 text-center"
               >
-                <div className="flex mb-4">
+                <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -648,11 +655,11 @@ function App() {
               <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-teal-500/10 rounded-full blur-3xl -z-10"></div>
 
               <div className="relative z-10">
-                <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+                <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 mb-6 sm:mb-8">
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-teal-900">You'll Love This If:</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-teal-900 text-center sm:text-left">You'll Love This If:</h3>
                 </div>
 
                 <ul className="space-y-4 sm:space-y-5">
@@ -675,11 +682,11 @@ function App() {
               <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-neutral-400/10 rounded-full blur-3xl -z-10"></div>
 
               <div className="relative z-10">
-                <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+                <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 mb-6 sm:mb-8">
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-neutral-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <XCircle className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-neutral-900">Maybe Not For You If:</h3>
+                  <h3 className="text-xl sm:text-2xl font-black text-neutral-900 text-center sm:text-left">Maybe Not For You If:</h3>
                 </div>
 
                 <ul className="space-y-4 sm:space-y-5">
@@ -762,26 +769,27 @@ function App() {
           <img
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansykJ9XUnOIJPwhi3Q9WsA61ykCl5eRHLYpVSN"
             alt="Treatment background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110 sm:scale-100"
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         {/* Content */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-20">
           <div className="text-center">
-            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-8">
+            <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white text-sm font-semibold uppercase tracking-wider mb-8">
               Ready to Transform?
             </span>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-light text-black mb-6 leading-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-light text-white mb-6 leading-tight">
               Start Your{' '}
               <span className="font-normal italic">Journey</span>
             </h2>
 
-            <div className="w-20 h-px bg-teal-500 mx-auto mb-10"></div>
+            <div className="w-20 h-px bg-white mx-auto mb-10"></div>
 
-            <p className="text-lg sm:text-xl text-black/70 max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed">
               Imagine waking up feeling confident in your own skin again - naturally lifted, beautifully you.
             </p>
 
@@ -807,17 +815,17 @@ function App() {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm text-black/50">
-              <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4 text-teal-600" />
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-8 text-xs sm:text-sm text-white/80">
+              <div className="flex items-center space-x-1.5 sm:space-x-2">
+                <Shield className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-white" />
                 <span>GDC Registered</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Award className="w-4 h-4 text-teal-600" />
+              <div className="flex items-center space-x-1.5 sm:space-x-2">
+                <Award className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-white" />
                 <span>Fully Insured</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Users className="w-4 h-4 text-teal-600" />
+              <div className="flex items-center space-x-1.5 sm:space-x-2">
+                <Users className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-white" />
                 <span>150+ Happy Clients</span>
               </div>
             </div>
