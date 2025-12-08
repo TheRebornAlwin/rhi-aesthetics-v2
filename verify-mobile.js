@@ -39,9 +39,9 @@ import { chromium } from 'playwright';
   console.log('   Chevron icons in h2 headings:', chevronCount);
 
   console.log('✅ Checking trust badges visibility on mobile...');
-  const trustBadges = page.locator('section#cta').locator('div').filter({ hasText: 'GDC Registered' });
+  const trustBadges = page.locator('section#cta').locator('div.hidden.sm\\:flex').first();
   const isVisible = await trustBadges.isVisible();
-  console.log('   Trust badges visible on mobile:', isVisible);
+  console.log('   Trust badges visible on mobile:', isVisible, '(should be false)');
 
   console.log('✅ Checking heading text consistency...');
   const howItWorksHeading = page.locator('section#how-it-works h2');
