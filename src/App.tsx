@@ -489,8 +489,8 @@ function App() {
 
       <section id="timeline" className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full text-center mb-4 sm:mb-6">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-center text-black mb-4">
+          <div className="w-full text-center mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-center text-black">
               Your Journey
             </h2>
           </div>
