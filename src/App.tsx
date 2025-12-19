@@ -407,10 +407,7 @@ function App() {
         <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <button
-            onClick={() => toggleSection('how-it-works')}
-            className="w-full text-center mb-12 sm:mb-20 cursor-pointer group"
-          >
+          <div className="w-full text-center mb-12 sm:mb-20">
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
               The Process
             </span>
@@ -420,9 +417,9 @@ function App() {
             <p className="text-base sm:text-xl text-black/60 max-w-3xl mx-auto font-light">
               Let me walk you through what actually happens - no confusing jargon, I promise!
             </p>
-          </button>
+          </div>
 
-          <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['how-it-works'] ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div>
 
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {[
@@ -492,17 +489,14 @@ function App() {
 
       <section id="timeline" className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <button
-            onClick={() => toggleSection('timeline')}
-            className="w-full text-center mb-4 sm:mb-6 cursor-pointer"
-          >
+          <div className="w-full text-center mb-4 sm:mb-6">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-center text-black mb-4">
               Your Journey
             </h2>
-          </button>
+          </div>
         </div>
 
-        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections['timeline'] ? 'max-h-[10000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div>
         <Timeline data={healingTimeline.map((item) => ({
           title: item.day,
           content: (
