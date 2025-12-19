@@ -223,12 +223,15 @@ function App() {
             >
               <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6" />
             </a>
-            <button
-              onClick={() => scrollToSection('cta')}
+            <a
+              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-xs tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
             >
-              Book Now
-            </button>
+              <span className="lg:hidden">Book Now</span>
+              <span className="hidden lg:inline">Book Free Consultation</span>
+            </a>
           </div>
         </div>
       </header>
@@ -270,12 +273,14 @@ function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
-              <button
-                onClick={() => scrollToSection('cta')}
-                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto"
+              <a
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto inline-block text-center"
               >
-                Free Consultation
-              </button>
+                Book Free Consultation
+              </a>
               <button
                 onClick={() => scrollToSection('how-it-works')}
                 className="bg-white border-2 border-teal-600 text-teal-600 px-10 py-4 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto"
@@ -384,12 +389,14 @@ function App() {
                   </p>
                 </div>
 
-                <button
-                  onClick={() => scrollToSection('cta')}
-                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 mx-auto sm:mx-0"
+                <a
+                  href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 mx-auto sm:mx-0 inline-block"
                 >
-                  Book Consultation
-                </button>
+                  Book Free Consultation
+                </a>
               </div>
             </div>
           </div>
@@ -469,13 +476,15 @@ function App() {
           </div>
 
           <div className="mt-8 sm:mt-12 text-center">
-            <button
-              onClick={() => scrollToSection('cta')}
+            <a
+              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
             >
               <Calendar className="w-5 h-5" />
-              <span>Book Now</span>
-            </button>
+              <span>Book Free Consultation</span>
+            </a>
           </div>
           </div>
         </div>
@@ -529,13 +538,15 @@ function App() {
                 You won't be left wondering what to do next! I'll give you a proper aftercare guide - what's normal, what to avoid, and how to get the best results. And you can always message me if you're worried about anything.
               </p>
 
-              <button
-                onClick={() => scrollToSection('cta')}
+              <a
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
               >
                 <Calendar className="w-5 h-5" />
-                <span>Book Now</span>
-              </button>
+                <span>Book Free Consultation</span>
+              </a>
             </div>
           </div>
         </div>
@@ -705,13 +716,15 @@ function App() {
             <p className="text-lg sm:text-2xl font-semibold text-black max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8">
               Not sure if it's right for you? Just book a chat with me - no pressure, I'll take a look at your skin and give you my honest opinion.
             </p>
-            <button
-              onClick={() => scrollToSection('cta')}
+            <a
+              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
             >
               <Calendar className="w-5 h-5" />
-              <span>Book Now</span>
-            </button>
+              <span>Book Free Consultation</span>
+            </a>
           </div>
           </div>
         </div>
@@ -789,13 +802,15 @@ function App() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-              <button
-                onClick={() => scrollToSection('cta')}
+              <a
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
               >
                 <Calendar className="w-5 h-5" />
-                <span>Book Consultation</span>
-              </button>
+                <span>Book Free Consultation</span>
+              </a>
 
               <a
                 href="https://wa.me/441234567890"
