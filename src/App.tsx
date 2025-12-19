@@ -806,10 +806,9 @@ function App() {
                 href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
               >
-                <Calendar className="w-5 h-5" />
-                <span>Book Free Consultation</span>
+                Book Free Consultation
               </a>
 
               <a
