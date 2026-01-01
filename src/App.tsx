@@ -281,12 +281,6 @@ function App() {
               >
                 Book Free Consultation
               </a>
-              <button
-                onClick={() => scrollToSection('how-it-works')}
-                className="bg-white border-2 border-teal-600 text-teal-600 px-10 py-4 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto"
-              >
-                View All Treatments
-              </button>
             </div>
           </motion.div>
         </div>
