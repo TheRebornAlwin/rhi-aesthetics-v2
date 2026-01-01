@@ -224,7 +224,7 @@ function App() {
               <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6" />
             </a>
             <a
-              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-xs tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
@@ -274,7 +274,7 @@ function App() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
               <a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto inline-block text-center"
@@ -384,7 +384,7 @@ function App() {
                 </div>
 
                 <a
-                  href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+                  href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 mx-auto sm:mx-0 inline-block"
@@ -468,7 +468,7 @@ function App() {
 
           <div className="mt-8 sm:mt-12 text-center">
             <a
-              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
@@ -527,7 +527,7 @@ function App() {
               </p>
 
               <a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
@@ -705,7 +705,7 @@ function App() {
               Not sure if it's right for you? Just book a chat with me - no pressure, I'll take a look at your skin and give you my honest opinion.
             </p>
             <a
-              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
@@ -791,7 +791,7 @@ function App() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98?service=s%3A22476966&pId=2514594"
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
