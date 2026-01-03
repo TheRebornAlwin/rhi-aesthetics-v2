@@ -66,6 +66,21 @@ function App() {
     "https://820i9wpaqi.ufs.sh/f/PwwcUidplansMIRcmXfF60kipOZwxPDGShftogB23RYsQ9cU"
   ];
 
+  const imageLabels = [
+    "Upper Eyelid Lift - 3 Weeks Post-Treatment",
+    "Neck & Under Chin Tightening - 6 Weeks Post-Treatment",
+    "Eye Area & Crow's Feet - 4 Weeks Post-Treatment",
+    "Under Eye Bags - 8 Weeks Post-Treatment",
+    "Hand Skin Tightening - 5 Weeks Post-Treatment",
+    "Hand Rejuvenation - 5 Weeks Post-Treatment",
+    "Eyebrow & Forehead Lift - 6 Weeks Post-Treatment",
+    "Forehead & Eye Area - 4 Weeks Post-Treatment",
+    "Full Face Treatment - 8 Weeks Post-Treatment",
+    "Facial Skin Tightening - 6 Weeks Post-Treatment",
+    "Facial Rejuvenation - 7 Weeks Post-Treatment",
+    "Complete Facial Treatment - 8 Weeks Post-Treatment"
+  ];
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
@@ -295,63 +310,6 @@ function App() {
         </div>
       </section>
 
-      <section id="results" className="bg-white py-16 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
-              Transformations
-            </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4 text-black">
-              Real Results, <br className="sm:hidden" />Real Transformations
-            </h2>
-            <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
-              Witness the power of precision plasma treatments with proven results.
-            </p>
-          </div>
-
-          {/* Luxury Gallery Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-2 sm:gap-6 mb-16">
-            {glareCardImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="group relative rounded-lg overflow-hidden h-full"
-              >
-                <img
-                  src={image}
-                  alt={`Treatment result ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[
-              { icon: Award, text: "Qualified Aesthetic Practitioner" },
-              { icon: Droplet, text: "Medical-grade Plasma IQ Device" },
-              { icon: Shield, text: "GDC Registered, CPD Accredited & Fully Insured Practitioner" },
-              { icon: MapPin, text: "Located in Southampton" }
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border border-teal-200 hover:border-teal-400 transition-all duration-300 text-center"
-              >
-                <div className="bg-teal-500 w-12 h-12 sm:w-14 sm:h-14 rounded-xl mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <item.icon className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
-                </div>
-                <p className="font-semibold text-xs sm:text-sm text-black/80">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-0">
@@ -402,6 +360,84 @@ function App() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12 sm:py-16 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="border-t-2 border-b-2 border-teal-500/20 py-8">
+            <p className="text-xl sm:text-2xl text-black mb-2">
+              Want to see what the journey looks like?
+            </p>
+            <button
+              onClick={() => scrollToSection('timeline')}
+              className="text-blue-600 hover:text-blue-700 underline font-medium text-lg transition-colors duration-300"
+            >
+              click here
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" className="bg-white py-16 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+              Transformations
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4 text-black">
+              Real Results, <br className="sm:hidden" />Real Transformations
+            </h2>
+            <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
+              Witness the power of precision plasma treatments with proven results.
+            </p>
+          </div>
+
+          {/* Luxury Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 sm:gap-8 mb-16">
+            {glareCardImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group relative flex flex-col"
+              >
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <img
+                    src={image}
+                    alt={imageLabels[index]}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="text-sm sm:text-base text-black/70 text-center font-medium">
+                  {imageLabels[index]}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Trust Badges */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { icon: Award, text: "Qualified Aesthetic Practitioner" },
+              { icon: Droplet, text: "Medical-grade Plasma IQ Device" },
+              { icon: Shield, text: "GDC Registered, CPD Accredited & Fully Insured Practitioner" },
+              { icon: MapPin, text: "Located in Southampton" }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border border-teal-200 hover:border-teal-400 transition-all duration-300 text-center"
+              >
+                <div className="bg-teal-500 w-12 h-12 sm:w-14 sm:h-14 rounded-xl mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
+                </div>
+                <p className="font-semibold text-xs sm:text-sm text-black/80">{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
