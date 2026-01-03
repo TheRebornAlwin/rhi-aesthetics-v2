@@ -219,9 +219,10 @@ function App() {
               href="https://wa.me/441234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 sm:p-2.5 rounded-full transition-all duration-300 text-white hover:bg-white/10 hover:scale-110"
+              className="flex items-center space-x-2 p-2 lg:px-4 lg:py-2 rounded-full transition-all duration-300 text-white hover:bg-white/10 hover:scale-110"
             >
               <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6" />
+              <span className="hidden lg:inline text-sm font-medium">Message Rhia</span>
             </a>
             <a
               href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
@@ -269,7 +270,7 @@ function App() {
             </p>
 
             <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Clinically experienced practitioner trusted by 150+ women for safe, natural skin tightening. Surgical results without the knife or the prices.
+              Tired of expensive creams that don't work and surgery you're too scared to try? Finally lift and tighten sagging skin naturally - real results trusted by 150+ Southampton women.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
@@ -280,6 +281,14 @@ function App() {
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto inline-block text-center"
               >
                 Book Free Consultation
+              </a>
+              <a
+                href="https://wa.me/441234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-white text-white px-10 py-4 rounded font-semibold hover:bg-white/10 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto inline-block text-center"
+              >
+                Message Rhia
               </a>
             </div>
           </motion.div>
@@ -409,7 +418,7 @@ function App() {
               How It Works
             </h2>
             <p className="text-base sm:text-xl text-black/60 max-w-3xl mx-auto font-light">
-              Let me walk you through what actually happens - no confusing jargon, I promise!
+              Let me walk you through what actually happens.
             </p>
           </div>
 
@@ -803,10 +812,9 @@ function App() {
                 href="https://wa.me/441234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white border-2 border-teal-600 text-teal-600 px-10 py-4 rounded font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
+                className="border-2 border-white text-white px-10 py-4 rounded font-semibold hover:bg-white/10 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
               >
-                <MessageCircle className="w-5 h-5" />
-                <span>Send Message</span>
+                Message Rhia
               </a>
             </div>
 
