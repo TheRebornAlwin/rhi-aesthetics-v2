@@ -372,9 +372,9 @@ function App() {
             </p>
             <button
               onClick={() => scrollToSection('timeline')}
-              className="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+              className="inline-flex items-center px-8 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
             >
-              Click Here
+              View Journey
             </button>
           </div>
         </div>
