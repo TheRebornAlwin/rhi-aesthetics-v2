@@ -69,12 +69,12 @@ function App() {
   const imageLabels = [
     "Upper Eyelid Lift - 3 Weeks Post-Treatment",
     "Neck & Under Chin Tightening - 6 Weeks Post-Treatment",
-    "Eye Area & Crow's Feet - 4 Weeks Post-Treatment",
+    "Eye Area Smoothing - 4 Weeks Post-Treatment",
     "Under Eye Bags - 8 Weeks Post-Treatment",
-    "Hand Skin Tightening - 5 Weeks Post-Treatment",
-    "Hand Rejuvenation - 5 Weeks Post-Treatment",
-    "Eyebrow & Forehead Lift - 6 Weeks Post-Treatment",
-    "Forehead & Eye Area - 4 Weeks Post-Treatment",
+    "Neck Lines & Chin - 5 Weeks Post-Treatment",
+    "Eye Area & Face Smoothing - 5 Weeks Post-Treatment",
+    "Under Eye Bags Treatment - 6 Weeks Post-Treatment",
+    "Hand Skin Rejuvenation - 4 Weeks Post-Treatment",
     "Full Face Treatment - 8 Weeks Post-Treatment",
     "Facial Skin Tightening - 6 Weeks Post-Treatment",
     "Facial Rejuvenation - 7 Weeks Post-Treatment",
@@ -285,7 +285,7 @@ function App() {
             </p>
 
             <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Tired of expensive creams that don't work and surgery you're too scared to try? Finally lift and tighten sagging skin naturally - real results trusted by 150+ Southampton women.
+              Lift and tighten sagging skin naturally - no surgery, real results trusted by 150+ women.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
@@ -310,7 +310,7 @@ function App() {
         </div>
       </section>
 
-      <section className="relative bg-white overflow-hidden">
+      <section className="relative bg-white overflow-hidden py-12 sm:py-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Image Side */}
@@ -364,17 +364,17 @@ function App() {
         </div>
       </section>
 
-      <section className="bg-white py-12 sm:py-16 px-4 sm:px-6">
+      <section className="bg-gradient-to-br from-teal-50/20 to-white py-16 sm:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="border-t-2 border-b-2 border-teal-500/20 py-8">
-            <p className="text-xl sm:text-2xl text-black mb-2">
+          <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-12 border border-teal-200">
+            <p className="text-2xl sm:text-3xl text-black font-light mb-6">
               Want to see what the journey looks like?
             </p>
             <button
               onClick={() => scrollToSection('timeline')}
-              className="text-blue-600 hover:text-blue-700 underline font-medium text-lg transition-colors duration-300"
+              className="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
             >
-              click here
+              Click Here
             </button>
           </div>
         </div>
@@ -605,46 +605,55 @@ function App() {
               {
                 quote: "Rhia is amazing! I got really bad acne scarring and had no idea who to trust. She's helped my skin get better with every treatment and truly isn't out to just make money. She's gone routes that help my face while not breaking the bank lol. Been coming for over 6 months and my skin is healing and looking better than when I first started. I trust & recommend RHI Aesthetics all the time!",
                 name: "Christine M.",
+                treatment: "Acne Scarring",
                 location: "Southampton"
               },
               {
                 quote: "I've been seeing Rhia for a little over 6 months now. I've always struggled with my skin but in just a few months I've noticed such a difference! Rhia is so knowledgeable and tailors my facial to what my skin needs. She answers any and all questions I have about skin treatments or products. She's the best, I highly recommend!",
                 name: "Sophie T.",
+                treatment: "Skin Rejuvenation",
                 location: "Southampton"
               },
               {
                 quote: "Cannot say enough good things about this place! From the moment you walk in, you are greeted with a warm smile, such a friendly hello; you feel so welcome. I see Rhia for my facials and I absolutely love her! The care and attention to every little detail made all the difference. My skin looks naturally refreshed - not overdone or fake looking at all.",
                 name: "Karen P.",
+                treatment: "Facial Treatments",
                 location: "Southampton"
               },
               {
                 quote: "I mean, I can't say enough great things about this place! From the moment you walk in, you're greeted with such a friendly hello; you feel so welcome. I see Rhia for plasma treatments and I already see such great improvements in just a short few weeks. Already can't wait for my next appointment!",
                 name: "Michelle R.",
+                treatment: "Plasma Fibroblast",
                 location: "Southampton"
               },
               {
                 quote: "From day one I felt in such good hands. Rhia's expertise just gave me this confidence that everything would be okay. And it was! The healing went exactly how she said it would. Best decision I've made for my skin in years. The confidence boost alone is worth it but the results just keep getting better!",
                 name: "Emma L.",
+                treatment: "Eyelid Lift",
                 location: "Southampton"
               },
               {
                 quote: "Best decision I've ever made. The whole thing felt so professional and safe, you can tell Rhia really knows what she's doing. The results honestly speak for themselves! I had pretty high expectations going in but honestly? This exceeded them. My skin genuinely feels tighter and I look years younger!",
                 name: "Rebecca S.",
+                treatment: "Skin Tightening",
                 location: "Southampton"
               },
               {
                 quote: "Not gonna lie, I was super skeptical at first. But the transformation is actually real?? My friends keep asking if I've had work done because it looks so natural. What I loved most was the honesty. No fake promises or overselling, just straight talk about what to expect. I feel like myself again, just... better!",
                 name: "Lisa H.",
+                treatment: "Face Lift",
                 location: "Southampton"
               },
               {
                 quote: "The entire journey was just... caring. That's the word. Professional yes, but also really caring. I genuinely feel like I've turned back the clock on my skin aging and I'm here for it! Why did I wait so long to do this?! If you're on the fence just book a consultation, seriously. You won't regret it!",
                 name: "Janet M.",
+                treatment: "Anti-Aging",
                 location: "Southampton"
               },
               {
                 quote: "Honestly I was SO nervous before! But Rhia sat with me and explained every single thing. The swelling was only bad for like 3 days, dots were gone in a week, and by week 8... WOW. Just incredible. I've literally wasted hundreds on creams that did absolutely nothing. This ACTUALLY worked! Hands down the best investment!",
                 name: "Sarah B.",
+                treatment: "Under Eye Treatment",
                 location: "Southampton"
               }
             ].map((testimonial, index) => (
@@ -667,7 +676,7 @@ function App() {
                   "{testimonial.quote}"
                 </p>
                 <div className="border-t border-teal-100 pt-4">
-                  <p className="font-semibold text-black">{testimonial.name}</p>
+                  <p className="font-semibold text-black">{testimonial.name}, <span className="text-teal-600">{testimonial.treatment}</span></p>
                   <p className="text-sm text-black/60">{testimonial.location}</p>
                 </div>
               </motion.div>
