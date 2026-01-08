@@ -9,6 +9,7 @@ function App() {
         <Route path="/" element={<Navigate to="/skin-lesion-removal" replace />} />
         <Route path="/skin-lesion-removal" element={<SkinLesionRemovalPage />} />
         <Route path="/plasma-fibroblast" element={<PlasmaFibroblastPage />} />
+        <Route path="*" element={<Navigate to="/skin-lesion-removal" replace />} />
       </Routes>
     </Router>
   );
