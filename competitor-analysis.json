@@ -1,0 +1,74 @@
+[
+  {
+    "name": "LA-Mole-Removal",
+    "url": "https://moleremovallosangeles.com/",
+    "title": "Affordable Mole Removal Los Angeles | Scarless Mole Removal",
+    "h1": "Thank You for Choosing Mole Removal Los Angeles",
+    "ctaButtons": [],
+    "pricing": [],
+    "testimonials": [],
+    "beforeAfter": true,
+    "faqCount": 14,
+    "trustBadges": []
+  },
+  {
+    "name": "London-Skin-Clinic",
+    "url": "https://londonskinclinic.london/laser-lesion-removal/",
+    "title": "Page not found | London Skin Clinic",
+    "h1": "Page not found",
+    "ctaButtons": [
+      "Book Now",
+      "Book Now",
+      "Book Now",
+      "Facebook",
+      "Book Now",
+      "Facebook"
+    ],
+    "pricing": [],
+    "testimonials": [
+      {
+        "preview": "5.0\n(297)"
+      },
+      {
+        "preview": "(297)"
+      },
+      {
+        "preview": ""
+      }
+    ],
+    "beforeAfter": false,
+    "faqCount": 0,
+    "trustBadges": []
+  },
+  {
+    "name": "NYC-Wall-Street-Derm",
+    "url": "https://www.wallstreetdermatology.com/mole-removal/",
+    "title": "Mole Removal NYC | Scar Minimization Expert",
+    "h1": "Mole Removal in NYC: Minimal Scarring & Maximum Precision",
+    "ctaButtons": [
+      "Book Appointment",
+      "Book an Appointment",
+      "Book an appointment",
+      "Contact us",
+      "Book An Appointment",
+      "Book An Appointment"
+    ],
+    "pricing": [],
+    "testimonials": [],
+    "beforeAfter": true,
+    "faqCount": 0,
+    "trustBadges": []
+  },
+  {
+    "name": "MACS-Clinic-London",
+    "url": "https://macsclinic.co.uk/mole-and-skin-lesion-removal/",
+    "title": "Mole Removal Clinic in London & Skin Lesions | MACS Clinic",
+    "h1": "None",
+    "ctaButtons": [],
+    "pricing": [],
+    "testimonials": [],
+    "beforeAfter": false,
+    "faqCount": 0,
+    "trustBadges": []
+  }
+]
