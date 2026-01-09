@@ -20,9 +20,7 @@ import {
   Clock,
   Sparkles,
   ArrowRight,
-  Star,
-  TrendingUp,
-  BadgeCheck
+  Star
 } from 'lucide-react';
 
 function SkinLesionRemovalPage() {
@@ -65,27 +63,18 @@ function SkinLesionRemovalPage() {
 
   // Placeholder before/after images
   const beforeAfterImages = [
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+1", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+1", label: "Facial Mole", timeline: "6 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+2", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+2", label: "Neck Skin Tag", timeline: "3 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+3", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+3", label: "Hand Age Spot", timeline: "4 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+4", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+4", label: "Cheek Mole", timeline: "5 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+5", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+5", label: "Forehead Mole", timeline: "6 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+6", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+6", label: "Multiple Skin Tags", timeline: "4 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+7", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+7", label: "Facial Lesion", timeline: "6 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+8", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+8", label: "Neck Mole", timeline: "5 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+9", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+9", label: "Cherry Angioma", timeline: "3 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+10", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+10", label: "Age Spots", timeline: "4 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+11", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+11", label: "Raised Mole", timeline: "6 weeks healed" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+12", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+12", label: "Seborrheic Keratosis", timeline: "5 weeks healed" }
-  ];
-
-  // Day-by-day healing timeline
-  const healingTimeline = [
-    { day: "Day 1", image: "https://placehold.co/400x400/ffebee/d32f2f?text=Day+1", description: "Small scab forms where mole was removed. Area may be slightly pink. You can go about your normal day." },
-    { day: "Day 3", image: "https://placehold.co/400x400/fff3e0/f57c00?text=Day+3", description: "Scab is still present but skin around it looks normal. No pain, just light sensitivity to touch." },
-    { day: "Day 7", image: "https://placehold.co/400x400/fff9c4/fbc02d?text=Day+7", description: "Scab naturally falls off (don't pick it!). You'll see new pink skin underneath. Can wear light makeup now." },
-    { day: "Week 2", image: "https://placehold.co/400x400/f1f8e9/9ccc65?text=Week+2", description: "Pink skin is fading to match your natural tone. Most people can't tell anything was done." },
-    { day: "Week 6", image: "https://placehold.co/400x800/e0f2f1/00897b?text=Week+6", description: "Fully healed. Any remaining mark is barely visible and continues to fade over the next few months." }
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+1", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+1", label: "Facial Mole - 3 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+2", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+2", label: "Neck Skin Tag - 2 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+3", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+3", label: "Hand Age Spot - 4 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+4", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+4", label: "Cheek Mole - 3 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+5", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+5", label: "Wart Removal - 2 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+6", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+6", label: "Multiple Skin Tags - 3 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+7", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+7", label: "Facial Lesion - 4 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+8", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+8", label: "Neck Mole - 3 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+9", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+9", label: "Cherry Angioma - 2 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+10", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+10", label: "Age Spots - 4 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+11", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+11", label: "Milia Removal - 2 Weeks" },
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+12", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+12", label: "Seborrheic Keratosis - 3 Weeks" }
   ];
 
   const testimonials = [
@@ -132,7 +121,7 @@ function SkinLesionRemovalPage() {
       location: "Southampton"
     },
     {
-      quote: "I work in healthcare so I'm cautious about procedures - I wanted to know exactly what to expect for downtime. Rhia was totally upfront about the healing process. Day 1 and 2 had a tiny scab, by day 5 it was barely noticeable. I was back at work day 3 wearing light makeup. So much easier than I'd built it up to be in my head.",
+      quote: "I work in healthcare so I take a bit of time off after procedures - I was worried about the downtime. Rhia was totally upfront about what to expect. Day 1 and 2 had a tiny scab, by day 5 it was barely noticeable. I was back at work day 3 wearing light makeup. So much easier than I'd built it up to be in my head.",
       name: "Amanda P.",
       treatment: "Facial Wart",
       location: "Southampton"
@@ -244,26 +233,26 @@ function SkinLesionRemovalPage() {
 
           <div className="flex items-center space-x-2 sm:space-x-4">
             <a
-              href="https://wa.me/447307762776"
+              href="https://wa.me/441234567890"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 p-2 lg:px-4 lg:py-2 rounded-full transition-all duration-300 text-gray-700 hover:bg-teal-50 hover:text-teal-600 hover:scale-105"
             >
               <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6" />
-              <span className="hidden lg:inline text-sm font-medium">Message Rhi</span>
+              <span className="hidden lg:inline text-sm font-medium">Message Rhia</span>
             </a>
             <button
               onClick={() => scrollToSection('offer')}
               className="bg-gradient-to-r from-teal-600 to-teal-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-teal-600 transition-all duration-300 uppercase text-xs tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
             >
               <span className="lg:hidden">£49 Offer</span>
-              <span className="hidden lg:inline">Book Free Consultation</span>
+              <span className="hidden lg:inline">Claim £49 Intro</span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* HERO - Recognition + Emotional Connection */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
@@ -274,112 +263,214 @@ function SkinLesionRemovalPage() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Rhi's Image */}
+        <motion.div
+          style={{ opacity: heroOpacity, scale: heroScale }}
+          className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-32 text-center"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+            className="space-y-6 sm:space-y-8"
+          >
+            {/* Badge */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="order-2 lg:order-1"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-teal-200 shadow-lg"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://placehold.co/800x1000/e0f2f1/00897b?text=Rhi+Portrait"
-                  alt="Rhi - Your Southampton Mole Removal Specialist"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                  <h3 className="text-white text-2xl font-bold mb-2">Hi, I'm Rhi</h3>
-                  <p className="text-white/90">Your Southampton mole removal specialist</p>
-                </div>
-              </div>
+              <Sparkles className="w-4 h-4 text-teal-600 mr-2" />
+              <span className="text-sm font-semibold text-teal-700">Trusted by 300+ Southampton Residents</span>
             </motion.div>
 
-            {/* Right: Emotional Headline + CTAs */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="order-1 lg:order-2 space-y-8"
-            >
-              {/* Trust Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-teal-200 shadow-lg"
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              Stop Hiding That Mole.<br />
+              <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                Start Living Confidently.
+              </span>
+            </h1>
+
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
+              Safe, professional lesion removal in Southampton - no surgery, minimal scarring, and back to your life in days. Get the confidence you deserve without the fear.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection('offer')}
+                className="group bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-10 py-5 rounded-xl font-bold hover:from-teal-700 hover:to-cyan-700 transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-2"
               >
-                <BadgeCheck className="w-5 h-5 text-teal-600 mr-2" />
-                <span className="text-sm font-semibold text-teal-700">300+ Southampton Residents Trust Me</span>
+                <span className="text-lg">Try It For £49</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection('results')}
+                className="border-2 border-teal-600 text-teal-700 px-10 py-5 rounded-xl font-bold hover:bg-teal-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+              >
+                <span className="text-lg">See Results</span>
+              </motion.button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap items-center justify-center gap-8 pt-8 text-sm text-gray-600">
+              <div className="flex items-center space-x-2">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <span className="font-semibold">5.0 Rating</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Shield className="w-5 h-5 text-teal-600" />
+                <span>GDC Registered</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Clock className="w-5 h-5 text-teal-600" />
+                <span>15-Min Treatment</span>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* £49 Intro Offer - REDESIGNED */}
+      <section id="offer" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyeiIvPjwvZz48L2c+PC9zdmc+')]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+              <Zap className="w-5 h-5 text-yellow-300 mr-2" />
+              <span className="text-white font-semibold">Limited Time Intro Offer</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+              Test It. See It. Love It.<br />
+              <span className="text-yellow-300">Only £49</span>
+            </h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              Not ready to commit? Try our intro offer - remove 1-2 small lesions and see my work for yourself. No pressure, just results.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              { icon: CheckCircle, title: "Test My Expertise", desc: "See the quality of my work firsthand" },
+              { icon: Heart, title: "Zero Commitment", desc: "One treatment, that's it - decide after" },
+              { icon: Sparkles, title: "Same Pro Quality", desc: "You get my full expert care, special intro price" },
+              { icon: Shield, title: "See Your Healing", desc: "Experience how your skin responds" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                <item.icon className="w-12 h-12 text-yellow-300 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-white/80">{item.desc}</p>
               </motion.div>
+            ))}
+          </div>
 
-              {/* Headline - Emotional + Benefit-Driven */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                You've Been Staring at That Mole for Years.
-                <span className="block mt-4 bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-                  Let's Change That - With Minimal Scarring.
-                </span>
-              </h1>
-
-              <p className="text-xl text-gray-700 leading-relaxed">
-                I get it. You're tired of covering it with makeup, angling away in photos, and worrying about scarring. I've safely removed 300+ moles and lesions right here in Southampton - and I'll support you through every step of the healing process.
-              </p>
-
-              {/* Trust Indicators Row */}
-              <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">
-                <div className="flex items-center space-x-2">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                    ))}
-                  </div>
-                  <span className="font-semibold">5.0 Rating</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Shield className="w-5 h-5 text-teal-600" />
-                  <span>Qualified Practitioner</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Clock className="w-5 h-5 text-teal-600" />
-                  <span>15-Min Treatment</span>
-                </div>
-              </div>
-
-              {/* Two-Path CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => scrollToSection('offer')}
-                  className="group flex-1 bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-8 py-5 rounded-xl font-bold hover:from-teal-700 hover:to-cyan-700 transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-2"
-                >
-                  <Calendar className="w-5 h-5" />
-                  <span className="text-lg">Book Free Consultation</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="https://wa.me/447307762776"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 border-2 border-teal-600 text-teal-700 px-8 py-5 rounded-xl font-bold hover:bg-teal-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  <span className="text-lg">Message Me First</span>
-                </motion.a>
-              </div>
-
-              <p className="text-sm text-gray-500 text-center sm:text-left">
-                No pressure, no obligation. Just honest conversation about what's right for you.
-              </p>
-            </motion.div>
+          <div className="text-center">
+            <a
+              href="#"
+              className="inline-flex items-center px-12 py-6 bg-white text-teal-700 rounded-2xl font-bold hover:bg-gray-50 transition-all duration-300 text-xl shadow-2xl hover:shadow-3xl hover:scale-105 group"
+            >
+              <Calendar className="w-6 h-6 mr-3" />
+              Book My £49 Consultation
+              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <p className="text-white/70 mt-4 text-sm">Free consultation included • No obligation</p>
           </div>
         </div>
       </section>
 
-      {/* BEFORE/AFTER GALLERY - Early Proof (Position 2) */}
+      {/* Why People Avoid Section */}
+      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              I Know Why You've Been Putting This Off
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              You're not alone in these fears. Every single client I've worked with had at least one of these worries. Here's the truth about each one.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: XCircle,
+                fear: "\"It's going to hurt\"",
+                truth: "The numbing injection is a tiny pinch for 2 seconds. After that? You feel nothing. Most clients are shocked at how painless it actually is."
+              },
+              {
+                icon: XCircle,
+                fear: "\"I'll be left with a scar\"",
+                truth: "With proper technique and aftercare, scarring is minimal. Most clients see the mark fade completely within 4-8 weeks. I show you real before/afters at consultation."
+              },
+              {
+                icon: XCircle,
+                fear: "\"It costs too much\"",
+                truth: "Other clinics charge £300-500+. My intro offer is £49 for 1-2 small lesions. I want this to be accessible, not a luxury only some can afford."
+              },
+              {
+                icon: XCircle,
+                fear: "\"What if it's dangerous to remove?\"",
+                truth: "I examine everything at consultation. If anything looks concerning, I refer you for medical assessment first. Your safety always comes before aesthetics."
+              },
+              {
+                icon: XCircle,
+                fear: "\"Recovery will be horrible\"",
+                truth: "Most people are back to normal activities the same day. You'll have a small scab for 5-7 days, but it's not painful or debilitating."
+              },
+              {
+                icon: XCircle,
+                fear: "\"What if it doesn't work?\"",
+                truth: "When removed properly, it's gone for good. That specific lesion won't grow back. I've done hundreds of these - the technique works."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-8 border-2 border-teal-100 hover:border-teal-300 transition-all duration-300 hover:shadow-xl"
+              >
+                <item.icon className="w-12 h-12 text-red-500 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.fear}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.truth}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before/After Gallery */}
       <section id="results" className="py-20 sm:py-28 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -391,13 +482,13 @@ function SkinLesionRemovalPage() {
           >
             <div className="inline-flex items-center px-4 py-2 bg-teal-100 rounded-full mb-6">
               <Sparkles className="w-4 h-4 text-teal-700 mr-2" />
-              <span className="text-sm font-semibold text-teal-700">Real Results from Real People</span>
+              <span className="text-sm font-semibold text-teal-700">Real Results, Real People</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              See Results You Can Trust
+              See It For Yourself
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Every single one of these is a real person I've treated right here in Southampton. This is what you can expect - natural-looking results with minimal scarring.
+              These aren't stock photos or generic images. Every single one of these is a real person I've treated right here in Southampton. This is what you can expect.
             </p>
           </motion.div>
 
@@ -434,8 +525,7 @@ function SkinLesionRemovalPage() {
                   </div>
                 </div>
                 <div className="p-4 bg-gradient-to-r from-teal-50 to-cyan-50">
-                  <p className="font-bold text-gray-900 text-center">{item.label}</p>
-                  <p className="text-sm text-teal-700 text-center mt-1">{item.timeline}</p>
+                  <p className="text-sm font-semibold text-gray-900 text-center">{item.label}</p>
                 </div>
               </motion.div>
             ))}
@@ -455,339 +545,7 @@ function SkinLesionRemovalPage() {
         </div>
       </section>
 
-      {/* CREDIBILITY BAR - Stats + Credentials (Position 3) */}
-      <section className="py-16 px-4 sm:px-6 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 text-center text-white">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="space-y-2"
-            >
-              <div className="flex items-center justify-center space-x-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-yellow-300 fill-yellow-300" />
-                ))}
-              </div>
-              <p className="text-5xl font-black">5.0</p>
-              <p className="text-white/90 font-semibold">Average Rating</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="space-y-2"
-            >
-              <Users className="w-12 h-12 mx-auto text-yellow-300" />
-              <p className="text-5xl font-black">300+</p>
-              <p className="text-white/90 font-semibold">Successful Removals</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="space-y-2"
-            >
-              <Award className="w-12 h-12 mx-auto text-yellow-300" />
-              <p className="text-3xl font-black">Qualified</p>
-              <p className="text-white/90 font-semibold">Aesthetic Practitioner</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT MAKES RHI DIFFERENT - Level 4 Differentiation (Position 4) */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Why Women in Southampton Choose Me
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Let's be honest - lots of places can remove moles. Here's what makes my approach different, and why my clients say they wish they'd found me sooner.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: MessageCircle,
-                title: "WhatsApp Support During Healing",
-                description: "You're not abandoned after treatment. Message me anytime during your healing process with questions or concerns. I respond within hours, not days.",
-                competitor: "Most clinics: Remove and forget."
-              },
-              {
-                icon: TrendingUp,
-                title: "See Your ACTUAL Healing Timeline",
-                description: "I show you real day-by-day photos of what to expect. Day 1, Day 3, Day 7, Week 2. No surprises, no guessing. You'll know exactly what's normal.",
-                competitor: "Most clinics: Just say 'minimal scarring' and hope."
-              },
-              {
-                icon: Heart,
-                title: "I Actually Understand Why You're Scared",
-                description: "This isn't just a medical procedure to me. I know you've been covering this for years. I know you're worried about scarring. I get it because my clients tell me - and I listen.",
-                competitor: "Most clinics: Clinical, transactional, no emotional connection."
-              },
-              {
-                icon: CheckCircle,
-                title: "Two Paths, Zero Pressure",
-                description: "Not ready to book? Message me your questions first. Want to come in? Free consultation with absolutely no obligation. You decide what feels right.",
-                competitor: "Most clinics: Just 'Book Now' with no low-pressure option."
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 border-2 border-teal-100 hover:border-teal-300 hover:shadow-xl transition-all duration-300"
-              >
-                <item.icon className="w-14 h-14 text-teal-600 mb-6" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">{item.description}</p>
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-sm text-gray-500 italic">{item.competitor}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DAY-BY-DAY HEALING TIMELINE - UNIQUE Differentiator (Position 5) */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center px-4 py-2 bg-teal-100 rounded-full mb-6">
-              <Clock className="w-4 h-4 text-teal-700 mr-2" />
-              <span className="text-sm font-semibold text-teal-700">Radical Transparency</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Here's What Healing Actually Looks Like
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Most clinics just say "minimal scarring." I'm going to show you exactly what to expect, day by day. No surprises, no wondering if what you're seeing is normal.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-5 gap-6">
-            {healingTimeline.map((stage, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 border-2 border-teal-100 hover:border-teal-400 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="aspect-square rounded-xl overflow-hidden mb-4 shadow-md">
-                  <img
-                    src={stage.image}
-                    alt={stage.day}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-2xl font-bold text-teal-700 mb-3">{stage.day}</h3>
-                <p className="text-gray-700 text-sm leading-relaxed">{stage.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-12 bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-8 text-center">
-            <Shield className="w-12 h-12 text-yellow-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">You Can Message Me Anytime During This Process</h3>
-            <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Day 3 and worried the scab looks too big? Message me. Day 5 and wondering if you can wear makeup? Message me. I'm here throughout your healing - you're not figuring this out alone.
-            </p>
-            <a
-              href="https://wa.me/447307762776"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center mt-6 px-8 py-4 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp Me Your Questions
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY PEOPLE AVOID - Address Objections (Position 6) */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              I Know Why You've Been Putting This Off
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              You're not alone in these fears. Every single client I've worked with had at least one of these worries. Here's the truth about each one.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: XCircle,
-                fear: "\"It's going to hurt\"",
-                truth: "The numbing injection is a tiny pinch for 2 seconds. After that? You feel nothing. Most clients are shocked at how painless it actually is."
-              },
-              {
-                icon: XCircle,
-                fear: "\"I'll be left with a scar\"",
-                truth: "With proper technique and aftercare, scarring is minimal. Most clients see the mark fade completely within 4-8 weeks. I show you real before/afters at consultation."
-              },
-              {
-                icon: XCircle,
-                fear: "\"It costs too much\"",
-                truth: "Other clinics charge £300-£800. My intro offer is £49 for 1-2 small lesions. I want this to be accessible, not a luxury only some can afford."
-              },
-              {
-                icon: XCircle,
-                fear: "\"What if it's dangerous to remove?\"",
-                truth: "I examine everything at consultation. If anything looks concerning, I refer you for medical assessment first. Your safety always comes before aesthetics."
-              },
-              {
-                icon: XCircle,
-                fear: "\"Recovery will be horrible\"",
-                truth: "Most people are back to normal activities the same day. You'll have a small scab for 5-7 days, but it's not painful or debilitating."
-              },
-              {
-                icon: XCircle,
-                fear: "\"What if it doesn't work?\"",
-                truth: "When removed properly, it's gone for good. That specific lesion won't grow back. I've done 300+ of these - the technique works."
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 border-2 border-teal-100 hover:border-teal-300 transition-all duration-300 hover:shadow-xl"
-              >
-                <item.icon className="w-12 h-12 text-red-500 mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.fear}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.truth}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* INTRO OFFER - Positioned as Low-Risk Test with Price Comparison (Position 7) */}
-      <section id="offer" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyem0wLTRoLTJ2LTJoMnYyeiIvPjwvZz48L2c+PC9zdmc+')]"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
-              <Zap className="w-5 h-5 text-yellow-300 mr-2" />
-              <span className="text-white font-semibold">Limited Time Intro Offer</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Test My Work. See How Your Skin Heals.<br />
-              <span className="text-yellow-300">Then Decide. Only £49.</span>
-            </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Not ready to commit hundreds? My intro offer lets you experience my technique, see your healing process, and decide if you want to do more. No pressure, just results.
-            </p>
-          </motion.div>
-
-          {/* Price Comparison */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white text-center mb-8">How We Compare</h3>
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <p className="text-white/70 mb-2">London Clinics</p>
-                  <p className="text-4xl font-black text-white line-through opacity-50">£400+</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <p className="text-white/70 mb-2">UK Average</p>
-                  <p className="text-4xl font-black text-white line-through opacity-50">£250+</p>
-                </div>
-                <div className="bg-yellow-400 rounded-xl p-6 border-4 border-yellow-300 scale-110">
-                  <p className="text-gray-900 font-bold mb-2">RHI Aesthetics</p>
-                  <p className="text-5xl font-black text-gray-900">£49</p>
-                </div>
-              </div>
-              <p className="text-white/80 text-center mt-6">
-                Same expert care. Same professional technique. Just more accessible.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
-              { icon: CheckCircle, title: "Test My Expertise", desc: "See the quality of my work firsthand with no huge commitment" },
-              { icon: Heart, title: "Zero Pressure", desc: "One treatment to start. Decide after if you want to do more." },
-              { icon: Sparkles, title: "Same Pro Quality", desc: "You get my full expert care at an intro price to remove barriers" },
-              { icon: Shield, title: "See Your Healing", desc: "Experience how YOUR skin responds before committing more" }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
-              >
-                <item.icon className="w-12 h-12 text-yellow-300 mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-white/80">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center space-y-4">
-            <a
-              href="#"
-              className="inline-flex items-center px-12 py-6 bg-white text-teal-700 rounded-2xl font-bold hover:bg-gray-50 transition-all duration-300 text-xl shadow-2xl hover:shadow-3xl hover:scale-105 group"
-            >
-              <Calendar className="w-6 h-6 mr-3" />
-              Book My £49 Consultation
-              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <p className="text-white/70 text-sm">Free consultation included • No obligation • Intro offer for 1-2 small lesions</p>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS - 3-Step Process (Position 8) */}
+      {/* How It Works */}
       <section id="process" className="py-20 sm:py-28 px-4 sm:px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -801,7 +559,7 @@ function SkinLesionRemovalPage() {
               How It Actually Works
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Simple, straightforward, and designed to make you feel comfortable every step of the way. No medical jargon, no confusion.
+              Simple, straightforward, and designed to make you feel comfortable every step of the way.
             </p>
           </motion.div>
 
@@ -810,19 +568,19 @@ function SkinLesionRemovalPage() {
               {
                 number: "01",
                 title: "Free Consultation",
-                desc: "We sit down for 15 minutes. I examine what you want removed, answer every question you have, and show you exactly what to expect. Zero pressure, zero obligation. You decide if it feels right.",
+                desc: "We sit down, I examine what you want removed, answer every question you have, and show you exactly what to expect. Zero pressure, zero obligation.",
                 icon: MessageCircle
               },
               {
                 number: "02",
                 title: "Quick Treatment",
-                desc: "I numb the area (tiny pinch, 2 seconds), then remove the lesion using advanced techniques designed for minimal scarring. Most treatments take 15-20 minutes total. You can literally do this on your lunch break.",
+                desc: "I numb the area (tiny pinch, 2 seconds), then remove the lesion using advanced techniques designed for minimal scarring. Most treatments take 15-20 minutes total.",
                 icon: Zap
               },
               {
                 number: "03",
-                title: "Easy Healing (With My Support)",
-                desc: "You'll have a small scab for about a week. I give you clear aftercare instructions AND you can WhatsApp me anytime with questions. Most people see complete healing in 4-6 weeks with barely any visible mark.",
+                title: "Easy Healing",
+                desc: "You'll have a small scab for about a week. I give you clear aftercare instructions. Most people see complete healing in 4-6 weeks with barely any visible mark.",
                 icon: Heart
               }
             ].map((step, index) => (
@@ -848,7 +606,7 @@ function SkinLesionRemovalPage() {
         </div>
       </section>
 
-      {/* COMMON MOLE TYPES - Who This Is For (Position 9) */}
+      {/* What We Remove */}
       <section className="py-20 sm:py-28 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -862,7 +620,7 @@ function SkinLesionRemovalPage() {
               What Can I Remove?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              If you've got a mole, skin tag, or lesion that's affecting your confidence, there's a good chance I can help. Here's what I safely remove.
+              If you've got a mole, skin tag, or lesion that's affecting your confidence, there's a good chance I can help.
             </p>
           </motion.div>
 
@@ -898,14 +656,86 @@ function SkinLesionRemovalPage() {
             <Shield className="w-12 h-12 text-yellow-600 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Safety First, Always</h3>
             <p className="text-gray-700 max-w-3xl mx-auto">
-              If during the consultation I see anything that looks concerning - unusual color, irregular borders, or anything that needs medical assessment - I won't remove it. Instead, I'll refer you to get it properly checked before we consider removal. Your health is more important than cosmetic work.
+              If during the consultation I see anything that looks concerning - unusual color, irregular borders, or anything that needs medical assessment - I'll refer you to get it properly checked before we consider removal. Your health is more important than cosmetic work.
             </p>
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS - Deep Social Proof (Position 10) */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
+      {/* Meet Rhia */}
+      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://placehold.co/800x1000/e0f2f1/00897b?text=Rhia+Portrait"
+                  alt="Rhia - Aesthetic Practitioner"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <Award className="w-6 h-6 text-teal-400" />
+                    <span className="text-white font-semibold">GDC Registered</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Users className="w-6 h-6 text-teal-400" />
+                    <span className="text-white font-semibold">300+ Treatments</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-teal-200 mb-4">
+                <Heart className="w-4 h-4 text-teal-600 mr-2" />
+                <span className="text-sm font-semibold text-teal-700">About Rhia</span>
+              </div>
+
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+                Hi, I'm Rhia - and I totally get why you're nervous.
+              </h2>
+
+              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
+                <p>
+                  I remember my first client who came in for mole removal. She'd been putting it off for three years because she was terrified of the pain and scarring. She cried when she saw the result - not because it hurt, but because she couldn't believe how simple it actually was after all that worrying.
+                </p>
+                <p>
+                  That's when I realized this isn't just about removing a mole or skin tag. It's about giving people their confidence back. It's about finally feeling comfortable in photos. It's about not having to think about "that thing" every time you look in the mirror.
+                </p>
+                <p>
+                  I'm GDC registered and have completed advanced training in aesthetic procedures, but honestly, the most important part of what I do is making you feel heard and safe. Every fear you have? I've heard it before, and I'll address every single one.
+                </p>
+              </div>
+
+              <div className="flex items-center space-x-4 pt-4">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => scrollToSection('offer')}
+                  className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-bold hover:from-teal-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Book Free Consultation
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -934,7 +764,7 @@ function SkinLesionRemovalPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 border-2 border-teal-100 hover:border-teal-300 hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border-2 border-teal-100 hover:border-teal-300 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -953,8 +783,8 @@ function SkinLesionRemovalPage() {
         </div>
       </section>
 
-      {/* PRICING - Full Transparency (Position 11) */}
-      <section id="pricing" className="py-20 sm:py-28 px-4 sm:px-6 bg-white">
+      {/* Pricing */}
+      <section id="pricing" className="py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -967,7 +797,7 @@ function SkinLesionRemovalPage() {
               Honest, Transparent Pricing
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              No hidden fees, no surprises. What you see is what you pay. Consultation is always free with no obligation.
+              No hidden fees, no surprises. What you see is what you pay - consultation is always free.
             </p>
           </motion.div>
 
@@ -980,8 +810,8 @@ function SkinLesionRemovalPage() {
                 features: [
                   "Remove 1-2 small lesions",
                   "Free consultation included",
-                  "Full aftercare kit & instructions",
-                  "WhatsApp support during healing",
+                  "Full aftercare kit",
+                  "Follow-up check included",
                   "Professional assessment",
                   "Same expert technique"
                 ]
@@ -993,8 +823,8 @@ function SkinLesionRemovalPage() {
                 features: [
                   "Remove 3-4 lesions",
                   "Free consultation included",
-                  "Full aftercare kit & instructions",
-                  "WhatsApp support during healing",
+                  "Full aftercare kit",
+                  "Follow-up check included",
                   "Professional assessment",
                   "Best for multiple areas"
                 ]
@@ -1006,8 +836,8 @@ function SkinLesionRemovalPage() {
                 features: [
                   "Remove 5-6 lesions",
                   "Free consultation included",
-                  "Full aftercare kit & instructions",
-                  "WhatsApp support during healing",
+                  "Full aftercare kit",
+                  "Follow-up check included",
                   "Professional assessment",
                   "Maximum value package"
                 ]
@@ -1070,90 +900,7 @@ function SkinLesionRemovalPage() {
         </div>
       </section>
 
-      {/* MEET RHI - Personal Connection (Position 12) */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://placehold.co/800x1000/e0f2f1/00897b?text=Rhi+Portrait"
-                  alt="Rhi - Aesthetic Practitioner"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                  <div className="flex items-center space-x-3 mb-2">
-                    <Award className="w-6 h-6 text-teal-400" />
-                    <span className="text-white font-semibold">Qualified Aesthetic Practitioner</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Users className="w-6 h-6 text-teal-400" />
-                    <span className="text-white font-semibold">300+ Successful Treatments</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-teal-200 mb-4">
-                <Heart className="w-4 h-4 text-teal-600 mr-2" />
-                <span className="text-sm font-semibold text-teal-700">About Rhi</span>
-              </div>
-
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-                Hi, I'm Rhi - and I totally get why you're nervous.
-              </h2>
-
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <p>
-                  I remember my first client who came in for mole removal. She'd been putting it off for three years because she was terrified of the pain and scarring. She cried when she saw the result - not because it hurt, but because she couldn't believe how simple it actually was after all that worrying.
-                </p>
-                <p>
-                  That's when I realized this isn't just about removing a mole or skin tag. It's about giving people their confidence back. It's about finally feeling comfortable in photos. It's about not having to think about "that thing" every time you look in the mirror.
-                </p>
-                <p>
-                  I'm a qualified aesthetic practitioner and have completed advanced training in lesion removal, but honestly, the most important part of what I do is making you feel heard and safe. Every fear you have? I've heard it before, and I'll address every single one. You're not just a number to me - I genuinely care about your results and your experience.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => scrollToSection('offer')}
-                  className="w-full sm:w-auto bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-bold hover:from-teal-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  Book Free Consultation
-                </motion.button>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="https://wa.me/447307762776"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto border-2 border-teal-600 text-teal-700 px-8 py-4 rounded-xl font-bold hover:bg-teal-50 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>Message Me First</span>
-                </motion.a>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ - Strategic Questions (Position 13) */}
+      {/* FAQ */}
       <section id="faqs" className="py-20 sm:py-28 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -1167,7 +914,7 @@ function SkinLesionRemovalPage() {
               Every Question You're Thinking
             </h2>
             <p className="text-xl text-gray-600">
-              I've answered thousands of questions over the years. These are the ones I hear most often - and the honest answers.
+              I've answered thousands of questions over the years. These are the ones I hear most often.
             </p>
           </motion.div>
 
@@ -1207,7 +954,7 @@ function SkinLesionRemovalPage() {
         </div>
       </section>
 
-      {/* FINAL CTA - Emotional Close (Position 14) */}
+      {/* Final CTA */}
       <section className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-teal-900 to-cyan-900"></div>
         <div className="absolute inset-0 opacity-20">
@@ -1227,7 +974,7 @@ function SkinLesionRemovalPage() {
               You've Put This Off Long Enough
             </h2>
             <p className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              Every day you wait is another day of hiding, another day of angling away in photos, another day of feeling self-conscious when people stare at it. It doesn't have to be that way anymore.
+              Every day you wait is another day of hiding, another day of feeling self-conscious, another day of wishing things were different. It doesn't have to be that way anymore.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
@@ -1240,17 +987,6 @@ function SkinLesionRemovalPage() {
                 <Calendar className="w-6 h-6 mr-3" />
                 Book Free Consultation Now
                 <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://wa.me/447307762776"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-12 py-6 border-2 border-white text-white rounded-2xl font-bold hover:bg-white/10 transition-all duration-300 text-xl shadow-2xl hover:shadow-3xl"
-              >
-                <MessageCircle className="w-6 h-6 mr-3" />
-                Message Me First
               </motion.a>
             </div>
 
@@ -1270,7 +1006,7 @@ function SkinLesionRemovalPage() {
             </div>
 
             <p className="text-gray-300 text-sm pt-4 max-w-2xl mx-auto">
-              The consultation is completely free. Come in, ask every question you have, see the clinic, meet me, and decide if it feels right for you. No pressure, just honest conversation about what's best for YOUR situation.
+              The consultation is completely free. Come in, ask every question you have, see the clinic, meet me, and decide if it feels right for you. No pressure, just honest conversation.
             </p>
           </motion.div>
         </div>
