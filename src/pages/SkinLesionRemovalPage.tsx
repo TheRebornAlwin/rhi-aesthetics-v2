@@ -494,7 +494,7 @@ function SkinLesionRemovalPage() {
               whileTap={{ scale: 0.97 }}
               className="inline-block px-12 py-5 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-colors shadow-lg shadow-teal-500/30"
             >
-              Book Your £49 Consultation
+              Book Your Treatment
             </motion.a>
             <p className="text-xs text-gray-500 font-light">No obligation • Additional lesions available</p>
           </motion.div>
