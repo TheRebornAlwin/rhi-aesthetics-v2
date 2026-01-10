@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import {
   Calendar,
   Phone,
@@ -16,13 +16,23 @@ import {
   Facebook,
   Star,
   ArrowRight,
-  BadgeCheck
+  BadgeCheck,
+  Sparkles,
+  Clock,
+  Users,
+  MoveRight
 } from 'lucide-react';
 
 function SkinLesionRemovalPage() {
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const { scrollY } = useScroll();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { scrollYProgress } = useScroll();
+  const scaleProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -33,8 +43,17 @@ function SkinLesionRemovalPage() {
       setIsHeaderScrolled(window.scrollY > 50);
     };
 
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -59,16 +78,7 @@ function SkinLesionRemovalPage() {
     { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+1", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+1", label: "Facial Mole", timeline: "6 weeks" },
     { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+2", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+2", label: "Skin Tags", timeline: "3 weeks" },
     { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+3", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+3", label: "Age Spot", timeline: "4 weeks" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+4", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+4", label: "Cheek Mole", timeline: "5 weeks" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+5", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+5", label: "Neck Lesion", timeline: "6 weeks" },
-    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+6", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+6", label: "Multiple Tags", timeline: "4 weeks" }
-  ];
-
-  const healingStages = [
-    { day: "Day 1-2", image: "https://placehold.co/400x400/e0f2f1/00897b?text=Day+1", description: "Small scab forms. Minimal discomfort." },
-    { day: "Day 7", image: "https://placehold.co/400x400/80cbc4/00695c?text=Day+7", description: "Scab naturally falls off. Pink skin underneath." },
-    { day: "Week 2-4", image: "https://placehold.co/400x400/4db6ac/00695c?text=Week+2", description: "Pink fades to match your skin tone." },
-    { day: "Week 6+", image: "https://placehold.co/400x800/e0f2f1/00897b?text=Week+6", description: "Fully healed. Minimal to no visible mark." }
+    { before: "https://placehold.co/600x800/e0f2f1/00897b?text=Before+4", after: "https://placehold.co/600x800/b2dfdb/00695c?text=After+4", label: "Cheek Mole", timeline: "5 weeks" }
   ];
 
   const testimonials = [
@@ -116,404 +126,728 @@ function SkinLesionRemovalPage() {
       answer: "During your free consultation, I examine everything carefully. If I have any concerns, I won't remove it - I'll refer you to get it properly checked by a dermatologist. Your safety is the priority."
     },
     {
-      question: "Can I wear makeup after?",
-      answer: "Give it 5-7 days before putting makeup directly on the treated area. You can wear makeup around the area from day 1. Once the scab falls off, you can gently cover with mineral makeup."
-    },
-    {
       question: "Will it come back?",
       answer: "When removed, it's gone for good. We remove the cells that created it, so that specific lesion won't grow back. However, you might develop new ones elsewhere if you're prone to them."
-    },
-    {
-      question: "What if the NHS rejected me?",
-      answer: "The NHS prioritizes medical need, so cosmetic removals aren't covered. Just because it's not medically necessary doesn't mean it's not affecting your confidence. That's why I offer this service."
     }
   ];
 
+  const AnimatedCounter = ({ end, suffix = "" }: { end: number; suffix?: string }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      if (isInView) {
+        let start = 0;
+        const duration = 2000;
+        const increment = end / (duration / 16);
+
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= end) {
+            setCount(end);
+            clearInterval(timer);
+          } else {
+            setCount(Math.floor(start));
+          }
+        }, 16);
+
+        return () => clearInterval(timer);
+      }
+    }, [isInView, end]);
+
+    return <span ref={ref}>{count}{suffix}</span>;
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Minimal Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <div className="min-h-screen bg-white overflow-x-hidden">
+      {/* Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-teal-600 origin-left z-50"
+        style={{ scaleX: scaleProgress }}
+      />
+
+      {/* Floating CTA */}
+      <motion.button
+        onClick={() => scrollToSection('offer')}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: isHeaderScrolled ? 1 : 0, y: isHeaderScrolled ? 0 : 100 }}
+        className="fixed bottom-8 right-8 z-50 bg-teal-600 text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 flex items-center space-x-2 group"
+      >
+        <Calendar className="w-5 h-5" />
+        <span className="font-semibold">Book Now - £49</span>
+        <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+      </motion.button>
+
+      {/* Glassmorphism Header */}
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isHeaderScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm py-4'
-            : 'bg-transparent py-6'
+            ? 'bg-white/80 backdrop-blur-xl shadow-lg border-b border-gray-100'
+            : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <Link to="/" className="flex items-center group">
-            <div className="w-10 h-10">
-              <img
-                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
-                alt="RHI Aesthetics Logo"
-                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-          </Link>
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="flex items-center group">
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: 5 }}
+                className="w-12 h-12"
+              >
+                <img
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
+                  alt="RHI Aesthetics"
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
+            </Link>
 
-          <div className="flex items-center space-x-6">
-            <a
-              href="https://wa.me/447307762776"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:flex items-center space-x-2 text-gray-700 hover:text-teal-600 transition-colors"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span className="text-sm font-medium">Message</span>
-            </a>
-            <button
-              onClick={() => scrollToSection('offer')}
-              className="bg-teal-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-teal-700 transition-all duration-300 text-sm"
-            >
-              Book Consultation
-            </button>
+            <div className="flex items-center space-x-4">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://wa.me/447307762776"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden lg:flex items-center space-x-2 text-gray-700 hover:text-teal-600 transition-colors px-4 py-2 rounded-lg hover:bg-teal-50"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span className="text-sm font-medium">Message</span>
+              </motion.a>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection('offer')}
+                className="bg-gradient-to-r from-teal-600 to-teal-500 text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 text-sm"
+              >
+                Book Consultation
+              </motion.button>
+            </div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
-      {/* HERO - Clean & Confident */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6 py-32 lg:py-40">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* HERO - Futuristic with Parallax */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-blue-50">
+          <motion.div
+            className="absolute inset-0 opacity-30"
+            animate={{
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+            style={{
+              backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)',
+              backgroundSize: '200% 200%',
+            }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 py-32 lg:py-40 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Left: Content */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="space-y-10"
             >
-              <div className="inline-flex items-center px-4 py-2 bg-teal-50 rounded-full border border-teal-100">
+              {/* Badge with Glassmorphism */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center px-5 py-2.5 bg-white/60 backdrop-blur-lg rounded-full border border-teal-200/50 shadow-lg"
+              >
                 <BadgeCheck className="w-4 h-4 text-teal-600 mr-2" />
-                <span className="text-sm font-medium text-teal-700">300+ Successful Treatments in Southampton</span>
+                <span className="text-sm font-semibold bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent">
+                  300+ Treatments • Southampton
+                </span>
+              </motion.div>
+
+              {/* Massive Kinetic Typography */}
+              <div className="space-y-4">
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.95] tracking-tight"
+                >
+                  Safe Skin
+                  <motion.span
+                    className="block bg-gradient-to-r from-teal-600 via-teal-500 to-blue-500 bg-clip-text text-transparent"
+                    animate={{
+                      backgroundPosition: ['0%', '100%', '0%'],
+                    }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    style={{ backgroundSize: '200% auto' }}
+                  >
+                    Lesion Removal
+                  </motion.span>
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-xl font-light"
+                >
+                  Professional mole, skin tag & lesion removal.{' '}
+                  <span className="font-semibold text-teal-600">Minimal scarring.</span>{' '}
+                  <span className="font-semibold text-teal-600">Quick healing.</span>
+                </motion.p>
               </div>
 
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
-                Safe Skin Lesion
-                <span className="block text-teal-600">Removal</span>
-              </h1>
-
-              <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                Professional mole, skin tag, and lesion removal in Southampton. Minimal scarring, quick healing, from £49 for 2 lesions.
-              </p>
-
-              {/* Trust Indicators */}
-              <div className="flex items-center space-x-8 text-sm text-gray-600">
+              {/* Stats with Animated Counters */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="flex items-center gap-8 py-6"
+              >
                 <div className="flex items-center space-x-2">
-                  <div className="flex">
+                  <div className="flex -space-x-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <span className="font-semibold">5.0</span>
+                  <span className="font-bold text-gray-900">5.0</span>
                 </div>
+                <div className="h-8 w-px bg-gray-300" />
                 <div className="flex items-center space-x-2">
-                  <Shield className="w-5 h-5 text-teal-600" />
-                  <span>Qualified Practitioner</span>
+                  <Shield className="w-6 h-6 text-teal-600" />
+                  <span className="text-sm font-medium text-gray-700">Qualified Practitioner</span>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              {/* CTAs with Micro-interactions */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+              >
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.03, boxShadow: "0 20px 40px rgba(20, 184, 166, 0.3)" }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => scrollToSection('offer')}
-                  className="bg-teal-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group"
+                  className="group relative bg-gradient-to-r from-teal-600 to-teal-500 text-white px-10 py-5 rounded-2xl font-bold shadow-2xl transition-all duration-300 overflow-hidden"
                 >
-                  <span>Book Free Consultation</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <span className="relative z-10 flex items-center justify-center space-x-2">
+                    <span className="text-lg">Book Free Consultation</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-500"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </motion.button>
+
                 <motion.a
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                   href="https://wa.me/447307762776"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:border-teal-600 hover:text-teal-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="group relative px-10 py-5 rounded-2xl font-bold transition-all duration-300 overflow-hidden bg-white/80 backdrop-blur-lg border-2 border-gray-200 hover:border-teal-500 shadow-lg hover:shadow-xl"
                 >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>Message First</span>
+                  <span className="relative z-10 flex items-center justify-center space-x-2 text-gray-700 group-hover:text-teal-600">
+                    <MessageCircle className="w-5 h-5" />
+                    <span className="text-lg">Message First</span>
+                  </span>
                 </motion.a>
-              </div>
+              </motion.div>
 
-              <p className="text-sm text-gray-500">
-                Free consultation • No obligation • WhatsApp support included
-              </p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="text-sm text-gray-500"
+              >
+                ✓ Free consultation &nbsp;•&nbsp; ✓ No obligation &nbsp;•&nbsp; ✓ WhatsApp support
+              </motion.p>
             </motion.div>
 
-            {/* Right: Image */}
+            {/* Right: 3D Card with Image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <motion.div
+                className="relative rounded-3xl overflow-hidden"
+                whileHover={{ scale: 1.02, rotateY: 5, rotateX: 5 }}
+                transition={{ duration: 0.3 }}
+                style={{
+                  transformStyle: 'preserve-3d',
+                  perspective: 1000,
+                }}
+              >
+                {/* Glassmorphism overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-blue-500/20 backdrop-blur-sm z-10 rounded-3xl" />
+
                 <img
                   src="https://placehold.co/800x1000/e0f2f1/00897b?text=Rhi+Portrait"
-                  alt="Rhi - Aesthetic Practitioner"
-                  className="w-full h-auto object-cover"
+                  alt="Rhiannon - Aesthetic Practitioner"
+                  className="w-full h-auto object-cover relative z-0 shadow-2xl"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8">
-                  <h3 className="text-white text-2xl font-bold mb-1">Rhiannon</h3>
-                  <p className="text-white/90">Qualified Aesthetic Practitioner</p>
-                </div>
-              </div>
+
+                {/* Floating Info Card with Glassmorphism */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 }}
+                  className="absolute bottom-8 left-8 right-8 z-20 bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-white/50"
+                >
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1">Rhiannon</h3>
+                  <p className="text-teal-600 font-medium mb-3">Qualified Aesthetic Practitioner</p>
+                  <div className="flex items-center space-x-4 text-sm text-gray-600">
+                    <div className="flex items-center space-x-1">
+                      <Users className="w-4 h-4" />
+                      <span><AnimatedCounter end={300} suffix="+" /> clients</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="w-4 h-4" />
+                      <span>15-min treatment</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Floating decorative elements */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-teal-400 to-blue-400 rounded-full blur-3xl opacity-60"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.6, 0.8, 0.6],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-blue-400 to-teal-400 rounded-full blur-3xl opacity-60"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.6, 0.7, 0.6],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              />
             </motion.div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2"
+        >
+          <span className="text-sm text-gray-500 font-medium">Scroll to explore</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-6 h-10 border-2 border-gray-300 rounded-full flex items-start justify-center p-2"
+          >
+            <motion.div className="w-1.5 h-2 bg-teal-600 rounded-full" />
+          </motion.div>
+        </motion.div>
       </section>
 
-      {/* BEFORE/AFTER - Elegant Gallery */}
-      <section id="results" className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+      {/* BEFORE/AFTER - Interactive Hover Cards */}
+      <section id="results" className="py-32 px-6 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-50">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-teal-200 rounded-full blur-3xl opacity-20" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-20" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Real Results
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center px-4 py-2 bg-teal-100 rounded-full mb-6"
+            >
+              <Sparkles className="w-4 h-4 text-teal-600 mr-2" />
+              <span className="text-sm font-semibold text-teal-700">Real Results</span>
+            </motion.div>
+
+            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
+              Minimal Scarring,
+              <span className="block bg-gradient-to-r from-teal-600 to-blue-500 bg-clip-text text-transparent">
+                Natural Results
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Every treatment performed in Southampton with minimal scarring and natural-looking results
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+              Every treatment performed in Southampton with precision and care
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {beforeAfterImages.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                whileHover={{ y: -12, scale: 1.02 }}
+                className="group relative"
               >
-                <div className="grid grid-cols-2 gap-px bg-gray-200">
-                  <div className="relative aspect-[3/4]">
-                    <img
-                      src={item.before}
-                      alt={`Before ${item.label}`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-medium">
-                      Before
+                {/* 3D Card Effect */}
+                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform-gpu">
+                  {/* Before/After Images */}
+                  <div className="relative h-80 overflow-hidden">
+                    <div className="absolute inset-0 grid grid-cols-2">
+                      <div className="relative">
+                        <img
+                          src={item.before}
+                          alt={`Before ${item.label}`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-3 left-3 bg-red-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold">
+                          Before
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <img
+                          src={item.after}
+                          alt={`After ${item.label}`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute top-3 right-3 bg-teal-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold">
+                          After
+                        </div>
+                      </div>
                     </div>
+
+                    {/* Divider line */}
+                    <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-white shadow-lg z-10" />
                   </div>
-                  <div className="relative aspect-[3/4]">
-                    <img
-                      src={item.after}
-                      alt={`After ${item.label}`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 rounded text-xs font-medium">
-                      After
-                    </div>
+
+                  {/* Info Card with Glassmorphism */}
+                  <div className="p-5 bg-gradient-to-br from-gray-50 to-white">
+                    <h3 className="font-bold text-gray-900 text-lg mb-1">{item.label}</h3>
+                    <p className="text-sm text-teal-600 font-medium flex items-center space-x-1">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>{item.timeline} healed</span>
+                    </p>
                   </div>
+
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-600/0 to-teal-600/0 group-hover:from-teal-600/10 group-hover:to-transparent transition-all duration-500 pointer-events-none" />
                 </div>
-                <div className="p-4 bg-gray-50">
-                  <p className="font-semibold text-gray-900">{item.label}</p>
-                  <p className="text-sm text-teal-600">{item.timeline} healed</p>
-                </div>
+
+                {/* Floating shadow effect */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-b from-teal-400/0 to-teal-400/20 blur-xl transform translate-y-4 group-hover:translate-y-8 transition-transform duration-500 rounded-2xl" />
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* THE OFFER - Clean & Simple */}
-      <section id="offer" className="py-24 px-6 bg-gradient-to-br from-teal-600 to-teal-700">
-        <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="text-center mt-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white">
-              Remove 2 Lesions for £49
-            </h2>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Professional treatment with minimal scarring. Free consultation, aftercare kit, and WhatsApp support included.
-            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('offer')}
+              className="group inline-flex items-center space-x-2 text-teal-600 font-bold text-lg hover:text-teal-700 transition-colors"
+            >
+              <span>See your results</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
 
-            {/* What's Included */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
+      {/* THE OFFER - Luxury Glassmorphism Card */}
+      <section id="offer" className="py-32 px-6 relative overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-teal-500 to-blue-500">
+          <motion.div
+            className="absolute inset-0"
+            animate={{
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+            style={{
+              backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+              backgroundSize: '200% 200%',
+            }}
+          />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-2xl rounded-3xl p-12 lg:p-16 border border-white/20 shadow-2xl"
+          >
+            <div className="text-center space-y-10">
+              {/* Price Display with Animation */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, type: "spring" }}
+                className="space-y-6"
+              >
+                <div className="inline-block">
+                  <motion.div
+                    className="text-white/90 text-xl font-medium mb-4"
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  >
+                    Introductory Offer
+                  </motion.div>
+                  <div className="flex items-baseline justify-center space-x-4">
+                    <motion.span
+                      className="text-8xl lg:text-9xl font-black text-white"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      £49
+                    </motion.span>
+                  </div>
+                  <div className="text-white/80 text-2xl font-light mt-4">
+                    Remove 2 Lesions
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* What's Included - Beautiful Icon Grid */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 py-8">
+                {[
+                  { icon: CheckCircle, text: "2 Lesions Removed" },
+                  { icon: Shield, text: "Free Consultation" },
+                  { icon: Heart, text: "Aftercare Kit" },
+                  { icon: MessageCircle, text: "WhatsApp Support" }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="flex flex-col items-center space-y-3 p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
+                  >
+                    <item.icon className="w-10 h-10 text-white" />
+                    <span className="text-white font-medium text-center text-sm">{item.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* CTA Button - Premium Design */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="pt-6"
+              >
+                <motion.a
+                  href="#"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group inline-flex items-center space-x-3 bg-white text-teal-700 px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300"
+                >
+                  <Calendar className="w-6 h-6" />
+                  <span>Book Your £49 Consultation</span>
+                  <motion.div
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRight className="w-6 h-6" />
+                  </motion.div>
+                </motion.a>
+
+                <p className="text-white/80 text-sm mt-6">
+                  No obligation • Additional lesions available • Book anytime
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Floating decorative orbs */}
+          <motion.div
+            className="absolute -top-20 -left-20 w-40 h-40 bg-white/20 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-400/20 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.3, 1],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              delay: 1
+            }}
+          />
+        </div>
+      </section>
+
+      {/* PROCESS - Sleek Timeline */}
+      <section id="process" className="py-32 px-6 bg-white relative">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
+              Simple, <span className="bg-gradient-to-r from-teal-600 to-blue-500 bg-clip-text text-transparent">Seamless</span> Process
+            </h2>
+            <p className="text-xl text-gray-600 font-light">
+              From consultation to full healing in 3 steps
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            {/* Connection Line */}
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-teal-200 via-teal-400 to-teal-200 -translate-y-1/2" />
+
+            <div className="grid md:grid-cols-3 gap-12 relative">
               {[
-                { icon: CheckCircle, text: "Remove 2 lesions" },
-                { icon: Shield, text: "Free consultation" },
-                { icon: Heart, text: "Aftercare kit" },
-                { icon: MessageCircle, text: "WhatsApp support" }
-              ].map((item, index) => (
+                {
+                  number: "01",
+                  title: "Free Consultation",
+                  desc: "15-minute consultation. We examine, answer questions, show you what to expect. Zero pressure.",
+                  icon: MessageCircle,
+                  color: "from-teal-500 to-teal-600"
+                },
+                {
+                  number: "02",
+                  title: "Quick Treatment",
+                  desc: "Area numbed (2-second pinch), then removal using advanced techniques. 15-20 minutes total.",
+                  icon: Shield,
+                  color: "from-teal-600 to-blue-500"
+                },
+                {
+                  number: "03",
+                  title: "Guided Healing",
+                  desc: "Small scab for a week. Clear instructions plus WhatsApp support. Healing in 4-6 weeks.",
+                  icon: Heart,
+                  color: "from-blue-500 to-blue-600"
+                }
+              ].map((step, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center space-y-3 text-white"
+                  transition={{ delay: index * 0.2, duration: 0.6 }}
+                  className="relative"
                 >
-                  <item.icon className="w-8 h-8" />
-                  <span className="text-sm font-medium">{item.text}</span>
+                  {/* Card with Glassmorphism */}
+                  <motion.div
+                    whileHover={{ y: -10, scale: 1.02 }}
+                    className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                  >
+                    {/* Step Number Badge */}
+                    <div className={`absolute -top-6 left-8 w-14 h-14 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center shadow-xl`}>
+                      <span className="text-white font-black text-xl">{step.number}</span>
+                    </div>
+
+                    {/* Icon with gradient */}
+                    <div className="mt-8 mb-6">
+                      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${step.color}`}>
+                        <step.icon className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{step.desc}</p>
+
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500/0 to-blue-500/0 hover:from-teal-500/5 hover:to-blue-500/5 rounded-3xl transition-all duration-500 pointer-events-none" />
+                  </motion.div>
+
+                  {/* Floating shadow */}
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-b from-teal-400/0 to-teal-400/10 blur-2xl transform translate-y-4 rounded-3xl" />
                 </motion.div>
               ))}
             </div>
-
-            {/* CTA */}
-            <div className="pt-8">
-              <a
-                href="#"
-                className="inline-flex items-center px-10 py-5 bg-white text-teal-700 rounded-xl font-bold hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl text-lg group"
-              >
-                <Calendar className="w-5 h-5 mr-3" />
-                Book Your £49 Consultation
-                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <p className="text-white/80 text-sm mt-4">No obligation • Additional lesions available</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS - 3 Steps */}
-      <section id="process" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Simple Process
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From consultation to full healing in 3 straightforward steps
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              {
-                number: "01",
-                title: "Free Consultation",
-                desc: "15-minute consultation where I examine what you want removed, answer all your questions, and show you what to expect. Zero pressure.",
-                icon: MessageCircle
-              },
-              {
-                number: "02",
-                title: "Quick Treatment",
-                desc: "Area is numbed (2-second pinch), then I remove the lesion using advanced techniques. Most treatments take 15-20 minutes.",
-                icon: Shield
-              },
-              {
-                number: "03",
-                title: "Guided Healing",
-                desc: "Small scab for about a week. Clear aftercare instructions plus WhatsApp support anytime. Most see complete healing in 4-6 weeks.",
-                icon: Heart
-              }
-            ].map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
-                className="relative text-center"
-              >
-                <div className="mb-6">
-                  <span className="text-6xl font-black text-teal-100">{step.number}</span>
-                </div>
-                <step.icon className="w-12 h-12 text-teal-600 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* HEALING TIMELINE */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              What Healing Looks Like
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              No surprises. Here's exactly what to expect during your healing journey.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {healingStages.map((stage, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                <div className="aspect-square rounded-lg overflow-hidden mb-4">
-                  <img
-                    src={stage.image}
-                    alt={stage.day}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-teal-600 mb-2">{stage.day}</h3>
-                <p className="text-gray-600 text-sm">{stage.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <div className="bg-teal-50 border border-teal-100 rounded-xl p-8 max-w-3xl mx-auto">
-              <MessageCircle className="w-10 h-10 text-teal-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Message Me Anytime</h3>
-              <p className="text-gray-700 mb-6">
-                Questions during healing? WhatsApp me anytime. You're fully supported throughout the process.
-              </p>
-              <a
-                href="https://wa.me/447307762776"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition-all duration-300"
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp Support
-              </a>
-            </div>
-          </div>
+      {/* TESTIMONIALS - Elegant Slider */}
+      <section className="py-32 px-6 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-1/4 right-10 w-96 h-96 bg-teal-200 rounded-full blur-3xl opacity-30" />
         </div>
-      </section>
 
-      {/* TESTIMONIALS - 4 Max, Beautiful Layout */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Client Stories
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center px-4 py-2 bg-yellow-100 rounded-full mb-6"
+            >
+              <Star className="w-4 h-4 text-yellow-600 mr-2 fill-yellow-600" />
+              <span className="text-sm font-semibold text-yellow-700">5.0 Rating</span>
+            </motion.div>
+
+            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
+              Loved by <span className="bg-gradient-to-r from-teal-600 to-blue-500 bg-clip-text text-transparent">Southampton</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Real experiences from Southampton residents
+            <p className="text-xl text-gray-600 font-light">
+              Real experiences from real people
             </p>
           </motion.div>
 
@@ -521,195 +855,314 @@ function SkinLesionRemovalPage() {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300"
+                transition={{ delay: index * 0.15 }}
+                whileHover={{ y: -8, scale: 1.01 }}
+                className="group relative"
               >
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  ))}
+                {/* Glassmorphism Card */}
+                <div className="relative bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                  {/* Stars */}
+                  <div className="flex mb-5">
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                      >
+                        <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Quote */}
+                  <p className="text-gray-700 leading-relaxed mb-6 text-lg italic">
+                    "{testimonial.quote}"
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center space-x-4 pt-5 border-t border-gray-200">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-400 to-blue-400 flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">{testimonial.name}</p>
+                      <p className="text-sm text-teal-600 font-medium">{testimonial.treatment}</p>
+                    </div>
+                  </div>
+
+                  {/* Decorative quote mark */}
+                  <div className="absolute top-6 right-6 text-8xl text-teal-100 font-serif leading-none opacity-50 select-none">
+                    "
+                  </div>
                 </div>
-                <p className="text-gray-700 leading-relaxed mb-6 italic">"{testimonial.quote}"</p>
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-teal-600 font-medium">{testimonial.treatment}</p>
-                </div>
+
+                {/* Floating shadow */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-b from-teal-400/0 to-teal-400/10 blur-2xl transform translate-y-4 group-hover:translate-y-8 transition-transform duration-500 rounded-3xl" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ - Clean Accordion */}
-      <section id="faqs" className="py-24 px-6 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
+      {/* FAQ - Modern Accordion */}
+      <section id="faqs" className="py-32 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Common Questions
+            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-6">
+              Common <span className="bg-gradient-to-r from-teal-600 to-blue-500 bg-clip-text text-transparent">Questions</span>
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 font-light">
               Everything you need to know
             </p>
           </motion.div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-lg overflow-hidden border border-gray-200 hover:border-teal-300 transition-all duration-300"
+                transition={{ delay: index * 0.08 }}
+                className="group"
               >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                <motion.div
+                  whileHover={{ scale: 1.01 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-teal-300 hover:shadow-lg transition-all duration-300"
                 >
-                  <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-teal-600 flex-shrink-0 transition-transform duration-300 ${
-                      openFaq === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openFaq === index ? 'max-h-96' : 'max-h-0'
-                  }`}
-                >
-                  <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </div>
-                </div>
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full px-8 py-6 flex items-center justify-between text-left transition-colors"
+                  >
+                    <span className="font-bold text-gray-900 text-lg pr-8">{faq.question}</span>
+                    <motion.div
+                      animate={{ rotate: openFaq === index ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex-shrink-0"
+                    >
+                      <ChevronDown className="w-6 h-6 text-teal-600" />
+                    </motion.div>
+                  </button>
+
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: openFaq === index ? 'auto' : 0,
+                      opacity: openFaq === index ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-8 pb-6 text-gray-600 leading-relaxed text-lg">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA - Simple & Powerful */}
-      <section className="py-24 px-6 bg-gradient-to-br from-gray-900 to-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* FINAL CTA - Immersive */}
+      <section className="py-32 px-6 relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Free consultation with no obligation. Let's talk about what's right for you.
-            </p>
+            className="absolute inset-0 opacity-30"
+            animate={{
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+            style={{
+              backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)',
+              backgroundSize: '200% 200%',
+            }}
+          />
+        </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center px-10 py-5 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 shadow-xl text-lg group"
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
+            <div className="space-y-6">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-5xl lg:text-7xl font-black text-white leading-tight"
               >
-                <Calendar className="w-5 h-5 mr-3" />
-                Book Free Consultation
-                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
+                Ready to Get Started?
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-2xl text-gray-300 font-light max-w-3xl mx-auto"
+              >
+                Free consultation with no obligation. Let's talk about what's right for you.
+              </motion.p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center pt-8"
+            >
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group inline-flex items-center justify-center space-x-3 bg-white text-gray-900 px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300"
+              >
+                <Calendar className="w-6 h-6" />
+                <span>Book Free Consultation</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              </motion.a>
+
+              <motion.a
                 href="https://wa.me/447307762776"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-10 py-5 border-2 border-white text-white rounded-xl font-bold hover:bg-white/10 transition-all duration-300 text-lg"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center justify-center space-x-3 border-2 border-white text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white/10 backdrop-blur-lg transition-all duration-300"
               >
-                <MessageCircle className="w-5 h-5 mr-3" />
-                Message First
-              </a>
-            </div>
+                <MessageCircle className="w-6 h-6" />
+                <span>Message First</span>
+              </motion.a>
+            </motion.div>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 text-white/80 text-sm pt-4">
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-teal-400" />
-                <span>Free Consultation</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-teal-400" />
-                <span>From £49</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-teal-400" />
-                <span>WhatsApp Support</span>
-              </div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap items-center justify-center gap-8 text-gray-400 text-sm pt-8"
+            >
+              {[
+                { icon: CheckCircle, text: "Free Consultation" },
+                { icon: Shield, text: "From £49" },
+                { icon: MessageCircle, text: "WhatsApp Support" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <item.icon className="w-5 h-5 text-teal-400" />
+                  <span>{item.text}</span>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
+
+        {/* Floating orbs */}
+        <motion.div
+          className="absolute top-20 left-20 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            delay: 1
+          }}
+        />
       </section>
 
-      {/* Footer - Clean */}
-      <footer className="bg-black text-white py-16 px-6">
+      {/* FOOTER - Minimal & Elegant */}
+      <footer className="bg-black text-white py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <div className="w-10 h-10">
-                  <img
-                    src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
-                    alt="RHI Aesthetics Logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </div>
-              <p className="text-white/60 text-sm">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+            <div className="space-y-6">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="w-12 h-12"
+              >
+                <img
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
+                  alt="RHI Aesthetics"
+                  className="w-full h-full object-contain"
+                />
+              </motion.div>
+              <p className="text-white/60 text-sm leading-relaxed">
                 Professional skin lesion removal in Southampton
               </p>
-              <div className="flex space-x-3">
-                <a
+              <div className="flex space-x-4">
+                <motion.a
+                  whileHover={{ scale: 1.1, y: -2 }}
                   href="https://www.instagram.com/rhi.aesthetics?igsh=MWhvMjFqb3Zscms0aw%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 p-2 rounded-full hover:bg-teal-600 transition-all duration-300"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors"
                 >
                   <Instagram className="w-5 h-5" />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.1, y: -2 }}
                   href="https://www.facebook.com/profile.php?id=61575636000105"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 p-2 rounded-full hover:bg-teal-600 transition-all duration-300"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors"
                 >
                   <Facebook className="w-5 h-5" />
-                </a>
+                </motion.a>
               </div>
             </div>
 
             <div>
-              <h3 className="font-bold text-sm mb-4 text-teal-400">Contact</h3>
-              <div className="space-y-3 text-white/70 text-sm">
-                <p className="flex items-center space-x-2">
-                  <MapPin className="w-4 h-4" />
+              <h3 className="font-bold text-sm mb-5 text-teal-400 uppercase tracking-wider">Contact</h3>
+              <div className="space-y-4 text-white/70 text-sm">
+                <p className="flex items-center space-x-3 hover:text-white transition-colors">
+                  <MapPin className="w-4 h-4 text-teal-400" />
                   <span>Southampton, UK</span>
                 </p>
-                <p className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
+                <p className="flex items-center space-x-3 hover:text-white transition-colors">
+                  <Phone className="w-4 h-4 text-teal-400" />
                   <span>07307 762776</span>
                 </p>
-                <p className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
+                <p className="flex items-center space-x-3 hover:text-white transition-colors">
+                  <Mail className="w-4 h-4 text-teal-400" />
                   <span>rhiaesthetics@mail.com</span>
                 </p>
               </div>
             </div>
 
             <div>
-              <h3 className="font-bold text-sm mb-4 text-teal-400">Services</h3>
-              <ul className="space-y-2 text-white/70 text-sm">
+              <h3 className="font-bold text-sm mb-5 text-teal-400 uppercase tracking-wider">Services</h3>
+              <ul className="space-y-3 text-white/70 text-sm">
                 <li>
                   <Link to="/skin-lesion-removal" className="hover:text-teal-400 transition-colors">
                     Skin Lesion Removal
@@ -724,46 +1177,45 @@ function SkinLesionRemovalPage() {
             </div>
 
             <div>
-              <h3 className="font-bold text-sm mb-4 text-teal-400">Hours</h3>
-              <div className="space-y-2 text-white/70 text-sm">
-                <p>Mon-Thurs: <span className="text-white">11am-8pm</span></p>
-                <p>Friday: <span className="text-white">10am-3pm</span></p>
-                <p>Sat-Sun: <span className="text-white">By Appointment</span></p>
+              <h3 className="font-bold text-sm mb-5 text-teal-400 uppercase tracking-wider">Hours</h3>
+              <div className="space-y-3 text-white/70 text-sm">
+                <p>Mon-Thurs: <span className="text-white font-medium">11am-8pm</span></p>
+                <p>Friday: <span className="text-white font-medium">10am-3pm</span></p>
+                <p>Sat-Sun: <span className="text-white font-medium">By Appointment</span></p>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+          <div className="border-t border-white/10 pt-10">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
               <p className="text-white/50">
                 &copy; 2025 RHI Aesthetics. All rights reserved.
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
                 <Link to="/privacy-policy" className="text-white/50 hover:text-teal-400 transition-colors">
-                  Privacy Policy
+                  Privacy
                 </Link>
-                <span className="text-white/30">•</span>
                 <Link to="/terms-of-service" className="text-white/50 hover:text-teal-400 transition-colors">
-                  Terms of Service
+                  Terms
                 </Link>
-                <span className="text-white/30">•</span>
                 <Link to="/cookie-policy" className="text-white/50 hover:text-teal-400 transition-colors">
-                  Cookie Policy
+                  Cookies
                 </Link>
               </div>
             </div>
           </div>
 
-          <div className="mt-8 pt-4 border-t border-white/10 text-center">
+          <div className="mt-10 pt-6 border-t border-white/10 text-center">
             <a
               href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=alwin@tripletendigits.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-block group"
             >
               <p className="text-white/60 text-xs">
-                <span className="text-teal-400 hover:text-teal-300 transition-colors font-semibold underline">Triple Ten Digits</span>
-                {' '}<span className="text-white/40">|</span>{' '}
-                Competition-crushing websites. Delivered in a week or less.
+                <span className="text-teal-400 group-hover:text-teal-300 transition-colors font-semibold">Triple Ten Digits</span>
+                <span className="text-white/40 mx-2">|</span>
+                <span className="group-hover:text-white/80 transition-colors">Competition-crushing websites</span>
               </p>
             </a>
           </div>
