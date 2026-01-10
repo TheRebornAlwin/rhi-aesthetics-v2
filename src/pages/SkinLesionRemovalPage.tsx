@@ -90,57 +90,57 @@ function SkinLesionRemovalPage() {
 
   const testimonials = [
     {
-      quote: "I've had this mole on my cheek for years and honestly, I was terrified. Terrified it would hurt, terrified of scarring, terrified of what people would think. Rhia sat with me and explained everything so patiently - she genuinely understood why I was nervous. The treatment itself? I felt barely anything. Two weeks later and it's like it was never there. I actually cried when I looked in the mirror because I finally felt like me again.",
-      name: "Sarah L.",
-      treatment: "Facial Mole Removal",
+      quote: "Very professional and friendly staff, procedure carried out quickly and efficiently. Would recommend. Skin tag removal was my procedure for info.",
+      name: "Frank R.",
+      treatment: "Skin Tag Removal",
       location: "Southampton"
     },
     {
-      quote: "I'd been to the NHS and they told me it was purely cosmetic so they couldn't help. That hurt more than I expected because this wasn't just cosmetic to me - it was affecting my confidence every single day. Finding Rhia felt like finally being heard. The £49 intro offer let me just try it without the huge financial commitment I was dreading. Best £49 I've ever spent, honestly.",
-      name: "Michelle R.",
-      treatment: "Neck Skin Tags",
+      quote: "Amazing service. Was really well received, had skin tags removed which were really bothering me for years and was so satisfied with the treatment. Will be returning for sure and would recommend the skin and laser treatment.",
+      name: "Marta R.",
+      treatment: "Skin Tags Removed",
       location: "Southampton"
     },
     {
-      quote: "I work in retail and interact with customers all day. I swear, people would stare at the mole on my forehead instead of looking me in the eye when we'd talk. It sounds dramatic but it was crushing my confidence. Rhia removed it in literally 20 minutes, and the healing was so much quicker than I expected. Three weeks later and you can't even tell it was there. I feel like a completely different person at work now.",
-      name: "Emma T.",
-      treatment: "Forehead Mole",
+      quote: "honestly ive been staring at this thing on my neck for like 3 years now, always said id get it done but never did. finally bit the bullet and wish i did it sooner!! didnt hurt at all and healing was so quick. cant even see where it was now",
+      name: "Lauren M.",
+      treatment: "Neck Mole",
       location: "Southampton"
     },
     {
-      quote: "My main worry was scarring. I've heard horror stories from friends who had things removed and were left with marks worse than the original mole. Rhia showed me her technique and all her before/after photos - I could see how careful she is about minimizing scarring. She was right - the tiny mark faded completely within a month. You'd never know there was anything there.",
-      name: "Charlotte B.",
-      treatment: "Facial Lesion",
+      quote: "I had a vascular treatment with Rhiannon and she was fantastic from start to finish. She made me feel totally at ease, took the time to ask which areas on my legs I wanted treated, and regularly checked in to make sure I was comfortable. I can already see some results and I'm really pleased with them.",
+      name: "Caroline H.",
+      treatment: "Vascular Treatment",
       location: "Southampton"
     },
     {
-      quote: "I thought it would cost hundreds. I'd been putting it off for that reason alone, even though seeing that skin tag in the mirror every morning was doing my head in. When I saw the £49 offer I thought there must be a catch, but there wasn't. It's exactly what they advertised - professional, quick, affordable. I've already recommended Rhia to three friends.",
-      name: "Jessica M.",
-      treatment: "Multiple Skin Tags",
+      quote: "Do you have imperfections on your body that you want removing? If so visit here. Friendly & efficient staff. I'm really happy with my treatments & not as expensive as i thought! Happy to recommend:)",
+      name: "Yvonne F.",
+      treatment: "Skin Imperfections",
       location: "Southampton"
     },
     {
-      quote: "The thing that scared me most was not knowing if it could even be removed. I'd convinced myself mine was too big, too raised, too whatever. Rhia examined it at the consultation and immediately put my mind at ease - she's removed hundreds exactly like mine. Knowing it was possible made the decision so much easier. And seeing it actually gone now still feels surreal in the best way.",
-      name: "Rebecca S.",
-      treatment: "Raised Mole",
+      quote: "my husband kept telling me nobody notices it but i KNEW people were looking at it when they talked to me. Rhia totally got it, she didnt make me feel vain or silly. Two weeks after treatment my sister came over and didnt even notice it was gone until i told her lol. Best feeling ever",
+      name: "Jennifer T.",
+      treatment: "Facial Mole",
       location: "Southampton"
     },
     {
-      quote: "I used to angle myself in every photo so the mole wouldn't show. Family pictures, work events, everything. My daughter even asked me once why I always turned my head the same way. That broke my heart. Getting it removed was one of the best decisions I've made - not just for me, but for finally being fully present in photos with my family.",
-      name: "Karen H.",
-      treatment: "Cheek Mole",
-      location: "Southampton"
-    },
-    {
-      quote: "I work in healthcare so I'm cautious about procedures - I wanted to know exactly what to expect for downtime. Rhia was totally upfront about the healing process. Day 1 and 2 had a tiny scab, by day 5 it was barely noticeable. I was back at work day 3 wearing light makeup. So much easier than I'd built it up to be in my head.",
-      name: "Amanda P.",
-      treatment: "Facial Wart",
-      location: "Southampton"
-    },
-    {
-      quote: "Honestly, the pain was my biggest fear. I have a pretty low pain threshold and I'd been putting this off for years because of it. Rhia completely numbed the area - I genuinely felt nothing during the treatment. Nothing at all. I almost laughed because I'd worked myself up so much for literally no reason. If you're scared like I was, just book the consultation. You'll see it's really not scary at all.",
+      quote: "Honestly thought this would be way more expensive. I'd been putting it off because I assumed it'd be like £300+ based on what I'd seen online. When I saw the £49 offer I booked straight away. Rhia was lovely, explained everything clearly and the whole thing took about 20 mins. Would definitely recommend",
       name: "Sophie K.",
-      treatment: "Mole Removal",
+      treatment: "Skin Tag Removal",
+      location: "Southampton"
+    },
+    {
+      quote: "I work in a school so I see parents every day and was really self conscious about the mole on my chin. Used to cover it with makeup but you could still see it. Getting it removed has honestly changed how I feel at work, I don't think about it anymore and that's such a relief.",
+      name: "Amanda P.",
+      treatment: "Facial Mole",
+      location: "Southampton"
+    },
+    {
+      quote: "was terrified about scarring!! Like absolutely terrified. Rhia showed me loads of before and afters at the consultation which really helped. She was so patient with all my questions (and i had A LOT). 5 weeks later and theres barely any mark at all, im actually amazed",
+      name: "Chloe B.",
+      treatment: "Cheek Mole",
       location: "Southampton"
     }
   ];
