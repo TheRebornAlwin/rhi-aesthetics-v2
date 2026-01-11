@@ -64,12 +64,12 @@ function SkinLesionRemovalPage() {
   };
 
   const beforeAfterImages = [
-    { before: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&h=800&fit=crop", after: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=800&fit=crop", label: "Facial Mole", timeline: "6 weeks" },
-    { before: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=800&fit=crop", after: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=800&fit=crop", label: "Skin Tags", timeline: "3 weeks" },
-    { before: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&h=800&fit=crop", after: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop", label: "Age Spot", timeline: "4 weeks" },
-    { before: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=800&fit=crop", after: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop", label: "Cheek Mole", timeline: "5 weeks" },
-    { before: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=800&fit=crop", after: "https://images.unsplash.com/photo-1614583224978-f05ce51ef5fa?w=600&h=800&fit=crop", label: "Neck Lesion", timeline: "6 weeks" },
-    { before: "https://images.unsplash.com/photo-1498843053639-170ff2122f35?w=600&h=800&fit=crop", after: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=800&fit=crop", label: "Sun Spot", timeline: "4 weeks" }
+    { before: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop&q=80", label: "Facial Mole", timeline: "6 weeks" },
+    { before: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop&q=80", label: "Skin Tags", timeline: "3 weeks" },
+    { before: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&h=800&fit=crop&q=80", label: "Age Spot", timeline: "4 weeks" },
+    { before: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=800&fit=crop&q=80", label: "Cheek Mole", timeline: "5 weeks" },
+    { before: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop&q=80", label: "Neck Lesion", timeline: "6 weeks" },
+    { before: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop&q=80", label: "Sun Spot", timeline: "4 weeks" }
   ];
 
   const testimonialStories = [
@@ -78,6 +78,7 @@ function SkinLesionRemovalPage() {
       age: 34,
       treatment: "Neck Mole Removal",
       timeAgo: "3 weeks ago",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop",
       before: "I'd been staring at this thing on my neck for like 3 years. Every morning when I got ready, there it was. I kept saying I'd get it done but never followed through. I was worried it would hurt, worried about scarring, worried I'd regret it.",
       process: "Rhi made me feel so comfortable from the start. She explained everything, showed me what to expect, and honestly? It didn't hurt at all. The numbing worked perfectly.",
       after: "I wish I'd done this sooner. Healing was so quick and I can't even see where it was now. I don't avoid the mirror anymore. Such a simple thing but it's changed how I feel every single day.",
@@ -88,6 +89,7 @@ function SkinLesionRemovalPage() {
       age: 42,
       treatment: "Multiple Skin Tags",
       timeAgo: "1 month ago",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
       before: "I'd had these skin tags for years and they really bothered me. They'd catch on my jewelry and I was always conscious of them. I looked into removal before but everywhere seemed so expensive and clinical.",
       process: "Rhiannon was so professional and made the whole experience easy. She took her time, checked in with me throughout, and I felt completely safe.",
       after: "I'm so satisfied with the results. They're gone and healing was straightforward. I'm already planning to come back for another area. Would 100% recommend.",
@@ -98,6 +100,7 @@ function SkinLesionRemovalPage() {
       age: 38,
       treatment: "Vascular Treatment",
       timeAgo: "2 weeks ago",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop",
       before: "I was nervous going in, not gonna lie. I'd never done anything like this before and I wasn't sure what to expect. But it was something that had bothered me for a while.",
       process: "Rhiannon was fantastic from start to finish. She made me feel totally at ease, took the time to ask exactly which areas I wanted treated, and regularly checked in to make sure I was comfortable throughout.",
       after: "I can already see results and I'm really pleased with them. The whole experience was so much better than I expected. I feel more confident already.",
@@ -282,7 +285,7 @@ function SkinLesionRemovalPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+          isHeaderScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -293,32 +296,36 @@ function SkinLesionRemovalPage() {
               </motion.div>
             </Link>
 
-            <nav className="hidden lg:flex items-center space-x-10">
-              {['Results', 'Stories', 'Process'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-sm tracking-wider text-gray-600 hover:text-teal-600 transition-colors duration-200 font-light uppercase"
-                >
-                  {item}
-                </button>
-              ))}
-            </nav>
+            <div className="flex items-center space-x-10">
+              <nav className="hidden lg:flex items-center space-x-10">
+                {['Results', 'Stories', 'Process'].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                    className={`text-sm tracking-wider transition-colors duration-200 font-light uppercase ${
+                      isHeaderScrolled ? 'text-white hover:text-teal-400' : 'text-gray-600 hover:text-teal-600'
+                    }`}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </nav>
 
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => scrollToSection('offer')}
-              className="text-sm tracking-wider px-6 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase shadow-lg shadow-teal-500/20"
-            >
-              Start Your Journey
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => scrollToSection('offer')}
+                className="text-sm tracking-wider px-6 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase shadow-lg shadow-teal-500/20 rounded-md"
+              >
+                Book £49 Intro Offer
+              </motion.button>
+            </div>
           </div>
         </div>
       </motion.header>
 
-      {/* AMPLIFIED HERO WITH VISCERAL HOOK */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* SIMPLIFIED HERO */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-teal-50/30">
           <img
             src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&h=1080&fit=crop"
@@ -329,67 +336,33 @@ function SkinLesionRemovalPage() {
         </div>
 
         <motion.div
-          style={{ opacity }}
-          className="relative z-10 text-center px-6 max-w-5xl mx-auto py-32"
+          className="relative z-10 text-center px-6 max-w-4xl mx-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-10"
+            className="space-y-8"
           >
-            {/* Visceral Empathy Hook */}
-            <div className="space-y-6">
-              <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="inline-block"
-              >
-                <p className="text-lg sm:text-xl text-teal-700 font-light tracking-wide italic">
-                  How many years has it been for you?
-                </p>
-              </motion.div>
-
-              <p className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 font-light leading-relaxed">
-                That mole. That skin tag. That spot you see <span className="italic">every single morning</span>.
-              </p>
-
-              <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
-                You touch it in the car. You adjust your angle in photos. When someone's talking to you, there's that voice in your head wondering: <span className="italic">"Are they staring at it?"</span>
-              </p>
-
-              <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
-                You've been thinking about getting it removed. Maybe for <span className="font-normal text-gray-800">months</span>. Maybe for <span className="font-normal text-gray-800">years</span>.
-              </p>
-            </div>
-
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent mx-auto" />
-
             {/* Main Heading */}
-            <div className="space-y-6">
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight tracking-tight font-light">
-                What if you could finally feel free?
-              </h1>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight tracking-tight font-light">
+              Finally Feel Free From That Mole or Skin Tag
+            </h1>
 
-              <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-light">
-                Safe, professional skin lesion removal in Southampton.
-                <span className="block mt-3 text-lg text-teal-700">Minimal scarring. Natural results. The confidence you've been waiting for.</span>
-              </p>
-            </div>
+            {/* Subtitle */}
+            <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-light">
+              Safe, professional skin lesion removal in Southampton with minimal scarring and natural results.
+            </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('offer')}
-                className="group px-12 py-5 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-all duration-200 shadow-xl shadow-teal-500/30 relative overflow-hidden"
+                className="px-12 py-4 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-all duration-200 shadow-xl shadow-teal-500/30 rounded-md"
               >
-                <span className="relative z-10 flex items-center space-x-2">
-                  <span>See How It Works</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
+                Book £49 Intro Offer
               </motion.button>
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -397,42 +370,11 @@ function SkinLesionRemovalPage() {
                 href="https://wa.me/447307762776"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-12 py-5 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-all duration-200"
+                className="px-12 py-4 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-all duration-200 rounded-md"
               >
-                Ask Me Anything
+                Message Rhia
               </motion.a>
             </div>
-
-            {/* Enhanced Trust Indicators */}
-            <div className="flex flex-wrap items-center justify-center gap-8 pt-8 text-sm">
-              <div className="flex items-center space-x-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-teal-600 fill-teal-600" />
-                ))}
-                <span className="ml-2 font-light text-gray-700">5.0 from 100+ reviews</span>
-              </div>
-              <div className="w-px h-4 bg-teal-300 hidden sm:block" />
-              <div className="flex items-center space-x-2 text-gray-700">
-                <Users className="w-4 h-4 text-teal-600" />
-                <span className="font-light">300+ successful treatments</span>
-              </div>
-              <div className="w-px h-4 bg-teal-300 hidden sm:block" />
-              <div className="flex items-center space-x-2 text-gray-700">
-                <BadgeCheck className="w-4 h-4 text-teal-600" />
-                <span className="font-light">Fully qualified & insured</span>
-              </div>
-            </div>
-
-            {/* Urgency Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-white/90 backdrop-blur-sm border-2 border-teal-500 rounded-full shadow-lg"
-            >
-              <Zap className="w-4 h-4 text-teal-600" />
-              <span className="text-xs tracking-wider text-gray-800 font-normal uppercase">Only 12 consultation spots left this month</span>
-            </motion.div>
           </motion.div>
         </motion.div>
 
@@ -450,6 +392,51 @@ function SkinLesionRemovalPage() {
         </motion.div>
       </section>
 
+      {/* BEFORE/AFTER GALLERY */}
+      <section id="results" className="py-24 lg:py-32 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">See For Yourself</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
+              Every treatment performed in Southampton with precision and care. These are real clients, real results.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {beforeAfterImages.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -4 }}
+                className="group relative bg-white overflow-hidden border-2 border-teal-100 rounded-xl shadow-sm hover:shadow-xl transition-all"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <div className="absolute inset-0 grid grid-cols-2">
+                    <img src={item.before} alt={`Before ${item.label}`} className="w-full h-full object-cover" />
+                    <img src={item.after} alt={`After ${item.label}`} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-white shadow-lg" />
+                  <div className="absolute top-4 left-4 text-xs tracking-wider text-white bg-black/60 backdrop-blur-sm px-3 py-1.5 uppercase font-light rounded">Before</div>
+                  <div className="absolute top-4 right-4 text-xs tracking-wider text-white bg-black/60 backdrop-blur-sm px-3 py-1.5 uppercase font-light rounded">After</div>
+                </div>
+                <div className="p-6 bg-gradient-to-br from-teal-50/40 to-white border-t-2 border-teal-100">
+                  <p className="text-sm text-gray-900 font-light mb-1">{item.label}</p>
+                  <p className="text-xs text-teal-600 font-light tracking-wide">{item.timeline} healed</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* THE 3-YEAR TRUTH - STAT DRIVEN */}
       <section className="py-16 px-6 bg-white border-y border-gray-100">
         <div className="max-w-4xl mx-auto">
@@ -459,11 +446,6 @@ function SkinLesionRemovalPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="inline-flex items-center space-x-3 mb-8">
-              <TrendingUp className="w-6 h-6 text-teal-600" />
-              <p className="text-xs tracking-widest text-teal-600 uppercase font-light">The Data Doesn't Lie</p>
-            </div>
-
             <h2 className="font-serif text-4xl sm:text-5xl text-gray-900 font-light mb-8">
               The average client waited <span className="text-teal-700">3.2 years</span> before calling.
             </h2>
@@ -562,10 +544,6 @@ function SkinLesionRemovalPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center space-x-2 mb-6">
-              <Target className="w-5 h-5 text-teal-600" />
-              <p className="text-xs tracking-widest text-teal-600 uppercase font-light">Is This For You?</p>
-            </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">This Is For You If...</h2>
           </motion.div>
 
@@ -607,7 +585,7 @@ function SkinLesionRemovalPage() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => scrollToSection('offer')}
-              className="px-10 py-4 bg-white border-2 border-teal-600 text-teal-600 text-sm tracking-wider uppercase font-light hover:bg-teal-50 transition-all"
+              className="px-10 py-4 bg-white border-2 border-teal-600 text-teal-600 text-sm tracking-wider uppercase font-light hover:bg-teal-50 transition-all rounded-md"
             >
               I'm Ready to Start
             </motion.button>
@@ -624,10 +602,6 @@ function SkinLesionRemovalPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center space-x-2 mb-6">
-              <X className="w-5 h-5 text-gray-500" />
-              <p className="text-xs tracking-widest text-gray-500 uppercase font-light">Being Honest</p>
-            </div>
             <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light mb-6">This ISN'T For You If...</h2>
           </motion.div>
 
@@ -665,52 +639,6 @@ function SkinLesionRemovalPage() {
               If that's you, we'll be a great fit.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* BEFORE/AFTER GALLERY */}
-      <section id="results" className="py-24 lg:py-32 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">Real Results</p>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">See For Yourself</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
-              Every treatment performed in Southampton with precision and care. These are real clients, real results.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {beforeAfterImages.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="group relative bg-white overflow-hidden border-2 border-teal-100 rounded-xl shadow-sm hover:shadow-xl transition-all"
-              >
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <div className="absolute inset-0 grid grid-cols-2">
-                    <img src={item.before} alt={`Before ${item.label}`} className="w-full h-full object-cover" />
-                    <img src={item.after} alt={`After ${item.label}`} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-white shadow-lg" />
-                  <div className="absolute top-4 left-4 text-xs tracking-wider text-white bg-black/60 backdrop-blur-sm px-3 py-1.5 uppercase font-light rounded">Before</div>
-                  <div className="absolute top-4 right-4 text-xs tracking-wider text-white bg-black/60 backdrop-blur-sm px-3 py-1.5 uppercase font-light rounded">After</div>
-                </div>
-                <div className="p-6 bg-gradient-to-br from-teal-50/40 to-white border-t-2 border-teal-100">
-                  <p className="text-sm text-gray-900 font-light mb-1">{item.label}</p>
-                  <p className="text-xs text-teal-600 font-light tracking-wide">{item.timeline} healed</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -799,7 +727,7 @@ function SkinLesionRemovalPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection('offer')}
-                className="group px-14 py-6 bg-white text-teal-700 text-sm tracking-widest uppercase font-normal hover:bg-gray-50 transition-all duration-200 shadow-2xl rounded-lg"
+                className="group px-14 py-6 bg-white text-teal-700 text-sm tracking-widest uppercase font-normal hover:bg-gray-50 transition-all duration-200 shadow-2xl rounded-md"
               >
                 <span className="flex items-center space-x-3">
                   <span>I'm Ready For This Future</span>
@@ -887,10 +815,6 @@ function SkinLesionRemovalPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <div className="inline-flex items-center space-x-2 mb-6">
-              <Users className="w-5 h-5 text-teal-600" />
-              <p className="text-xs tracking-widest text-teal-600 uppercase font-light">Real Stories</p>
-            </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">Their Journeys</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
               Real women from Southampton who finally felt free
@@ -905,48 +829,62 @@ function SkinLesionRemovalPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white border-2 border-teal-100 rounded-3xl p-10 lg:p-14 shadow-sm hover:shadow-xl transition-shadow"
+                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
               >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-10 gap-4">
-                  <div>
-                    <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-2">{story.name}</h3>
-                    <p className="text-sm text-teal-600 font-light mb-2">{story.treatment}</p>
-                    <p className="text-xs text-gray-400 font-light">{story.timeAgo}</p>
-                  </div>
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-teal-600 fill-teal-600" />
-                    ))}
+                {/* Image */}
+                <div className="w-full lg:w-1/3 flex-shrink-0">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
+                    <img
+                      src={story.image}
+                      alt={story.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
 
-                <div className="space-y-8">
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <div className="w-8 h-0.5 bg-gray-300" />
-                      <p className="text-xs tracking-widest text-gray-500 uppercase font-light">Before</p>
+                {/* Testimonial Content */}
+                <div className="w-full lg:w-2/3 bg-white border-2 border-teal-100 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-shadow">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-8 gap-4">
+                    <div>
+                      <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-2">{story.name}</h3>
+                      <p className="text-sm text-teal-600 font-light mb-2">{story.treatment}</p>
+                      <p className="text-xs text-gray-400 font-light">{story.timeAgo}</p>
                     </div>
-                    <p className="text-base text-gray-700 font-light leading-relaxed italic pl-10">"{story.before}"</p>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-teal-600 fill-teal-600" />
+                      ))}
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <div className="w-8 h-0.5 bg-teal-300" />
-                      <p className="text-xs tracking-widest text-teal-600 uppercase font-light">The Experience</p>
+                  <div className="space-y-6">
+                    <div>
+                      <div className="flex items-center space-x-2 mb-3">
+                        <div className="w-8 h-0.5 bg-gray-300" />
+                        <p className="text-xs tracking-widest text-gray-500 uppercase font-light">Before</p>
+                      </div>
+                      <p className="text-sm text-gray-700 font-light leading-relaxed italic pl-10">"{story.before}"</p>
                     </div>
-                    <p className="text-base text-gray-700 font-light leading-relaxed italic pl-10">"{story.process}"</p>
-                  </div>
 
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <div className="w-8 h-0.5 bg-teal-500" />
-                      <p className="text-xs tracking-widest text-teal-700 uppercase font-light">After</p>
+                    <div>
+                      <div className="flex items-center space-x-2 mb-3">
+                        <div className="w-8 h-0.5 bg-teal-300" />
+                        <p className="text-xs tracking-widest text-teal-600 uppercase font-light">The Experience</p>
+                      </div>
+                      <p className="text-sm text-gray-700 font-light leading-relaxed italic pl-10">"{story.process}"</p>
                     </div>
-                    <p className="text-base text-gray-700 font-light leading-relaxed italic mb-6 pl-10">"{story.after}"</p>
-                    <div className="pl-10">
-                      <div className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-xs tracking-wider uppercase font-light rounded-full shadow-lg">
-                        <CheckCircle className="w-4 h-4" />
-                        <span>{story.result}</span>
+
+                    <div>
+                      <div className="flex items-center space-x-2 mb-3">
+                        <div className="w-8 h-0.5 bg-teal-500" />
+                        <p className="text-xs tracking-widest text-teal-700 uppercase font-light">After</p>
+                      </div>
+                      <p className="text-sm text-gray-700 font-light leading-relaxed italic mb-4 pl-10">"{story.after}"</p>
+                      <div className="pl-10">
+                        <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-xs tracking-wider uppercase font-light rounded-full shadow-lg">
+                          <CheckCircle className="w-4 h-4" />
+                          <span>{story.result}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -968,7 +906,7 @@ function SkinLesionRemovalPage() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => scrollToSection('offer')}
-              className="px-12 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors shadow-lg shadow-teal-500/30 rounded-lg"
+              className="px-12 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors shadow-lg shadow-teal-500/30 rounded-md"
             >
               Start Your Journey
             </motion.button>
@@ -1066,7 +1004,7 @@ function SkinLesionRemovalPage() {
                   href="#"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-block px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-xl"
+                  className="inline-block px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md"
                 >
                   Book Your Treatment Now
                 </motion.a>
@@ -1075,7 +1013,7 @@ function SkinLesionRemovalPage() {
                 {/* Urgency element */}
                 <div className="inline-flex items-center space-x-2 px-5 py-2.5 bg-amber-50 border-2 border-amber-200 rounded-full mt-6">
                   <Clock className="w-4 h-4 text-amber-600" />
-                  <p className="text-xs text-amber-700 font-normal">Only 12 consultation spots remaining this month</p>
+                  <p className="text-xs text-amber-700 font-normal">Only 9 consultation spots remaining this month</p>
                 </div>
               </div>
             </div>
@@ -1092,7 +1030,7 @@ function SkinLesionRemovalPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">Why Other Clinics Miss The Mark</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">What Makes This Different</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
               You've probably looked into this before. Here's what I do differently.
             </p>
@@ -1169,7 +1107,7 @@ function SkinLesionRemovalPage() {
             className="text-center mt-16 p-10 bg-white border-2 border-teal-100 rounded-2xl"
           >
             <p className="text-lg text-gray-700 font-light leading-relaxed italic">
-              "The difference? You're not a transaction here. You're a person, and I actually care about your results and how you feel throughout the process."
+              "You're not a transaction here—you're a person I genuinely care about."
             </p>
             <p className="text-sm text-teal-600 font-light mt-4">— Rhiannon</p>
           </motion.div>
@@ -1471,7 +1409,7 @@ function SkinLesionRemovalPage() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center space-x-3 px-10 py-5 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-lg shadow-lg"
+                  className="inline-flex items-center space-x-3 px-10 py-5 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md shadow-lg"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>Message Me First</span>
@@ -1563,7 +1501,7 @@ function SkinLesionRemovalPage() {
                 href="#"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-xl"
+                className="group px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md"
               >
                 <span className="flex items-center space-x-3">
                   <span>Book Free Consultation</span>
@@ -1576,7 +1514,7 @@ function SkinLesionRemovalPage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-14 py-6 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-xl"
+                className="px-14 py-6 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md"
               >
                 Ask Me Anything First
               </motion.a>
@@ -1588,7 +1526,7 @@ function SkinLesionRemovalPage() {
               </p>
               <div className="flex items-center justify-center space-x-2">
                 <Clock className="w-4 h-4 text-amber-600" />
-                <p className="text-xs text-amber-700 font-normal">Only 12 consultation spots remaining this month</p>
+                <p className="text-xs text-amber-700 font-normal">Only 9 consultation spots remaining this month</p>
               </div>
             </div>
           </motion.div>
@@ -1596,7 +1534,7 @@ function SkinLesionRemovalPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-teal-900 text-white py-16 px-6">
+      <footer className="bg-teal-900 text-white py-12 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
             <div className="space-y-6">
@@ -1654,7 +1592,7 @@ function SkinLesionRemovalPage() {
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-teal-800 text-center">
+          <div className="mt-4 pt-4 border-t border-teal-800 text-center">
             <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=alwin@tripletendigits.com" target="_blank" rel="noopener noreferrer" className="inline-block group">
               <p className="text-xs text-teal-300 font-light">
                 <span className="text-teal-200 group-hover:text-white transition-colors">Triple Ten Digits</span>
