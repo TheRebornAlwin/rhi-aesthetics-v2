@@ -313,14 +313,16 @@ function SkinLesionRemovalPage() {
                 ))}
               </nav>
 
-              <motion.button
+              <motion.a
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => scrollToSection('offer')}
                 className="text-sm tracking-wider px-6 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase shadow-lg shadow-teal-500/20 rounded-md"
               >
                 Book £49 Intro Offer
-              </motion.button>
+              </motion.a>
             </div>
           </div>
         </div>
@@ -358,14 +360,16 @@ function SkinLesionRemovalPage() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-              <motion.button
+              <motion.a
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('offer')}
                 className="px-12 py-4 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-all duration-200 shadow-xl shadow-teal-500/30 rounded-md"
               >
                 Book £49 Intro Offer
-              </motion.button>
+              </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -589,14 +593,16 @@ function SkinLesionRemovalPage() {
             <p className="text-lg text-gray-700 font-light italic mb-8">
               If any of these sound like you, you're in the right place.
             </p>
-            <motion.button
+            <motion.a
+              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => scrollToSection('offer')}
               className="px-10 py-4 bg-white border-2 border-teal-600 text-teal-600 text-sm tracking-wider uppercase font-light hover:bg-teal-50 transition-all rounded-md"
             >
               I'm Ready to Start
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -731,17 +737,19 @@ function SkinLesionRemovalPage() {
                 </p>
               </div>
 
-              <motion.button
+              <motion.a
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('offer')}
                 className="group px-14 py-6 bg-white text-teal-700 text-sm tracking-widest uppercase font-normal hover:bg-gray-50 transition-all duration-200 shadow-2xl rounded-md"
               >
                 <span className="flex items-center space-x-3">
                   <span>I'm Ready For This Future</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -910,14 +918,16 @@ function SkinLesionRemovalPage() {
             <p className="text-base text-gray-600 font-light italic mb-8">
               Want to be one of these success stories?
             </p>
-            <motion.button
+            <motion.a
+              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => scrollToSection('offer')}
               className="px-12 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors shadow-lg shadow-teal-500/30 rounded-md"
             >
               Start Your Journey
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -1005,7 +1015,9 @@ function SkinLesionRemovalPage() {
 
               <div className="space-y-6">
                 <motion.a
-                  href="#"
+                  href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-block px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md"
@@ -1490,7 +1502,9 @@ function SkinLesionRemovalPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
               <motion.a
-                href="#"
+                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md"
