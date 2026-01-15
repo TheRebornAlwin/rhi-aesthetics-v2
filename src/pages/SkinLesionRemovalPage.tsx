@@ -330,7 +330,7 @@ function SkinLesionRemovalPage() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansXalFoiQ4bTOaquwlny7EgjxAp8FLSYJzHRsQ"
+            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZ9SpbP6XwJuImFfqiz86x7V3CyK2odlaTv5P"
             alt="Clinic"
             className="w-full h-full object-cover"
           />
