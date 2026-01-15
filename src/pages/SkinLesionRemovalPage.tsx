@@ -64,12 +64,10 @@ function SkinLesionRemovalPage() {
   };
 
   const beforeAfterImages = [
-    { before: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop&q=80", label: "Facial Mole", timeline: "6 weeks" },
-    { before: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop&q=80", label: "Skin Tags", timeline: "3 weeks" },
-    { before: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&h=800&fit=crop&q=80", label: "Age Spot", timeline: "4 weeks" },
-    { before: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=800&fit=crop&q=80", label: "Cheek Mole", timeline: "5 weeks" },
-    { before: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop&q=80", label: "Neck Lesion", timeline: "6 weeks" },
-    { before: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=800&fit=crop&q=80", after: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop&q=80", label: "Sun Spot", timeline: "4 weeks" }
+    { before: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansrEctJIggJMAWrzNy61nv7tqUuYLkCVcsZQHl", after: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans1GO6raPrPgLW2xY53lMqmX6sbNHJyknwUZt8", label: "Facial Mole", timeline: "6 weeks" },
+    { before: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansMb9ONqfF60kipOZwxPDGShftogB23RYsQ9cU", after: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansnGSknDeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg", label: "Skin Tags", timeline: "3 weeks" },
+    { before: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansbcDWDCOYpmXqDxfseSP45Qwn0azcOMUoCJih", after: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansROkb0cNnPqXUigWtzfTd60QMsIbeE2vVLYuH", label: "Age Spot", timeline: "4 weeks" },
+    { before: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansb4lZ4dOYpmXqDxfseSP45Qwn0azcOMUoCJih", after: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZO9NlbM6XwJuImFfqiz86x7V3CyK2odlaTv5", label: "Cheek Mole", timeline: "5 weeks" }
   ];
 
   const testimonialStories = [
@@ -407,7 +405,7 @@ function SkinLesionRemovalPage() {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
             {beforeAfterImages.map((item, index) => (
               <motion.div
                 key={index}
