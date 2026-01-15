@@ -38,7 +38,10 @@ function SkinLesionRemovalPage() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    // Force scroll to top on mount and ensure it happens after render
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, []);
 
   useEffect(() => {
@@ -134,11 +137,13 @@ function SkinLesionRemovalPage() {
               src="https://images.unsplash.com/photo-1609840534195-e6385ca0d10a?w=500&h=500&fit=crop"
               alt="Bandage on healing wound"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
             />
             <img
               src="https://images.unsplash.com/photo-1765996796562-ce301df337a0?w=500&h=500&fit=crop"
               alt="Medical first aid aftercare kit"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
             />
           </div>
           <div className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-lg p-6">
@@ -173,11 +178,13 @@ function SkinLesionRemovalPage() {
               src="https://images.unsplash.com/photo-1761485172742-ec3457eef2d6?w=500&h=500&fit=crop"
               alt="Healing wound with protective scab"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
             />
             <img
               src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop"
               alt="Gentle skincare moisturizing cream"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
             />
           </div>
           <div className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-lg p-6">
@@ -212,11 +219,13 @@ function SkinLesionRemovalPage() {
               src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&h=500&fit=crop"
               alt="Fresh pink healing skin after scab removal"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
             />
             <img
               src="https://plus.unsplash.com/premium_photo-1715604350275-0e326557803f?w=500&h=500&fit=crop"
               alt="Applying SPF sunscreen protection"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
             />
           </div>
           <div className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-lg p-6">
@@ -251,11 +260,13 @@ function SkinLesionRemovalPage() {
               src="https://plus.unsplash.com/premium_photo-1682096433084-b68c0cf072b8?w=500&h=500&fit=crop"
               alt="Fully healed clear glowing skin"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
             />
             <img
               src="https://plus.unsplash.com/premium_photo-1682096449710-1f3aa0624ef3?w=500&h=500&fit=crop"
               alt="Beautiful healthy radiant complexion"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
             />
           </div>
           <div className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-lg p-6">
@@ -335,6 +346,8 @@ function SkinLesionRemovalPage() {
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZ9SpbP6XwJuImFfqiz86x7V3CyK2odlaTv5P"
             alt="Clinic"
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
@@ -366,7 +379,7 @@ function SkinLesionRemovalPage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-4 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-all duration-200 shadow-xl shadow-teal-500/30 rounded-md"
+                className="w-full sm:w-auto px-12 py-4 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-all duration-200 shadow-xl shadow-teal-500/30 rounded-md text-center"
               >
                 Book £49 Intro Offer
               </motion.a>
@@ -376,7 +389,7 @@ function SkinLesionRemovalPage() {
                 href="https://wa.me/447307762776"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-12 py-4 border-2 border-white text-white text-sm tracking-widest uppercase font-light hover:bg-white/10 transition-all duration-200 rounded-md"
+                className="w-full sm:w-auto px-12 py-4 border-2 border-white text-white text-sm tracking-widest uppercase font-light hover:bg-white/10 transition-all duration-200 rounded-md text-center"
               >
                 Message Rhia
               </motion.a>
@@ -425,7 +438,7 @@ function SkinLesionRemovalPage() {
                 className="group relative bg-white overflow-hidden border-2 border-teal-100 rounded-xl shadow-sm hover:shadow-xl transition-all"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <img src={item.image} alt={`${item.label} Before & After`} className="w-full h-full object-cover" />
+                  <img src={item.image} alt={`${item.label} Before & After`} className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="p-6 bg-gradient-to-br from-teal-50/40 to-white border-t-2 border-teal-100">
                   <p className="text-sm text-gray-900 font-light mb-1">{item.label}</p>
@@ -854,6 +867,7 @@ function SkinLesionRemovalPage() {
                       src={story.image}
                       alt={story.name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -1357,7 +1371,7 @@ function SkinLesionRemovalPage() {
               viewport={{ once: true }}
               className="aspect-[3/4] bg-teal-50 border-3 border-teal-200 overflow-hidden rounded-2xl shadow-2xl"
             >
-              <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="Rhiannon" className="w-full h-full object-cover" />
+              <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="Rhiannon" className="w-full h-full object-cover" loading="lazy" />
             </motion.div>
 
             <motion.div
