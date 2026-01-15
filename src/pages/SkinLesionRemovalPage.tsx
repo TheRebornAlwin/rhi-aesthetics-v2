@@ -305,7 +305,7 @@ function SkinLesionRemovalPage() {
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
                     className={`text-sm tracking-wider transition-colors duration-200 font-light uppercase ${
-                      isHeaderScrolled ? 'text-white hover:text-teal-400' : 'text-gray-600 hover:text-teal-600'
+                      isHeaderScrolled ? 'text-white hover:text-teal-400' : 'text-white hover:text-teal-400'
                     }`}
                   >
                     {item}
@@ -347,12 +347,12 @@ function SkinLesionRemovalPage() {
             className="space-y-8"
           >
             {/* Main Heading */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight tracking-tight font-light">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight font-light">
               Finally Feel Free From That Mole or Skin Tag
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-light">
+            <p className="text-xl sm:text-2xl text-white leading-relaxed max-w-3xl mx-auto font-light">
               Safe, professional skin lesion removal in Southampton with minimal scarring and natural results.
             </p>
 
@@ -372,7 +372,7 @@ function SkinLesionRemovalPage() {
                 href="https://wa.me/447307762776"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-12 py-4 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-all duration-200 rounded-md"
+                className="px-12 py-4 border-2 border-white text-white text-sm tracking-widest uppercase font-light hover:bg-white/10 transition-all duration-200 rounded-md"
               >
                 Message Rhia
               </motion.a>
