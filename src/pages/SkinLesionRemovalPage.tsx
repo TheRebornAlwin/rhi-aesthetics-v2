@@ -328,13 +328,13 @@ function SkinLesionRemovalPage() {
 
       {/* SIMPLIFIED HERO */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-teal-50/30">
+        <div className="absolute inset-0">
           <img
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansXalFoiQ4bTOaquwlny7EgjxAp8FLSYJzHRsQ"
             alt="Clinic"
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-white/40" />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
 
         <motion.div
