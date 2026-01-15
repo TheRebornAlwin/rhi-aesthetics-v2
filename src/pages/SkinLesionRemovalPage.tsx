@@ -64,10 +64,14 @@ function SkinLesionRemovalPage() {
   };
 
   const beforeAfterImages = [
-    { before: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansrEctJIggJMAWrzNy61nv7tqUuYLkCVcsZQHl", after: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans1GO6raPrPgLW2xY53lMqmX6sbNHJyknwUZt8", label: "Facial Mole", timeline: "6 weeks" },
-    { before: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansMb9ONqfF60kipOZwxPDGShftogB23RYsQ9cU", after: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansnGSknDeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg", label: "Skin Tags", timeline: "3 weeks" },
-    { before: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansbcDWDCOYpmXqDxfseSP45Qwn0azcOMUoCJih", after: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansROkb0cNnPqXUigWtzfTd60QMsIbeE2vVLYuH", label: "Age Spot", timeline: "4 weeks" },
-    { before: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansb4lZ4dOYpmXqDxfseSP45Qwn0azcOMUoCJih", after: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZO9NlbM6XwJuImFfqiz86x7V3CyK2odlaTv5", label: "Cheek Mole", timeline: "5 weeks" }
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansrEctJIggJMAWrzNy61nv7tqUuYLkCVcsZQHl", label: "Facial Mole", timeline: "6 weeks" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans1GO6raPrPgLW2xY53lMqmX6sbNHJyknwUZt8", label: "Skin Tags", timeline: "3 weeks" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansMb9ONqfF60kipOZwxPDGShftogB23RYsQ9cU", label: "Age Spot", timeline: "4 weeks" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansnGSknDeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg", label: "Cheek Mole", timeline: "5 weeks" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansbcDWDCOYpmXqDxfseSP45Qwn0azcOMUoCJih", label: "Neck Lesion", timeline: "4 weeks" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansROkb0cNnPqXUigWtzfTd60QMsIbeE2vVLYuH", label: "Sun Spot", timeline: "5 weeks" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZO9NlbM6XwJuImFfqiz86x7V3CyK2odlaTv5", label: "Vascular Lesion", timeline: "3 weeks" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplanspGTOtu9qI1imrJsTxKlZHRz3Vt25Gv4aoPnL", label: "Facial Lesion", timeline: "6 weeks" }
   ];
 
   const testimonialStories = [
@@ -417,13 +421,7 @@ function SkinLesionRemovalPage() {
                 className="group relative bg-white overflow-hidden border-2 border-teal-100 rounded-xl shadow-sm hover:shadow-xl transition-all"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <div className="absolute inset-0 grid grid-cols-2">
-                    <img src={item.before} alt={`Before ${item.label}`} className="w-full h-full object-cover" />
-                    <img src={item.after} alt={`After ${item.label}`} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-white shadow-lg" />
-                  <div className="absolute top-4 left-4 text-xs tracking-wider text-white bg-black/60 backdrop-blur-sm px-3 py-1.5 uppercase font-light rounded">Before</div>
-                  <div className="absolute top-4 right-4 text-xs tracking-wider text-white bg-black/60 backdrop-blur-sm px-3 py-1.5 uppercase font-light rounded">After</div>
+                  <img src={item.image} alt={`${item.label} Before & After`} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6 bg-gradient-to-br from-teal-50/40 to-white border-t-2 border-teal-100">
                   <p className="text-sm text-gray-900 font-light mb-1">{item.label}</p>
