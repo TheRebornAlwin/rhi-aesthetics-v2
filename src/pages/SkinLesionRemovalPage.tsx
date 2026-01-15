@@ -491,11 +491,7 @@ function SkinLesionRemovalPage() {
                 className="group relative bg-white overflow-hidden border-2 border-teal-100 rounded-xl shadow-sm hover:shadow-xl transition-all"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <img src={item.image} alt={`${item.label} Before & After`} className="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <div className="p-6 bg-gradient-to-br from-teal-50/40 to-white border-t-2 border-teal-100">
-                  <p className="text-sm text-gray-900 font-light mb-1">{item.label}</p>
-                  <p className="text-xs text-teal-600 font-light tracking-wide">{item.timeline} healed</p>
+                  <img src={item.image} alt="Before & After" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
             ))}
