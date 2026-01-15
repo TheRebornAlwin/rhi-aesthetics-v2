@@ -919,10 +919,6 @@ function SkinLesionRemovalPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-teal-50 border border-teal-200 rounded-full mb-8">
-              <Zap className="w-4 h-4 text-teal-600" />
-              <p className="text-xs tracking-wider text-teal-700 uppercase font-normal">Limited Availability</p>
-            </div>
             <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">Try Before You Commit</p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-8">Start Small, See For Yourself</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
