@@ -131,13 +131,13 @@ function SkinLesionRemovalPage() {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=500&fit=crop"
-              alt="Initial healing stage"
+              src="https://images.unsplash.com/photo-1609840534195-e6385ca0d10a?w=500&h=500&fit=crop"
+              alt="Bandage on healing wound"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
             />
             <img
-              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=500&fit=crop"
-              alt="Aftercare products"
+              src="https://images.unsplash.com/photo-1765996796562-ce301df337a0?w=500&h=500&fit=crop"
+              alt="Medical first aid aftercare kit"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
             />
           </div>
@@ -170,13 +170,13 @@ function SkinLesionRemovalPage() {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=500&h=500&fit=crop"
-              alt="Healing progress"
+              src="https://images.unsplash.com/photo-1761485172742-ec3457eef2d6?w=500&h=500&fit=crop"
+              alt="Healing wound with protective scab"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
             />
             <img
-              src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&h=500&fit=crop"
-              alt="Clean skincare"
+              src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop"
+              alt="Gentle skincare moisturizing cream"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
             />
           </div>
@@ -209,13 +209,13 @@ function SkinLesionRemovalPage() {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500&h=500&fit=crop"
-              alt="Pink new skin"
+              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&h=500&fit=crop"
+              alt="Fresh pink healing skin after scab removal"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
             />
             <img
-              src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=500&h=500&fit=crop"
-              alt="SPF protection"
+              src="https://plus.unsplash.com/premium_photo-1715604350275-0e326557803f?w=500&h=500&fit=crop"
+              alt="Applying SPF sunscreen protection"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
             />
           </div>
@@ -248,13 +248,13 @@ function SkinLesionRemovalPage() {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&h=500&fit=crop"
-              alt="Fully healed skin"
+              src="https://plus.unsplash.com/premium_photo-1682096433084-b68c0cf072b8?w=500&h=500&fit=crop"
+              alt="Fully healed clear glowing skin"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
             />
             <img
-              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&h=500&fit=crop"
-              alt="Beautiful clear skin"
+              src="https://plus.unsplash.com/premium_photo-1682096449710-1f3aa0624ef3?w=500&h=500&fit=crop"
+              alt="Beautiful healthy radiant complexion"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
             />
           </div>
@@ -529,6 +529,18 @@ function SkinLesionRemovalPage() {
             </div>
           </motion.div>
         </div>
+      </section>
+
+      {/* HEALING JOURNEY TIMELINE */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 text-center mb-16">
+          <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">Healing Journey</p>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">Your Path to Recovery</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
+            Transparent healing process from day 1 to full recovery
+          </p>
+        </div>
+        <Timeline data={timelineData} />
       </section>
 
       {/* WHO THIS IS FOR */}
@@ -1274,18 +1286,6 @@ function SkinLesionRemovalPage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* HEALING JOURNEY TIMELINE */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center mb-16">
-          <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">Healing Journey</p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">Your Path to Recovery</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
-            Transparent healing process from day 1 to full recovery
-          </p>
-        </div>
-        <Timeline data={timelineData} />
       </section>
 
       {/* MY PROMISE TO YOU - GUARANTEE */}
