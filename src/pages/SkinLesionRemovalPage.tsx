@@ -76,7 +76,7 @@ function SkinLesionRemovalPage() {
       age: 34,
       treatment: "Neck Mole Removal",
       timeAgo: "3 weeks ago",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop",
+      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansb4lZ4dOYpmXqDxfseSP45Qwn0azcOMUoCJih",
       before: "I'd been staring at this thing on my neck for like 3 years. Every morning when I got ready, there it was. I kept saying I'd get it done but never followed through. I was worried it would hurt, worried about scarring, worried I'd regret it.",
       process: "Rhi made me feel so comfortable from the start. She explained everything, showed me what to expect, and honestly? It didn't hurt at all. The numbing worked perfectly.",
       after: "I wish I'd done this sooner. Healing was so quick and I can't even see where it was now. I don't avoid the mirror anymore. Such a simple thing but it's changed how I feel every single day.",
@@ -87,7 +87,7 @@ function SkinLesionRemovalPage() {
       age: 42,
       treatment: "Multiple Skin Tags",
       timeAgo: "1 month ago",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
+      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZO9NlbM6XwJuImFfqiz86x7V3CyK2odlaTv5",
       before: "I'd had these skin tags for years and they really bothered me. They'd catch on my jewelry and I was always conscious of them. I looked into removal before but everywhere seemed so expensive and clinical.",
       process: "Rhiannon was so professional and made the whole experience easy. She took her time, checked in with me throughout, and I felt completely safe.",
       after: "I'm so satisfied with the results. They're gone and healing was straightforward. I'm already planning to come back for another area. Would 100% recommend.",
@@ -98,7 +98,7 @@ function SkinLesionRemovalPage() {
       age: 38,
       treatment: "Vascular Treatment",
       timeAgo: "2 weeks ago",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop",
+      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplanspGTOtu9qI1imrJsTxKlZHRz3Vt25Gv4aoPnL",
       before: "I was nervous going in, not gonna lie. I'd never done anything like this before and I wasn't sure what to expect. But it was something that had bothered me for a while.",
       process: "Rhiannon was fantastic from start to finish. She made me feel totally at ease, took the time to ask exactly which areas I wanted treated, and regularly checked in to make sure I was comfortable throughout.",
       after: "I can already see results and I'm really pleased with them. The whole experience was so much better than I expected. I feel more confident already.",
@@ -416,7 +416,7 @@ function SkinLesionRemovalPage() {
                 whileHover={{ y: -4 }}
                 className="group relative bg-white overflow-hidden border-2 border-teal-100 rounded-xl shadow-sm hover:shadow-xl transition-all"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden">
                   <div className="absolute inset-0 grid grid-cols-2">
                     <img src={item.before} alt={`Before ${item.label}`} className="w-full h-full object-cover" />
                     <img src={item.after} alt={`After ${item.label}`} className="w-full h-full object-cover" />
