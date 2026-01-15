@@ -1345,7 +1345,7 @@ function SkinLesionRemovalPage() {
               viewport={{ once: true }}
               className="aspect-[3/4] bg-teal-50 border-3 border-teal-200 overflow-hidden rounded-2xl shadow-2xl"
             >
-              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=1000&fit=crop" alt="Rhiannon" className="w-full h-full object-cover" />
+              <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="Rhiannon" className="w-full h-full object-cover" />
             </motion.div>
 
             <motion.div
