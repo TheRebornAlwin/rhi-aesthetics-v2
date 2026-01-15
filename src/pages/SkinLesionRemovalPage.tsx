@@ -38,6 +38,13 @@ function SkinLesionRemovalPage() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   useEffect(() => {
+    // Set page title and meta description
+    document.title = 'RHI Aesthetics Southampton | Professional Aesthetic Clinic';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professional aesthetic clinic in Southampton. Expert skin treatments, lesion removal, and cosmetic procedures. Safe, effective, and natural-looking results.');
+    }
+
     // Prevent browser scroll restoration
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
