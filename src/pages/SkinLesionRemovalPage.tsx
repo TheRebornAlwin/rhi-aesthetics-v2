@@ -39,11 +39,43 @@ function SkinLesionRemovalPage() {
 
   useEffect(() => {
     // Set page title and meta description
-    document.title = 'RHI Aesthetics Southampton | Professional Aesthetic Clinic';
+    document.title = 'Skin Lesion Removal Southampton | RHI Aesthetics';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional aesthetic clinic in Southampton. Expert skin treatments, lesion removal, and cosmetic procedures. Safe, effective, and natural-looking results.');
+      metaDescription.setAttribute('content', 'Professional skin lesion removal in Southampton. Safe mole and skin tag removal with minimal scarring. Expert care, natural results, £49 intro offer.');
     }
+
+    // Set Open Graph meta tags for link previews
+    const setMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    setMetaTag('og:title', 'Skin Lesion Removal Southampton | RHI Aesthetics');
+    setMetaTag('og:description', 'Professional skin lesion removal in Southampton. Safe mole and skin tag removal with minimal scarring. Expert care, natural results, £49 intro offer.');
+    setMetaTag('og:type', 'website');
+    setMetaTag('og:url', window.location.href);
+    setMetaTag('og:site_name', 'RHI Aesthetics');
+
+    // Twitter Card meta tags
+    const setTwitterTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    setTwitterTag('twitter:card', 'summary_large_image');
+    setTwitterTag('twitter:title', 'Skin Lesion Removal Southampton | RHI Aesthetics');
+    setTwitterTag('twitter:description', 'Professional skin lesion removal in Southampton. Safe mole and skin tag removal with minimal scarring.');
 
     // Prevent browser scroll restoration
     if ('scrollRestoration' in window.history) {
@@ -1605,7 +1637,7 @@ function SkinLesionRemovalPage() {
             <div>
               <h3 className="text-xs tracking-widest uppercase mb-6 font-light">Services</h3>
               <ul className="space-y-3 text-sm text-teal-100 font-light">
-                <li><Link to="/skin-lesion-removal" className="hover:text-white transition-colors">Skin Lesion Removal</Link></li>
+                <li><Link to="/slr" className="hover:text-white transition-colors">Skin Lesion Removal</Link></li>
                 <li><Link to="/plasma-fibroblast" className="hover:text-white transition-colors">Plasma Fibroblast</Link></li>
               </ul>
             </div>

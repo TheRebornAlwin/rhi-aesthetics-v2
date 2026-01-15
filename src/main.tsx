@@ -12,13 +12,13 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/skin-lesion-removal" replace />} />
-        <Route path="/skin-lesion-removal" element={<SkinLesionRemovalPage />} />
+        <Route path="/" element={<Navigate to="/slr" replace />} />
+        <Route path="/slr" element={<SkinLesionRemovalPage />} />
         <Route path="/plasma-fibroblast" element={<PlasmaFibroblastPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
-        <Route path="*" element={<Navigate to="/skin-lesion-removal" replace />} />
+        <Route path="*" element={<Navigate to="/slr" replace />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
