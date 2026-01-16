@@ -449,19 +449,6 @@ function SkinLesionRemovalPage() {
             </div>
           </motion.div>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-px h-12 bg-teal-400"
-          />
-        </motion.div>
       </section>
 
       {/* BEFORE/AFTER GALLERY */}
@@ -805,10 +792,10 @@ function SkinLesionRemovalPage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center space-x-3 px-14 py-6 bg-white text-teal-700 text-sm tracking-widest uppercase font-normal hover:bg-gray-50 transition-all duration-200 shadow-2xl rounded-md"
+                className="inline-flex items-center justify-center space-x-2 sm:space-x-3 px-8 sm:px-14 py-6 bg-white text-teal-700 text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase font-normal hover:bg-gray-50 transition-all duration-200 shadow-2xl rounded-md whitespace-nowrap"
               >
                 <span>I'm Ready For This Future</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
               </motion.a>
             </div>
           </motion.div>
