@@ -187,14 +187,14 @@ function SkinLesionRemovalPage() {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="https://images.unsplash.com/photo-1609840534195-e6385ca0d10a?w=500&h=500&fit=crop"
-              alt="Bandage on healing wound"
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnfivKXeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg"
+              alt="Day 1-2 healing"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
             <img
-              src="https://images.unsplash.com/photo-1765996796562-ce301df337a0?w=500&h=500&fit=crop"
-              alt="Medical first aid aftercare kit"
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZPaQ1V6XwJuImFfqiz86x7V3CyK2odlaTv5P"
+              alt="Day 1-2 aftercare"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
@@ -220,7 +220,7 @@ function SkinLesionRemovalPage() {
       ),
     },
     {
-      title: "Day 3-7",
+      title: "Day 3-4",
       content: (
         <div>
           <p className="text-gray-700 text-sm md:text-base font-light mb-6 leading-relaxed">
@@ -228,14 +228,14 @@ function SkinLesionRemovalPage() {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="https://images.unsplash.com/photo-1761485172742-ec3457eef2d6?w=500&h=500&fit=crop"
-              alt="Healing wound with protective scab"
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansc6WMewV4JTIOjNmkbGi5ScPRl97M4udQahKw"
+              alt="Day 3-4 healing"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
             <img
-              src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop"
-              alt="Gentle skincare moisturizing cream"
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansmLKtCavIL2Qu3fNjFstHoVDamzgMXZvnwb1q"
+              alt="Day 3-4 aftercare"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
@@ -261,7 +261,7 @@ function SkinLesionRemovalPage() {
       ),
     },
     {
-      title: "Week 2-4",
+      title: "Day 5-6",
       content: (
         <div>
           <p className="text-gray-700 text-sm md:text-base font-light mb-6 leading-relaxed">
@@ -269,14 +269,14 @@ function SkinLesionRemovalPage() {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&h=500&fit=crop"
-              alt="Fresh pink healing skin after scab removal"
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans0SpoKnBZmf2arIMiUH3nS4jP6K8OLs0thCzV"
+              alt="Day 5-6 healing"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
             <img
-              src="https://plus.unsplash.com/premium_photo-1715604350275-0e326557803f?w=500&h=500&fit=crop"
-              alt="Applying SPF sunscreen protection"
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLZwNaMtcEpuNyB4c5UP1OD9z8GXJlTsjiKSL"
+              alt="Day 5-6 aftercare"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
@@ -302,7 +302,7 @@ function SkinLesionRemovalPage() {
       ),
     },
     {
-      title: "Week 6+",
+      title: "Day 7-8",
       content: (
         <div>
           <p className="text-gray-700 text-sm md:text-base font-light mb-6 leading-relaxed">
@@ -310,14 +310,14 @@ function SkinLesionRemovalPage() {
           </p>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <img
-              src="https://plus.unsplash.com/premium_photo-1682096433084-b68c0cf072b8?w=500&h=500&fit=crop"
-              alt="Fully healed clear glowing skin"
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnA2LAKeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg"
+              alt="Day 7-8 healing"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
             <img
-              src="https://plus.unsplash.com/premium_photo-1682096449710-1f3aa0624ef3?w=500&h=500&fit=crop"
-              alt="Beautiful healthy radiant complexion"
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansjEaU1MeqGaXs5kxUnqOwW9zN10cfIyh8rStY"
+              alt="Day 7-8 aftercare"
               className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
