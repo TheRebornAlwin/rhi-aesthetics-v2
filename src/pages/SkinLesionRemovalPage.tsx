@@ -137,10 +137,7 @@ function SkinLesionRemovalPage() {
       treatment: "Neck Mole Removal",
       timeAgo: "3 weeks ago",
       image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansvhu53QI2LoFzNsU8hi6XjReWVPbCHytdQ0YT",
-      before: "I'd been staring at this thing on my neck for like 3 years. Every morning when I got ready, there it was. I kept saying I'd get it done but never followed through. I was worried it would hurt, worried about scarring, worried I'd regret it.",
-      process: "Rhi made me feel so comfortable from the start. She explained everything, showed me what to expect, and honestly? It didn't hurt at all. The numbing worked perfectly.",
-      after: "I wish I'd done this sooner. Healing was so quick and I can't even see where it was now. I don't avoid the mirror anymore. Such a simple thing but it's changed how I feel every single day.",
-      result: "Confidence restored"
+      quote: "Okay so I literally put this off for THREE YEARS because I was convinced it would hurt or leave a scar or something. Finally booked it and honestly?? Cannot believe I waited that long. The numbing stuff works, you don't feel anything, and now it's just... gone. Like it was never there. My sister keeps asking me which one it was because she can't tell anymore lol. Should've done this ages ago but whatever, it's done now and I'm obsessed with not having to think about it every time I look in the mirror."
     },
     {
       name: "Marta R.",
@@ -148,10 +145,7 @@ function SkinLesionRemovalPage() {
       treatment: "Multiple Skin Tags",
       timeAgo: "1 month ago",
       image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLUrYbcEpuNyB4c5UP1OD9z8GXJlTsjiKSLwq",
-      before: "I'd had these skin tags for years and they really bothered me. They'd catch on my jewelry and I was always conscious of them. I looked into removal before but everywhere seemed so expensive and clinical.",
-      process: "Rhia was so professional and made the whole experience easy. She took her time, checked in with me throughout, and I felt completely safe.",
-      after: "I'm so satisfied with the results. They're gone and healing was straightforward. I'm already planning to come back for another area. Would 100% recommend.",
-      result: "Finally free"
+      quote: "Had a few skin tags that kept catching on necklaces and it drove me mad. Looked into getting them done privately before but everywhere was charging silly money. Rhia sorted all of them in one appointment, very professional, explained everything properly. Healed up nicely within a couple weeks. Already booked in again for another area. Very happy with it."
     },
     {
       name: "Caroline H.",
@@ -159,10 +153,7 @@ function SkinLesionRemovalPage() {
       treatment: "Vascular Treatment",
       timeAgo: "2 weeks ago",
       image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZRmTJU6XwJuImFfqiz86x7V3CyK2odlaTv5P",
-      before: "I was nervous going in, not gonna lie. I'd never done anything like this before and I wasn't sure what to expect. But it was something that had bothered me for a while.",
-      process: "Rhia was fantastic from start to finish. She made me feel totally at ease, took the time to ask exactly which areas I wanted treated, and regularly checked in to make sure I was comfortable throughout.",
-      after: "I can already see results and I'm really pleased with them. The whole experience was so much better than I expected. I feel more confident already.",
-      result: "Worth every penny"
+      quote: "Not gonna lie I was SO nervous beforehand, like proper anxious about it. But Rhia is so lovely and calm, she just chats to you and before you know it it's done. Still healing but already looks so much better than before. Actually excited to see the final result! Would defo recommend if you're on the fence about it x"
     }
   ];
 
@@ -782,15 +773,15 @@ function SkinLesionRemovalPage() {
         <Timeline data={timelineData} />
 
         {/* Testimonial at end of timeline */}
-        <div className="max-w-4xl mx-auto px-6 mt-20">
+        <div className="max-w-5xl mx-auto px-6 mt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col lg:flex-row gap-8 items-center bg-gradient-to-br from-teal-50/50 to-white border-2 border-teal-100 rounded-3xl p-8 lg:p-10 shadow-lg"
+            className="flex flex-col lg:flex-row gap-10 items-center bg-gradient-to-br from-teal-50/50 to-white border-2 border-teal-100 rounded-3xl p-8 lg:p-12 shadow-lg"
           >
-            <div className="w-full lg:w-1/3 flex-shrink-0">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
+            <div className="w-full lg:w-1/2 flex-shrink-0">
+              <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
                 <img
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansz8Zl6zTq8Hf5hu6iAXSa2bUkK9dTPsRpvIMn"
                   alt="Lauren M."
@@ -800,7 +791,7 @@ function SkinLesionRemovalPage() {
               </div>
             </div>
 
-            <div className="w-full lg:w-2/3">
+            <div className="w-full lg:w-1/2">
               <div className="flex items-center space-x-2 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-teal-600 text-teal-600" />
@@ -974,7 +965,7 @@ function SkinLesionRemovalPage() {
 
                 {/* Testimonial Content */}
                 <div className="w-full lg:w-2/3 bg-white border-2 border-teal-100 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-shadow">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-8 gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 gap-4">
                     <div>
                       <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-2">{story.name}</h3>
                       <p className="text-sm text-teal-600 font-light mb-2">{story.treatment}</p>
@@ -987,37 +978,7 @@ function SkinLesionRemovalPage() {
                     </div>
                   </div>
 
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex items-center space-x-2 mb-3">
-                        <div className="w-8 h-0.5 bg-gray-300" />
-                        <p className="text-xs tracking-widest text-gray-500 uppercase font-light">Before</p>
-                      </div>
-                      <p className="text-sm text-gray-700 font-light leading-relaxed italic pl-10">"{story.before}"</p>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center space-x-2 mb-3">
-                        <div className="w-8 h-0.5 bg-teal-300" />
-                        <p className="text-xs tracking-widest text-teal-600 uppercase font-light">The Experience</p>
-                      </div>
-                      <p className="text-sm text-gray-700 font-light leading-relaxed italic pl-10">"{story.process}"</p>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center space-x-2 mb-3">
-                        <div className="w-8 h-0.5 bg-teal-500" />
-                        <p className="text-xs tracking-widest text-teal-700 uppercase font-light">After</p>
-                      </div>
-                      <p className="text-sm text-gray-700 font-light leading-relaxed italic mb-4 pl-10">"{story.after}"</p>
-                      <div className="pl-10">
-                        <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-xs tracking-wider uppercase font-light rounded-full shadow-lg">
-                          <CheckCircle className="w-4 h-4" />
-                          <span>{story.result}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <p className="text-base text-gray-700 font-light leading-relaxed italic">"{story.quote}"</p>
                 </div>
               </motion.div>
             ))}
@@ -1237,7 +1198,7 @@ function SkinLesionRemovalPage() {
             className="text-center mt-16 p-10 bg-white border-2 border-teal-100 rounded-2xl"
           >
             <p className="text-lg text-gray-700 font-light leading-relaxed italic">
-              "You're not a transaction here-you're a person I genuinely care about."
+              "You're a person I genuinely care about helping, and I'll do everything I can to prove it."
             </p>
             <p className="text-sm text-teal-600 font-light mt-4">- Rhia</p>
           </motion.div>
@@ -1380,13 +1341,13 @@ function SkinLesionRemovalPage() {
                 If you're not happy with your results, <span className="font-normal">I'll make it right</span>.
               </p>
               <p>
-                If I think something needs medical attention, <span className="font-normal">I'll tell you honestly</span>-even if it means turning down your money.
+                If I think something needs medical attention, <span className="font-normal">I'll tell you</span> and guide you in the right direction.
               </p>
               <p>
-                If you have questions during healing, <span className="font-normal">I'll be there</span>. WhatsApp me anytime.
+                If you have any questions at all, <span className="font-normal">I'll be there</span> to answer them.
               </p>
               <p>
-                If you're nervous or unsure, <span className="font-normal">I'll take the time</span> to make sure you feel comfortable before we do anything.
+                If you're nervous or unsure, <span className="font-normal">I'll take the time</span> to make sure you feel comfortable before doing anything.
               </p>
             </div>
 
@@ -1470,7 +1431,7 @@ function SkinLesionRemovalPage() {
                 How much longer will you wait?
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
-                You've been thinking about this long enough. Let's have a conversation-no pressure, no obligation. Just honest answers to your questions and a clear path forward.
+                You've been thinking about this long enough, let me help you fix it once and for all.
               </p>
               <p className="text-base text-gray-700 max-w-2xl mx-auto font-light italic">
                 Six months from now, you'll wish you'd started today.
