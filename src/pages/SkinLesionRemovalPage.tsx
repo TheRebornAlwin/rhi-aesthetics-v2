@@ -643,25 +643,103 @@ function SkinLesionRemovalPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-br from-teal-600 to-teal-700 text-white rounded-3xl p-12 lg:p-16 relative overflow-hidden"
+            className="text-center bg-gradient-to-br from-teal-600 to-teal-700 text-white rounded-3xl p-8 sm:p-10 lg:p-16 relative overflow-hidden"
           >
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl" />
             </div>
 
-            <div className="relative z-10 space-y-6">
-              <Heart className="w-12 h-12 mx-auto mb-6 opacity-80" />
-              <p className="text-2xl sm:text-3xl font-serif font-light leading-relaxed mb-6">
+            <div className="relative z-10 space-y-4 sm:space-y-6">
+              <Heart className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 sm:mb-6 opacity-80" />
+              <p className="text-xl sm:text-2xl lg:text-3xl font-serif font-light leading-relaxed mb-4 sm:mb-6">
                 Here's what I want you to know:
               </p>
-              <p className="text-lg font-light leading-relaxed max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg font-light leading-relaxed max-w-3xl mx-auto">
                 Your feelings are valid. It's not vain to want this gone. It's not silly that it bothers you. And you don't have to live with it just because it's "not medically necessary."
               </p>
-              <p className="text-xl font-light leading-relaxed mt-8">
+              <p className="text-lg sm:text-xl font-light leading-relaxed mt-6 sm:mt-8">
                 Your confidence matters. Let me help you get it back.
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* MEET RHI - ENHANCED WITH PERSONAL WHY */}
+      <section className="py-24 lg:py-32 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="aspect-[3/4] bg-teal-50 border-3 border-teal-200 overflow-hidden rounded-2xl shadow-2xl"
+            >
+              <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="Rhiannon" className="w-full h-full object-cover" loading="lazy" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-10"
+            >
+              <div>
+                <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">About</p>
+                <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light mb-8">Hi, I'm Rhiannon</h2>
+
+                <div className="space-y-6 text-sm text-gray-600 leading-relaxed font-light">
+                  <p className="text-base">
+                    I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years.
+                  </p>
+                  <p>
+                    But here's the thing-I started doing this because I saw how much it actually <span className="italic">mattered</span> to people. Not in a medical way. In a <span className="font-normal text-gray-800">confidence</span> way.
+                  </p>
+                  <p>
+                    I know you've probably been thinking about this for a while. Maybe you've looked into it before but got scared off by the price, the clinical websites, or the fear of scarring. Maybe the NHS turned you away and you felt stuck.
+                  </p>
+                  <p>
+                    <strong className="text-gray-800">I get it.</strong> This isn't just about removing a physical imperfection-it's about getting your confidence back. It's about not adjusting your angle in every photo. It's about talking to people without wondering if they're staring at it.
+                  </p>
+                  <p className="text-base text-teal-700 font-normal border-l-4 border-teal-500 pl-6 py-4 bg-teal-50/30">
+                    You deserve to feel comfortable in your own skin. Let me help you get there.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-8 pt-6 border-t-2 border-teal-200">
+                <div>
+                  <p className="font-serif text-4xl text-teal-700 font-light">300+</p>
+                  <p className="text-xs tracking-wider text-gray-500 mt-1 uppercase font-light">Happy Clients</p>
+                </div>
+                <div className="w-px h-14 bg-teal-300" />
+                <div>
+                  <p className="font-serif text-4xl text-teal-700 font-light">5.0</p>
+                  <p className="text-xs tracking-wider text-gray-500 mt-1 uppercase font-light">Average Rating</p>
+                </div>
+                <div className="w-px h-14 bg-teal-300" />
+                <div>
+                  <p className="font-serif text-4xl text-teal-700 font-light">5+</p>
+                  <p className="text-xs tracking-wider text-gray-500 mt-1 uppercase font-light">Years Experience</p>
+                </div>
+              </div>
+
+              <div className="pt-6">
+                <motion.a
+                  href="https://wa.me/447307762776"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center space-x-3 px-10 py-5 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md shadow-lg"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Message Me First</span>
+                </motion.a>
+                <p className="text-xs text-gray-500 font-light mt-4 italic">No pressure. Just honest conversation.</p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -1000,8 +1078,8 @@ function SkinLesionRemovalPage() {
                   ))}
                 </div>
 
-                <div className="bg-white border-2 border-teal-200 rounded-2xl p-8 max-w-4xl mx-auto shadow-sm">
-                  <div className="flex items-center justify-center space-x-2 mb-6">
+                <div className="bg-white border-2 border-teal-200 rounded-2xl p-5 sm:p-6 lg:p-8 max-w-4xl mx-auto shadow-sm">
+                  <div className="flex items-center justify-center space-x-2 mb-4 sm:mb-6">
                     <BadgeCheck className="w-5 h-5 text-teal-600" />
                     <p className="text-xs tracking-widest text-teal-600 uppercase font-light">What's Included</p>
                   </div>
@@ -1029,7 +1107,7 @@ function SkinLesionRemovalPage() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-block px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md"
+                  className="inline-block px-8 sm:px-14 py-5 sm:py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md whitespace-nowrap"
                 >
                   Book Your Treatment Now
                 </motion.a>
@@ -1295,84 +1373,6 @@ function SkinLesionRemovalPage() {
               </div>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* MEET RHI - ENHANCED WITH PERSONAL WHY */}
-      <section className="py-24 lg:py-32 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="aspect-[3/4] bg-teal-50 border-3 border-teal-200 overflow-hidden rounded-2xl shadow-2xl"
-            >
-              <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="Rhiannon" className="w-full h-full object-cover" loading="lazy" />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-10"
-            >
-              <div>
-                <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">About</p>
-                <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light mb-8">Hi, I'm Rhiannon</h2>
-
-                <div className="space-y-6 text-sm text-gray-600 leading-relaxed font-light">
-                  <p className="text-base">
-                    I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years.
-                  </p>
-                  <p>
-                    But here's the thing-I started doing this because I saw how much it actually <span className="italic">mattered</span> to people. Not in a medical way. In a <span className="font-normal text-gray-800">confidence</span> way.
-                  </p>
-                  <p>
-                    I know you've probably been thinking about this for a while. Maybe you've looked into it before but got scared off by the price, the clinical websites, or the fear of scarring. Maybe the NHS turned you away and you felt stuck.
-                  </p>
-                  <p>
-                    <strong className="text-gray-800">I get it.</strong> This isn't just about removing a physical imperfection-it's about getting your confidence back. It's about not adjusting your angle in every photo. It's about talking to people without wondering if they're staring at it.
-                  </p>
-                  <p className="text-base text-teal-700 font-normal border-l-4 border-teal-500 pl-6 py-4 bg-teal-50/30">
-                    You deserve to feel comfortable in your own skin. Let me help you get there.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-8 pt-6 border-t-2 border-teal-200">
-                <div>
-                  <p className="font-serif text-4xl text-teal-700 font-light">300+</p>
-                  <p className="text-xs tracking-wider text-gray-500 mt-1 uppercase font-light">Happy Clients</p>
-                </div>
-                <div className="w-px h-14 bg-teal-300" />
-                <div>
-                  <p className="font-serif text-4xl text-teal-700 font-light">5.0</p>
-                  <p className="text-xs tracking-wider text-gray-500 mt-1 uppercase font-light">Average Rating</p>
-                </div>
-                <div className="w-px h-14 bg-teal-300" />
-                <div>
-                  <p className="font-serif text-4xl text-teal-700 font-light">5+</p>
-                  <p className="text-xs tracking-wider text-gray-500 mt-1 uppercase font-light">Years Experience</p>
-                </div>
-              </div>
-
-              <div className="pt-6">
-                <motion.a
-                  href="https://wa.me/447307762776"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center space-x-3 px-10 py-5 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md shadow-lg"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>Message Me First</span>
-                </motion.a>
-                <p className="text-xs text-gray-500 font-light mt-4 italic">No pressure. Just honest conversation.</p>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
