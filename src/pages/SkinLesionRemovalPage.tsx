@@ -189,13 +189,13 @@ function SkinLesionRemovalPage() {
             <img
               src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLk9hCKcEpuNyB4c5UP1OD9z8GXJlTsjiKSLw"
               alt="Booking appointment"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              className="rounded-lg object-cover h-48 md:h-64 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
             <img
               src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansPXyFyBplansMeUbGIOLF6SBXiAE1CKD5xpJ0"
               alt="Consultation booking"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              className="rounded-lg object-cover h-48 md:h-64 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
           </div>
@@ -257,13 +257,13 @@ function SkinLesionRemovalPage() {
             <img
               src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansBOTpEsXAT70DbI3p4EqW1ve6ijGVXNYd8hwf"
               alt="Treatment process"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              className="rounded-lg object-cover h-48 md:h-64 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
             <img
               src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansoGYKcU5Kd6UZLc8ozSIHCbRu7DkWQpJ2sfq3"
               alt="Lesion removal treatment"
-              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              className="rounded-lg object-cover h-48 md:h-64 w-full shadow-lg border-2 border-teal-100"
               loading="lazy"
             />
           </div>
