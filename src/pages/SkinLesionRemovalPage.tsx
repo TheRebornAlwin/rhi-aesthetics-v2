@@ -169,7 +169,7 @@ function SkinLesionRemovalPage() {
   const faqs = [
     { question: "Does it hurt?", answer: "The area is numbed before treatment. You'll feel a small pinch from the numbing injection (2 seconds), then nothing during the removal. Most clients are surprised by how painless it is." },
     { question: "Will it scar?", answer: "With proper technique and aftercare, scarring is minimal. Most clients see any mark fade completely within 4-8 weeks. I use methods specifically designed to minimize scarring." },
-    { question: "What's included in the £49 offer?", answer: "The £49 offer includes removal of 2 small lesions, free consultation, aftercare kit, detailed healing instructions, and WhatsApp support during your healing process." },
+    { question: "What's included in the £49 offer?", answer: "The £49 offer includes removal of a small lesion, free consultation, aftercare kit, detailed healing instructions, and WhatsApp support during your healing process." },
     { question: "How long does healing take?", answer: "Most people see the bulk of healing within 5-7 days. You'll have a small scab for about a week, then new pink skin that fades to match your skin tone over 4-6 weeks." },
     { question: "What if it's cancerous or dangerous?", answer: "During your free consultation, I examine everything carefully. If I have any concerns, I won't remove it - I'll refer you to get it properly checked by a dermatologist. Your safety is the priority." },
     { question: "Will it come back?", answer: "When removed, it's gone for good. We remove the cells that created it, so that specific lesion won't grow back. However, you might develop new ones elsewhere if you're prone to them." },
@@ -1046,12 +1046,12 @@ function SkinLesionRemovalPage() {
                   <h3 className="font-serif text-7xl sm:text-8xl bg-gradient-to-r from-teal-700 via-teal-600 to-teal-500 bg-clip-text text-transparent font-light mb-4">£49</h3>
                   <div className="h-1 bg-gradient-to-r from-transparent via-teal-400 to-transparent" />
                 </div>
-                <p className="text-2xl sm:text-3xl text-gray-700 font-light mt-6">Remove 2 Small Lesions</p>
+                <p className="text-2xl sm:text-3xl text-gray-700 font-light mt-6">Remove a Small Lesion</p>
               </div>
 
               <div className="mb-14">
                 <p className="text-lg text-gray-700 font-light leading-relaxed mb-8 max-w-2xl mx-auto">
-                  This isn't just about removing two lesions. It's about letting you:
+                  This isn't just about removing a lesion. It's about letting you:
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
@@ -1085,7 +1085,7 @@ function SkinLesionRemovalPage() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     {[
                       "Free consultation (no obligation)",
-                      "Removal of 2 small lesions",
+                      "Removal of a small lesion",
                       "Complete aftercare kit",
                       "Detailed healing instructions",
                       "WhatsApp support during healing"
