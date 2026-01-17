@@ -764,7 +764,7 @@ function SkinLesionRemovalPage() {
             <div className="w-full lg:w-1/3 flex-shrink-0">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
                 <img
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansvhu53QI2LoFzNsU8hi6XjReWVPbCHytdQ0YT"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansz8Zl6zTq8Hf5hu6iAXSa2bUkK9dTPsRpvIMn"
                   alt="Lauren M."
                   className="w-full h-full object-cover"
                   loading="lazy"
