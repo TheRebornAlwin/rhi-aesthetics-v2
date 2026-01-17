@@ -136,7 +136,7 @@ function SkinLesionRemovalPage() {
       age: 34,
       treatment: "Neck Mole Removal",
       timeAgo: "3 weeks ago",
-      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplanskcOsANoM8xhVQJusqtST06R5NiK7fcewbZ39",
+      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansvhu53QI2LoFzNsU8hi6XjReWVPbCHytdQ0YT",
       before: "I'd been staring at this thing on my neck for like 3 years. Every morning when I got ready, there it was. I kept saying I'd get it done but never followed through. I was worried it would hurt, worried about scarring, worried I'd regret it.",
       process: "Rhi made me feel so comfortable from the start. She explained everything, showed me what to expect, and honestly? It didn't hurt at all. The numbing worked perfectly.",
       after: "I wish I'd done this sooner. Healing was so quick and I can't even see where it was now. I don't avoid the mirror anymore. Such a simple thing but it's changed how I feel every single day.",
@@ -764,7 +764,7 @@ function SkinLesionRemovalPage() {
             <div className="w-full lg:w-1/3 flex-shrink-0">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
                 <img
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplanskcOsANoM8xhVQJusqtST06R5NiK7fcewbZ39"
+                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansvhu53QI2LoFzNsU8hi6XjReWVPbCHytdQ0YT"
                   alt="Lauren M."
                   className="w-full h-full object-cover"
                   loading="lazy"
