@@ -1459,7 +1459,7 @@ function SkinLesionRemovalPage() {
                 className="group px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md"
               >
                 <span className="flex items-center space-x-3">
-                  <span>Book Free Consultation</span>
+                  <span>Book £49 Lesion Removal</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </motion.a>
