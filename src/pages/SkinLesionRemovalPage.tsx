@@ -585,7 +585,7 @@ function SkinLesionRemovalPage() {
             </p>
 
             <p className="text-base text-gray-600 font-light leading-relaxed italic">
-              "I just wish I'd done it sooner" — The most common thing I hear after treatment.
+              "I just wish I'd done it sooner" - The most common thing I hear after treatment.
             </p>
           </motion.div>
         </div>
@@ -953,7 +953,7 @@ function SkinLesionRemovalPage() {
             <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">Try Before You Commit</p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-8">Start Small, See For Yourself</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
-              I know you might be nervous. Worried about pain, scarring, whether you can trust me. That's why I created this intro offer—so you can experience my work without the big commitment.
+              I know you might be nervous. Worried about pain, scarring, whether you can trust me. That's why I created this intro offer-so you can experience my work without the big commitment.
             </p>
           </motion.div>
 
@@ -1109,12 +1109,12 @@ function SkinLesionRemovalPage() {
 
               <div className="space-y-4">
                 {[
-                  "Warm, human approach—you're working with Rhi directly",
+                  "Warm, human approach-you're working with Rhi directly",
                   "£49 intro offer so you can test my work first",
                   "Free consultation where we actually connect",
                   "WhatsApp access during your entire healing process",
                   "Real before/afters showing actual 6-week healed results",
-                  "Zero pressure—message me first if you want"
+                  "Zero pressure-message me first if you want"
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-3 p-4 bg-gradient-to-br from-teal-50 to-white border-2 border-teal-200 rounded-lg">
                     <CheckCircle className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
@@ -1132,9 +1132,9 @@ function SkinLesionRemovalPage() {
             className="text-center mt-16 p-10 bg-white border-2 border-teal-100 rounded-2xl"
           >
             <p className="text-lg text-gray-700 font-light leading-relaxed italic">
-              "You're not a transaction here—you're a person I genuinely care about."
+              "You're not a transaction here-you're a person I genuinely care about."
             </p>
-            <p className="text-sm text-teal-600 font-light mt-4">— Rhiannon</p>
+            <p className="text-sm text-teal-600 font-light mt-4">- Rhiannon</p>
           </motion.div>
         </div>
       </section>
@@ -1167,10 +1167,10 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"Will it scar?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  <strong className="text-gray-900">Honest answer:</strong> You'll have a small mark at first—that's how healing works. But with proper technique and aftercare, most clients see it fade to nearly invisible within 4-8 weeks.
+                  <strong className="text-gray-900">Honest answer:</strong> You'll have a small mark at first-that's how healing works. But with proper technique and aftercare, most clients see it fade to nearly invisible within 4-8 weeks.
                 </p>
                 <p>
-                  I use methods specifically designed to minimize scarring. The key is letting it heal naturally—no picking, following aftercare, protecting from sun.
+                  I use methods specifically designed to minimize scarring. The key is letting it heal naturally-no picking, following aftercare, protecting from sun.
                 </p>
                 <p className="text-teal-700 font-normal pt-4 border-t border-teal-200">
                   Most clients tell me the tiny healed mark is 100x better than the mole they'd been hiding for years.
@@ -1213,13 +1213,13 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"What if it's cancerous?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  <strong className="text-gray-900">Honest answer:</strong> During your free consultation, I examine it carefully. If anything looks concerning—unusual shape, color changes, irregular borders—I won't remove it.
+                  <strong className="text-gray-900">Honest answer:</strong> During your free consultation, I examine it carefully. If anything looks concerning-unusual shape, color changes, irregular borders-I won't remove it.
                 </p>
                 <p>
                   I'll refer you to get it properly checked by a dermatologist first. Your safety is always the priority over any treatment.
                 </p>
                 <p className="text-teal-700 font-normal pt-4 border-t border-teal-200">
-                  Most of what I see is completely benign—simple skin tags, moles, warts. But I'll never take risks with your health.
+                  Most of what I see is completely benign-simple skin tags, moles, warts. But I'll never take risks with your health.
                 </p>
               </div>
             </motion.div>
@@ -1276,7 +1276,7 @@ function SkinLesionRemovalPage() {
                 If you're not happy with your results, <span className="font-normal">I'll make it right</span>.
               </p>
               <p>
-                If I think something needs medical attention, <span className="font-normal">I'll tell you honestly</span>—even if it means turning down your money.
+                If I think something needs medical attention, <span className="font-normal">I'll tell you honestly</span>-even if it means turning down your money.
               </p>
               <p>
                 If you have questions during healing, <span className="font-normal">I'll be there</span>. WhatsApp me anytime.
@@ -1291,7 +1291,7 @@ function SkinLesionRemovalPage() {
                 <p className="text-2xl font-serif font-light italic">
                   "Your confidence and your safety are more important to me than any sale."
                 </p>
-                <p className="text-sm font-light mt-4 opacity-90">— Rhiannon, Founder</p>
+                <p className="text-sm font-light mt-4 opacity-90">- Rhiannon, Founder</p>
               </div>
             </div>
           </motion.div>
@@ -1326,13 +1326,13 @@ function SkinLesionRemovalPage() {
                     I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years.
                   </p>
                   <p>
-                    But here's the thing—I started doing this because I saw how much it actually <span className="italic">mattered</span> to people. Not in a medical way. In a <span className="font-normal text-gray-800">confidence</span> way.
+                    But here's the thing-I started doing this because I saw how much it actually <span className="italic">mattered</span> to people. Not in a medical way. In a <span className="font-normal text-gray-800">confidence</span> way.
                   </p>
                   <p>
                     I know you've probably been thinking about this for a while. Maybe you've looked into it before but got scared off by the price, the clinical websites, or the fear of scarring. Maybe the NHS turned you away and you felt stuck.
                   </p>
                   <p>
-                    <strong className="text-gray-800">I get it.</strong> This isn't just about removing a physical imperfection—it's about getting your confidence back. It's about not adjusting your angle in every photo. It's about talking to people without wondering if they're staring at it.
+                    <strong className="text-gray-800">I get it.</strong> This isn't just about removing a physical imperfection-it's about getting your confidence back. It's about not adjusting your angle in every photo. It's about talking to people without wondering if they're staring at it.
                   </p>
                   <p className="text-base text-teal-700 font-normal border-l-4 border-teal-500 pl-6 py-4 bg-teal-50/30">
                     You deserve to feel comfortable in your own skin. Let me help you get there.
@@ -1444,7 +1444,7 @@ function SkinLesionRemovalPage() {
                 How much longer will you wait?
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
-                You've been thinking about this long enough. Let's have a conversation—no pressure, no obligation. Just honest answers to your questions and a clear path forward.
+                You've been thinking about this long enough. Let's have a conversation-no pressure, no obligation. Just honest answers to your questions and a clear path forward.
               </p>
               <p className="text-base text-gray-700 max-w-2xl mx-auto font-light italic">
                 Six months from now, you'll wish you'd started today.
@@ -1479,7 +1479,7 @@ function SkinLesionRemovalPage() {
 
             <div className="pt-8 border-t border-teal-200">
               <p className="text-base text-gray-600 font-light italic mb-6">
-                "I wish I'd done this sooner" — Almost every client says this.
+                "I wish I'd done this sooner" - Almost every client says this.
               </p>
               <div className="flex items-center justify-center space-x-2">
                 <Clock className="w-4 h-4 text-amber-600" />
