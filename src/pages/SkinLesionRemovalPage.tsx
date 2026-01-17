@@ -655,7 +655,7 @@ function SkinLesionRemovalPage() {
                 Here's what I want you to know:
               </p>
               <p className="text-base sm:text-lg font-light leading-relaxed max-w-3xl mx-auto">
-                Your feelings are valid. It's not vain to want this gone. It's not silly that it bothers you. And you don't have to live with it just because it's "not medically necessary."
+                Your feelings are valid, and it's good that you want this gone. Nobody, including you, would want to just "live with it".
               </p>
               <p className="text-lg sm:text-xl font-light leading-relaxed mt-6 sm:mt-8">
                 Your confidence matters. Let me help you get it back.
