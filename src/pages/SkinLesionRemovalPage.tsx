@@ -952,8 +952,8 @@ function SkinLesionRemovalPage() {
                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
               >
                 {/* Image */}
-                <div className="w-full lg:w-1/3 flex-shrink-0">
-                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
+                <div className="w-full lg:w-1/2 flex-shrink-0">
+                  <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
                     <img
                       src={story.image}
                       alt={story.name}
@@ -964,7 +964,7 @@ function SkinLesionRemovalPage() {
                 </div>
 
                 {/* Testimonial Content */}
-                <div className="w-full lg:w-2/3 bg-white border-2 border-teal-100 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-shadow">
+                <div className="w-full lg:w-1/2 bg-white border-2 border-teal-100 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-shadow">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 gap-4">
                     <div>
                       <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-2">{story.name}</h3>
