@@ -185,6 +185,20 @@ function SkinLesionRemovalPage() {
           <p className="text-gray-700 text-sm md:text-base font-light mb-6 leading-relaxed">
             Book your free consultation online or message directly via WhatsApp. Choose a time that works for you - evening and weekend slots available.
           </p>
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <img
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLk9hCKcEpuNyB4c5UP1OD9z8GXJlTsjiKSLw"
+              alt="Booking appointment"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
+            />
+            <img
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansPXyFyBplansMeUbGIOLF6SBXiAE1CKD5xpJ0"
+              alt="Consultation booking"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
+            />
+          </div>
           <div className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-lg p-6">
             <h4 className="text-teal-800 font-serif text-lg mb-3 font-light">Getting Started</h4>
             <ul className="space-y-2 text-sm text-gray-700 font-light">
@@ -239,6 +253,20 @@ function SkinLesionRemovalPage() {
           <p className="text-gray-700 text-sm md:text-base font-light mb-6 leading-relaxed">
             The area is numbed (just a small pinch for 2 seconds), then the lesion is carefully removed. Most treatments take 15-20 minutes. You'll feel pressure but no pain.
           </p>
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <img
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansBOTpEsXAT70DbI3p4EqW1ve6ijGVXNYd8hwf"
+              alt="Treatment process"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
+            />
+            <img
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansoGYKcU5Kd6UZLc8ozSIHCbRu7DkWQpJ2sfq3"
+              alt="Lesion removal treatment"
+              className="rounded-lg object-cover h-32 md:h-48 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
+            />
+          </div>
           <div className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-lg p-6">
             <h4 className="text-teal-800 font-serif text-lg mb-3 font-light">During Treatment</h4>
             <ul className="space-y-2 text-sm text-gray-700 font-light">
