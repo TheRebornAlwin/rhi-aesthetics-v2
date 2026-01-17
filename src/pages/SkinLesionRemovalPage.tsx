@@ -149,7 +149,7 @@ function SkinLesionRemovalPage() {
       timeAgo: "1 month ago",
       image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansL7WIuZcEpuNyB4c5UP1OD9z8GXJlTsjiKSLw",
       before: "I'd had these skin tags for years and they really bothered me. They'd catch on my jewelry and I was always conscious of them. I looked into removal before but everywhere seemed so expensive and clinical.",
-      process: "Rhiannon was so professional and made the whole experience easy. She took her time, checked in with me throughout, and I felt completely safe.",
+      process: "Rhia was so professional and made the whole experience easy. She took her time, checked in with me throughout, and I felt completely safe.",
       after: "I'm so satisfied with the results. They're gone and healing was straightforward. I'm already planning to come back for another area. Would 100% recommend.",
       result: "Finally free"
     },
@@ -160,7 +160,7 @@ function SkinLesionRemovalPage() {
       timeAgo: "2 weeks ago",
       image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans3crCSbkbzO1oaYGq0j4H8guRQFnhBerA3iyl",
       before: "I was nervous going in, not gonna lie. I'd never done anything like this before and I wasn't sure what to expect. But it was something that had bothered me for a while.",
-      process: "Rhiannon was fantastic from start to finish. She made me feel totally at ease, took the time to ask exactly which areas I wanted treated, and regularly checked in to make sure I was comfortable throughout.",
+      process: "Rhia was fantastic from start to finish. She made me feel totally at ease, took the time to ask exactly which areas I wanted treated, and regularly checked in to make sure I was comfortable throughout.",
       after: "I can already see results and I'm really pleased with them. The whole experience was so much better than I expected. I feel more confident already.",
       result: "Worth every penny"
     }
@@ -466,7 +466,7 @@ function SkinLesionRemovalPage() {
                 whileTap={{ scale: 0.97 }}
                 className="text-sm tracking-wider px-6 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase shadow-lg shadow-teal-500/20 rounded-md"
               >
-                Book £49 Intro Offer
+                Book £49 Lesion Removal
               </motion.a>
             </div>
           </div>
@@ -515,7 +515,7 @@ function SkinLesionRemovalPage() {
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto px-12 py-4 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-all duration-200 shadow-xl shadow-teal-500/30 rounded-md text-center"
               >
-                Book £49 Intro Offer
+                Book £49 Lesion Removal
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -675,7 +675,7 @@ function SkinLesionRemovalPage() {
               viewport={{ once: true }}
               className="aspect-[3/4] bg-teal-50 border-3 border-teal-200 overflow-hidden rounded-2xl shadow-2xl"
             >
-              <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="Rhiannon" className="w-full h-full object-cover" loading="lazy" />
+              <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="Rhia" className="w-full h-full object-cover" loading="lazy" />
             </motion.div>
 
             <motion.div
@@ -686,7 +686,7 @@ function SkinLesionRemovalPage() {
             >
               <div>
                 <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">About</p>
-                <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light mb-8">Hi, I'm Rhiannon</h2>
+                <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light mb-8">Hi, I'm Rhia</h2>
 
                 <div className="space-y-6 text-sm text-gray-600 leading-relaxed font-light">
                   <p className="text-base">
@@ -736,7 +736,6 @@ function SkinLesionRemovalPage() {
                   <MessageCircle className="w-5 h-5" />
                   <span>Message Me First</span>
                 </motion.a>
-                <p className="text-xs text-gray-500 font-light mt-4 italic">No pressure. Just honest conversation.</p>
               </div>
             </motion.div>
           </div>
@@ -1212,7 +1211,7 @@ function SkinLesionRemovalPage() {
             <p className="text-lg text-gray-700 font-light leading-relaxed italic">
               "You're not a transaction here-you're a person I genuinely care about."
             </p>
-            <p className="text-sm text-teal-600 font-light mt-4">- Rhiannon</p>
+            <p className="text-sm text-teal-600 font-light mt-4">- Rhia</p>
           </motion.div>
         </div>
       </section>
@@ -1226,7 +1225,6 @@ function SkinLesionRemovalPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <p className="text-xs tracking-widest text-teal-600 uppercase mb-6 font-light">No BS, Just Honesty</p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light mb-6">Real Talk</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
               You deserve to know exactly what to expect. No sugar-coating, no hiding the truth.
@@ -1245,7 +1243,7 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"Will it scar?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  <strong className="text-gray-900">Honest answer:</strong> You'll have a small mark at first-that's how healing works. But with proper technique and aftercare, most clients see it fade to nearly invisible within 4-8 weeks.
+                  You'll have a small mark at first-that's how healing works. But with proper technique and aftercare, most clients see it fade to nearly invisible within 4-8 weeks.
                 </p>
                 <p>
                   I use methods specifically designed to minimize scarring. The key is letting it heal naturally-no picking, following aftercare, protecting from sun.
@@ -1268,7 +1266,7 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"Does it hurt?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  <strong className="text-gray-900">Honest answer:</strong> The numbing injection? Yeah, you'll feel a quick pinch for about 2 seconds. After that? Nothing during the actual removal.
+                  The numbing injection? Yeah, you'll feel a quick pinch for about 2 seconds. After that? Nothing during the actual removal.
                 </p>
                 <p>
                   Some clients feel a slight pressure or tugging, but no pain. Most people are genuinely surprised by how easy it is.
@@ -1291,7 +1289,7 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"What if it's cancerous?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  <strong className="text-gray-900">Honest answer:</strong> During your free consultation, I examine it carefully. If anything looks concerning-unusual shape, color changes, irregular borders-I won't remove it.
+                  During your free consultation, I examine it carefully. If anything looks concerning-unusual shape, color changes, irregular borders-I won't remove it.
                 </p>
                 <p>
                   I'll refer you to get it properly checked by a dermatologist first. Your safety is always the priority over any treatment.
@@ -1314,7 +1312,7 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"Can I go to work after?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  <strong className="text-gray-900">Honest answer:</strong> Yes. Most people go straight back to work or their normal routine. You'll have a small scab, but you can cover it with makeup after day 1.
+                  Yes. Most people go straight back to work or their normal routine. You'll have a small scab, but you can cover it with makeup after day 1.
                 </p>
                 <p>
                   For makeup directly on the treated area, wait 5-7 days until the scab falls off. Around it? You're fine from day one.
@@ -1369,7 +1367,7 @@ function SkinLesionRemovalPage() {
                 <p className="text-2xl font-serif font-light italic">
                   "Your confidence and your safety are more important to me than any sale."
                 </p>
-                <p className="text-sm font-light mt-4 opacity-90">- Rhiannon, Founder</p>
+                <p className="text-sm font-light mt-4 opacity-90">- Rhia, Founder</p>
               </div>
             </div>
           </motion.div>
