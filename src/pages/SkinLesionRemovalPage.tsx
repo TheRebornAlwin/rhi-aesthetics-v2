@@ -693,13 +693,13 @@ function SkinLesionRemovalPage() {
                     I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years.
                   </p>
                   <p>
-                    But here's the thing-I started doing this because I saw how much it actually <span className="italic">mattered</span> to people. Not in a medical way. In a <span className="font-normal text-gray-800">confidence</span> way.
+                    But here's the thing, I started doing this because I saw how much it actually <span className="italic">mattered</span> to people. Not in a medical way, but in a <span className="font-normal text-gray-800">confident</span> way.
                   </p>
                   <p>
-                    I know you've probably been thinking about this for a while. Maybe you've looked into it before but got scared off by the price, the clinical websites, or the fear of scarring. Maybe the NHS turned you away and you felt stuck.
+                    I know you've probably been thinking about this for a while. Maybe you've looked into it before but got scared off by the price, the clinical websites, or the fear of scarring. Maybe the NHS turned you away, and you felt stuck.
                   </p>
                   <p>
-                    <strong className="text-gray-800">I get it.</strong> This isn't just about removing a physical imperfection-it's about getting your confidence back. It's about not adjusting your angle in every photo. It's about talking to people without wondering if they're staring at it.
+                    <strong className="text-gray-800">I get it,</strong> this isn't just about removing a physical imperfection, it's about getting your confidence back. It's about just not adjusting your angle in every photo, it's also about talking to people without wondering if they're staring at it.
                   </p>
                   <p className="text-base text-teal-700 font-normal border-l-4 border-teal-500 pl-6 py-4 bg-teal-50/30">
                     You deserve to feel comfortable in your own skin. Let me help you get there.
