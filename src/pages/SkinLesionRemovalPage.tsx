@@ -734,7 +734,7 @@ function SkinLesionRemovalPage() {
                   className="inline-flex items-center space-x-3 px-10 py-5 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md shadow-lg"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  <span>Message Me First</span>
+                  <span>Message Me</span>
                 </motion.a>
               </div>
             </motion.div>
