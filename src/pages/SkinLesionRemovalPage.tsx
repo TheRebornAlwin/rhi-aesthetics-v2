@@ -952,8 +952,8 @@ function SkinLesionRemovalPage() {
                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
               >
                 {/* Image */}
-                <div className="w-full lg:w-1/2 flex-shrink-0">
-                  <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
+                <div className="w-full lg:w-1/3 flex-shrink-0">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
                     <img
                       src={story.image}
                       alt={story.name}
@@ -964,7 +964,7 @@ function SkinLesionRemovalPage() {
                 </div>
 
                 {/* Testimonial Content */}
-                <div className="w-full lg:w-1/2 bg-white border-2 border-teal-100 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-shadow">
+                <div className="w-full lg:w-2/3 bg-white border-2 border-teal-100 rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-shadow">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 gap-4">
                     <div>
                       <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-2">{story.name}</h3>
@@ -1232,10 +1232,10 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"Will it scar?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  You'll have a small mark at first-that's how healing works. But with proper technique and aftercare, most clients see it fade to nearly invisible within 4-8 weeks.
+                  You'll have a small mark at first, that's how healing works. But with proper technique and aftercare, most clients see it fade to nearly invisible within 4-8 weeks.
                 </p>
                 <p>
-                  I use methods specifically designed to minimize scarring. The key is letting it heal naturally-no picking, following aftercare, protecting from sun.
+                  I use methods specifically designed to minimize scarring, but the key is letting it heal naturally. No picking, making sure to follow aftercare, and protecting from sun.
                 </p>
                 <p className="text-teal-700 font-normal pt-4 border-t border-teal-200">
                   Most clients tell me the tiny healed mark is 100x better than the mole they'd been hiding for years.
@@ -1255,10 +1255,10 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"Does it hurt?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  The numbing injection? Yeah, you'll feel a quick pinch for about 2 seconds. After that? Nothing during the actual removal.
+                  You'll feel a quick pinch for about 2 seconds. But after that, the numbing takes care of the pain during the actual removal.
                 </p>
                 <p>
-                  Some clients feel a slight pressure or tugging, but no pain. Most people are genuinely surprised by how easy it is.
+                  Some clients feel a slight pressure or tugging, but no pain. Most people are genuinely surprised by how easy and painless it is.
                 </p>
                 <p className="text-teal-700 font-normal pt-4 border-t border-teal-200">
                   If I had to rate it: the injection is maybe a 3/10 for 2 seconds. The removal itself? 0/10. You won't feel it.
@@ -1281,7 +1281,7 @@ function SkinLesionRemovalPage() {
                   During your free consultation, I examine it carefully. If anything looks concerning-unusual shape, color changes, irregular borders-I won't remove it.
                 </p>
                 <p>
-                  I'll refer you to get it properly checked by a dermatologist first. Your safety is always the priority over any treatment.
+                  I'll refer you to get it properly checked by a dermatologist first, because your safety is always the priority over any treatment.
                 </p>
                 <p className="text-teal-700 font-normal pt-4 border-t border-teal-200">
                   Most of what I see is completely benign-simple skin tags, moles, warts. But I'll never take risks with your health.
