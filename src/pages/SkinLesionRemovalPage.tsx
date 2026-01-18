@@ -1448,7 +1448,7 @@ function SkinLesionRemovalPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center space-y-12 p-12 lg:p-16 bg-gradient-to-br from-teal-50/50 to-white border-3 border-teal-200 rounded-3xl shadow-xl"
+            className="text-center space-y-12 p-6 sm:p-10 lg:p-16 bg-gradient-to-br from-teal-50/50 to-white border-3 border-teal-200 rounded-3xl shadow-xl"
           >
             <div className="space-y-6">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-light">
@@ -1469,9 +1469,9 @@ function SkinLesionRemovalPage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-14 py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md"
+                className="group px-8 sm:px-14 py-5 sm:py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md whitespace-nowrap"
               >
-                <span className="flex items-center space-x-3">
+                <span className="flex items-center space-x-2 sm:space-x-3">
                   <span>Book £49 Lesion Removal</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -1482,7 +1482,7 @@ function SkinLesionRemovalPage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-14 py-6 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md"
+                className="px-8 sm:px-14 py-5 sm:py-6 border-2 border-teal-600 text-teal-600 text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md whitespace-nowrap"
               >
                 Ask Me Anything First
               </motion.a>
