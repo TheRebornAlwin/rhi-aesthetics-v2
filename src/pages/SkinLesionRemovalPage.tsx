@@ -1462,16 +1462,16 @@ function SkinLesionRemovalPage() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full">
               <motion.a
                 href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-8 sm:px-14 py-5 sm:py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md whitespace-nowrap"
+                className="group w-full sm:w-auto px-8 sm:px-14 py-5 sm:py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-normal sm:tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md text-center"
               >
-                <span className="flex items-center space-x-2 sm:space-x-3">
+                <span className="flex items-center justify-center space-x-2 sm:space-x-3">
                   <span>Book £49 Lesion Removal</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -1482,7 +1482,7 @@ function SkinLesionRemovalPage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 sm:px-14 py-5 sm:py-6 border-2 border-teal-600 text-teal-600 text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md whitespace-nowrap"
+                className="w-full sm:w-auto px-8 sm:px-14 py-5 sm:py-6 border-2 border-teal-600 text-teal-600 text-sm tracking-normal sm:tracking-widest uppercase font-light hover:bg-teal-50 transition-colors rounded-md text-center"
               >
                 Ask Me Anything First
               </motion.a>
