@@ -1354,9 +1354,9 @@ function SkinLesionRemovalPage() {
             <div className="pt-8">
               <div className="inline-block p-8 bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-2xl">
                 <p className="text-2xl font-serif font-light italic">
-                  "Your confidence and your safety are more important to me than any sale."
+                  "I messaged her like 10 times during healing with random questions and she answered every single one. Never made me feel stupid for asking. You can tell she actually cares."
                 </p>
-                <p className="text-sm font-light mt-4 opacity-90">- Rhia, Founder</p>
+                <p className="text-sm font-light mt-4 opacity-90">- Sophie T.</p>
               </div>
             </div>
           </motion.div>
