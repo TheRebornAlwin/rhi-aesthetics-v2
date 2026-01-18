@@ -1301,10 +1301,10 @@ function SkinLesionRemovalPage() {
               <h3 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-6">"Can I go to work after?"</h3>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  Yes. Most people go straight back to work or their normal routine. You'll have a small scab, but you can cover it with makeup after day 1.
+                  Yes, most people go straight back to work or their normal routine. You'll have a small scab, but you can cover it with makeup after the first day.
                 </p>
                 <p>
-                  For makeup directly on the treated area, wait 5-7 days until the scab falls off. Around it? You're fine from day one.
+                  For makeup directly on the treated area, wait 5-7 days until the scab falls off. You're fine putting it around the direct area though!
                 </p>
                 <p className="text-teal-700 font-normal pt-4 border-t border-teal-200">
                   The healing is way easier than most people expect. Just protect it from sun and follow the simple aftercare.
