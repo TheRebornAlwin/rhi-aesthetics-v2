@@ -1354,7 +1354,7 @@ function SkinLesionRemovalPage() {
             <div className="pt-8">
               <div className="inline-block p-8 bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-2xl">
                 <p className="text-2xl font-serif font-light italic">
-                  "I messaged her like 10 times during healing with random questions and she answered every single one. Never made me feel stupid for asking. You can tell she actually cares."
+                  "I messaged her like 10 times during healing with random questions because I'm super anxious about literally EVERYTHING and she answered every single one! Never made me feel stupid for asking, and you can tell she actually cares."
                 </p>
                 <p className="text-sm font-light mt-4 opacity-90">- Sophie T.</p>
               </div>
@@ -1465,9 +1465,10 @@ function SkinLesionRemovalPage() {
             </div>
 
             <div className="pt-8 border-t border-teal-200">
-              <p className="text-base text-gray-600 font-light italic mb-6">
-                "I wish I'd done this sooner" - Almost every client says this.
+              <p className="text-base text-gray-700 font-light italic mb-2">
+                "Genuinely mad at myself for waiting so long. Was scared for no reason, took like 15 mins and now I actually like what I see in photos again?? Just book it honestly"
               </p>
+              <p className="text-sm text-teal-600 font-light mb-6">- Jess K.</p>
               <div className="flex items-center justify-center space-x-2">
                 <Clock className="w-4 h-4 text-amber-600" />
                 <p className="text-xs text-amber-700 font-normal">Only 9 consultation spots remaining this month</p>
