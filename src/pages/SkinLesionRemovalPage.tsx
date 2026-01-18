@@ -217,6 +217,20 @@ function SkinLesionRemovalPage() {
           <p className="text-gray-700 text-sm md:text-base font-light mb-6 leading-relaxed">
             Rhia will examine the area, discuss your skin history, answer all your questions, and explain exactly what to expect. This is your time to feel completely comfortable.
           </p>
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <img
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansokn9f15Kd6UZLc8ozSIHCbRu7DkWQpJ2sfq3"
+              alt="Consultation"
+              className="rounded-lg object-cover h-48 md:h-64 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
+            />
+            <img
+              src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansDrzsO1FlbUg7HiPYe8pNhaWf5E4dG26xVuXJ"
+              alt="Professional assessment"
+              className="rounded-lg object-cover h-48 md:h-64 w-full shadow-lg border-2 border-teal-100"
+              loading="lazy"
+            />
+          </div>
           <div className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-lg p-6">
             <h4 className="text-teal-800 font-serif text-lg mb-3 font-light">What We Cover</h4>
             <ul className="space-y-2 text-sm text-gray-700 font-light">
@@ -495,12 +509,22 @@ function SkinLesionRemovalPage() {
       {/* SIMPLIFIED HERO */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
+          {/* Mobile hero image - loads super fast */}
+          <img
+            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZYKIfl6XwJuImFfqiz86x7V3CyK2odlaTv5P"
+            alt="Clinic"
+            className="w-full h-full object-cover md:hidden"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
+          />
+          {/* Desktop hero image */}
           <img
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansvJH6nsUI2LoFzNsU8hi6XjReWVPbCHytdQ0Y"
             alt="Clinic"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hidden md:block"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
