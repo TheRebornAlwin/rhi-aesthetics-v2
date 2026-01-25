@@ -51,6 +51,11 @@ function SkinLesionRemovalPage() {
   };
 
   useEffect(() => {
+    // Track Meta Pixel PageView for SPA navigation
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'PageView');
+    }
+
     // Load Calendly widget CSS and JS
     const link = document.createElement('link');
     link.href = 'https://assets.calendly.com/assets/external/widget.css';
