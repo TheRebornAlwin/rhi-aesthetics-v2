@@ -44,6 +44,10 @@ function SkinLesionRemovalPage() {
       (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal'});
       window.history.pushState({}, '', window.location.pathname + '#book');
     }
+    // Track Meta Pixel Schedule event
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'Schedule');
+    }
   };
 
   useEffect(() => {
