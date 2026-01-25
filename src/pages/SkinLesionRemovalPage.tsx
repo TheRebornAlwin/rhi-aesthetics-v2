@@ -37,7 +37,26 @@ function SkinLesionRemovalPage() {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
+  // Calendly popup handler
+  const openCalendly = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal'});
+    }
+  };
+
   useEffect(() => {
+    // Load Calendly widget CSS and JS
+    const link = document.createElement('link');
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
     // Set page title and meta description
     document.title = 'Skin Lesion Removal Southampton | RHI Aesthetics';
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -492,9 +511,8 @@ function SkinLesionRemovalPage() {
               </nav>
 
               <motion.a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                onClick={openCalendly}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="text-sm tracking-wider px-6 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase shadow-lg shadow-teal-500/20 rounded-md"
@@ -551,9 +569,8 @@ function SkinLesionRemovalPage() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
               <motion.a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                onClick={openCalendly}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto px-12 py-4 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-all duration-200 shadow-xl shadow-teal-500/30 rounded-md text-center"
@@ -887,9 +904,8 @@ function SkinLesionRemovalPage() {
               If any of these sound like you, you're in the right place.
             </p>
             <motion.a
-              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
+              onClick={openCalendly}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="px-10 py-4 bg-white border-2 border-teal-600 text-teal-600 text-sm tracking-wider uppercase font-light hover:bg-teal-50 transition-all rounded-md"
@@ -1018,9 +1034,8 @@ function SkinLesionRemovalPage() {
               Want to be one of these success stories?
             </p>
             <motion.a
-              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
+              onClick={openCalendly}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="px-12 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors shadow-lg shadow-teal-500/30 rounded-md"
@@ -1114,9 +1129,8 @@ function SkinLesionRemovalPage() {
 
               <div className="space-y-6">
                 <motion.a
-                  href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
+                  onClick={openCalendly}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-block px-8 sm:px-14 py-5 sm:py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md whitespace-nowrap"
@@ -1464,9 +1478,8 @@ function SkinLesionRemovalPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full">
               <motion.a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A26013937&cartId=8615a6ad-7619-4242-af39-c25e698a2afc"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                onClick={openCalendly}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group w-full sm:w-auto px-8 sm:px-14 py-5 sm:py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-normal sm:tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md text-center"
