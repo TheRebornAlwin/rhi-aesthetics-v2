@@ -561,14 +561,14 @@ function SkinLesionRemovalPage() {
         </div>
       </motion.header>
 
-      {/* SIMPLIFIED HERO */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          {/* Mobile hero image - loads super fast */}
+          {/* Mobile hero image */}
           <img
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZYKIfl6XwJuImFfqiz86x7V3CyK2odlaTv5P"
             alt="Clinic"
-            className="w-full h-full object-cover md:hidden"
+            className="w-full h-full object-cover lg:hidden"
             loading="eager"
             fetchPriority="high"
             decoding="sync"
@@ -577,15 +577,16 @@ function SkinLesionRemovalPage() {
           <img
             src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansvJH6nsUI2LoFzNsU8hi6XjReWVPbCHytdQ0Y"
             alt="Clinic"
-            className="w-full h-full object-cover hidden md:block"
+            className="w-full h-full object-cover hidden lg:block"
             loading="eager"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
+        {/* Mobile: Centered content */}
         <motion.div
-          className="relative z-10 text-center px-6 max-w-4xl mx-auto"
+          className="relative z-10 text-center px-6 max-w-4xl mx-auto lg:hidden"
         >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -593,21 +594,15 @@ function SkinLesionRemovalPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
           >
-            {/* Main Heading */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight font-light">
+            <h1 className="font-serif text-4xl sm:text-5xl text-white leading-tight tracking-tight font-light">
               Finally Feel Free From That Mole or Skin Tag
             </h1>
-
-            {/* Subtitle */}
             <p className="text-xl sm:text-2xl text-white leading-relaxed max-w-3xl mx-auto font-light">
               Safe, professional skin lesion removal in Southampton with minimal scarring and natural results.
             </p>
-
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
               <motion.a
-                href="#"
-                onClick={openCalendly}
+                href="#mobile-booking"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto px-12 py-4 bg-teal-600 text-white text-sm tracking-widest uppercase font-light hover:bg-teal-700 transition-all duration-200 shadow-xl shadow-teal-500/30 rounded-md text-center"
@@ -627,110 +622,92 @@ function SkinLesionRemovalPage() {
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Desktop: Split layout - Content left, Calendly right */}
+        <div className="relative z-10 hidden lg:grid lg:grid-cols-2 lg:gap-8 w-full max-w-7xl mx-auto px-6 lg:px-12 py-24">
+          {/* Left side: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col justify-center space-y-8"
+          >
+            <h1 className="font-serif text-5xl xl:text-6xl text-white leading-tight tracking-tight font-light">
+              Finally Feel Free From That Mole or Skin Tag
+            </h1>
+            <p className="text-xl xl:text-2xl text-white/90 leading-relaxed font-light max-w-xl">
+              Safe, professional skin lesion removal in Southampton with minimal scarring and natural results.
+            </p>
+            <div className="space-y-4 pt-4">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                  <CheckCircle className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-white font-light">Free consultation included</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-white font-light">Aftercare kit provided</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-white font-light">WhatsApp support during healing</span>
+              </div>
+            </div>
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="https://wa.me/447307762776"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 w-fit px-8 py-4 border-2 border-white text-white text-sm tracking-widest uppercase font-light hover:bg-white/10 transition-all duration-200 rounded-md"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Or Message Rhia First
+            </motion.a>
+          </motion.div>
+
+          {/* Right side: Calendly embed */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex items-center"
+          >
+            <div
+              className="calendly-inline-widget w-full rounded-xl overflow-hidden shadow-2xl bg-white"
+              data-url="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488"
+              style={{ minWidth: '320px', height: '680px' }}
+            />
+          </motion.div>
+        </div>
       </section>
 
-      {/* CALENDLY BOOKING SECTION */}
-      <section className="bg-white py-16 lg:py-0">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          {/* Desktop: Side by side layout */}
-          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center lg:min-h-[700px]">
-            {/* Left side: Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-8"
-            >
-              <div className="space-y-6">
-                <h2 className="font-serif text-4xl lg:text-5xl text-gray-900 font-light leading-tight">
-                  Book Your £49 Skin Lesion Removal
-                </h2>
-                <p className="text-xl text-gray-600 font-light leading-relaxed">
-                  Safe, professional removal with minimal scarring. Choose a time that works for you and take the first step toward clearer skin.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-5 h-5 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900">Free Consultation Included</h3>
-                    <p className="text-gray-600 font-light">We'll assess your lesion and answer all your questions</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-5 h-5 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900">Aftercare Kit Provided</h3>
-                    <p className="text-gray-600 font-light">Everything you need for optimal healing</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="w-5 h-5 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900">WhatsApp Support</h3>
-                    <p className="text-gray-600 font-light">Direct access to Rhia during your healing</p>
-                  </div>
-                </div>
-              </div>
-
-              <motion.a
-                href="https://wa.me/447307762776"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-all duration-200 rounded-md"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Or Message Rhia First
-              </motion.a>
-            </motion.div>
-
-            {/* Right side: Calendly embed */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="h-full"
-            >
-              <div
-                className="calendly-inline-widget rounded-xl overflow-hidden shadow-lg"
-                data-url="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488"
-                style={{ minWidth: '320px', height: '700px' }}
-              />
-            </motion.div>
-          </div>
-
-          {/* Mobile: Stacked layout */}
-          <div className="lg:hidden">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-8"
-            >
-              <h2 className="font-serif text-3xl text-gray-900 font-light mb-4">
-                Book Your Appointment
-              </h2>
-              <p className="text-gray-600 font-light">
-                Choose a time that works for you
-              </p>
-            </motion.div>
-            <div
-              className="calendly-inline-widget rounded-xl overflow-hidden shadow-lg"
-              data-url="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488"
-              style={{ minWidth: '100%', height: '650px' }}
-            />
-          </div>
+      {/* MOBILE CALENDLY BOOKING SECTION */}
+      <section id="mobile-booking" className="bg-white py-16 lg:hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="font-serif text-3xl text-gray-900 font-light mb-4">
+              Book Your Appointment
+            </h2>
+            <p className="text-gray-600 font-light">
+              Choose a time that works for you
+            </p>
+          </motion.div>
+          <div
+            className="calendly-inline-widget rounded-xl overflow-hidden shadow-lg"
+            data-url="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488"
+            style={{ minWidth: '100%', height: '650px' }}
+          />
         </div>
       </section>
 
