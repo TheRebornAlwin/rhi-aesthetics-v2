@@ -135,28 +135,45 @@ function SkinLesionRemovalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Initialize Calendly widgets
+  // Use preloaded Calendly iframe or initialize fresh
   useEffect(() => {
-    const initCalendly = () => {
+    const preloadContainer = document.getElementById('calendly-preload');
+    const preloadedIframe = document.getElementById('calendly-preload-iframe') as HTMLIFrameElement;
+
+    // Find the first visible Calendly widget (desktop hero)
+    const desktopWidget = document.querySelector('.calendly-inline-widget.calendly-desktop');
+
+    if (preloadedIframe && desktopWidget && !desktopWidget.querySelector('iframe')) {
+      // Clone the preloaded iframe for desktop
+      const clonedIframe = preloadedIframe.cloneNode(true) as HTMLIFrameElement;
+      clonedIframe.id = '';
+      clonedIframe.style.cssText = 'width:100%;height:100%;border:none;';
+      desktopWidget.appendChild(clonedIframe);
+    }
+
+    // Remove preload container
+    if (preloadContainer) {
+      preloadContainer.remove();
+    }
+
+    // Initialize mobile widget with Calendly API (loads when scrolled into view)
+    const initMobileWidget = () => {
       if ((window as any).Calendly) {
-        document.querySelectorAll('.calendly-inline-widget').forEach((widget) => {
-          const url = widget.getAttribute('data-url');
-          if (url && !widget.querySelector('iframe')) {
-            (window as any).Calendly.initInlineWidget({
-              url,
-              parentElement: widget as HTMLElement,
-            });
-          }
-        });
+        const mobileWidget = document.querySelector('.calendly-inline-widget.calendly-mobile');
+        if (mobileWidget && !mobileWidget.querySelector('iframe')) {
+          (window as any).Calendly.initInlineWidget({
+            url: (window as any).calendlyUrl,
+            parentElement: mobileWidget as HTMLElement,
+          });
+        }
         return true;
       }
       return false;
     };
 
-    // Try immediately, then poll if not ready
-    if (!initCalendly()) {
+    if (!initMobileWidget()) {
       const interval = setInterval(() => {
-        if (initCalendly()) clearInterval(interval);
+        if (initMobileWidget()) clearInterval(interval);
       }, 50);
       return () => clearInterval(interval);
     }
@@ -660,7 +677,7 @@ function SkinLesionRemovalPage() {
             className="flex items-center"
           >
             <div
-              className="calendly-inline-widget w-full rounded-xl overflow-hidden shadow-2xl bg-white"
+              className="calendly-inline-widget calendly-desktop w-full rounded-xl overflow-hidden shadow-2xl bg-white"
               data-url="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488"
               style={{ minWidth: '320px', height: '680px' }}
             />
@@ -685,7 +702,7 @@ function SkinLesionRemovalPage() {
             </p>
           </motion.div>
           <div
-            className="calendly-inline-widget rounded-xl overflow-hidden shadow-lg"
+            className="calendly-inline-widget calendly-mobile rounded-xl overflow-hidden shadow-lg"
             data-url="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488"
             style={{ minWidth: '100%', height: '650px' }}
           />

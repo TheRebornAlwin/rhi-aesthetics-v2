@@ -7,6 +7,14 @@
     <meta name="description" content="Safe, doctor-led Plasma Fibroblast in Southampton. Tighten loose eyelids, under eyes, and wrinkles without surgery. Expert care, visible results, full healing guidance." />
     <meta name="keywords" content="Plasma Fibroblast Southampton, Non-surgical eyelid lift, Skin tightening treatment UK, Plasma IQ clinic, Rhi's Aesthetics" />
     <title>Plasma Fibroblast Southampton | Non-Surgical Skin Tightening by Rhi's Aesthetics</title>
+
+    <!-- Critical: Calendly connections first for fastest embed -->
+    <link rel="preconnect" href="https://calendly.com" crossorigin />
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
+    <link rel="dns-prefetch" href="https://calendly.com" />
+    <link rel="dns-prefetch" href="https://assets.calendly.com" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -15,53 +23,64 @@
     <link rel="preload" href="https://820i9wpaqi.ufs.sh/f/PwwcUidplans8NiUzg1xiSaLujMzsdITE5Q2PNOovq1BVhCA" as="image" media="(min-width: 1024px)" />
     <link rel="preload" href="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZYKIfl6XwJuImFfqiz86x7V3CyK2odlaTv5P" as="image" media="(max-width: 1023px)" />
 
-    <!-- Calendly Preload - Early connections for faster embed -->
-    <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
-    <link rel="preconnect" href="https://calendly.com" crossorigin />
-    <link rel="preconnect" href="https://js.stripe.com" crossorigin />
-    <link rel="dns-prefetch" href="https://assets.calendly.com" />
-    <link rel="dns-prefetch" href="https://calendly.com" />
-    <link rel="dns-prefetch" href="https://js.stripe.com" />
-    <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" />
-    <link rel="preload" href="https://assets.calendly.com/assets/external/widget.js" as="script" crossorigin />
+    <!-- Calendly CSS and JS - load immediately -->
     <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
     <script src="https://assets.calendly.com/assets/external/widget.js"></script>
-    <!-- Prefetch the actual booking page for faster iframe load -->
-    <link rel="prefetch" href="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488" />
 
-    <!-- Hotjar Tracking Code -->
-    <script src="https://t.contentsquare.net/uxa/4f2a26fecffea.js"></script>
-
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "utdm84gulu");
+    <!-- Start loading Calendly iframe immediately -->
+    <script>
+      window.calendlyUrl = "https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488";
     </script>
-
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '877220211447893');
-fbq('track', 'PageView');
-</script>
-<!-- End Meta Pixel Code -->
   </head>
   <body>
     <!-- Meta Pixel noscript fallback -->
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=877220211447893&ev=PageView&noscript=1"
     /></noscript>
+
+    <!-- Preload Calendly iframe - starts loading immediately, hidden until React takes over -->
+    <div id="calendly-preload" style="position:absolute;left:-9999px;width:400px;height:700px;">
+      <iframe
+        src="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488&embed_type=Inline"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        loading="eager"
+        id="calendly-preload-iframe"
+      ></iframe>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Defer analytics to after page load -->
+    <script>
+      window.addEventListener('load', function() {
+        // Hotjar
+        var hj = document.createElement('script');
+        hj.src = 'https://t.contentsquare.net/uxa/4f2a26fecffea.js';
+        hj.async = true;
+        document.head.appendChild(hj);
+
+        // Microsoft Clarity
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "utdm84gulu");
+
+        // Meta Pixel
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '877220211447893');
+        fbq('track', 'PageView');
+      });
+    </script>
   </body>
 </html>
