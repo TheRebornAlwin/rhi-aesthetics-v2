@@ -135,32 +135,45 @@ function SkinLesionRemovalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Re-initialize Calendly widgets when component mounts (for SPA navigation)
+  // Preload and initialize Calendly widgets immediately
   useEffect(() => {
+    // Prefetch Calendly scheduling page for faster iframe load
+    const prefetchLink = document.createElement('link');
+    prefetchLink.rel = 'prefetch';
+    prefetchLink.href = 'https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal';
+    document.head.appendChild(prefetchLink);
+
     const initWidgets = () => {
-      if ((window as any).Calendly) {
-        const widgets = document.querySelectorAll('.calendly-inline-widget:not([data-processed])');
-        widgets.forEach((widget) => {
-          widget.setAttribute('data-processed', 'true');
+      if ((window as any).Calendly && typeof (window as any).Calendly.initInlineWidget === 'function') {
+        document.querySelectorAll('.calendly-inline-widget').forEach((widget) => {
+          const url = widget.getAttribute('data-url');
+          // Only init if not already initialized (no iframe inside)
+          if (url && !widget.querySelector('iframe')) {
+            (window as any).Calendly.initInlineWidget({
+              url: url,
+              parentElement: widget as HTMLElement,
+            });
+          }
         });
-        // Trigger Calendly to scan for new widgets
-        if (typeof (window as any).Calendly.initInlineWidget === 'function') {
-          document.querySelectorAll('.calendly-inline-widget').forEach((widget) => {
-            const url = widget.getAttribute('data-url');
-            if (url && widget.children.length === 0) {
-              (window as any).Calendly.initInlineWidget({
-                url: url,
-                parentElement: widget as HTMLElement,
-              });
-            }
-          });
-        }
+        return true;
       }
+      return false;
     };
 
-    // Try after a short delay to ensure DOM is ready
-    const timer = setTimeout(initWidgets, 500);
-    return () => clearTimeout(timer);
+    // Try immediately
+    if (!initWidgets()) {
+      // If Calendly not ready, poll aggressively until it is
+      let attempts = 0;
+      const maxAttempts = 50; // 5 seconds max
+      const interval = setInterval(() => {
+        attempts++;
+        if (initWidgets() || attempts >= maxAttempts) {
+          clearInterval(interval);
+        }
+      }, 100);
+
+      return () => clearInterval(interval);
+    }
   }, []);
 
   const scrollToSection = (id: string) => {
