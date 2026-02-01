@@ -135,47 +135,6 @@ function SkinLesionRemovalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Preload and initialize Calendly widgets immediately
-  useEffect(() => {
-    // Prefetch Calendly scheduling page for faster iframe load
-    const prefetchLink = document.createElement('link');
-    prefetchLink.rel = 'prefetch';
-    prefetchLink.href = 'https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal';
-    document.head.appendChild(prefetchLink);
-
-    const initWidgets = () => {
-      if ((window as any).Calendly && typeof (window as any).Calendly.initInlineWidget === 'function') {
-        document.querySelectorAll('.calendly-inline-widget').forEach((widget) => {
-          const url = widget.getAttribute('data-url');
-          // Only init if not already initialized (no iframe inside)
-          if (url && !widget.querySelector('iframe')) {
-            (window as any).Calendly.initInlineWidget({
-              url: url,
-              parentElement: widget as HTMLElement,
-            });
-          }
-        });
-        return true;
-      }
-      return false;
-    };
-
-    // Try immediately
-    if (!initWidgets()) {
-      // If Calendly not ready, poll aggressively until it is
-      let attempts = 0;
-      const maxAttempts = 50; // 5 seconds max
-      const interval = setInterval(() => {
-        attempts++;
-        if (initWidgets() || attempts >= maxAttempts) {
-          clearInterval(interval);
-        }
-      }, 100);
-
-      return () => clearInterval(interval);
-    }
-  }, []);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -590,7 +549,7 @@ function SkinLesionRemovalPage() {
           />
           {/* Desktop hero image */}
           <img
-            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansvJH6nsUI2LoFzNsU8hi6XjReWVPbCHytdQ0Y"
+            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans8NiUzg1xiSaLujMzsdITE5Q2PNOovq1BVhCA"
             alt="Clinic"
             className="w-full h-full object-cover hidden lg:block"
             loading="eager"
