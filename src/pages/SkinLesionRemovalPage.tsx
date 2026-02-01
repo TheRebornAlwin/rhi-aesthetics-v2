@@ -947,7 +947,7 @@ function SkinLesionRemovalPage() {
       </section>
 
       {/* CREDENTIALS/CERTIFICATES GALLERY */}
-      <section className="py-16 lg:py-20 bg-gray-50">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             <div className="rounded-xl overflow-hidden shadow-lg">
