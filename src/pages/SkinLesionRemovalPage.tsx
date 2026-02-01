@@ -209,7 +209,7 @@ function SkinLesionRemovalPage() {
       age: 38,
       treatment: "Vascular Treatment",
       timeAgo: "2 weeks ago",
-      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZRmTJU6XwJuImFfqiz86x7V3CyK2odlaTv5P",
+      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans1jAiKGPrPgLW2xY53lMqmX6sbNHJyknwUZt8",
       quote: "Not gonna lie I was SO nervous beforehand, like proper anxious about it. But Rhia is so lovely and calm, she just chats to you and before you know it it's done. Still healing but already looks so much better than before. Actually excited to see the final result! Would defo recommend if you're on the fence about it x"
     }
   ];
@@ -973,7 +973,7 @@ function SkinLesionRemovalPage() {
               <div className="flex items-center justify-between pt-4 border-t border-teal-200">
                 <div>
                   <p className="font-serif text-lg text-gray-900 font-light">Stephanie P.</p>
-                  <p className="text-sm text-gray-500 font-light">Neck Mole Removal</p>
+                  <p className="text-sm text-gray-500 font-light">Head Mole Removals</p>
                 </div>
                 <div className="bg-teal-100 px-4 py-2 rounded-full">
                   <p className="text-xs tracking-wider text-teal-700 uppercase font-light">3 weeks ago</p>
