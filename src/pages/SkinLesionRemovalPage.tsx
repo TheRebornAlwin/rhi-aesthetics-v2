@@ -226,7 +226,7 @@ function SkinLesionRemovalPage() {
       age: 38,
       treatment: "Vascular Treatment",
       timeAgo: "2 weeks ago",
-      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans1jAiKGPrPgLW2xY53lMqmX6sbNHJyknwUZt8",
+      image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans1jAiKGPrPgLW2xY53lMqmX6sbNHJyknwUZt8?v=2",
       quote: "Not gonna lie I was SO nervous beforehand, like proper anxious about it. But Rhia is so lovely and calm, she just chats to you and before you know it it's done. Still healing but already looks so much better than before. Actually excited to see the final result! Would defo recommend if you're on the fence about it x"
     }
   ];
