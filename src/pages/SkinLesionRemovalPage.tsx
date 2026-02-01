@@ -950,48 +950,30 @@ function SkinLesionRemovalPage() {
       <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="rounded-xl overflow-hidden shadow-lg"
-            >
+            <div className="rounded-xl overflow-hidden shadow-lg">
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZMUl9t6XwJuImFfqiz86x7V3CyK2odlaTv5P"
                 alt="Credential 1"
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-xl overflow-hidden shadow-lg"
-            >
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans4xsdmeZlV9LZ7rOzhpUH0MiuGACRPD3jNeQk"
                 alt="Credential 2"
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-xl overflow-hidden shadow-lg"
-            >
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansK7pCwqEuVC1H7mIjaGYs4kS2vQxiO3zoXpD6"
                 alt="Credential 3"
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
