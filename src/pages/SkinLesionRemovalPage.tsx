@@ -135,44 +135,7 @@ function SkinLesionRemovalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Initialize Calendly inline widgets
-  useEffect(() => {
-    const initCalendly = () => {
-      if ((window as any).Calendly) {
-        const widgets = document.querySelectorAll('.calendly-inline-widget');
-        widgets.forEach((widget) => {
-          const url = widget.getAttribute('data-url');
-          if (url && !widget.hasAttribute('data-initialized')) {
-            widget.setAttribute('data-initialized', 'true');
-            (window as any).Calendly.initInlineWidget({
-              url: url,
-              parentElement: widget as HTMLElement,
-            });
-          }
-        });
-      }
-    };
-
-    // Try immediately in case script is already loaded
-    initCalendly();
-
-    // Also set up a check in case script loads after component mounts
-    const checkInterval = setInterval(() => {
-      if ((window as any).Calendly) {
-        initCalendly();
-        clearInterval(checkInterval);
-      }
-    }, 100);
-
-    // Clear interval after 5 seconds max
-    const timeout = setTimeout(() => clearInterval(checkInterval), 5000);
-
-    return () => {
-      clearInterval(checkInterval);
-      clearTimeout(timeout);
-    };
-  }, []);
-
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -650,26 +613,6 @@ function SkinLesionRemovalPage() {
             <p className="text-xl xl:text-2xl text-white/90 leading-relaxed font-light max-w-xl">
               Safe, professional skin lesion removal in Southampton with minimal scarring and natural results.
             </p>
-            <div className="space-y-4 pt-4">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-white font-light">Free consultation included</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-white font-light">Aftercare kit provided</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-white font-light">WhatsApp support during healing</span>
-              </div>
-            </div>
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -679,7 +622,7 @@ function SkinLesionRemovalPage() {
               className="inline-flex items-center gap-3 w-fit px-8 py-4 border-2 border-white text-white text-sm tracking-widest uppercase font-light hover:bg-white/10 transition-all duration-200 rounded-md"
             >
               <MessageCircle className="w-5 h-5" />
-              Or Message Rhia First
+              Message Rhia
             </motion.a>
           </motion.div>
 
