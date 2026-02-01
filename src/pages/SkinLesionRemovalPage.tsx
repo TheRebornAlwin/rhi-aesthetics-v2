@@ -135,7 +135,34 @@ function SkinLesionRemovalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  
+  // Re-initialize Calendly widgets when component mounts (for SPA navigation)
+  useEffect(() => {
+    const initWidgets = () => {
+      if ((window as any).Calendly) {
+        const widgets = document.querySelectorAll('.calendly-inline-widget:not([data-processed])');
+        widgets.forEach((widget) => {
+          widget.setAttribute('data-processed', 'true');
+        });
+        // Trigger Calendly to scan for new widgets
+        if (typeof (window as any).Calendly.initInlineWidget === 'function') {
+          document.querySelectorAll('.calendly-inline-widget').forEach((widget) => {
+            const url = widget.getAttribute('data-url');
+            if (url && widget.children.length === 0) {
+              (window as any).Calendly.initInlineWidget({
+                url: url,
+                parentElement: widget as HTMLElement,
+              });
+            }
+          });
+        }
+      }
+    };
+
+    // Try after a short delay to ensure DOM is ready
+    const timer = setTimeout(initWidgets, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -698,6 +725,24 @@ function SkinLesionRemovalPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <motion.a
+              href="#"
+              onClick={scrollToBooking}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase shadow-lg shadow-teal-500/20 rounded-md"
+            >
+              Book £49 Lesion Removal
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
@@ -794,6 +839,15 @@ function SkinLesionRemovalPage() {
               <p className="text-lg sm:text-xl font-light leading-relaxed mt-6 sm:mt-8">
                 Your confidence matters. Let me help you get it back.
               </p>
+              <motion.a
+                href="#"
+                onClick={scrollToBooking}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-block mt-8 text-sm tracking-wider px-8 py-4 bg-white text-teal-700 hover:bg-teal-50 transition-colors duration-200 font-light uppercase shadow-lg rounded-md"
+              >
+                Book £49 Lesion Removal
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -899,7 +953,7 @@ function SkinLesionRemovalPage() {
               <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-100">
                 <img
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansz8Zl6zTq8Hf5hu6iAXSa2bUkK9dTPsRpvIMn"
-                  alt="Lauren M."
+                  alt="Stephanie P."
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -919,7 +973,7 @@ function SkinLesionRemovalPage() {
 
               <div className="flex items-center justify-between pt-4 border-t border-teal-200">
                 <div>
-                  <p className="font-serif text-lg text-gray-900 font-light">Lauren M.</p>
+                  <p className="font-serif text-lg text-gray-900 font-light">Stephanie P.</p>
                   <p className="text-sm text-gray-500 font-light">Neck Mole Removal</p>
                 </div>
                 <div className="bg-teal-100 px-4 py-2 rounded-full">
@@ -927,6 +981,24 @@ function SkinLesionRemovalPage() {
                 </div>
               </div>
             </div>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <motion.a
+              href="#"
+              onClick={scrollToBooking}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase shadow-lg shadow-teal-500/20 rounded-md"
+            >
+              Book £49 Lesion Removal
+            </motion.a>
           </motion.div>
         </div>
       </section>
