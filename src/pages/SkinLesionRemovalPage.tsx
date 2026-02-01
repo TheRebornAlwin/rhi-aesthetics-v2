@@ -135,6 +135,33 @@ function SkinLesionRemovalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Initialize Calendly widgets
+  useEffect(() => {
+    const initCalendly = () => {
+      if ((window as any).Calendly) {
+        document.querySelectorAll('.calendly-inline-widget').forEach((widget) => {
+          const url = widget.getAttribute('data-url');
+          if (url && !widget.querySelector('iframe')) {
+            (window as any).Calendly.initInlineWidget({
+              url,
+              parentElement: widget as HTMLElement,
+            });
+          }
+        });
+        return true;
+      }
+      return false;
+    };
+
+    // Try immediately, then poll if not ready
+    if (!initCalendly()) {
+      const interval = setInterval(() => {
+        if (initCalendly()) clearInterval(interval);
+      }, 50);
+      return () => clearInterval(interval);
+    }
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
