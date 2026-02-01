@@ -37,13 +37,25 @@ function SkinLesionRemovalPage() {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-  // Calendly popup handler
-  const openCalendly = (e: React.MouseEvent) => {
+  // Scroll to booking section handler
+  const scrollToBooking = (e: React.MouseEvent) => {
     e.preventDefault();
-    if ((window as any).Calendly) {
-      (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal'});
-      window.history.pushState({}, '', window.location.pathname + '#book');
+    const isDesktop = window.innerWidth >= 1024; // lg breakpoint
+
+    if (isDesktop) {
+      // On desktop, scroll to top where hero + Calendly embed is
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // On mobile, scroll to the mobile booking section
+      const mobileBooking = document.getElementById('mobile-booking');
+      if (mobileBooking) {
+        const offset = 20;
+        const elementPosition = mobileBooking.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
     }
+
     // Track Meta Pixel Schedule event
     if ((window as any).fbq) {
       (window as any).fbq('track', 'Schedule');
@@ -549,7 +561,7 @@ function SkinLesionRemovalPage() {
 
               <motion.a
                 href="#"
-                onClick={openCalendly}
+                onClick={scrollToBooking}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="text-sm tracking-wider px-6 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase shadow-lg shadow-teal-500/20 rounded-md"
@@ -1024,7 +1036,7 @@ function SkinLesionRemovalPage() {
             </p>
             <motion.a
               href="#"
-              onClick={openCalendly}
+              onClick={scrollToBooking}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="px-10 py-4 bg-white border-2 border-teal-600 text-teal-600 text-sm tracking-wider uppercase font-light hover:bg-teal-50 transition-all rounded-md"
@@ -1154,7 +1166,7 @@ function SkinLesionRemovalPage() {
             </p>
             <motion.a
               href="#"
-              onClick={openCalendly}
+              onClick={scrollToBooking}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="px-12 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors shadow-lg shadow-teal-500/30 rounded-md"
@@ -1249,7 +1261,7 @@ function SkinLesionRemovalPage() {
               <div className="space-y-6">
                 <motion.a
                   href="#"
-                  onClick={openCalendly}
+                  onClick={scrollToBooking}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-block px-8 sm:px-14 py-5 sm:py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md whitespace-nowrap"
@@ -1598,7 +1610,7 @@ function SkinLesionRemovalPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full">
               <motion.a
                 href="#"
-                onClick={openCalendly}
+                onClick={scrollToBooking}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group w-full sm:w-auto px-8 sm:px-14 py-5 sm:py-6 bg-gradient-to-r from-teal-600 to-teal-700 text-white text-sm tracking-normal sm:tracking-widest uppercase font-normal hover:from-teal-700 hover:to-teal-800 transition-all shadow-2xl shadow-teal-500/40 rounded-md text-center"
