@@ -56,17 +56,6 @@ function SkinLesionRemovalPage() {
       (window as any).fbq('track', 'PageView');
     }
 
-    // Load Calendly widget CSS and JS
-    const link = document.createElement('link');
-    link.href = 'https://assets.calendly.com/assets/external/widget.css';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-
     // Set page title and meta description
     document.title = 'Skin Lesion Removal Southampton | RHI Aesthetics';
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -132,6 +121,44 @@ function SkinLesionRemovalPage() {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Initialize Calendly inline widgets
+  useEffect(() => {
+    const initCalendly = () => {
+      if ((window as any).Calendly) {
+        const widgets = document.querySelectorAll('.calendly-inline-widget');
+        widgets.forEach((widget) => {
+          const url = widget.getAttribute('data-url');
+          if (url && !widget.hasAttribute('data-initialized')) {
+            widget.setAttribute('data-initialized', 'true');
+            (window as any).Calendly.initInlineWidget({
+              url: url,
+              parentElement: widget as HTMLElement,
+            });
+          }
+        });
+      }
+    };
+
+    // Try immediately in case script is already loaded
+    initCalendly();
+
+    // Also set up a check in case script loads after component mounts
+    const checkInterval = setInterval(() => {
+      if ((window as any).Calendly) {
+        initCalendly();
+        clearInterval(checkInterval);
+      }
+    }, 100);
+
+    // Clear interval after 5 seconds max
+    const timeout = setTimeout(() => clearInterval(checkInterval), 5000);
+
+    return () => {
+      clearInterval(checkInterval);
+      clearTimeout(timeout);
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -600,6 +627,111 @@ function SkinLesionRemovalPage() {
             </div>
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* CALENDLY BOOKING SECTION */}
+      <section className="bg-white py-16 lg:py-0">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          {/* Desktop: Side by side layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center lg:min-h-[700px]">
+            {/* Left side: Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="space-y-6">
+                <h2 className="font-serif text-4xl lg:text-5xl text-gray-900 font-light leading-tight">
+                  Book Your £49 Skin Lesion Removal
+                </h2>
+                <p className="text-xl text-gray-600 font-light leading-relaxed">
+                  Safe, professional removal with minimal scarring. Choose a time that works for you and take the first step toward clearer skin.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-5 h-5 text-teal-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">Free Consultation Included</h3>
+                    <p className="text-gray-600 font-light">We'll assess your lesion and answer all your questions</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-5 h-5 text-teal-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">Aftercare Kit Provided</h3>
+                    <p className="text-gray-600 font-light">Everything you need for optimal healing</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-5 h-5 text-teal-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">WhatsApp Support</h3>
+                    <p className="text-gray-600 font-light">Direct access to Rhia during your healing</p>
+                  </div>
+                </div>
+              </div>
+
+              <motion.a
+                href="https://wa.me/447307762776"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-teal-600 text-teal-600 text-sm tracking-widest uppercase font-light hover:bg-teal-50 transition-all duration-200 rounded-md"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Or Message Rhia First
+              </motion.a>
+            </motion.div>
+
+            {/* Right side: Calendly embed */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="h-full"
+            >
+              <div
+                className="calendly-inline-widget rounded-xl overflow-hidden shadow-lg"
+                data-url="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488"
+                style={{ minWidth: '320px', height: '700px' }}
+              />
+            </motion.div>
+          </div>
+
+          {/* Mobile: Stacked layout */}
+          <div className="lg:hidden">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
+              <h2 className="font-serif text-3xl text-gray-900 font-light mb-4">
+                Book Your Appointment
+              </h2>
+              <p className="text-gray-600 font-light">
+                Choose a time that works for you
+              </p>
+            </motion.div>
+            <div
+              className="calendly-inline-widget rounded-xl overflow-hidden shadow-lg"
+              data-url="https://calendly.com/rhiaaestheticsttd/49-skin-lesion-removal?hide_gdpr_banner=1&background_color=ffffff&text_color=1f2937&primary_color=0d9488"
+              style={{ minWidth: '100%', height: '650px' }}
+            />
+          </div>
+        </div>
       </section>
 
       {/* BEFORE/AFTER GALLERY */}
