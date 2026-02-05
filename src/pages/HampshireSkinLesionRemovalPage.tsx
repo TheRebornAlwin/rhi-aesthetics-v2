@@ -894,7 +894,7 @@ function HampshireSkinLesionRemovalPage() {
 
                 <div className="space-y-6 text-sm text-gray-600 leading-relaxed font-light">
                   <p className="text-base">
-                    I've helped hundreds of women across the Hampshire County area — from Southampton and Portsmouth to Winchester and Basingstoke — finally feel free from the moles, skin tags, and lesions they'd been hiding for years.
+                    I've helped hundreds of women across the Hampshire County area, from Southampton and Portsmouth to Winchester and Basingstoke, finally feel free from the moles, skin tags, and lesions they'd been hiding for years.
                   </p>
                   <p>
                     But here's the thing, I started doing this because I saw how much it actually <span className="italic">mattered</span> to people. Not in a medical way, but in a <span className="font-normal text-gray-800">confident</span> way.
@@ -1733,7 +1733,7 @@ function HampshireSkinLesionRemovalPage() {
             <div>
               <h3 className="text-xs tracking-widest uppercase mb-6 font-light">Contact</h3>
               <div className="space-y-4 text-sm text-teal-100 font-light">
-                <p className="flex items-center space-x-3"><MapPin className="w-4 h-4" /><span>Hampshire, UK</span></p>
+                <p className="flex items-center space-x-3"><MapPin className="w-4 h-4" /><span>Hampshire County, UK</span></p>
                 <p className="flex items-center space-x-3"><Phone className="w-4 h-4" /><span>07307 762776</span></p>
                 <p className="flex items-center space-x-3"><Mail className="w-4 h-4" /><span>rhiaesthetics@mail.com</span></p>
               </div>
