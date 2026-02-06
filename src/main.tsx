@@ -7,6 +7,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
 import CookiePolicy from './pages/CookiePolicy.tsx';
 import HampshireSkinLesionRemovalPage from './pages/HampshireSkinLesionRemovalPage.tsx';
+import SandboxPage from './pages/SandboxPage.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/hampshire" element={<HampshireSkinLesionRemovalPage />} />
+        <Route path="/sandbox" element={<SandboxPage />} />
         <Route path="*" element={<Navigate to="/slr" replace />} />
       </Routes>
     </BrowserRouter>
