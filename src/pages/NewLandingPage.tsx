@@ -51,7 +51,7 @@ function NewLandingPage() {
     document.title = 'Skin Lesion Removal Southampton | RHI Aesthetics';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional skin lesion removal in Southampton. Precise 15-minute treatment. Mole and skin tag removal with natural results. £49 intro offer.');
+      metaDescription.setAttribute('content', 'Professional skin lesion removal in Southampton. Precise 30-minute treatment. Mole, wart, and skin lesion removal with natural results. £49 intro offer.');
     }
 
     if ('scrollRestoration' in window.history) {
@@ -146,7 +146,7 @@ function NewLandingPage() {
           <div className="flex items-center justify-between">
             <Link to="/" className="group">
               <motion.div whileHover={{ opacity: 0.7 }} transition={{ duration: 0.2 }} className="w-10 h-10">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="RHI Aesthetics" className="w-full h-full object-contain" />
+                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansPwVqOiQplansMeUbGIOLF6SBXiAE1CKD5xpJ" alt="RHI Aesthetics" className="w-full h-full object-contain" />
               </motion.div>
             </Link>
 
@@ -199,7 +199,7 @@ function NewLandingPage() {
               </h1>
 
               <p className="text-lg sm:text-xl text-gray-700 font-light leading-relaxed">
-                A precise 15-minute treatment that removes your mole or skin tag permanently — with results you'll see the same day.
+                A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently — with results you'll see the same day.
               </p>
 
               <div className="space-y-2.5">
@@ -348,7 +348,7 @@ function NewLandingPage() {
                   I numb the area with a tiny injection (you'll feel a 2-second pinch, then nothing). Then I use a precise clinical technique to remove the mole, skin tag, or lesion at the root — so it's gone for good.
                 </p>
                 <p>
-                  The whole thing takes about 15 minutes. You walk out the same day, no downtime, and within 4–8 weeks the area has healed to the point most people can't tell anything was ever there.
+                  The whole thing takes about 30 minutes. You walk out the same day, no downtime, and within 4–8 weeks the area has healed to the point most people can't tell anything was ever there.
                 </p>
                 <p className="text-teal-700 font-normal border-l-4 border-teal-400 pl-4 py-2 bg-teal-50/50 rounded-r-lg">
                   It's the kind of result where everyone notices you look great — but nobody can tell why.
@@ -588,7 +588,7 @@ function NewLandingPage() {
                 <p className="text-sm text-gray-900 font-normal mb-3">Your £49 appointment includes:</p>
                 {[
                   'Expert skin assessment & consultation',
-                  'Complete removal (approx. 15 minutes)',
+                  'Complete removal (approx. 30 minutes)',
                   'Aftercare kit & healing instructions',
                   'WhatsApp support throughout healing',
                 ].map((item, i) => (
