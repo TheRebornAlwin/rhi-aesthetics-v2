@@ -199,7 +199,7 @@ function NewLandingPage() {
               </h1>
 
               <p className="text-lg sm:text-xl text-gray-700 font-light leading-relaxed">
-                A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently — with results you'll see the same day.
+                A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently with results you'll see the same day.
               </p>
 
               <div className="space-y-2.5">
@@ -747,7 +747,7 @@ function NewLandingPage() {
             </div>
           </div>
           <div className="mt-4 pt-4 border-t border-gray-800 text-center">
-            <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=alwin@tripletendigits.com" target="_blank" rel="noopener noreferrer" className="inline-block group">
+            <a href="https://tripletendigits.com" target="_blank" rel="noopener noreferrer" className="inline-block group">
               <p className="text-xs text-gray-500 font-light">
                 <span className="text-gray-400 group-hover:text-white transition-colors">Triple Ten Digits</span>
                 <span className="mx-2">|</span>
