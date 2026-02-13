@@ -92,13 +92,13 @@ function NewLandingPage() {
     <div className={`flex items-center gap-3 ${className}`}>
       <div className="flex -space-x-2">
         <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-          <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansvhu53QI2LoFzNsU8hi6XjReWVPbCHytdQ0YT" alt="" className="w-full h-full object-cover" />
+          <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansvhu53QI2LoFzNsU8hi6XjReWVPbCHytdQ0YT" alt="" className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-          <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLUrYbcEpuNyB4c5UP1OD9z8GXJlTsjiKSLwq" alt="" className="w-full h-full object-cover" />
+          <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLUrYbcEpuNyB4c5UP1OD9z8GXJlTsjiKSLwq" alt="" className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-          <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans1jAiKGPrPgLW2xY53lMqmX6sbNHJyknwUZt8?v=2" alt="" className="w-full h-full object-cover" />
+          <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans1jAiKGPrPgLW2xY53lMqmX6sbNHJyknwUZt8?v=2" alt="" className="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
@@ -121,6 +121,8 @@ function NewLandingPage() {
     { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansnGSknDeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg" },
     { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansbcDWDCOYpmXqDxfseSP45Qwn0azcOMUoCJih" },
     { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansROkb0cNnPqXUigWtzfTd60QMsIbeE2vVLYuH" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansZO9NlbM6XwJuImFfqiz86x7V3CyK2odlaTv5" },
+    { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplanspGTOtu9qI1imrJsTxKlZHRz3Vt25Gv4aoPnL" },
   ];
 
   const faqs = [
@@ -133,7 +135,7 @@ function NewLandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDF8F6]">
+    <div className="min-h-screen bg-[#FDF8F6] overflow-x-hidden">
       {/* Header */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
@@ -142,15 +144,15 @@ function NewLandingPage() {
           isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-[#FDF8F6] py-5'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between">
             <Link to="/" className="group">
               <motion.div whileHover={{ opacity: 0.7 }} transition={{ duration: 0.2 }} className="w-10 h-10">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI" alt="RHI Aesthetics" className="w-full h-full object-contain" />
+                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI" alt="RHI Aesthetics" className="w-full h-full object-contain" loading="eager" />
               </motion.div>
             </Link>
 
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-4 sm:space-x-8">
               <nav className="hidden lg:flex items-center space-x-8">
                 {[
                   { label: 'Results', id: 'results' },
@@ -172,7 +174,7 @@ function NewLandingPage() {
                 onClick={scrollToForm}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="text-xs tracking-wider px-5 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase rounded-md"
+                className="text-xs tracking-wider px-4 sm:px-5 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase rounded-md whitespace-nowrap"
               >
                 Book £49 Removal
               </motion.a>
@@ -184,7 +186,7 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* 1. HERO — Identity + Specific + Offer Card   */}
       {/* ============================================ */}
-      <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-6">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
             {/* Left: Content */}
@@ -192,13 +194,13 @@ function NewLandingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-5 sm:space-y-6"
             >
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-gray-900 leading-[1.15] tracking-tight font-light">
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-[3.2rem] text-gray-900 leading-[1.15] tracking-tight font-light">
                 For Women Who Are Done Hiding
               </h1>
 
-              <p className="text-lg sm:text-xl text-gray-700 font-light leading-relaxed">
+              <p className="text-base sm:text-xl text-gray-700 font-light leading-relaxed">
                 A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently with results you'll see the same day.
               </p>
 
@@ -223,8 +225,8 @@ function NewLandingPage() {
                 ))}
               </div>
 
-              {/* Offer card — right in the hero */}
-              <div className="bg-white border-2 border-teal-200 rounded-2xl p-6 sm:p-7 max-w-sm space-y-4">
+              {/* Offer card */}
+              <div className="bg-white border-2 border-teal-200 rounded-2xl p-5 sm:p-7 space-y-4">
                 <p className="text-sm text-gray-600 font-light">First treatment only</p>
                 <div className="flex items-baseline gap-3">
                   <span className="text-xl text-gray-400 line-through font-light">£120</span>
@@ -253,14 +255,14 @@ function NewLandingPage() {
               </div>
             </motion.div>
 
-            {/* Right: Hero image */}
+            {/* Right: Hero image — desktop only */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl max-w-lg">
                 <img
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansZYKIfl6XwJuImFfqiz86x7V3CyK2odlaTv5P"
                   alt="Skin lesion removal"
@@ -277,30 +279,30 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* 2. RESULTS — Before/After Gallery             */}
       {/* ============================================ */}
-      <section id="results" className="py-20 lg:py-24 px-6 bg-white">
+      <section id="results" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-10 sm:mb-12"
           >
-            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-4 font-light">Real Results</p>
-            <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light mb-3">What Results Can You Expect?</h2>
-            <p className="text-base text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 sm:mb-4 font-light">Real Results</p>
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3">What Results Can You Expect?</h2>
+            <p className="text-sm sm:text-base text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
               After treatment, the lesion is gone — permanently. A small scab forms and falls off within a week, leaving fresh skin that fades to match your natural tone. Most clients can't even find where it was.
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {beforeAfterImages.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="overflow-hidden rounded-xl border border-gray-100 shadow-sm"
+                transition={{ delay: index * 0.04 }}
+                className="overflow-hidden rounded-lg sm:rounded-xl border border-gray-100 shadow-sm"
               >
                 <div className="aspect-[16/9] overflow-hidden">
                   <img src={item.image} alt="Before & After" className="w-full h-full object-cover" loading="lazy" />
@@ -315,7 +317,7 @@ function NewLandingPage() {
             viewport={{ once: true }}
             className="text-center mt-8"
           >
-            <p className="text-sm text-gray-500 font-light italic mb-6">Every result shown is a real client treated by me in Southampton.</p>
+            <p className="text-xs sm:text-sm text-gray-500 font-light italic mb-5 sm:mb-6">Every result shown is a real client treated by me in Southampton.</p>
             <motion.a
               href="#booking-form"
               onClick={scrollToForm}
@@ -332,17 +334,17 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* 3. WHAT IS IT + WHO IS IT FOR (combined)      */}
       {/* ============================================ */}
-      <section className="py-20 lg:py-24 px-6 bg-[#FDF8F6]">
+      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-[#FDF8F6]">
         <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-14 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
             {/* What is it */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-4 font-light">Precise & Permanent</p>
-              <h2 className="font-serif text-3xl text-gray-900 font-light mb-6">How Does It Work?</h2>
+              <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 sm:mb-4 font-light">Precise & Permanent</p>
+              <h2 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-5 sm:mb-6">How Does It Work?</h2>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
                   I numb the area with a tiny injection (you'll feel a 2-second pinch, then nothing). Then I use a precise clinical technique to remove the mole, skin tag, or lesion at the root — so it's gone for good.
@@ -363,9 +365,9 @@ function NewLandingPage() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-4 font-light">Is This You?</p>
-              <h2 className="font-serif text-3xl text-gray-900 font-light mb-6">This Treatment Is For You If...</h2>
-              <div className="space-y-3">
+              <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 sm:mb-4 font-light">Is This You?</p>
+              <h2 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-5 sm:mb-6">This Treatment Is For You If...</h2>
+              <div className="space-y-2.5 sm:space-y-3">
                 {[
                   "You've been hiding it with makeup or adjusting your angle in every photo",
                   "You worry people are looking at it instead of you when you talk",
@@ -388,38 +390,56 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* 4. TESTIMONIALS                               */}
       {/* ============================================ */}
-      <section id="reviews" className="py-20 lg:py-24 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
+      <section id="reviews" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-10 sm:mb-12"
           >
-            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-4 font-light">Real Stories</p>
-            <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light mb-5">Women Who Trusted Me</h2>
+            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 sm:mb-4 font-light">Real Stories</p>
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-5">Hear It From My Clients</h2>
             <SocialProofBadge className="justify-center" />
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {[
               {
                 name: "Lauren M.",
-                treatment: "Neck Mole",
-                quote: "I put this off for THREE YEARS. The numbing works, you don't feel anything, and now it's just... gone. My sister can't even tell which one it was.",
-                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansvhu53QI2LoFzNsU8hi6XjReWVPbCHytdQ0YT",
+                quote: "I put this off for THREE YEARS because I was scared. The numbing works, you don't feel anything, and now it's just... gone. My sister can't even tell which one it was.",
               },
               {
                 name: "Marta R.",
-                treatment: "Skin Tags",
                 quote: "Rhia sorted all of them in one appointment, very professional, explained everything. Healed up nicely within a couple weeks. Already booked in again.",
-                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLUrYbcEpuNyB4c5UP1OD9z8GXJlTsjiKSLwq",
               },
               {
                 name: "Caroline H.",
-                treatment: "Vascular Lesion",
                 quote: "I was SO nervous. But Rhia is so lovely and calm, she chats to you and before you know it it's done. Already looks so much better. Would defo recommend.",
-                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans1jAiKGPrPgLW2xY53lMqmX6sbNHJyknwUZt8?v=2",
+              },
+              {
+                name: "Jess K.",
+                quote: "Genuinely mad at myself for waiting so long. Was scared for no reason, took like 15 mins and now I actually like what I see in photos again.",
+              },
+              {
+                name: "Sophie T.",
+                quote: "I messaged her like 10 times during healing with random questions because I'm super anxious and she answered every single one. Never made me feel stupid for asking.",
+              },
+              {
+                name: "Stephanie P.",
+                quote: "I wish I'd done this sooner. Healing was so quick and I can't even see where it was now. I don't avoid the mirror anymore. Such a simple thing but it's changed how I feel.",
+              },
+              {
+                name: "Emma W.",
+                quote: "Had a mole on my cheek I'd been covering with makeup for years. One appointment and it's gone. The scarring faded completely after about 5 weeks. Life changing honestly.",
+              },
+              {
+                name: "Rachel D.",
+                quote: "Was so worried about pain but the numbing injection was literally 2 seconds and then I felt nothing. Rhia talked me through everything. So professional and caring.",
+              },
+              {
+                name: "Priya N.",
+                quote: "The NHS told me they wouldn't remove it because it's cosmetic. Found Rhia and she had it sorted in one session for £49. Wish I'd known about her sooner.",
               },
             ].map((story, index) => (
               <motion.div
@@ -427,24 +447,16 @@ function NewLandingPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-[#FDF8F6] border border-gray-100 rounded-2xl p-6"
+                transition={{ delay: index * 0.04 }}
+                className="bg-[#FDF8F6] border border-gray-100 rounded-xl sm:rounded-2xl p-5 sm:p-6"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-teal-100">
-                    <img src={story.image} alt={story.name} className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-normal text-gray-900">{story.name}</p>
-                    <p className="text-xs text-teal-600 font-light">{story.treatment}</p>
-                  </div>
-                </div>
                 <div className="flex gap-0.5 mb-3">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-sm text-gray-700 font-light leading-relaxed italic">"{story.quote}"</p>
+                <p className="text-sm text-gray-700 font-light leading-relaxed italic mb-3">"{story.quote}"</p>
+                <p className="text-xs text-gray-500 font-normal">— {story.name}</p>
               </motion.div>
             ))}
           </div>
@@ -453,7 +465,7 @@ function NewLandingPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mt-10"
+            className="text-center mt-8 sm:mt-10"
           >
             <motion.a
               href="#booking-form"
@@ -471,21 +483,21 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* 5. BOOKING FORM + RHIA BIO + OFFER RECAP      */}
       {/* ============================================ */}
-      <section id="booking-form" className="py-20 lg:py-24 px-6 bg-[#FDF8F6]">
+      <section id="booking-form" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-[#FDF8F6]">
         <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
             {/* Left: Form */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light mb-3">Book Your Treatment</h2>
-              <p className="text-sm text-gray-600 font-light mb-8 leading-relaxed">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3">Book Your Treatment</h2>
+              <p className="text-sm text-gray-600 font-light mb-6 sm:mb-8 leading-relaxed">
                 Fill in the form and I'll get back to you the same day. We'll find a time that works and I'll answer any questions you have.
               </p>
 
-              <form onSubmit={handleFormSubmit} className="space-y-5">
+              <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-5">
                 <div>
                   <label className="block text-xs tracking-wider text-gray-700 uppercase mb-2 font-light">Your Name</label>
                   <input
@@ -530,7 +542,7 @@ function NewLandingPage() {
               </form>
 
               {/* Guarantee + Social proof under form */}
-              <div className="mt-6 space-y-4">
+              <div className="mt-5 sm:mt-6 space-y-4">
                 <div className="flex items-start gap-2">
                   <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
                   <p className="text-xs text-gray-500 font-light">
@@ -547,10 +559,10 @@ function NewLandingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
             >
-              {/* Rhia photo + bio */}
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-gray-100 max-w-xs">
+              {/* Rhia photo */}
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-gray-100 w-full max-w-md mx-auto lg:mx-0">
                 <img
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
                   alt="Rhia"
@@ -559,13 +571,13 @@ function NewLandingPage() {
                 />
               </div>
 
-              <div>
+              <div className="text-center lg:text-left">
                 <h3 className="font-serif text-2xl text-gray-900 font-light mb-2">Hi, I'm Rhia</h3>
                 <p className="text-sm text-gray-600 font-light leading-relaxed mb-4">
                   I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years. Your confidence matters — let me help you get it back.
                 </p>
 
-                <div className="flex items-center gap-6 pt-4 border-t border-gray-200">
+                <div className="flex items-center justify-center lg:justify-start gap-6 pt-4 border-t border-gray-200">
                   <div>
                     <p className="font-serif text-2xl text-teal-700 font-light">300+</p>
                     <p className="text-xs text-gray-500 font-light">Happy Clients</p>
@@ -584,7 +596,7 @@ function NewLandingPage() {
               </div>
 
               {/* What's included */}
-              <div className="bg-white border border-gray-100 rounded-xl p-6 space-y-3">
+              <div className="bg-white border border-gray-100 rounded-xl p-5 sm:p-6 space-y-3">
                 <p className="text-sm text-gray-900 font-normal mb-3">Your £49 appointment includes:</p>
                 {[
                   'Expert skin assessment & consultation',
@@ -602,11 +614,9 @@ function NewLandingPage() {
               {/* Not ready? */}
               <div className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl">
                 <MessageCircle className="w-5 h-5 text-teal-600 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-gray-700 font-light">
-                    Not ready yet? <a href="https://wa.me/447307762776" target="_blank" rel="noopener noreferrer" className="text-teal-600 font-normal underline underline-offset-2 hover:text-teal-700">Message me</a> with your questions — no pressure.
-                  </p>
-                </div>
+                <p className="text-sm text-gray-700 font-light">
+                  Not ready yet? <a href="https://wa.me/447307762776" target="_blank" rel="noopener noreferrer" className="text-teal-600 font-normal underline underline-offset-2 hover:text-teal-700">Message me</a> with your questions — no pressure.
+                </p>
               </div>
             </motion.div>
           </div>
@@ -616,15 +626,15 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* 6. FAQ                                        */}
       {/* ============================================ */}
-      <section id="faqs" className="py-20 lg:py-24 px-6 bg-white">
+      <section id="faqs" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-10 sm:mb-12"
           >
-            <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 font-light">Frequently Asked Questions</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light">Frequently Asked Questions</h2>
           </motion.div>
 
           <div className="space-y-2">
@@ -639,14 +649,14 @@ function NewLandingPage() {
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/50 transition-colors"
+                  className="w-full px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-white/50 transition-colors"
                 >
-                  <span className="text-sm text-gray-900 pr-6 font-light">{faq.question}</span>
+                  <span className="text-sm text-gray-900 pr-4 sm:pr-6 font-light">{faq.question}</span>
                   <motion.div
                     animate={{ rotate: openFaq === index ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <ChevronDown className="w-4 h-4 text-teal-600" />
+                    <ChevronDown className="w-4 h-4 text-teal-600 flex-shrink-0" />
                   </motion.div>
                 </button>
                 <motion.div
@@ -655,7 +665,7 @@ function NewLandingPage() {
                   transition={{ duration: 0.2 }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-5 text-sm text-gray-600 leading-relaxed font-light border-t border-gray-100 pt-4">
+                  <div className="px-5 sm:px-6 pb-4 sm:pb-5 text-sm text-gray-600 leading-relaxed font-light border-t border-gray-100 pt-4">
                     {faq.answer}
                   </div>
                 </motion.div>
@@ -668,18 +678,14 @@ function NewLandingPage() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mt-12 space-y-4"
+            className="text-center mt-10 sm:mt-12 space-y-4"
           >
-            <p className="text-base text-gray-700 font-light italic">
-              "Genuinely mad at myself for waiting so long. Was scared for no reason, took 15 mins and now I actually like what I see in photos again."
-            </p>
-            <p className="text-xs text-teal-600 font-light">— Jess K.</p>
             <motion.a
               href="#booking-form"
               onClick={scrollToForm}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15 mt-4"
+              className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
             >
               Book £49 Removal
             </motion.a>
@@ -693,12 +699,12 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* FOOTER                                        */}
       {/* ============================================ */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
+      <footer className="bg-gray-900 text-white py-10 sm:py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
-            <div className="space-y-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-12">
+            <div className="col-span-2 sm:col-span-1 space-y-5">
               <div className="w-10 h-10">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="RHI Aesthetics" className="w-full h-full object-contain opacity-80" />
+                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="RHI Aesthetics" className="w-full h-full object-contain opacity-80" loading="lazy" />
               </div>
               <p className="text-sm text-gray-400 font-light">
                 Professional skin lesion removal in Southampton
@@ -713,22 +719,22 @@ function NewLandingPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-xs tracking-widest uppercase mb-5 font-light">Contact</h3>
+              <h3 className="text-xs tracking-widest uppercase mb-4 sm:mb-5 font-light">Contact</h3>
               <div className="space-y-3 text-sm text-gray-400 font-light">
-                <p className="flex items-center space-x-3"><MapPin className="w-4 h-4" /><span>Southampton, UK</span></p>
-                <p className="flex items-center space-x-3"><Phone className="w-4 h-4" /><span>07307 762776</span></p>
-                <p className="flex items-center space-x-3"><Mail className="w-4 h-4" /><span>rhiaesthetics@mail.com</span></p>
+                <p className="flex items-center space-x-3"><MapPin className="w-4 h-4 flex-shrink-0" /><span>Southampton, UK</span></p>
+                <p className="flex items-center space-x-3"><Phone className="w-4 h-4 flex-shrink-0" /><span>07307 762776</span></p>
+                <p className="flex items-center space-x-3"><Mail className="w-4 h-4 flex-shrink-0" /><span>rhiaesthetics@mail.com</span></p>
               </div>
             </div>
             <div>
-              <h3 className="text-xs tracking-widest uppercase mb-5 font-light">Services</h3>
+              <h3 className="text-xs tracking-widest uppercase mb-4 sm:mb-5 font-light">Services</h3>
               <ul className="space-y-3 text-sm text-gray-400 font-light">
                 <li><Link to="/slr" className="hover:text-white transition-colors">Skin Lesion Removal</Link></li>
                 <li><Link to="/plasma-fibroblast" className="hover:text-white transition-colors">Plasma Fibroblast</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-xs tracking-widest uppercase mb-5 font-light">Hours</h3>
+              <h3 className="text-xs tracking-widest uppercase mb-4 sm:mb-5 font-light">Hours</h3>
               <div className="space-y-3 text-sm text-gray-400 font-light">
                 <p>Mon–Thurs: <span className="text-white">11am–8pm</span></p>
                 <p>Friday: <span className="text-white">10am–3pm</span></p>
@@ -737,7 +743,7 @@ function NewLandingPage() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500 font-light">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-xs text-gray-500 font-light">
               <p>&copy; 2025 RHI Aesthetics. All rights reserved.</p>
               <div className="flex items-center gap-6">
                 <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
