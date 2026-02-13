@@ -135,7 +135,7 @@ function NewLandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDF8F6] overflow-x-hidden">
+    <div className="min-h-screen bg-[#FDF8F6]">
       {/* Header */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
@@ -257,8 +257,8 @@ function NewLandingPage() {
 
             {/* Right: Hero image — desktop only */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block"
             >
