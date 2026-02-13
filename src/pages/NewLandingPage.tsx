@@ -146,7 +146,7 @@ function NewLandingPage() {
           <div className="flex items-center justify-between">
             <Link to="/" className="group">
               <motion.div whileHover={{ opacity: 0.7 }} transition={{ duration: 0.2 }} className="w-10 h-10">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansPwVqOiQplansMeUbGIOLF6SBXiAE1CKD5xpJ" alt="RHI Aesthetics" className="w-full h-full object-contain" />
+                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI" alt="RHI Aesthetics" className="w-full h-full object-contain" />
               </motion.div>
             </Link>
 
