@@ -146,7 +146,7 @@ function NewLandingPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent lg:bg-[#FDF8F6] py-5'
+          isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-[#FDF8F6] py-5'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -191,65 +191,66 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* 1. HERO — Identity + Specific + Offer Card   */}
       {/* ============================================ */}
-      {/* Mobile hero background image */}
-      <section className="relative pt-36 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6">
-        {/* Background image for mobile */}
-        <div
-          className="absolute inset-0 lg:hidden bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(https://820i9wpaqi.ufs.sh/f/PwwcUidplansZYKIfl6XwJuImFfqiz86x7V3CyK2odlaTv5P)` }}
-        >
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-
-        <div className="relative max-w-6xl mx-auto">
+      <section className="relative pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
             {/* Left: Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-10 lg:space-y-6 text-center lg:text-left"
+              className="space-y-8 lg:space-y-6 text-center lg:text-left"
             >
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-white lg:text-gray-900 leading-[1.15] tracking-tight font-light">
+              {/* Hero B&A image - mobile only */}
+              <div className="lg:hidden -mx-4 sm:-mx-6">
+                <div className="overflow-hidden">
+                  <img
+                    src={beforeAfterImages[3].image}
+                    alt="Before & After result"
+                    className="w-full h-auto object-cover"
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                </div>
+              </div>
+
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-gray-900 leading-[1.15] tracking-tight font-light px-4 lg:px-0">
                 For Women Who<br className="lg:hidden" /> Are Done Hiding
               </h1>
 
-              <p className="text-base sm:text-xl text-white/90 lg:text-gray-700 font-light leading-loose lg:leading-relaxed">
+              <p className="text-base sm:text-xl text-gray-600 lg:text-gray-700 font-light leading-loose lg:leading-relaxed px-6 lg:px-0">
                 A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently with results you'll see the same day.
               </p>
 
               <div className="space-y-4 lg:space-y-2.5 inline-block text-left">
-                <p className="text-sm text-white lg:text-gray-900 font-normal">Results after your treatment:</p>
+                <p className="text-sm text-gray-900 font-normal">Results after your treatment:</p>
                 {[
                   'Lesion completely removed in one session',
                   'Tiny mark that fades to invisible within weeks',
                   'Back to your normal routine the same day',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5">
-                    <CheckCircle className="w-4 h-4 text-teal-400 lg:text-teal-600 flex-shrink-0" />
-                    <span className="text-sm text-white/90 lg:text-gray-700 font-light">{item}</span>
+                    <CheckCircle className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span className="text-sm text-gray-700 font-light">{item}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Proof pills */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 lg:gap-2">
-                {['Clinically proven technique', 'All skin types', 'Zero downtime'].map((pill, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-white/20 lg:bg-white border border-white/30 lg:border-gray-200 rounded text-xs text-white lg:text-gray-600 font-light">{pill}</span>
+              {/* Proof pills - with dividers on mobile like Crystal */}
+              <div className="lg:hidden flex items-center justify-center border-y border-gray-200 py-4">
+                {['Clinically proven', 'All skin types', 'Zero downtime'].map((pill, i) => (
+                  <div key={i} className="flex items-center">
+                    {i > 0 && <div className="w-px h-8 bg-gray-200 mx-3" />}
+                    <span className="text-xs text-gray-600 font-light text-center leading-tight">{pill}</span>
+                  </div>
                 ))}
               </div>
 
-              {/* Mobile CTA button (no offer card) */}
-              <div className="lg:hidden">
-                <motion.a
-                  href="#booking-form"
-                  onClick={scrollToForm}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
-                >
-                  Book Skin Lesion Removal
-                </motion.a>
+              {/* Proof pills - desktop */}
+              <div className="hidden lg:flex flex-wrap items-center gap-2">
+                {['Clinically proven technique', 'All skin types', 'Zero downtime'].map((pill, i) => (
+                  <span key={i} className="px-3 py-1.5 bg-white border border-gray-200 rounded text-xs text-gray-600 font-light">{pill}</span>
+                ))}
               </div>
 
               {/* Offer card - desktop only (in hero) */}
@@ -303,37 +304,31 @@ function NewLandingPage() {
         </div>
       </section>
 
-      {/* Offer card - mobile only (own section below hero) */}
-      <section className="lg:hidden py-10 px-4 sm:px-6 bg-[#FDF8F6]">
-        <div className="max-w-md mx-auto">
-          <div className="bg-white border-2 border-teal-200 rounded-2xl p-6 space-y-6 text-center">
-            <p className="text-sm text-gray-600 font-light">First treatment only</p>
+      {/* Offer card - mobile only (own section below hero, modelled after Crystal) */}
+      <section className="lg:hidden py-8 px-4 sm:px-6 bg-[#FDF8F6]">
+        <div className="max-w-md mx-auto text-center">
+          <div className="bg-white border-[3px] border-teal-700 rounded-2xl p-7 space-y-5">
+            <p className="font-serif text-xl text-gray-900 font-light">First treatment only</p>
             <div className="flex items-baseline justify-center gap-3">
-              <span className="text-xl text-gray-400 line-through font-light">£150</span>
-              <span className="font-serif text-5xl text-teal-700 font-light">£49</span>
+              <span className="text-2xl text-gray-400 line-through font-light">£150</span>
+              <span className="font-serif text-6xl text-teal-700 font-light">£49</span>
             </div>
-            <div className="flex items-center justify-center gap-2 text-amber-700 bg-amber-50 px-3 py-2 rounded-lg">
-              <Clock className="w-3.5 h-3.5 flex-shrink-0" />
-              <span className="text-xs font-normal">Only 9 spots remaining this month</span>
-            </div>
+            <p className="text-sm text-gray-500 italic">Only 9 spots remaining this month</p>
             <motion.a
               href="#booking-form"
               onClick={scrollToForm}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
+              className="block w-full text-center px-6 py-4 bg-gray-900 text-white text-sm tracking-wider uppercase font-light hover:bg-gray-800 transition-colors rounded-lg"
             >
               Book Skin Lesion Removal
             </motion.a>
-            <div className="flex items-start justify-center gap-2 leading-relaxed">
-              <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
-              <p className="text-xs text-gray-600 font-light leading-relaxed">
-                <span className="font-normal text-gray-800">Satisfaction guarantee.</span> Not happy with your results? I'll make it right, free of charge.
-              </p>
-            </div>
-            <div className="pt-2">
-              <SocialProofBadge className="justify-center" />
-            </div>
+          </div>
+          <div className="mt-6 space-y-4">
+            <p className="text-sm text-gray-700 font-normal">
+              Satisfaction guarantee... <span className="text-gray-500 font-light">Not happy? I'll make it right, free of charge.</span>
+            </p>
+            <SocialProofBadge className="justify-center" />
           </div>
         </div>
       </section>
@@ -351,7 +346,7 @@ function NewLandingPage() {
           >
             <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 sm:mb-4 font-light">Real Results</p>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3">What Results Can You Expect?</h2>
-            <p className="text-sm sm:text-base text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 font-light max-w-2xl mx-auto leading-relaxed px-4 lg:px-0">
               After treatment, the lesion is gone. Permanently. A small scab forms and falls off within a week, leaving fresh skin that fades to match your natural tone. Most clients can't even find where it was.
             </p>
           </motion.div>
