@@ -448,7 +448,6 @@ function NewLandingPage() {
       {/* Standalone B&A image - mobile only (after How/Who section) */}
       <div className="sm:hidden px-4 py-6 bg-white">
         <div className="max-w-sm mx-auto">
-          <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light text-center">Real Result</p>
           <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
             <div className="aspect-[16/9] overflow-hidden">
               <img src={beforeAfterImages[6].image} alt="Before & After" className="w-full h-full object-cover" loading="lazy" />
@@ -553,7 +552,6 @@ function NewLandingPage() {
       {/* Standalone B&A image - mobile only (after Testimonials) */}
       <div className="sm:hidden px-4 py-6 bg-[#FDF8F6]">
         <div className="max-w-sm mx-auto">
-          <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light text-center">Real Result</p>
           <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
             <div className="aspect-[16/9] overflow-hidden">
               <img src={beforeAfterImages[7].image} alt="Before & After" className="w-full h-full object-cover" loading="lazy" />
