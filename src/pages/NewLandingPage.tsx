@@ -127,10 +127,10 @@ function NewLandingPage() {
 
   const faqs = [
     { question: "Does it hurt?", answer: "You'll feel a tiny pinch for about 2 seconds from the numbing injection. After that, you won't feel the removal at all. Most clients say they're surprised how easy it was." },
-    { question: "Will it scar?", answer: "You'll have a small mark at first — that's normal healing. With proper aftercare, most clients see it fade to nearly invisible within 4–8 weeks. The healed mark is always far less noticeable than the original lesion." },
+    { question: "Will it scar?", answer: "You'll have a small mark at first. That's normal healing. With proper aftercare, most clients see it fade to nearly invisible within 4 to 8 weeks. The healed mark is always far less noticeable than the original lesion." },
     { question: "What's included in the £49?", answer: "Everything: a full skin assessment, the removal itself, an aftercare kit with healing instructions, and WhatsApp support from me throughout your healing process." },
-    { question: "How long does healing take?", answer: "A small scab forms and falls off within 5–7 days. The new pink skin underneath fades to match your natural tone over 4–6 weeks." },
-    { question: "What if it's something dangerous?", answer: "I examine everything carefully during your consultation. If anything looks concerning — unusual shape, colour changes, irregular borders — I won't remove it. I'll refer you to a dermatologist first. Your safety always comes before any treatment." },
+    { question: "How long does healing take?", answer: "A small scab forms and falls off within 5 to 7 days. The new pink skin underneath fades to match your natural tone over 4 to 6 weeks." },
+    { question: "What if it's something dangerous?", answer: "I examine everything carefully during your consultation. If anything looks concerning (unusual shape, colour changes, irregular borders), I won't remove it. I'll refer you to a dermatologist first. Your safety always comes before any treatment." },
     { question: "The NHS turned me away. Can you help?", answer: "Yes. The NHS only covers medically necessary removals, not cosmetic ones. Just because it's not 'medically necessary' doesn't mean it's not affecting your confidence every single day. That's exactly why I offer this service." },
   ];
 
@@ -248,7 +248,7 @@ function NewLandingPage() {
                 <div className="flex items-start gap-2">
                   <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
                   <p className="text-xs text-gray-600 font-light">
-                    <span className="font-normal text-gray-800">Satisfaction guarantee.</span> Not happy with your results? I'll make it right — free of charge.
+                    <span className="font-normal text-gray-800">Satisfaction guarantee.</span> Not happy with your results? I'll make it right, free of charge.
                   </p>
                 </div>
                 <SocialProofBadge />
@@ -290,7 +290,7 @@ function NewLandingPage() {
             <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 sm:mb-4 font-light">Real Results</p>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3">What Results Can You Expect?</h2>
             <p className="text-sm sm:text-base text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
-              After treatment, the lesion is gone — permanently. A small scab forms and falls off within a week, leaving fresh skin that fades to match your natural tone. Most clients can't even find where it was.
+              After treatment, the lesion is gone. Permanently. A small scab forms and falls off within a week, leaving fresh skin that fades to match your natural tone. Most clients can't even find where it was.
             </p>
           </motion.div>
 
@@ -347,13 +347,13 @@ function NewLandingPage() {
               <h2 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-5 sm:mb-6">How Does It Work?</h2>
               <div className="space-y-4 text-sm text-gray-700 font-light leading-relaxed">
                 <p>
-                  I numb the area with a tiny injection (you'll feel a 2-second pinch, then nothing). Then I use a precise clinical technique to remove the mole, skin tag, or lesion at the root — so it's gone for good.
+                  I numb the area with a tiny injection (you'll feel a 2-second pinch, then nothing). Then I use a precise clinical technique to remove the mole, skin tag, or lesion at the root, so it's gone for good.
                 </p>
                 <p>
-                  The whole thing takes about 30 minutes. You walk out the same day, no downtime, and within 4–8 weeks the area has healed to the point most people can't tell anything was ever there.
+                  The whole thing takes about 30 minutes. You walk out the same day, no downtime, and within 4 to 8 weeks the area has healed to the point most people can't tell anything was ever there.
                 </p>
                 <p className="text-teal-700 font-normal border-l-4 border-teal-400 pl-4 py-2 bg-teal-50/50 rounded-r-lg">
-                  It's the kind of result where everyone notices you look great — but nobody can tell why.
+                  It's the kind of result where everyone notices you look great... but nobody can tell why.
                 </p>
               </div>
             </motion.div>
@@ -456,7 +456,7 @@ function NewLandingPage() {
                   ))}
                 </div>
                 <p className="text-sm text-gray-700 font-light leading-relaxed italic mb-3">"{story.quote}"</p>
-                <p className="text-xs text-gray-500 font-normal">— {story.name}</p>
+                <p className="text-xs text-gray-500 font-normal">- {story.name}</p>
               </motion.div>
             ))}
           </div>
@@ -493,7 +493,7 @@ function NewLandingPage() {
               viewport={{ once: true }}
             >
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3">Book Your Treatment</h2>
-              <p className="text-sm text-gray-600 font-light mb-6 sm:mb-8 leading-relaxed">
+              <p className="text-base text-gray-800 font-light mb-6 sm:mb-8 leading-relaxed">
                 Fill in the form and I'll get back to you the same day. We'll find a time that works and I'll answer any questions you have.
               </p>
 
@@ -515,7 +515,11 @@ function NewLandingPage() {
                     type="tel"
                     required
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) => {
+                      const digits = e.target.value.replace(/\D/g, '');
+                      const formatted = digits.length > 5 ? digits.slice(0, 5) + ' ' + digits.slice(5, 11) : digits;
+                      setFormData({ ...formData, phone: formatted });
+                    }}
                     className="w-full px-4 py-3.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 font-light focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
                     placeholder="07XXX XXXXXX"
                   />
@@ -551,6 +555,18 @@ function NewLandingPage() {
                 </div>
                 <SocialProofBadge />
               </div>
+
+              {/* Treatment photos below form - desktop only */}
+              <div className="hidden lg:block mt-8">
+                <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light">Recent Results</p>
+                <div className="grid grid-cols-3 gap-2">
+                  {beforeAfterImages.slice(0, 6).map((item, index) => (
+                    <div key={index} className="aspect-square rounded-lg overflow-hidden border border-gray-100">
+                      <img src={item.image} alt="Treatment result" className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
 
             {/* Right: Rhia bio + what's included */}
@@ -574,7 +590,7 @@ function NewLandingPage() {
               <div className="text-center lg:text-left">
                 <h3 className="font-serif text-2xl text-gray-900 font-light mb-2">Hi, I'm Rhia</h3>
                 <p className="text-sm text-gray-600 font-light leading-relaxed mb-4">
-                  I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years. Your confidence matters — let me help you get it back.
+                  I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years. Your confidence matters. Let me help you get it back.
                 </p>
 
                 <div className="flex items-center justify-center lg:justify-start gap-6 pt-4 border-t border-gray-200">
@@ -615,7 +631,7 @@ function NewLandingPage() {
               <div className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl">
                 <MessageCircle className="w-5 h-5 text-teal-600 flex-shrink-0" />
                 <p className="text-sm text-gray-700 font-light">
-                  Not ready yet? <a href="https://wa.me/447307762776" target="_blank" rel="noopener noreferrer" className="text-teal-600 font-normal underline underline-offset-2 hover:text-teal-700">Message me</a> with your questions — no pressure.
+                  Not ready yet? <a href="https://wa.me/447307762776" target="_blank" rel="noopener noreferrer" className="text-teal-600 font-normal underline underline-offset-2 hover:text-teal-700">Message me</a> with your questions, no pressure.
                 </p>
               </div>
             </motion.div>
