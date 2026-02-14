@@ -187,7 +187,7 @@ function NewLandingPage() {
       {/* 1. HERO — Identity + Specific + Offer Card   */}
       {/* ============================================ */}
       {/* Mobile hero background image */}
-      <section className="relative pt-32 sm:pt-40 pb-14 sm:pb-20 px-4 sm:px-6">
+      <section className="relative pt-36 sm:pt-40 pb-16 sm:pb-20 px-4 sm:px-6">
         {/* Background image for mobile */}
         <div
           className="absolute inset-0 lg:hidden bg-cover bg-center bg-no-repeat"
@@ -203,17 +203,17 @@ function NewLandingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-7 sm:space-y-8 lg:space-y-6 text-center lg:text-left"
+              className="space-y-10 lg:space-y-6 text-center lg:text-left"
             >
               <h1 className="font-serif text-3xl sm:text-5xl lg:text-[3.2rem] text-white lg:text-gray-900 leading-[1.15] tracking-tight font-light">
                 For Women Who Are Done Hiding
               </h1>
 
-              <p className="text-base sm:text-xl text-white/90 lg:text-gray-700 font-light leading-relaxed">
+              <p className="text-base sm:text-xl text-white/90 lg:text-gray-700 font-light leading-loose lg:leading-relaxed">
                 A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently with results you'll see the same day.
               </p>
 
-              <div className="space-y-3 inline-block text-left">
+              <div className="space-y-4 lg:space-y-2.5 inline-block text-left">
                 <p className="text-sm text-white lg:text-gray-900 font-normal">Results after your treatment:</p>
                 {[
                   'Lesion completely removed in one session',
@@ -228,14 +228,27 @@ function NewLandingPage() {
               </div>
 
               {/* Proof pills */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 lg:gap-2">
                 {['Clinically proven technique', 'All skin types', 'Zero downtime'].map((pill, i) => (
                   <span key={i} className="px-3 py-1.5 bg-white/20 lg:bg-white border border-white/30 lg:border-gray-200 rounded text-xs text-white lg:text-gray-600 font-light">{pill}</span>
                 ))}
               </div>
 
-              {/* Offer card */}
-              <div className="bg-white border-2 border-teal-200 rounded-2xl p-5 sm:p-7 space-y-5 sm:space-y-6 lg:space-y-4 text-center">
+              {/* Mobile CTA button (no offer card) */}
+              <div className="lg:hidden">
+                <motion.a
+                  href="#booking-form"
+                  onClick={scrollToForm}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
+                >
+                  Book Skin Lesion Removal
+                </motion.a>
+              </div>
+
+              {/* Offer card - desktop only (in hero) */}
+              <div className="hidden lg:block bg-white border-2 border-teal-200 rounded-2xl p-7 space-y-4 text-center">
                 <p className="text-sm text-gray-600 font-light">First treatment only</p>
                 <div className="flex items-baseline justify-center gap-3">
                   <span className="text-xl text-gray-400 line-through font-light">£150</span>
@@ -285,6 +298,39 @@ function NewLandingPage() {
         </div>
       </section>
 
+      {/* Offer card - mobile only (own section below hero) */}
+      <section className="lg:hidden py-10 px-4 sm:px-6 bg-[#FDF8F6]">
+        <div className="max-w-md mx-auto">
+          <div className="bg-white border-2 border-teal-200 rounded-2xl p-6 space-y-6 text-center">
+            <p className="text-sm text-gray-600 font-light">First treatment only</p>
+            <div className="flex items-baseline justify-center gap-3">
+              <span className="text-xl text-gray-400 line-through font-light">£150</span>
+              <span className="font-serif text-5xl text-teal-700 font-light">£49</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-amber-700 bg-amber-50 px-3 py-2 rounded-lg">
+              <Clock className="w-3.5 h-3.5 flex-shrink-0" />
+              <span className="text-xs font-normal">Only 9 spots remaining this month</span>
+            </div>
+            <motion.a
+              href="#booking-form"
+              onClick={scrollToForm}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
+            >
+              Book Skin Lesion Removal
+            </motion.a>
+            <div className="flex items-start justify-center gap-2">
+              <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
+              <p className="text-xs text-gray-600 font-light">
+                <span className="font-normal text-gray-800">Satisfaction guarantee.</span> Not happy with your results? I'll make it right, free of charge.
+              </p>
+            </div>
+            <SocialProofBadge className="justify-center" />
+          </div>
+        </div>
+      </section>
+
       {/* ============================================ */}
       {/* 2. RESULTS — Before/After Gallery             */}
       {/* ============================================ */}
@@ -303,6 +349,7 @@ function NewLandingPage() {
             </p>
           </motion.div>
 
+          {/* Mobile: 6 images, Desktop: all 8 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {beforeAfterImages.map((item, index) => (
               <motion.div
@@ -311,7 +358,7 @@ function NewLandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.04 }}
-                className="overflow-hidden rounded-lg sm:rounded-xl border border-gray-100 shadow-sm"
+                className={`overflow-hidden rounded-lg sm:rounded-xl border border-gray-100 shadow-sm ${index >= 6 ? 'hidden sm:block' : ''}`}
               >
                 <div className="aspect-[16/9] overflow-hidden">
                   <img src={item.image} alt="Before & After" className="w-full h-full object-cover" loading="lazy" />
@@ -397,6 +444,18 @@ function NewLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Standalone B&A image - mobile only (after How/Who section) */}
+      <div className="sm:hidden px-4 py-6 bg-white">
+        <div className="max-w-sm mx-auto">
+          <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light text-center">Real Result</p>
+          <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
+            <div className="aspect-[16/9] overflow-hidden">
+              <img src={beforeAfterImages[6].image} alt="Before & After" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ============================================ */}
       {/* 4. TESTIMONIALS                               */}
@@ -490,6 +549,18 @@ function NewLandingPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Standalone B&A image - mobile only (after Testimonials) */}
+      <div className="sm:hidden px-4 py-6 bg-[#FDF8F6]">
+        <div className="max-w-sm mx-auto">
+          <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light text-center">Real Result</p>
+          <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
+            <div className="aspect-[16/9] overflow-hidden">
+              <img src={beforeAfterImages[7].image} alt="Before & After" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ============================================ */}
       {/* 5. BOOKING FORM + RHIA BIO + OFFER RECAP      */}
