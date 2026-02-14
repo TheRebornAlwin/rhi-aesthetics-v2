@@ -634,7 +634,7 @@ function HampshireLandingPage() {
                   className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
                 >
                   <Send className="w-4 h-4" />
-                  Book Skin Lesion Removal
+                  Send Message
                 </motion.button>
               </form>
 
