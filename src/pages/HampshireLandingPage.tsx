@@ -16,7 +16,7 @@ import {
   Send,
 } from 'lucide-react';
 
-function NewLandingPage() {
+function HampshireLandingPage() {
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
@@ -59,10 +59,10 @@ function NewLandingPage() {
     if ((window as any).fbq) {
       (window as any).fbq('track', 'PageView');
     }
-    document.title = 'Skin Lesion Removal Southampton | RHI Aesthetics';
+    document.title = 'Skin Lesion Removal Hampshire | RHI Aesthetics';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional skin lesion removal in Southampton. Precise 30-minute treatment. Mole, wart, and skin lesion removal with natural results. £49 intro offer.');
+      metaDescription.setAttribute('content', 'Professional skin lesion removal in Hampshire. Precise 30-minute treatment. Mole, wart, and skin lesion removal with natural results. £49 intro offer.');
     }
 
     if ('scrollRestoration' in window.history) {
@@ -119,7 +119,7 @@ function NewLandingPage() {
           ))}
         </div>
         <p className="text-xs text-gray-600 font-light">
-          <span className="font-normal text-gray-800">300+</span> happy clients in Southampton
+          <span className="font-normal text-gray-800">300+</span> happy clients in Hampshire
         </p>
       </div>
     </div>
@@ -386,7 +386,7 @@ function NewLandingPage() {
             viewport={{ once: true }}
             className="text-center mt-8"
           >
-            <p className="text-xs sm:text-sm text-gray-500 font-light italic mb-5 sm:mb-6">Every result shown is a real client treated by me in Southampton.</p>
+            <p className="text-xs sm:text-sm text-gray-500 font-light italic mb-5 sm:mb-6">Every result shown is a real client treated by me in Hampshire.</p>
             <motion.a
               href="#booking-form"
               onClick={scrollToForm}
@@ -683,7 +683,7 @@ function NewLandingPage() {
               <div className="text-center">
                 <h3 className="font-serif text-2xl text-gray-900 font-light mb-2">Hi, I'm Rhia</h3>
                 <p className="text-sm text-gray-600 font-light leading-relaxed mb-4">
-                  I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years. Your confidence matters. Let me help you get it back.
+                  I've helped hundreds of women in Hampshire finally feel free from the moles, skin tags, and lesions they'd been hiding for years. Your confidence matters. Let me help you get it back.
                 </p>
 
                 <div className="flex items-center justify-center gap-6 pt-4 border-t border-gray-200">
@@ -816,7 +816,7 @@ function NewLandingPage() {
                 <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="RHI Aesthetics" className="w-full h-full object-contain opacity-80" loading="lazy" />
               </div>
               <p className="text-sm text-gray-400 font-light">
-                Professional skin lesion removal in Southampton
+                Professional skin lesion removal in Hampshire
               </p>
               <div className="flex space-x-4">
                 <a href="https://www.instagram.com/rhi.aesthetics?igsh=MWhvMjFqb3Zscms0aw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
@@ -830,7 +830,7 @@ function NewLandingPage() {
             <div>
               <h3 className="text-xs tracking-widest uppercase mb-4 sm:mb-5 font-light">Contact</h3>
               <div className="space-y-3 text-sm text-gray-400 font-light">
-                <p className="flex items-center space-x-3"><MapPin className="w-4 h-4 flex-shrink-0" /><span>Southampton, UK</span></p>
+                <p className="flex items-center space-x-3"><MapPin className="w-4 h-4 flex-shrink-0" /><span>Hampshire, UK</span></p>
                 <p className="flex items-center space-x-3"><Phone className="w-4 h-4 flex-shrink-0" /><span>07307 762776</span></p>
                 <p className="flex items-center space-x-3"><Mail className="w-4 h-4 flex-shrink-0" /><span>rhiaesthetics@mail.com</span></p>
               </div>
@@ -876,4 +876,4 @@ function NewLandingPage() {
   );
 }
 
-export default NewLandingPage;
+export default HampshireLandingPage;
