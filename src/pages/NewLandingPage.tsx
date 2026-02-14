@@ -152,7 +152,7 @@ function NewLandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between">
             <Link to="/" className="group">
-              <motion.div whileHover={{ opacity: 0.7 }} transition={{ duration: 0.2 }} className="w-10 h-10">
+              <motion.div whileHover={{ opacity: 0.7 }} transition={{ duration: 0.2 }} className="w-12 h-12 lg:w-10 lg:h-10">
                 <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI" alt="RHI Aesthetics" className="w-full h-full object-contain" loading="eager" />
               </motion.div>
             </Link>
@@ -202,24 +202,28 @@ function NewLandingPage() {
               className="space-y-8 lg:space-y-6 text-center lg:text-left"
             >
               {/* Hero B&A image - mobile only */}
-              <div className="lg:hidden -mx-4 sm:-mx-6">
-                <div className="overflow-hidden">
-                  <img
-                    src={beforeAfterImages[3].image}
-                    alt="Before & After result"
-                    className="w-full h-auto object-cover"
-                    loading="eager"
-                    fetchPriority="high"
-                  />
+              <div className="lg:hidden">
+                <div className="overflow-hidden rounded-lg border border-gray-100 shadow-sm">
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img
+                      src={beforeAfterImages[3].image}
+                      alt="Before & After result"
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                      fetchPriority="high"
+                    />
+                  </div>
                 </div>
               </div>
 
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-gray-900 leading-[1.15] tracking-tight font-light px-4 lg:px-0">
-                For Women Who<br className="lg:hidden" /> Are Done Hiding
+                <span className="lg:hidden">Clear, Smooth Skin<br />In 30 Minutes</span>
+                <span className="hidden lg:inline">For Women Who Are Done Hiding</span>
               </h1>
 
               <p className="text-base sm:text-xl text-gray-600 lg:text-gray-700 font-light leading-loose lg:leading-relaxed px-6 lg:px-0">
-                A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently with results you'll see the same day.
+                <span className="lg:hidden">Precise skin lesion removal that gets rid of your mole, wart, or skin tag permanently.</span>
+                <span className="hidden lg:inline">A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently with results you'll see the same day.</span>
               </p>
 
               <div className="space-y-4 lg:space-y-2.5 inline-block text-left">
@@ -255,7 +259,7 @@ function NewLandingPage() {
 
               {/* Offer card - desktop only (in hero) */}
               <div className="hidden lg:block bg-white border-2 border-teal-200 rounded-2xl p-7 space-y-4 text-center">
-                <p className="text-sm text-gray-600 font-light">First treatment only</p>
+                <p className="text-sm text-gray-600 font-light">First Skin Lesion Removal</p>
                 <div className="flex items-baseline justify-center gap-3">
                   <span className="text-xl text-gray-400 line-through font-light">£150</span>
                   <span className="font-serif text-5xl text-teal-700 font-light">£49</span>
@@ -308,7 +312,7 @@ function NewLandingPage() {
       <section className="lg:hidden py-8 px-4 sm:px-6 bg-[#FDF8F6]">
         <div className="max-w-md mx-auto text-center">
           <div className="bg-white border-[3px] border-teal-700 rounded-2xl p-7 space-y-5">
-            <p className="font-serif text-xl text-gray-900 font-light">First treatment only</p>
+            <p className="font-serif text-xl text-gray-900 font-light">First Skin Lesion Removal</p>
             <div className="flex items-baseline justify-center gap-3">
               <span className="text-2xl text-gray-400 line-through font-light">£150</span>
               <span className="font-serif text-6xl text-teal-700 font-light">£49</span>
@@ -319,7 +323,7 @@ function NewLandingPage() {
               onClick={scrollToForm}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="block w-full text-center px-6 py-4 bg-gray-900 text-white text-sm tracking-wider uppercase font-light hover:bg-gray-800 transition-colors rounded-lg"
+              className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg"
             >
               Book Skin Lesion Removal
             </motion.a>
@@ -660,11 +664,11 @@ function NewLandingPage() {
               className="space-y-6 sm:space-y-8"
             >
               {/* Rhia photo */}
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-gray-100 w-full max-w-md mx-auto lg:mx-0">
+              <div className="aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-gray-100 w-full max-w-md mx-auto lg:mx-0">
                 <img
                   src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
                   alt="Rhia"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
