@@ -37,6 +37,17 @@ function NewLandingPage() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Submit to Formspark
+    fetch('https://submit-form.com/mZdp9094H', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        message: formData.message || '(no message)',
+      }),
+    }).catch(() => {});
+    // Open WhatsApp
     const msg = `Hi Rhia! I'd like to book a skin lesion removal consultation.\n\nName: ${formData.name}\nPhone: ${formData.phone}${formData.message ? `\nMessage: ${formData.message}` : ''}`;
     window.open(`https://wa.me/447307762776?text=${encodeURIComponent(msg)}`, '_blank');
     if ((window as any).fbq) {
