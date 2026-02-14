@@ -141,7 +141,7 @@ function NewLandingPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-[#FDF8F6] py-5'
+          isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent lg:bg-[#FDF8F6] py-5'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -176,7 +176,7 @@ function NewLandingPage() {
                 whileTap={{ scale: 0.97 }}
                 className="text-xs tracking-wider px-4 sm:px-5 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase rounded-md whitespace-nowrap"
               >
-                Book £49 Removal
+                Book Skin Lesion Removal
               </motion.a>
             </div>
           </div>
@@ -187,13 +187,13 @@ function NewLandingPage() {
       {/* 1. HERO — Identity + Specific + Offer Card   */}
       {/* ============================================ */}
       {/* Mobile hero background image */}
-      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
+      <section className="relative pt-32 sm:pt-40 pb-14 sm:pb-20 px-4 sm:px-6">
         {/* Background image for mobile */}
         <div
           className="absolute inset-0 lg:hidden bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(https://820i9wpaqi.ufs.sh/f/PwwcUidplansZYKIfl6XwJuImFfqiz86x7V3CyK2odlaTv5P)` }}
         >
-          <div className="absolute inset-0 bg-[#FDF8F6]/90" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
         <div className="relative max-w-6xl mx-auto">
@@ -203,26 +203,26 @@ function NewLandingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-5 sm:space-y-6 text-center lg:text-left"
+              className="space-y-7 sm:space-y-8 lg:space-y-6 text-center lg:text-left"
             >
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-[3.2rem] text-gray-900 leading-[1.15] tracking-tight font-light">
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-[3.2rem] text-white lg:text-gray-900 leading-[1.15] tracking-tight font-light">
                 For Women Who Are Done Hiding
               </h1>
 
-              <p className="text-base sm:text-xl text-gray-700 font-light leading-relaxed">
+              <p className="text-base sm:text-xl text-white/90 lg:text-gray-700 font-light leading-relaxed">
                 A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently with results you'll see the same day.
               </p>
 
-              <div className="space-y-2.5 inline-block text-left">
-                <p className="text-sm text-gray-900 font-normal">Results after your treatment:</p>
+              <div className="space-y-3 inline-block text-left">
+                <p className="text-sm text-white lg:text-gray-900 font-normal">Results after your treatment:</p>
                 {[
                   'Lesion completely removed in one session',
                   'Tiny mark that fades to invisible within weeks',
                   'Back to your normal routine the same day',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5">
-                    <CheckCircle className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span className="text-sm text-gray-700 font-light">{item}</span>
+                    <CheckCircle className="w-4 h-4 text-teal-400 lg:text-teal-600 flex-shrink-0" />
+                    <span className="text-sm text-white/90 lg:text-gray-700 font-light">{item}</span>
                   </div>
                 ))}
               </div>
@@ -230,12 +230,12 @@ function NewLandingPage() {
               {/* Proof pills */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
                 {['Clinically proven technique', 'All skin types', 'Zero downtime'].map((pill, i) => (
-                  <span key={i} className="px-3 py-1.5 bg-white border border-gray-200 rounded text-xs text-gray-600 font-light">{pill}</span>
+                  <span key={i} className="px-3 py-1.5 bg-white/20 lg:bg-white border border-white/30 lg:border-gray-200 rounded text-xs text-white lg:text-gray-600 font-light">{pill}</span>
                 ))}
               </div>
 
               {/* Offer card */}
-              <div className="bg-white border-2 border-teal-200 rounded-2xl p-5 sm:p-7 space-y-4 text-center">
+              <div className="bg-white border-2 border-teal-200 rounded-2xl p-5 sm:p-7 space-y-5 sm:space-y-6 lg:space-y-4 text-center">
                 <p className="text-sm text-gray-600 font-light">First treatment only</p>
                 <div className="flex items-baseline justify-center gap-3">
                   <span className="text-xl text-gray-400 line-through font-light">£150</span>
@@ -252,7 +252,7 @@ function NewLandingPage() {
                   whileTap={{ scale: 0.98 }}
                   className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
                 >
-                  Book Your Treatment
+                  Book Skin Lesion Removal
                 </motion.a>
                 <div className="flex items-start justify-center gap-2">
                   <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
@@ -334,7 +334,7 @@ function NewLandingPage() {
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
             >
-              Book £49 Removal
+              Book Skin Lesion Removal
             </motion.a>
           </motion.div>
         </div>
@@ -485,7 +485,7 @@ function NewLandingPage() {
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
             >
-              Book £49 Removal
+              Book Skin Lesion Removal
             </motion.a>
           </motion.div>
         </div>
@@ -552,7 +552,7 @@ function NewLandingPage() {
                   className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
                 >
                   <Send className="w-4 h-4" />
-                  Book My £49 Treatment
+                  Book Skin Lesion Removal
                 </motion.button>
               </form>
 
@@ -714,7 +714,7 @@ function NewLandingPage() {
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
             >
-              Book £49 Removal
+              Book Skin Lesion Removal
             </motion.a>
             <div className="pt-2">
               <SocialProofBadge className="justify-center" />
