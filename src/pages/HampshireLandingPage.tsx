@@ -48,7 +48,7 @@ function HampshireLandingPage() {
       }),
     }).catch(() => {});
     // Open WhatsApp
-    const msg = `Hi Rhia! I'd like to book a skin lesion removal consultation.\n\nName: ${formData.name}\nPhone: ${formData.phone}${formData.message ? `\nMessage: ${formData.message}` : ''}`;
+    const msg = `Hi Rhia! I'd like to book a skin lesion removal.\n\nName: ${formData.name}\nPhone: ${formData.phone}${formData.message ? `\nMessage: ${formData.message}` : ''}`;
     window.open(`https://wa.me/447307762776?text=${encodeURIComponent(msg)}`, '_blank');
     if ((window as any).fbq) {
       (window as any).fbq('track', 'Lead');
@@ -138,9 +138,9 @@ function HampshireLandingPage() {
 
   const faqs = [
     { question: "Does it hurt?", answer: "You'll feel a tiny pinch for about 2 seconds from the numbing injection. After that, you won't feel the removal at all. Most clients say they're surprised how easy it was." },
-    { question: "Will it scar?", answer: "You'll have a small mark at first. That's normal healing. With proper aftercare, most clients see it fade to nearly invisible within 4 to 8 weeks. The healed mark is always far less noticeable than the original lesion." },
+    { question: "Will it scar?", answer: "You'll have a small mark at first. That's normal healing. With proper aftercare, most clients see it fade to nearly invisible within roughly 1 week. The healed mark is always far less noticeable than the original lesion." },
     { question: "What's included in the £49?", answer: "Everything: a full skin assessment, the removal itself, an aftercare kit with healing instructions, and WhatsApp support from me throughout your healing process." },
-    { question: "How long does healing take?", answer: "A small scab forms and falls off within 5 to 7 days. The new pink skin underneath fades to match your natural tone over 4 to 6 weeks." },
+    { question: "How long does healing take?", answer: "A small scab forms and falls off within 5 to 7 days. The new pink skin underneath fades to match your natural tone over 1-2 weeks." },
     { question: "What if it's something dangerous?", answer: "I examine everything carefully during your consultation. If anything looks concerning (unusual shape, colour changes, irregular borders), I won't remove it. I'll refer you to a dermatologist first. Your safety always comes before any treatment." },
     { question: "The NHS turned me away. Can you help?", answer: "Yes. The NHS only covers medically necessary removals, not cosmetic ones. Just because it's not 'medically necessary' doesn't mean it's not affecting your confidence every single day. That's exactly why I offer this service." },
   ];
@@ -216,7 +216,7 @@ function HampshireLandingPage() {
               transition={{ duration: 0.6 }}
               className="space-y-10 lg:space-y-6 text-center lg:text-left"
             >
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-[3.2rem] text-white lg:text-gray-900 leading-[1.15] tracking-tight font-light">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-white lg:text-gray-900 leading-[1.15] tracking-tight font-light">
                 For Women Who<br className="lg:hidden" /> Are Done Hiding
               </h1>
 
