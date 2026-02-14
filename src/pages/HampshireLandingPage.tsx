@@ -47,9 +47,6 @@ function HampshireLandingPage() {
     // Open WhatsApp
     const msg = `Hi Rhia! I'd like to book a skin lesion removal.\n\nName: ${formData.name}\nPhone: ${formData.phone}${formData.message ? `\nMessage: ${formData.message}` : ''}`;
     window.open(`https://wa.me/447307762776?text=${encodeURIComponent(msg)}`, '_blank');
-    if ((window as any).fbq) {
-      (window as any).fbq('track', 'Schedule');
-    }
   };
 
   useEffect(() => {
