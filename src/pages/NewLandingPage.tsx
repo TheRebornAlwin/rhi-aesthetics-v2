@@ -186,15 +186,24 @@ function NewLandingPage() {
       {/* ============================================ */}
       {/* 1. HERO — Identity + Specific + Offer Card   */}
       {/* ============================================ */}
-      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
+      {/* Mobile hero background image */}
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6">
+        {/* Background image for mobile */}
+        <div
+          className="absolute inset-0 lg:hidden bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(https://820i9wpaqi.ufs.sh/f/PwwcUidplansZYKIfl6XwJuImFfqiz86x7V3CyK2odlaTv5P)` }}
+        >
+          <div className="absolute inset-0 bg-[#FDF8F6]/90" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
             {/* Left: Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-5 sm:space-y-6"
+              className="space-y-5 sm:space-y-6 text-center lg:text-left"
             >
               <h1 className="font-serif text-3xl sm:text-5xl lg:text-[3.2rem] text-gray-900 leading-[1.15] tracking-tight font-light">
                 For Women Who Are Done Hiding
@@ -204,7 +213,7 @@ function NewLandingPage() {
                 A precise 30-minute treatment that removes your mole, wart, or any skin lesion permanently with results you'll see the same day.
               </p>
 
-              <div className="space-y-2.5">
+              <div className="space-y-2.5 inline-block text-left">
                 <p className="text-sm text-gray-900 font-normal">Results after your treatment:</p>
                 {[
                   'Lesion completely removed in one session',
@@ -219,20 +228,20 @@ function NewLandingPage() {
               </div>
 
               {/* Proof pills */}
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
                 {['Clinically proven technique', 'All skin types', 'Zero downtime'].map((pill, i) => (
                   <span key={i} className="px-3 py-1.5 bg-white border border-gray-200 rounded text-xs text-gray-600 font-light">{pill}</span>
                 ))}
               </div>
 
               {/* Offer card */}
-              <div className="bg-white border-2 border-teal-200 rounded-2xl p-5 sm:p-7 space-y-4">
+              <div className="bg-white border-2 border-teal-200 rounded-2xl p-5 sm:p-7 space-y-4 text-center">
                 <p className="text-sm text-gray-600 font-light">First treatment only</p>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-xl text-gray-400 line-through font-light">£120</span>
+                <div className="flex items-baseline justify-center gap-3">
+                  <span className="text-xl text-gray-400 line-through font-light">£150</span>
                   <span className="font-serif text-5xl text-teal-700 font-light">£49</span>
                 </div>
-                <div className="flex items-center gap-2 text-amber-700 bg-amber-50 px-3 py-2 rounded-lg">
+                <div className="flex items-center justify-center gap-2 text-amber-700 bg-amber-50 px-3 py-2 rounded-lg">
                   <Clock className="w-3.5 h-3.5 flex-shrink-0" />
                   <span className="text-xs font-normal">Only 9 spots remaining this month</span>
                 </div>
@@ -245,17 +254,17 @@ function NewLandingPage() {
                 >
                   Book Your Treatment
                 </motion.a>
-                <div className="flex items-start gap-2">
+                <div className="flex items-start justify-center gap-2">
                   <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
                   <p className="text-xs text-gray-600 font-light">
                     <span className="font-normal text-gray-800">Satisfaction guarantee.</span> Not happy with your results? I'll make it right, free of charge.
                   </p>
                 </div>
-                <SocialProofBadge />
+                <SocialProofBadge className="justify-center" />
               </div>
             </motion.div>
 
-            {/* Right: Hero image — desktop only */}
+            {/* Right: Hero image - desktop only */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -294,7 +303,7 @@ function NewLandingPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {beforeAfterImages.map((item, index) => (
               <motion.div
                 key={index}
@@ -342,6 +351,7 @@ function NewLandingPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-center lg:text-left"
             >
               <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 sm:mb-4 font-light">Precise & Permanent</p>
               <h2 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-5 sm:mb-6">How Does It Work?</h2>
@@ -350,7 +360,7 @@ function NewLandingPage() {
                   I numb the area with a tiny injection (you'll feel a 2-second pinch, then nothing). Then I use a precise clinical technique to remove the mole, skin tag, or lesion at the root, so it's gone for good.
                 </p>
                 <p>
-                  The whole thing takes about 30 minutes. You walk out the same day, no downtime, and within 4 to 8 weeks the area has healed to the point most people can't tell anything was ever there.
+                  The whole thing takes about 30 minutes. You walk out the same day, no downtime, and within a week the area has healed to the point most people can't tell anything was ever there.
                 </p>
                 <p className="text-teal-700 font-normal border-l-4 border-teal-400 pl-4 py-2 bg-teal-50/50 rounded-r-lg">
                   It's the kind of result where everyone notices you look great... but nobody can tell why.
@@ -364,6 +374,7 @@ function NewLandingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
+              className="text-center lg:text-left"
             >
               <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 sm:mb-4 font-light">Is This You?</p>
               <h2 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-5 sm:mb-6">This Treatment Is For You If...</h2>
@@ -448,9 +459,9 @@ function NewLandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.04 }}
-                className="bg-[#FDF8F6] border border-gray-100 rounded-xl sm:rounded-2xl p-5 sm:p-6"
+                className="bg-[#FDF8F6] border border-gray-100 rounded-xl sm:rounded-2xl p-5 sm:p-6 text-center"
               >
-                <div className="flex gap-0.5 mb-3">
+                <div className="flex justify-center gap-0.5 mb-3">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}
@@ -492,8 +503,8 @@ function NewLandingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3">Book Your Treatment</h2>
-              <p className="text-base text-gray-800 font-light mb-6 sm:mb-8 leading-relaxed">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3 text-center lg:text-left">Book Your Treatment</h2>
+              <p className="text-base text-gray-800 font-light mb-6 sm:mb-8 leading-relaxed text-center lg:text-left">
                 Fill in the form and I'll get back to you the same day. We'll find a time that works and I'll answer any questions you have.
               </p>
 
@@ -547,13 +558,13 @@ function NewLandingPage() {
 
               {/* Guarantee + Social proof under form */}
               <div className="mt-5 sm:mt-6 space-y-4">
-                <div className="flex items-start gap-2">
+                <div className="flex items-start justify-center lg:justify-start gap-2">
                   <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
                   <p className="text-xs text-gray-500 font-light">
                     <span className="font-normal text-gray-700">Satisfaction guarantee.</span> Not happy? I'll make it right, free of charge.
                   </p>
                 </div>
-                <SocialProofBadge />
+                <SocialProofBadge className="justify-center lg:justify-start" />
               </div>
 
               {/* Treatment photos below form - desktop only */}
@@ -587,13 +598,13 @@ function NewLandingPage() {
                 />
               </div>
 
-              <div className="text-center lg:text-left">
+              <div className="text-center">
                 <h3 className="font-serif text-2xl text-gray-900 font-light mb-2">Hi, I'm Rhia</h3>
                 <p className="text-sm text-gray-600 font-light leading-relaxed mb-4">
                   I've helped hundreds of women in Southampton finally feel free from the moles, skin tags, and lesions they'd been hiding for years. Your confidence matters. Let me help you get it back.
                 </p>
 
-                <div className="flex items-center justify-center lg:justify-start gap-6 pt-4 border-t border-gray-200">
+                <div className="flex items-center justify-center gap-6 pt-4 border-t border-gray-200">
                   <div>
                     <p className="font-serif text-2xl text-teal-700 font-light">300+</p>
                     <p className="text-xs text-gray-500 font-light">Happy Clients</p>
@@ -612,7 +623,7 @@ function NewLandingPage() {
               </div>
 
               {/* What's included */}
-              <div className="bg-white border border-gray-100 rounded-xl p-5 sm:p-6 space-y-3">
+              <div className="bg-white border border-gray-100 rounded-xl p-5 sm:p-6 space-y-3 text-center">
                 <p className="text-sm text-gray-900 font-normal mb-3">Your £49 appointment includes:</p>
                 {[
                   'Expert skin assessment & consultation',
@@ -620,7 +631,7 @@ function NewLandingPage() {
                   'Aftercare kit & healing instructions',
                   'WhatsApp support throughout healing',
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5">
+                  <div key={i} className="flex items-center justify-center gap-2.5">
                     <CheckCircle className="w-4 h-4 text-teal-600 flex-shrink-0" />
                     <span className="text-sm text-gray-700 font-light">{item}</span>
                   </div>
@@ -628,7 +639,7 @@ function NewLandingPage() {
               </div>
 
               {/* Not ready? */}
-              <div className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl">
+              <div className="flex items-center justify-center gap-3 p-4 bg-white border border-gray-100 rounded-xl">
                 <MessageCircle className="w-5 h-5 text-teal-600 flex-shrink-0" />
                 <p className="text-sm text-gray-700 font-light">
                   Not ready yet? <a href="https://wa.me/447307762776" target="_blank" rel="noopener noreferrer" className="text-teal-600 font-normal underline underline-offset-2 hover:text-teal-700">Message me</a> with your questions, no pressure.
