@@ -13,41 +13,13 @@ import {
   Facebook,
   Star,
   Clock,
-  Send,
 } from 'lucide-react';
 
 function NewLandingPage() {
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
 
-  const scrollToForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const form = document.getElementById('booking-form');
-    if (form) {
-      const offset = 40;
-      const elementPosition = form.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Submit to Formspark
-    fetch('https://submit-form.com/mZdp9094H', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        name: formData.name,
-        phone: formData.phone,
-        message: formData.message || '(no message)',
-      }),
-    }).catch(() => {});
-    // Open WhatsApp
-    const msg = `Hi Rhia! I'd like to book a skin lesion removal.\n\nName: ${formData.name}\nPhone: ${formData.phone}${formData.message ? `\nMessage: ${formData.message}` : ''}`;
-    window.open(`https://wa.me/447307762776?text=${encodeURIComponent(msg)}`, '_blank');
-  };
+  const waUrl = `https://wa.me/447307762776?text=${encodeURIComponent("Hey Rhia, I was wondering if you were available for a skin lesion removal on (DATE) at (TIME)!\n\nFirst name:\nSurname:\nDate of birth:\nPhone number: \nEmail address: \n\nThanks!")}`;
 
   useEffect(() => {
     if ((window as any).fbq) {
@@ -175,8 +147,9 @@ function NewLandingPage() {
               </nav>
 
               <motion.a
-                href="#booking-form"
-                onClick={scrollToForm}
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="text-xs tracking-wider px-4 sm:px-5 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase rounded-md whitespace-nowrap"
@@ -269,8 +242,9 @@ function NewLandingPage() {
                   <span className="text-xs font-normal">Only 9 spots remaining this month</span>
                 </div>
                 <motion.a
-                  href="#booking-form"
-                  onClick={scrollToForm}
+                  href={waUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
@@ -319,8 +293,9 @@ function NewLandingPage() {
             </div>
             <p className="text-sm text-gray-500 italic">Only 9 spots remaining this month</p>
             <motion.a
-              href="#booking-form"
-              onClick={scrollToForm}
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg"
@@ -381,8 +356,9 @@ function NewLandingPage() {
           >
             <p className="text-xs sm:text-sm text-gray-500 font-light italic mb-5 sm:mb-6">Every result shown is a real client treated by me in Southampton.</p>
             <motion.a
-              href="#booking-form"
-              onClick={scrollToForm}
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
@@ -543,8 +519,9 @@ function NewLandingPage() {
             className="text-center mt-8 sm:mt-10"
           >
             <motion.a
-              href="#booking-form"
-              onClick={scrollToForm}
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
@@ -567,12 +544,12 @@ function NewLandingPage() {
       </div>
 
       {/* ============================================ */}
-      {/* 5. BOOKING FORM + RHIA BIO + OFFER RECAP      */}
+      {/* 5. BOOK VIA WHATSAPP + RHIA BIO + OFFER RECAP */}
       {/* ============================================ */}
       <section id="booking-form" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 bg-[#FDF8F6]">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-            {/* Left: Form */}
+            {/* Left: WhatsApp CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -580,58 +557,22 @@ function NewLandingPage() {
             >
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3 text-center lg:text-left">Book Your Treatment</h2>
               <p className="text-base text-gray-800 font-light mb-6 sm:mb-8 leading-relaxed text-center lg:text-left">
-                Fill in the form and I'll get back to you <strong>the same day</strong>. We'll find a time that works and I'll answer any questions you have.
+                Tap the button below and you'll be taken straight to WhatsApp. A message is pre-filled for you — just pop in your preferred date, time, and details, then hit send.
               </p>
 
-              <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-5">
-                <div>
-                  <label className="block text-xs tracking-wider text-gray-700 uppercase mb-2 font-light">Your Name</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 font-light focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
-                    placeholder="e.g. Sarah"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs tracking-wider text-gray-700 uppercase mb-2 font-light">Phone Number</label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => {
-                      const digits = e.target.value.replace(/\D/g, '');
-                      const formatted = digits.length > 5 ? digits.slice(0, 5) + ' ' + digits.slice(5, 11) : digits;
-                      setFormData({ ...formData, phone: formatted });
-                    }}
-                    className="w-full px-4 py-3.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 font-light focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
-                    placeholder="07XXX XXXXXX"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs tracking-wider text-gray-700 uppercase mb-2 font-light">Message (optional)</label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={3}
-                    className="w-full px-4 py-3.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 font-light focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors resize-none"
-                    placeholder="Any questions or concerns..."
-                  />
-                </div>
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
-                >
-                  <Send className="w-4 h-4" />
-                  Send Message
-                </motion.button>
-              </form>
+              <motion.a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-[#25D366] text-white text-sm tracking-wider uppercase font-light hover:bg-[#1ebe5d] transition-colors rounded-lg shadow-lg shadow-green-500/20"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Book via WhatsApp
+              </motion.a>
 
-              {/* Guarantee + Social proof under form */}
+              {/* Guarantee + Social proof */}
               <div className="mt-5 sm:mt-6 space-y-4">
                 <div className="flex items-start justify-center lg:justify-start gap-2">
                   <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
@@ -642,7 +583,7 @@ function NewLandingPage() {
                 <SocialProofBadge className="justify-center lg:justify-start" />
               </div>
 
-              {/* Treatment photos below form - desktop only */}
+              {/* Treatment photos below - desktop only */}
               <div className="hidden lg:block mt-8">
                 <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light">Recent Results</p>
                 <div className="grid grid-cols-3 gap-2">
@@ -783,8 +724,9 @@ function NewLandingPage() {
             className="text-center mt-10 sm:mt-12 space-y-4"
           >
             <motion.a
-              href="#booking-form"
-              onClick={scrollToForm}
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
