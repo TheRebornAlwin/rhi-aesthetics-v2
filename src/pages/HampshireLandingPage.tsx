@@ -580,7 +580,7 @@ function HampshireLandingPage() {
             >
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3 text-center lg:text-left">Book Your Treatment</h2>
               <p className="text-base text-gray-800 font-light mb-6 sm:mb-8 leading-relaxed text-center lg:text-left">
-                Fill in the form and I'll get back to you the same day. We'll find a time that works and I'll answer any questions you have.
+                Fill in the form and I'll get back to you <strong>the same day</strong>. We'll find a time that works and I'll answer any questions you have.
               </p>
 
               <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-5">
