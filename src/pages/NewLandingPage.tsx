@@ -21,6 +21,14 @@ function NewLandingPage() {
 
   const waUrl = `https://wa.me/447307762776?text=${encodeURIComponent("Hey Rhia, I was wondering if you were available for a skin lesion removal on (DATE) at (TIME)!\n\nFirst name:\nSurname:\nDate of birth:\nPhone number: \nEmail address: \n\nThanks!")}`;
 
+  const handleCtaClick = () => {
+    fetch('https://submit-form.com/mZdp9094H', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ event: 'WhatsApp CTA Clicked', page: 'Southampton Landing Page' }),
+    }).catch(() => {});
+  };
+
   useEffect(() => {
     if ((window as any).fbq) {
       (window as any).fbq('track', 'PageView');
@@ -148,6 +156,7 @@ function NewLandingPage() {
 
               <motion.a
                 href={waUrl}
+                onClick={handleCtaClick}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
@@ -243,6 +252,7 @@ function NewLandingPage() {
                 </div>
                 <motion.a
                   href={waUrl}
+                  onClick={handleCtaClick}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
@@ -294,6 +304,7 @@ function NewLandingPage() {
             <p className="text-sm text-gray-500 italic">Only 9 spots remaining this month</p>
             <motion.a
               href={waUrl}
+              onClick={handleCtaClick}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
@@ -357,6 +368,7 @@ function NewLandingPage() {
             <p className="text-xs sm:text-sm text-gray-500 font-light italic mb-5 sm:mb-6">Every result shown is a real client treated by me in Southampton.</p>
             <motion.a
               href={waUrl}
+              onClick={handleCtaClick}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
@@ -520,6 +532,7 @@ function NewLandingPage() {
           >
             <motion.a
               href={waUrl}
+              onClick={handleCtaClick}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
@@ -557,16 +570,17 @@ function NewLandingPage() {
             >
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3 text-center lg:text-left">Book Your Treatment</h2>
               <p className="text-base text-gray-800 font-light mb-6 sm:mb-8 leading-relaxed text-center lg:text-left">
-                Tap the button below and you'll be taken straight to WhatsApp. A message is pre-filled for you — just pop in your preferred date, time, and details, then hit send.
+                Tap the button below and you'll be taken straight to WhatsApp. A message is pre-filled for you, so just pop in your preferred date, time, and details and hit send.
               </p>
 
               <motion.a
                 href={waUrl}
+                onClick={handleCtaClick}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-[#25D366] text-white text-sm tracking-wider uppercase font-light hover:bg-[#1ebe5d] transition-colors rounded-lg shadow-lg shadow-green-500/20"
+                className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
               >
                 <MessageCircle className="w-5 h-5" />
                 Book via WhatsApp
@@ -725,6 +739,7 @@ function NewLandingPage() {
           >
             <motion.a
               href={waUrl}
+              onClick={handleCtaClick}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
