@@ -23,9 +23,6 @@ function NewLandingPage() {
 
   const handleCtaClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    if ((window as any).fbq) {
-      (window as any).fbq('track', 'Contact');
-    }
     fetch('https://submit-form.com/mZdp9094H', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
