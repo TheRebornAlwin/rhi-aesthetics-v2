@@ -159,10 +159,8 @@ function HampshireLandingPage() {
               </nav>
 
               <motion.a
-                href={waUrl}
+                href="#"
                 onClick={handleCtaClick}
-                target="_blank"
-                rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="text-xs tracking-wider px-4 sm:px-5 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase rounded-md whitespace-nowrap"
@@ -255,10 +253,8 @@ function HampshireLandingPage() {
                   <span className="text-xs font-normal">Only 9 spots remaining this month</span>
                 </div>
                 <motion.a
-                  href={waUrl}
+                  href="#"
                   onClick={handleCtaClick}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
@@ -307,10 +303,8 @@ function HampshireLandingPage() {
             </div>
             <p className="text-sm text-gray-500 italic">Only 9 spots remaining this month</p>
             <motion.a
-              href={waUrl}
+              href="#"
               onClick={handleCtaClick}
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="block w-full text-center px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg"
@@ -371,10 +365,8 @@ function HampshireLandingPage() {
           >
             <p className="text-xs sm:text-sm text-gray-500 font-light italic mb-5 sm:mb-6">Every result shown is a real client treated by me in Southampton.</p>
             <motion.a
-              href={waUrl}
+              href="#"
               onClick={handleCtaClick}
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
@@ -535,10 +527,8 @@ function HampshireLandingPage() {
             className="text-center mt-8 sm:mt-10"
           >
             <motion.a
-              href={waUrl}
+              href="#"
               onClick={handleCtaClick}
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
@@ -578,10 +568,8 @@ function HampshireLandingPage() {
               </p>
 
               <motion.a
-                href={waUrl}
+                href="#"
                 onClick={handleCtaClick}
-                target="_blank"
-                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
@@ -742,10 +730,8 @@ function HampshireLandingPage() {
             className="text-center mt-10 sm:mt-12 space-y-4"
           >
             <motion.a
-              href={waUrl}
+              href="#"
               onClick={handleCtaClick}
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
