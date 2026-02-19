@@ -22,6 +22,9 @@ function NewLandingPage() {
   const waUrl = `https://wa.me/447307762776?text=${encodeURIComponent("Hey Rhia, I was wondering if you were available for a skin lesion removal on (DATE) at (TIME)!\n\nFirst name:\nSurname:\nDate of birth:\nPhone number: \nEmail address: \n\nThanks!")}`;
 
   const handleCtaClick = () => {
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'Contact');
+    }
     fetch('https://submit-form.com/mZdp9094H', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
