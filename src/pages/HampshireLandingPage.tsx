@@ -21,7 +21,8 @@ function HampshireLandingPage() {
 
   const waUrl = `https://wa.me/447307762776?text=${encodeURIComponent("Hey Rhia, I was wondering if you were available for a skin lesion removal on (DATE) at (TIME)!\n\nFirst name:\nSurname:\nDate of birth:\nPhone number: \nEmail address: \n\nThanks!")}`;
 
-  const handleCtaClick = () => {
+  const handleCtaClick = (e: React.MouseEvent) => {
+    e.preventDefault();
     if ((window as any).fbq) {
       (window as any).fbq('track', 'Contact');
     }
@@ -30,6 +31,9 @@ function HampshireLandingPage() {
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({ event: 'WhatsApp CTA Clicked', page: 'Hampshire Landing Page' }),
     }).catch(() => {});
+    setTimeout(() => {
+      window.open(waUrl, '_blank');
+    }, 300);
   };
 
   useEffect(() => {
