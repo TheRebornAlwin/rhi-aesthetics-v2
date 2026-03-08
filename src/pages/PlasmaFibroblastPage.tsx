@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Calendar,
   Phone,
   Mail,
   MapPin,
@@ -140,6 +139,20 @@ function PlasmaFibroblastPage() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const waUrl = `https://wa.me/447307762776?text=${encodeURIComponent("Hey Rhia, I'm interested in Plasma Fibroblast and was wondering if I'd be a good candidate!\n\nArea I'm interested in (e.g. eyelids, crow's feet, forehead lines, neck):\n\nFirst name:\nSurname:\nPhone number:\nEmail address:\n\nThanks!")}`;
+
+  const handleCtaClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    fetch('https://submit-form.com/mZdp9094H', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ event: 'WhatsApp CTA Clicked', page: 'Plasma Fibroblast Page' }),
+    }).catch(() => {});
+    setTimeout(() => {
+      window.open(waUrl, '_blank');
+    }, 300);
+  };
+
   const nextCarousel = () => {
     setCarouselIndex((prev) => (prev + 4) % glareCardImages.length);
   };
@@ -235,22 +248,13 @@ function PlasmaFibroblastPage() {
 
           <div className="flex items-center space-x-2 sm:space-x-4">
             <a
-              href="https://wa.me/441234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 p-2 lg:px-4 lg:py-2 rounded-full transition-all duration-300 text-white hover:bg-white/10 hover:scale-110"
-            >
-              <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6" />
-              <span className="hidden lg:inline text-sm font-medium">Message Rhia</span>
-            </a>
-            <a
-              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
+              href={waUrl}
+              onClick={handleCtaClick}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-xs tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
             >
-              <span className="lg:hidden">Book Now</span>
-              <span className="hidden lg:inline">Book Free Consultation</span>
+              Get in Touch
             </a>
           </div>
         </div>
@@ -294,20 +298,13 @@ function PlasmaFibroblastPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
               <a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
+                href={waUrl}
+                onClick={handleCtaClick}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto inline-block text-center"
               >
-                Book Free Consultation
-              </a>
-              <a
-                href="https://wa.me/441234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-white text-white px-10 py-4 rounded font-semibold hover:bg-white/10 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 w-auto sm:w-auto inline-block text-center"
-              >
-                Message Rhia
+                Get in Touch
               </a>
             </div>
           </motion.div>
@@ -355,12 +352,13 @@ function PlasmaFibroblastPage() {
                 </div>
 
                 <a
-                  href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
+                  href={waUrl}
+                  onClick={handleCtaClick}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 mx-auto sm:mx-0 inline-block"
                 >
-                  Book Free Consultation
+                  Get in Touch
                 </a>
               </div>
             </div>
@@ -517,13 +515,14 @@ function PlasmaFibroblastPage() {
 
           <div className="mt-8 sm:mt-12 text-center">
             <a
-              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
+              href={waUrl}
+              onClick={handleCtaClick}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
             >
-              <Calendar className="w-5 h-5" />
-              <span>Book Free Consultation</span>
+              <MessageCircle className="w-5 h-5" />
+              <span>Get in Touch</span>
             </a>
           </div>
           </div>
@@ -576,13 +575,14 @@ function PlasmaFibroblastPage() {
               </p>
 
               <a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
+                href={waUrl}
+                onClick={handleCtaClick}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
               >
-                <Calendar className="w-5 h-5" />
-                <span>Book Free Consultation</span>
+                <MessageCircle className="w-5 h-5" />
+                <span>Get in Touch</span>
               </a>
             </div>
           </div>
@@ -763,13 +763,14 @@ function PlasmaFibroblastPage() {
               Not sure if it's right for you? Just book a chat with me - no pressure, I'll take a look at your skin and give you my honest opinion.
             </p>
             <a
-              href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
+              href={waUrl}
+              onClick={handleCtaClick}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2"
             >
-              <Calendar className="w-5 h-5" />
-              <span>Book Free Consultation</span>
+              <MessageCircle className="w-5 h-5" />
+              <span>Get in Touch</span>
             </a>
           </div>
           </div>
@@ -849,21 +850,13 @@ function PlasmaFibroblastPage() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <a
-                href="https://www.fresha.com/a/rhi-aesthetics-eastleigh-heron-square-hly29r98/booking?offerItems=sv%3A25747351&pId=2514594&cartId=974a13f1-78b5-4381-99d9-bb848ac915f7"
+                href={waUrl}
+                onClick={handleCtaClick}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
               >
-                Book Free Consultation
-              </a>
-
-              <a
-                href="https://wa.me/441234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-white text-white px-10 py-4 rounded font-semibold hover:bg-white/10 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                Message Rhia
+                Get in Touch
               </a>
             </div>
 
