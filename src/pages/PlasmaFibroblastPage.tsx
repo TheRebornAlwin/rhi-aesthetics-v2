@@ -139,7 +139,7 @@ function PlasmaFibroblastPage() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const waUrl = `https://wa.me/447307762776?text=${encodeURIComponent("Hey Rhia, I'm interested in Plasma Fibroblast and was wondering if I'd be a good candidate!\n\nArea I'm interested in (e.g. eyelids, crow's feet, forehead lines, neck):\n\nFirst name:\nSurname:\nPhone number:\nEmail address:\n\nThanks!")}`;
+  const waUrl = `https://wa.me/447307762776?text=${encodeURIComponent("Hey Rhia, I'm interested in Plasma Fibroblast!\n\nArea I'd like treated (e.g. eyelids, crow's feet, forehead lines, neck):\n\nFirst name:\nSurname:\nPhone number:\nEmail address:\n\nThanks!")}`;
 
   const handleCtaClick = (e: React.MouseEvent) => {
     e.preventDefault();
