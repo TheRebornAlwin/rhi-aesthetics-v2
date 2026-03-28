@@ -1,0 +1,7 @@
+name = "fresha-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Your allowed origins (update with your actual domain)
+[vars]
+ALLOWED_ORIGINS = "https://rhiaesthetics.co.uk,https://www.rhiaesthetics.co.uk,http://localhost:5173,http://localhost:3000"
