@@ -10,6 +10,7 @@ import HampshireSkinLesionRemovalPage from './pages/HampshireSkinLesionRemovalPa
 import SandboxPage from './pages/SandboxPage.tsx';
 import NewLandingPage from './pages/NewLandingPage.tsx';
 import HampshireLandingPage from './pages/HampshireLandingPage.tsx';
+import TestingSandboxPage from './pages/TestingSandboxPage.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/hampshire" element={<HampshireLandingPage />} />
         <Route path="/hampshire-slr" element={<HampshireSkinLesionRemovalPage />} />
         <Route path="/sandbox" element={<SandboxPage />} />
+        <Route path="/testingsandbox" element={<TestingSandboxPage />} />
         <Route path="/newlp" element={<NewLandingPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
