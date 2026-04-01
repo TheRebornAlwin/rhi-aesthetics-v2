@@ -11,6 +11,7 @@ import SandboxPage from './pages/SandboxPage.tsx';
 import NewLandingPage from './pages/NewLandingPage.tsx';
 import HampshireLandingPage from './pages/HampshireLandingPage.tsx';
 import TestingSandboxPage from './pages/TestingSandboxPage.tsx';
+import BrightenRenewPage from './pages/BrightenRenewPage.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/hampshire-slr" element={<HampshireSkinLesionRemovalPage />} />
         <Route path="/sandbox" element={<SandboxPage />} />
         <Route path="/testingsandbox" element={<TestingSandboxPage />} />
+        <Route path="/brighten-renew" element={<BrightenRenewPage />} />
         <Route path="/newlp" element={<NewLandingPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
