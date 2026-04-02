@@ -68,6 +68,7 @@ function BrightenRenewPage() {
     // Preload critical above-fold images
     const criticalImages = [
       "https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt",
       "https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
     ];
     criticalImages.forEach((src) => {
@@ -173,62 +174,87 @@ function BrightenRenewPage() {
       </header>
 
       {/* ============================================ */}
-      {/* 1. FULL-SCREEN HERO                          */}
+      {/* 1. HERO — Split Layout                       */}
       {/* ============================================ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* IMAGE NEEDED: Hero background - Close-up of glowing, radiant skin or Rhia performing dermaplaning treatment. Warm, soft lighting. Should feel premium and calming. */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-500/20 via-transparent to-transparent"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-600/10 via-transparent to-transparent"></div>
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Mobile: image as background with overlay */}
+        <div className="lg:hidden absolute inset-0 z-0">
+          <img
+            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt"
+            alt="Glowing, radiant skin"
+            className="w-full h-full object-cover object-[70%_center]"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/70 to-gray-900/80"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 py-24 sm:py-32 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
-            className="space-y-6 sm:space-y-8"
-          >
-            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-xs sm:text-sm font-medium uppercase tracking-wider">
-              Brighten & Renew Facial
-            </span>
+        {/* Desktop: split layout */}
+        <div className="relative z-10 max-w-7xl mx-auto min-h-screen flex items-center">
+          <div className="grid lg:grid-cols-2 gap-0 w-full items-center">
+            {/* Left: Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
+              className="px-6 sm:px-10 lg:px-16 py-28 sm:py-32 lg:py-20 text-center lg:text-left space-y-6 sm:space-y-8"
+            >
+              <span className="inline-block px-4 py-2 bg-white/10 lg:bg-teal-500/10 backdrop-blur-sm border border-white/20 lg:border-teal-500/20 rounded-full text-white/90 lg:text-teal-600 text-xs sm:text-sm font-medium uppercase tracking-wider">
+                Brighten & Renew Facial
+              </span>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-normal text-white leading-tight">
-              <span className="lg:hidden">Smooth, Glowing Skin<br />in One Treatment</span>
-              <span className="hidden lg:inline">When Nothing You've Tried<br />Has Actually Worked</span>
-            </h1>
+              <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-serif font-normal text-white lg:text-black leading-tight">
+                <span className="lg:hidden">Smooth, Glowing Skin<br />in One Treatment</span>
+                <span className="hidden lg:inline">When Nothing You've Tried Has Actually Worked</span>
+              </h1>
 
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-16 sm:w-20 h-px bg-teal-400"></div>
-            </div>
+              <div className="w-16 sm:w-20 h-px bg-teal-400 lg:bg-teal-500 mx-auto lg:mx-0"></div>
 
-            <p className="text-sm sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed px-2">
-              Professional dermaplaning + chemical peel removes the dead layer your products can't reach, smooths texture, and gives you the glow you've been spending hundreds trying to get.
-            </p>
+              <p className="text-sm sm:text-lg lg:text-xl text-white/80 lg:text-black/60 max-w-xl leading-relaxed font-light">
+                Professional dermaplaning + chemical peel removes the dead layer your products can't reach, smooths texture, and gives you the glow you've been spending hundreds trying to get.
+              </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-2 text-white/70">
-              {[
-                { icon: Clock, text: "2-Hour Treatment" },
-                { icon: Sparkles, text: "Immediate Results" },
-                { icon: Shield, text: "Zero Downtime" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <item.icon className="w-4 h-4 text-teal-400" />
-                  <span className="text-sm font-light">{item.text}</span>
-                </div>
-              ))}
-            </div>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-2 text-white/70 lg:text-black/50">
+                {[
+                  { icon: Clock, text: "2-Hour Treatment" },
+                  { icon: Sparkles, text: "Immediate Results" },
+                  { icon: Shield, text: "Zero Downtime" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <item.icon className="w-4 h-4 text-teal-400 lg:text-teal-600" />
+                    <span className="text-sm font-light">{item.text}</span>
+                  </div>
+                ))}
+              </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
-              <a
-                href="#booking-form"
-                onClick={scrollToForm}
-                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 block sm:inline-block text-center w-full sm:w-auto"
-              >
-                Book Your Treatment
-              </a>
-            </div>
-          </motion.div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                <a
+                  href="#booking-form"
+                  onClick={scrollToForm}
+                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 block sm:inline-block text-center w-full sm:w-auto"
+                >
+                  Book Your Treatment
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Right: Hero image — desktop only */}
+            <motion.div
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
+              className="hidden lg:block relative h-screen"
+            >
+              <img
+                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt"
+                alt="Glowing, radiant skin after Brighten & Renew treatment"
+                className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent w-32"></div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -237,7 +263,7 @@ function BrightenRenewPage() {
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         >
-          <ChevronDown className="w-6 h-6 text-white/40" />
+          <ChevronDown className="w-6 h-6 text-white/40 lg:text-black/30" />
         </motion.div>
       </section>
 
