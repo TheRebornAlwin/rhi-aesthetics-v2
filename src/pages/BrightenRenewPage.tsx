@@ -225,7 +225,7 @@ function BrightenRenewPage() {
                 onClick={scrollToForm}
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 block sm:inline-block text-center w-full sm:w-auto"
               >
-                Book Your Treatment - £100
+                Book Your Treatment
               </a>
             </div>
           </motion.div>
@@ -763,7 +763,7 @@ function BrightenRenewPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <a href="#booking-form" onClick={scrollToForm}
                 className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105">
-                Book Your Treatment - £100
+                Book Your Treatment
               </a>
             </div>
 
