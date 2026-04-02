@@ -65,6 +65,19 @@ function BrightenRenewPage() {
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Professional dermaplaning + chemical peel in Southampton. 2-hour treatment for smooth, glowing skin. No needles, no downtime. £100. Book your Brighten & Renew Facial.');
     }
+    // Preload critical above-fold images
+    const criticalImages = [
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
+    ];
+    criticalImages.forEach((src) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
@@ -128,7 +141,7 @@ function BrightenRenewPage() {
           <div className="flex items-center justify-between">
             <Link to="/" className="group">
               <div className="w-12 h-12 lg:w-10 lg:h-10">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI" alt="RHI Aesthetics" className="w-full h-full object-contain" loading="eager" />
+                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI" alt="RHI Aesthetics" className="w-full h-full object-contain" loading="eager" fetchPriority="high" />
               </div>
             </Link>
             <div className="flex items-center space-x-4 sm:space-x-8">
@@ -169,7 +182,7 @@ function BrightenRenewPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-600/10 via-transparent to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-32 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 py-24 sm:py-32 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -180,7 +193,7 @@ function BrightenRenewPage() {
               Brighten & Renew Facial
             </span>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-normal text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-normal text-white leading-tight">
               <span className="lg:hidden">Smooth, Glowing Skin<br />in One Treatment</span>
               <span className="hidden lg:inline">When Nothing You've Tried<br />Has Actually Worked</span>
             </h1>
@@ -189,11 +202,11 @@ function BrightenRenewPage() {
               <div className="w-16 sm:w-20 h-px bg-teal-400"></div>
             </div>
 
-            <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed px-2">
               Professional dermaplaning + chemical peel removes the dead layer your products can't reach, smooths texture, and gives you the glow you've been spending hundreds trying to get.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-white/70">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-2 text-white/70">
               {[
                 { icon: Clock, text: "2-Hour Treatment" },
                 { icon: Sparkles, text: "Immediate Results" },
@@ -210,7 +223,7 @@ function BrightenRenewPage() {
               <a
                 href="#booking-form"
                 onClick={scrollToForm}
-                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-block text-center"
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 block sm:inline-block text-center w-full sm:w-auto"
               >
                 Book Your Treatment - £100
               </a>
@@ -235,28 +248,29 @@ function BrightenRenewPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* IMAGE NEEDED: Professional photo of Rhia, warm and approachable. Same one used on other pages works, or a new one of her in the treatment room looking welcoming. */}
-            <div className="relative h-[500px] lg:h-[700px]">
+            <div className="relative h-[350px] sm:h-[500px] lg:h-[700px]">
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
                 alt="Rhia - Aesthetic Practitioner"
-                className="w-full h-full object-cover"
-                loading="lazy"
+                className="w-full h-full object-cover object-top"
+                loading="eager"
+                fetchPriority="high"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20"></div>
             </div>
 
-            <div className="flex items-center px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-teal-50/40 to-white">
-              <div className="max-w-xl mx-auto text-center sm:text-left">
+            <div className="flex items-center px-6 sm:px-12 lg:px-16 py-12 sm:py-20 lg:py-24 bg-gradient-to-br from-teal-50/40 to-white">
+              <div className="max-w-xl mx-auto text-center lg:text-left">
                 <span className="inline-block px-4 py-2 bg-white border border-teal-200 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-8">
                   Sound Familiar?
                 </span>
 
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-black mb-8 leading-tight">
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light text-black mb-8 leading-tight">
                   Tired of products that{' '}
                   <span className="font-normal italic">promise everything and do nothing?</span>
                 </h2>
 
-                <div className="w-16 h-px bg-teal-500 mb-8 mx-auto sm:mx-0"></div>
+                <div className="w-16 h-px bg-teal-500 mb-8 mx-auto lg:mx-0"></div>
 
                 <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed mb-10">
                   <p>
@@ -273,7 +287,7 @@ function BrightenRenewPage() {
                 <a
                   href="#booking-form"
                   onClick={scrollToForm}
-                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 mx-auto sm:mx-0 inline-block"
+                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 mx-auto lg:mx-0 inline-block"
                 >
                   Book Your Treatment
                 </a>
@@ -294,7 +308,7 @@ function BrightenRenewPage() {
             <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
               The Treatment
             </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-black mb-6">
               How It Works
             </h2>
             <p className="text-lg sm:text-xl text-black/60 max-w-3xl mx-auto font-light">
@@ -331,8 +345,8 @@ function BrightenRenewPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 overflow-hidden text-center hover:shadow-xl"
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 overflow-hidden text-center hover:shadow-xl"
               >
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 z-10">
                   <span className="text-2xl sm:text-3xl font-black text-white">{step.number}</span>
@@ -365,7 +379,7 @@ function BrightenRenewPage() {
       {/* ============================================ */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-teal-50/20 to-white">
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white border-4 border-teal-500 rounded-3xl p-8 sm:p-12 text-center shadow-xl overflow-hidden">
+          <div className="relative bg-white border-4 border-teal-500 rounded-2xl sm:rounded-3xl p-6 sm:p-12 text-center shadow-xl overflow-hidden">
             <div className="absolute top-0 left-0 w-24 h-24 bg-teal-500/10 rounded-full blur-2xl"></div>
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-teal-600/10 rounded-full blur-2xl"></div>
 
@@ -375,7 +389,7 @@ function BrightenRenewPage() {
               </span>
 
               <div className="flex items-baseline justify-center gap-3 mb-4">
-                <span className="font-serif text-6xl sm:text-7xl text-teal-700 font-light">£100</span>
+                <span className="font-serif text-5xl sm:text-7xl text-teal-700 font-light">£100</span>
               </div>
               <p className="text-lg text-black/60 font-light mb-8">for a full 2-hour treatment</p>
 
@@ -423,7 +437,7 @@ function BrightenRenewPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-teal-50 to-white rounded-3xl border-2 border-teal-200 p-8 sm:p-10 shadow-xl"
+              className="bg-gradient-to-br from-teal-50 to-white rounded-2xl sm:rounded-3xl border-2 border-teal-200 p-5 sm:p-10 shadow-xl"
             >
               <h2 className="text-3xl sm:text-4xl font-light text-black mb-2 text-center lg:text-left">Book Your Treatment</h2>
               <p className="text-base text-black/60 font-light mb-8 text-center lg:text-left">
@@ -525,7 +539,7 @@ function BrightenRenewPage() {
             <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
               Transformations
             </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
               Real Results,{' '}<br className="sm:hidden" />Real Skin
             </h2>
             <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
@@ -533,24 +547,24 @@ function BrightenRenewPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 sm:gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
             {[
-              "IMAGE: Before/after - Dull skin to glowing radiance. Same lighting, same angle. Immediate post-treatment.",
-              "IMAGE: Before/after - Cakey makeup vs smooth application. Show how foundation sits differently.",
-              "IMAGE: Before/after - Visible peach fuzz vs smooth, fuzz-free skin. Close-up side lighting.",
-              "IMAGE: Before/after - Rough texture vs silky smooth. Close-up of cheek area. 1 week post.",
-              "IMAGE: Before/after - Tired/dull complexion vs vibrant glow. Natural daylight. 3 days post.",
-              "IMAGE: Before/after - Pore visibility improvement. Close-up showing refined skin texture. 2 weeks post.",
+              "Before/after - Dull skin to glowing radiance. Immediate post-treatment.",
+              "Before/after - Cakey makeup vs smooth application.",
+              "Before/after - Peach fuzz vs smooth, fuzz-free skin.",
+              "Before/after - Rough texture vs silky smooth. 1 week post.",
+              "Before/after - Tired complexion vs vibrant glow. 3 days post.",
+              "Before/after - Pore visibility improvement. 2 weeks post.",
             ].map((label, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ delay: index * 0.05, duration: 0.5 }}
                 viewport={{ once: true }}
                 className="group relative flex flex-col"
               >
-                <ImagePlaceholder label={label} aspect="aspect-[3/4]" className="rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300" />
+                <ImagePlaceholder label={label} aspect="aspect-[4/3] sm:aspect-[3/4]" className="rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300" />
               </motion.div>
             ))}
           </div>
@@ -583,7 +597,7 @@ function BrightenRenewPage() {
             <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
               Testimonials
             </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
               What My{' '}<br className="sm:hidden" />Clients Say
             </h2>
             <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
@@ -684,7 +698,7 @@ function BrightenRenewPage() {
             <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
               FAQ
             </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-black">
               Common Questions
             </h2>
           </div>
@@ -727,7 +741,7 @@ function BrightenRenewPage() {
       {/* ============================================ */}
       {/* 9. FINAL CTA                                 */}
       {/* ============================================ */}
-      <section className="relative py-24 sm:py-32 overflow-hidden">
+      <section className="relative py-16 sm:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-500/20 via-transparent to-transparent"></div>
         </div>
@@ -739,8 +753,8 @@ function BrightenRenewPage() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white leading-tight">
-              Ready to See What Your Skin<br />Can Actually Look Like?
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif text-white leading-tight">
+              Ready to See What Your Skin Can Actually Look Like?
             </h2>
             <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
               Stop spending money on products that don't work. One treatment, two hours, and you'll finally have the glow you've been chasing.
