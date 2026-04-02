@@ -16,6 +16,9 @@ import {
   Sparkles,
   Droplet,
   Layers,
+  Award,
+  ImageIcon,
+  ArrowRight,
 } from 'lucide-react';
 
 function BrightenRenewPage() {
@@ -93,136 +96,40 @@ function BrightenRenewPage() {
   };
 
   const faqs = [
-    {
-      question: "Does it hurt?",
-      answer: "No. Dermaplaning feels like gentle shaving. You'll feel the blade on your skin but there's no cutting or pain. The chemical peel may tingle slightly but it's not uncomfortable. Most women find the whole treatment relaxing."
-    },
-    {
-      question: "Will my hair grow back thicker or darker?",
-      answer: "No, this is a common myth. Dermaplaning cuts hair at the surface, leaving the follicle completely intact. Your hair will grow back at the same rate and texture as before."
-    },
-    {
-      question: "How long do results last?",
-      answer: "You'll see an immediate glow. Full results develop over 1-2 days and last 2-4 weeks. For best results, I recommend treatments every 3-4 weeks."
-    },
-    {
-      question: "Is there any downtime?",
-      answer: "None. You can return to normal activities immediately. Avoid heavy makeup for 24 hours and use SPF, but otherwise you're good to go. Most women go straight back to work or out for dinner."
-    },
-    {
-      question: "Is the scalpel actually safe?",
-      answer: "Completely. It's a medical-grade blade used with a precise, gentle technique. It's not cutting into your skin, it's gliding across the surface to remove dead cells and peach fuzz. I've performed hundreds of these treatments without a single issue."
-    },
-    {
-      question: "Is £100 worth it?",
-      answer: "Think about how much you've spent on serums, creams, and facials that didn't last. This gives you 2-4 weeks of smooth, glowing skin and flawless makeup application. Most clients say they wish they'd stopped buying products and started here."
-    },
-    {
-      question: "What if I have sensitive skin?",
-      answer: "I customise the chemical peel strength to your skin type. During the treatment, I'll check in with you and adjust accordingly. Just let me know about any sensitivities beforehand."
-    },
-    {
-      question: "Can I wear makeup afterwards?",
-      answer: "I recommend waiting 24 hours before applying makeup to let your fresh skin breathe. After that, you'll notice your makeup applies better than it ever has. That's usually the moment clients message me saying they can't believe the difference."
-    },
+    { question: "Does it hurt?", answer: "No. Dermaplaning feels like gentle shaving. You'll feel the blade on your skin but there's no cutting or pain. The chemical peel may tingle slightly but it's not uncomfortable. Most women find the whole treatment relaxing." },
+    { question: "Will my hair grow back thicker or darker?", answer: "No, this is a common myth. Dermaplaning cuts hair at the surface, leaving the follicle completely intact. Your hair will grow back at the same rate and texture as before." },
+    { question: "How long do results last?", answer: "You'll see an immediate glow. Full results develop over 1-2 days and last 2-4 weeks. For best results, I recommend treatments every 3-4 weeks." },
+    { question: "Is there any downtime?", answer: "None. You can return to normal activities immediately. Avoid heavy makeup for 24 hours and use SPF, but otherwise you're good to go. Most women go straight back to work or out for dinner." },
+    { question: "Is the scalpel actually safe?", answer: "Completely. It's a medical-grade blade used with a precise, gentle technique. It's not cutting into your skin, it's gliding across the surface to remove dead cells and peach fuzz. I've performed hundreds of these treatments without a single issue." },
+    { question: "Is £100 worth it?", answer: "Think about how much you've spent on serums, creams, and facials that didn't last. This gives you 2-4 weeks of smooth, glowing skin and flawless makeup application. Most clients say they wish they'd stopped buying products and started here." },
+    { question: "What if I have sensitive skin?", answer: "I customise the chemical peel strength to your skin type. During the treatment, I'll check in with you and adjust accordingly. Just let me know about any sensitivities beforehand." },
+    { question: "Can I wear makeup afterwards?", answer: "I recommend waiting 24 hours before applying makeup to let your fresh skin breathe. After that, you'll notice your makeup applies better than it ever has. That's usually the moment clients message me saying they can't believe the difference." },
   ];
 
-  const BookingForm = ({ id, className = '' }: { id?: string; className?: string }) => (
-    <div id={id} className={className}>
-      {formSubmitted ? (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center py-10 px-6"
-        >
-          <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-4">
-            <CheckCircle className="w-8 h-8 text-teal-600" />
-          </div>
-          <h3 className="font-serif text-2xl text-gray-900 font-light mb-2">You're all set!</h3>
-          <p className="text-sm text-gray-600 font-light leading-relaxed max-w-sm mx-auto">
-            I'll text you within 2 hours to confirm your appointment. If you have any questions in the meantime, feel free to <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-teal-600 underline underline-offset-2">message me on WhatsApp</a>.
-          </p>
-        </motion.div>
-      ) : (
-        <form onSubmit={handleFormSubmit} className="space-y-4">
-          <div>
-            <label className="block text-xs tracking-wider text-gray-700 uppercase mb-2 font-light">Your Name</label>
-            <input
-              type="text"
-              required
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 font-light focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
-              placeholder="e.g. Sarah"
-            />
-          </div>
-          <div>
-            <label className="block text-xs tracking-wider text-gray-700 uppercase mb-2 font-light">Email Address</label>
-            <input
-              type="email"
-              required
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 font-light focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
-              placeholder="sarah@email.com"
-            />
-          </div>
-          <div>
-            <label className="block text-xs tracking-wider text-gray-700 uppercase mb-2 font-light">Phone Number</label>
-            <input
-              type="tel"
-              required
-              value={formData.phone}
-              onChange={(e) => {
-                const digits = e.target.value.replace(/\D/g, '');
-                const formatted = digits.length > 5 ? digits.slice(0, 5) + ' ' + digits.slice(5, 11) : digits;
-                setFormData({ ...formData, phone: formatted });
-              }}
-              className="w-full px-4 py-3.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 font-light focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
-              placeholder="07XXX XXXXXX"
-            />
-          </div>
-          <div>
-            <label className="block text-xs tracking-wider text-gray-700 uppercase mb-2 font-light">Preferred Date (optional)</label>
-            <input
-              type="date"
-              value={formData.preferredDate}
-              onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-              className="w-full px-4 py-3.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-900 font-light focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-colors"
-            />
-          </div>
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-light hover:bg-teal-700 transition-colors rounded-lg shadow-lg shadow-teal-500/20"
-          >
-            Reserve My Spot
-          </motion.button>
-          <p className="text-xs text-gray-500 font-light text-center pt-1">
-            No payment required. I'll text you within 2 hours to confirm.
-          </p>
-        </form>
-      )}
+  // Image placeholder component
+  const ImagePlaceholder = ({ label, aspect = "aspect-[4/3]", className = "" }: { label: string; aspect?: string; className?: string }) => (
+    <div className={`${aspect} bg-gradient-to-br from-teal-100 via-teal-50 to-white rounded-2xl border-2 border-dashed border-teal-200 flex items-center justify-center overflow-hidden ${className}`}>
+      <div className="text-center px-6">
+        <div className="w-14 h-14 bg-teal-500/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
+          <ImageIcon className="w-7 h-7 text-teal-400" />
+        </div>
+        <p className="text-xs text-teal-600/70 font-medium leading-relaxed">{label}</p>
+      </div>
     </div>
   );
 
   return (
-    <div className="min-h-screen bg-[#FDF8F6]">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <motion.header
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-[#FDF8F6] py-5'
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between">
             <Link to="/" className="group">
-              <motion.div whileHover={{ opacity: 0.7 }} transition={{ duration: 0.2 }} className="w-12 h-12 lg:w-10 lg:h-10">
+              <div className="w-12 h-12 lg:w-10 lg:h-10">
                 <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI" alt="RHI Aesthetics" className="w-full h-full object-contain" loading="eager" />
-              </motion.div>
+              </div>
             </Link>
             <div className="flex items-center space-x-4 sm:space-x-8">
               <nav className="hidden lg:flex items-center space-x-8">
@@ -234,220 +141,374 @@ function BrightenRenewPage() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-xs tracking-wider transition-colors duration-200 font-light uppercase text-gray-700 hover:text-teal-600"
+                    className={`text-xs tracking-wider transition-colors duration-200 font-light uppercase ${isHeaderScrolled ? 'text-gray-700 hover:text-teal-600' : 'text-white/80 hover:text-white'}`}
                   >
                     {item.label}
                   </button>
                 ))}
               </nav>
-              <motion.a
+              <a
                 href="#booking-form"
                 onClick={scrollToForm}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="text-xs tracking-wider px-4 sm:px-5 py-2.5 bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-200 font-light uppercase rounded-md whitespace-nowrap"
+                className="text-xs tracking-wider px-4 sm:px-6 py-2.5 sm:py-3 bg-teal-600 text-white hover:bg-teal-700 transition-all duration-300 font-semibold uppercase rounded hover:scale-105 shadow-lg"
               >
                 Book Treatment
-              </motion.a>
+              </a>
             </div>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* ============================================ */}
-      {/* 1. HERO                                      */}
+      {/* 1. FULL-SCREEN HERO                          */}
       {/* ============================================ */}
-      <section className="relative pt-28 sm:pt-36 lg:pt-44 pb-14 sm:pb-20 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* IMAGE NEEDED: Hero background - Close-up of glowing, radiant skin or Rhia performing dermaplaning treatment. Warm, soft lighting. Should feel premium and calming. */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-500/20 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-teal-600/10 via-transparent to-transparent"></div>
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-32 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
+            className="space-y-6 sm:space-y-8"
           >
-            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase font-light">Brighten & Renew Facial</p>
+            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-xs sm:text-sm font-medium uppercase tracking-wider">
+              Brighten & Renew Facial
+            </span>
 
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-[3.2rem] text-gray-900 leading-[1.15] tracking-tight font-light px-2 lg:px-0">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif font-normal text-white leading-tight">
               <span className="lg:hidden">Smooth, Glowing Skin<br />in One Treatment</span>
-              <span className="hidden lg:inline">When Nothing You've Tried Has Given<br />You the Skin You Actually Want</span>
+              <span className="hidden lg:inline">When Nothing You've Tried<br />Has Actually Worked</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed max-w-2xl mx-auto px-4 lg:px-0">
-              Professional dermaplaning + chemical peel removes dead skin, smooths texture, and gives you immediate radiance. No needles. No downtime. Just the glow you've been spending hundreds on products trying to get.
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-16 sm:w-20 h-px bg-teal-400"></div>
+            </div>
+
+            <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Professional dermaplaning + chemical peel removes the dead layer your products can't reach, smooths texture, and gives you the glow you've been spending hundreds trying to get.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-2">
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-teal-600" />
-                <span className="text-sm text-gray-700 font-light">2-Hour Treatment</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-teal-600" />
-                <span className="text-sm text-gray-700 font-light">Immediate Results</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-teal-600" />
-                <span className="text-sm text-gray-700 font-light">Zero Downtime</span>
-              </div>
+            <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-white/70">
+              {[
+                { icon: Clock, text: "2-Hour Treatment" },
+                { icon: Sparkles, text: "Immediate Results" },
+                { icon: Shield, text: "Zero Downtime" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <item.icon className="w-4 h-4 text-teal-400" />
+                  <span className="text-sm font-light">{item.text}</span>
+                </div>
+              ))}
             </div>
 
-            <div className="pt-4">
-              <motion.a
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 px-4">
+              <a
                 href="#booking-form"
                 onClick={scrollToForm}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-block text-sm tracking-wider px-10 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-block text-center"
               >
                 Book Your Treatment - £100
-              </motion.a>
+              </a>
             </div>
           </motion.div>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        >
+          <ChevronDown className="w-6 h-6 text-white/40" />
+        </motion.div>
+      </section>
+
+      {/* ============================================ */}
+      {/* 2. EMPATHY SECTION — "I Get It"              */}
+      {/* ============================================ */}
+      <section className="relative bg-white overflow-hidden py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* IMAGE NEEDED: Professional photo of Rhia, warm and approachable. Same one used on other pages works, or a new one of her in the treatment room looking welcoming. */}
+            <div className="relative h-[500px] lg:h-[700px]">
+              <img
+                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
+                alt="Rhia - Aesthetic Practitioner"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20"></div>
+            </div>
+
+            <div className="flex items-center px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-teal-50/40 to-white">
+              <div className="max-w-xl mx-auto text-center sm:text-left">
+                <span className="inline-block px-4 py-2 bg-white border border-teal-200 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-8">
+                  Sound Familiar?
+                </span>
+
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-black mb-8 leading-tight">
+                  Tired of products that{' '}
+                  <span className="font-normal italic">promise everything and do nothing?</span>
+                </h2>
+
+                <div className="w-16 h-px bg-teal-500 mb-8 mx-auto sm:mx-0"></div>
+
+                <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed mb-10">
+                  <p>
+                    You've tried The Ordinary, Drunk Elephant, those £60 Sephora serums. You've watched every skincare routine on Instagram. You've done the multi-step routines, the retinol, the vitamin C.
+                  </p>
+                  <p>
+                    And still your foundation looks cakey by 3pm. Still your skin looks tired even when you're not. Still nobody notices.
+                  </p>
+                  <p className="text-teal-700 font-medium">
+                    The problem isn't your products. It's that you have a layer of dead skin blocking everything from working. This treatment removes it.
+                  </p>
+                </div>
+
+                <a
+                  href="#booking-form"
+                  onClick={scrollToForm}
+                  className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 mx-auto sm:mx-0 inline-block"
+                >
+                  Book Your Treatment
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ============================================ */}
-      {/* 2. WHAT'S INCLUDED                           */}
+      {/* 3. HOW IT WORKS — 3 Step Cards               */}
       {/* ============================================ */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light">What You Get</p>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light">Two Treatments, One Session, Real Results</h2>
-          </motion.div>
+      <section className="bg-white py-16 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-50/50 via-transparent to-transparent"></div>
 
-          <div className="grid sm:grid-cols-3 gap-6 sm:gap-8">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-12 sm:mb-20">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+              The Treatment
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-6">
+              How It Works
+            </h2>
+            <p className="text-lg sm:text-xl text-black/60 max-w-3xl mx-auto font-light">
+              Two professional treatments combined in one session for results you can see immediately.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                icon: <Sparkles className="w-6 h-6 text-teal-600" />,
-                step: "Step 1",
-                title: "Professional Dermaplaning",
-                description: "A medical-grade blade gently removes every layer of dead skin and peach fuzz from your face. This is what makes your skin feel like silk and lets products actually absorb."
+                icon: Sparkles,
+                title: "Dermaplaning",
+                description: "A medical-grade blade gently removes every layer of dead skin and peach fuzz. It feels like someone lightly shaving your face, nothing more. Most women are surprised at how much comes off and how smooth their skin feels immediately.",
+                number: "01",
+                imageLabel: "IMAGE: Close-up of dermaplaning being performed. Blade gliding gently across cheek. Clean, professional, calming."
               },
               {
-                icon: <Droplet className="w-6 h-6 text-teal-600" />,
-                step: "Step 2",
+                icon: Droplet,
                 title: "Chemical Peel",
-                description: "With the dead layer gone, a customised chemical peel penetrates deeper than it ever could on its own. This is what gives you the lasting glow that products alone can't."
+                description: "With the dead layer gone, a customised peel penetrates deeper than it ever could on its own. You might feel a mild tingle. This is what gives you the lasting radiance that keeps developing over the next few days.",
+                number: "02",
+                imageLabel: "IMAGE: Chemical peel being applied with a brush. Smooth, even application. Professional setting."
               },
               {
-                icon: <Layers className="w-6 h-6 text-teal-600" />,
-                step: "The Result",
-                title: "Smooth, Radiant Skin",
-                description: "You walk out with visibly smoother texture, a natural glow, and skin that your makeup will actually sit on properly. Results last 2-4 weeks."
-              },
-            ].map((item, i) => (
+                icon: Layers,
+                title: "Instant Glow",
+                description: "You walk out with visibly smoother texture, a natural glow, and skin that your makeup will actually sit on properly. No redness, no hiding. Most clients go straight to dinner or back to work.",
+                number: "03",
+                imageLabel: "IMAGE: Client's face immediately after treatment - glowing, radiant skin. Natural lighting. No filter."
+              }
+            ].map((step, index) => (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center p-6 sm:p-8 bg-[#FDF8F6] rounded-2xl border border-gray-100"
+                transition={{ delay: index * 0.15, duration: 0.5 }}
+                className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-teal-200 hover:border-teal-500/50 transition-all duration-500 overflow-hidden text-center hover:shadow-xl"
               >
-                <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  {item.icon}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 z-10">
+                  <span className="text-2xl sm:text-3xl font-black text-white">{step.number}</span>
                 </div>
-                <p className="text-xs tracking-wider text-teal-600 uppercase mb-2 font-light">{item.step}</p>
-                <h3 className="font-serif text-lg text-gray-900 font-light mb-3">{item.title}</h3>
-                <p className="text-sm text-gray-600 font-light leading-relaxed">{item.description}</p>
+
+                <div className="relative z-10 space-y-4 sm:space-y-6 pt-16 sm:pt-20">
+                  <ImagePlaceholder label={step.imageLabel} aspect="aspect-video" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-black">{step.title}</h3>
+                  <p className="text-sm sm:text-base text-black/70 leading-relaxed">{step.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mt-10"
+            className="mt-12 sm:mt-16 bg-gradient-to-r from-teal-50 to-teal-100/50 border border-teal-500/20 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-center"
           >
-            <div className="inline-flex items-center gap-3 bg-teal-50 border border-teal-100 rounded-xl px-6 py-3">
-              <span className="font-serif text-2xl text-teal-700 font-light">£100</span>
-              <span className="text-sm text-gray-600 font-light">for 2 hours of treatment</span>
-            </div>
+            <p className="text-lg sm:text-xl text-black">
+              <strong className="text-teal-600 font-bold">No pain, no needles, no downtime</strong> — just a gentle treatment that feels like a professional facial, with results that actually last.
+            </p>
           </motion.div>
         </div>
       </section>
 
       {/* ============================================ */}
-      {/* 3. FIRST BOOKING FORM (Hot Traffic)          */}
+      {/* 4. PRICE CARD                                */}
       {/* ============================================ */}
-      <section id="booking-form" className="py-16 sm:py-20 px-4 sm:px-6 bg-[#FDF8F6]">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3 text-center lg:text-left">Ready to Get Your Glow?</h2>
-              <p className="text-base text-gray-700 font-light mb-6 leading-relaxed text-center lg:text-left">
-                Fill in the form and I'll get back to you within a couple of hours to confirm your appointment. No payment needed right now.
-              </p>
-              <BookingForm />
-            </motion.div>
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-teal-50/20 to-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative bg-white border-4 border-teal-500 rounded-3xl p-8 sm:p-12 text-center shadow-xl overflow-hidden">
+            <div className="absolute top-0 left-0 w-24 h-24 bg-teal-500/10 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-teal-600/10 rounded-full blur-2xl"></div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="space-y-5"
-            >
-              <div className="bg-white border border-gray-100 rounded-xl p-5 sm:p-6 space-y-3">
-                <p className="text-sm text-gray-900 font-normal mb-2">Your appointment includes:</p>
+            <div className="relative z-10">
+              <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+                Brighten & Renew Facial
+              </span>
+
+              <div className="flex items-baseline justify-center gap-3 mb-4">
+                <span className="font-serif text-6xl sm:text-7xl text-teal-700 font-light">£100</span>
+              </div>
+              <p className="text-lg text-black/60 font-light mb-8">for a full 2-hour treatment</p>
+
+              <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-10 text-left">
                 {[
-                  'Full skin assessment before we start',
-                  'Professional dermaplaning (approx. 45 mins)',
-                  'Customised chemical peel for your skin type',
-                  'Aftercare guidance and product recommendations',
-                  'WhatsApp support if you have any questions after',
+                  'Professional dermaplaning',
+                  'Customised chemical peel',
+                  'Full skin assessment',
+                  'Aftercare kit & guidance',
+                  'WhatsApp support after',
+                  'Immediate visible results',
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2.5">
-                    <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700 font-light">{item}</span>
+                  <div key={i} className="flex items-center gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span className="text-sm text-black/70">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex items-start gap-2 px-1">
-                <Shield className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
-                <p className="text-xs text-gray-500 font-light">
-                  <span className="font-normal text-gray-700">Satisfaction guarantee.</span> Not happy with your results? I'll make it right, free of charge.
-                </p>
+              <a
+                href="#booking-form"
+                onClick={scrollToForm}
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-block"
+              >
+                Reserve My Spot
+              </a>
+
+              <p className="text-xs text-black/40 mt-4 font-light">No payment required to book. I'll confirm within 2 hours.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* 5. BOOKING FORM                              */}
+      {/* ============================================ */}
+      <section id="booking-form" className="py-16 sm:py-24 px-4 sm:px-6 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-teal-100/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            {/* Form Side */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-teal-50 to-white rounded-3xl border-2 border-teal-200 p-8 sm:p-10 shadow-xl"
+            >
+              <h2 className="text-3xl sm:text-4xl font-light text-black mb-2 text-center lg:text-left">Book Your Treatment</h2>
+              <p className="text-base text-black/60 font-light mb-8 text-center lg:text-left">
+                No payment needed. I'll text you within 2 hours to confirm.
+              </p>
+
+              {formSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-10"
+                >
+                  <div className="w-20 h-20 bg-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <CheckCircle className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-black mb-2">You're all set!</h3>
+                  <p className="text-base text-black/60 leading-relaxed max-w-sm mx-auto">
+                    I'll text you within 2 hours to confirm your appointment. Questions? <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-teal-600 font-semibold underline underline-offset-2">WhatsApp me</a>.
+                  </p>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleFormSubmit} className="space-y-5">
+                  <div>
+                    <label className="block text-xs tracking-wider text-black/60 uppercase mb-2 font-semibold">Your Name</label>
+                    <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-5 py-4 bg-white border-2 border-teal-200 rounded-xl text-sm text-black focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all" placeholder="e.g. Sarah" />
+                  </div>
+                  <div>
+                    <label className="block text-xs tracking-wider text-black/60 uppercase mb-2 font-semibold">Email Address</label>
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-5 py-4 bg-white border-2 border-teal-200 rounded-xl text-sm text-black focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all" placeholder="sarah@email.com" />
+                  </div>
+                  <div>
+                    <label className="block text-xs tracking-wider text-black/60 uppercase mb-2 font-semibold">Phone Number</label>
+                    <input type="tel" required value={formData.phone} onChange={(e) => {
+                      const digits = e.target.value.replace(/\D/g, '');
+                      const formatted = digits.length > 5 ? digits.slice(0, 5) + ' ' + digits.slice(5, 11) : digits;
+                      setFormData({ ...formData, phone: formatted });
+                    }}
+                      className="w-full px-5 py-4 bg-white border-2 border-teal-200 rounded-xl text-sm text-black focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all" placeholder="07XXX XXXXXX" />
+                  </div>
+                  <div>
+                    <label className="block text-xs tracking-wider text-black/60 uppercase mb-2 font-semibold">Preferred Date <span className="normal-case text-black/30">(optional)</span></label>
+                    <input type="date" value={formData.preferredDate} onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                      className="w-full px-5 py-4 bg-white border-2 border-teal-200 rounded-xl text-sm text-black focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all" />
+                  </div>
+                  <button type="submit"
+                    className="w-full px-6 py-4 bg-teal-600 text-white text-sm tracking-wider uppercase font-semibold hover:bg-teal-700 transition-all duration-300 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                    Reserve My Spot
+                  </button>
+                </form>
+              )}
+            </motion.div>
+
+            {/* Trust Side */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="space-y-6"
+            >
+              {/* IMAGE NEEDED: Rhia performing treatment or client with glowing skin. Should feel warm and professional. */}
+              <ImagePlaceholder label="IMAGE: Rhia performing the treatment on a relaxed client. Warm lighting, professional setting, calming atmosphere." aspect="aspect-[4/3]" className="shadow-lg" />
+
+              <div className="bg-gradient-to-br from-teal-50 to-white border-2 border-teal-200 rounded-2xl p-6 sm:p-8 space-y-4">
+                <p className="font-bold text-black mb-2">Your appointment includes:</p>
+                {[
+                  'Full skin assessment before we start',
+                  'Professional dermaplaning (approx. 45 mins)',
+                  'Customised chemical peel for your skin type',
+                  'Aftercare guidance & product recommendations',
+                  'WhatsApp support if you have questions after',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-black/70">{item}</span>
+                  </div>
+                ))}
               </div>
 
-              <div className="flex items-center gap-3 px-1">
-                <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-                    <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansvhu53QI2LoFzNsU8hi6XjReWVPbCHytdQ0YT" alt="" className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-                    <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansLUrYbcEpuNyB4c5UP1OD9z8GXJlTsjiKSLwq" alt="" className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-                    <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans1jAiKGPrPgLW2xY53lMqmX6sbNHJyknwUZt8?v=2" alt="" className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-xs text-gray-600 font-light">Trusted by <span className="font-normal text-gray-800">200+</span> women in Southampton</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl">
+              <div className="flex items-center gap-3 p-4 bg-white border border-teal-200 rounded-xl">
                 <MessageCircle className="w-5 h-5 text-teal-600 flex-shrink-0" />
-                <p className="text-sm text-gray-700 font-light">
-                  Prefer to message? <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-teal-600 font-normal underline underline-offset-2 hover:text-teal-700">WhatsApp me</a> instead.
+                <p className="text-sm text-black/70">
+                  Prefer to message? <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-teal-600 font-semibold underline underline-offset-2 hover:text-teal-700">WhatsApp me</a> instead.
                 </p>
               </div>
             </motion.div>
@@ -456,204 +517,126 @@ function BrightenRenewPage() {
       </section>
 
       {/* ============================================ */}
-      {/* 4. BEFORE & AFTER GALLERY                    */}
+      {/* 6. BEFORE & AFTER GALLERY                    */}
       {/* ============================================ */}
-      <section id="results" className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-12"
-          >
-            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light">Real Results</p>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-3">See the Difference for Yourself</h2>
-            <p className="text-sm text-gray-600 font-light max-w-2xl mx-auto leading-relaxed px-4">
-              Every result here is from a real client treated by me in Southampton. No filters, no editing, just the treatment doing what it does.
+      <section id="results" className="bg-white py-16 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+              Transformations
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
+              Real Results,{' '}<br className="sm:hidden" />Real Skin
+            </h2>
+            <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
+              Every photo is from a real client. No filters, no editing. Just the treatment doing what it does.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 sm:gap-8 mb-16">
             {[
-              { label: "Immediate Glow - Right After Treatment" },
-              { label: "Texture Smoothing - 3 Days Post-Treatment" },
-              { label: "Radiance Boost - 1 Week Post-Treatment" },
-              { label: "Makeup Application - Before vs After" },
-              { label: "Skin Clarity - 2 Weeks Post-Treatment" },
-              { label: "Overall Smoothness - 1 Week Post-Treatment" },
-            ].map((item, index) => (
+              "IMAGE: Before/after - Dull skin to glowing radiance. Same lighting, same angle. Immediate post-treatment.",
+              "IMAGE: Before/after - Cakey makeup vs smooth application. Show how foundation sits differently.",
+              "IMAGE: Before/after - Visible peach fuzz vs smooth, fuzz-free skin. Close-up side lighting.",
+              "IMAGE: Before/after - Rough texture vs silky smooth. Close-up of cheek area. 1 week post.",
+              "IMAGE: Before/after - Tired/dull complexion vs vibrant glow. Natural daylight. 3 days post.",
+              "IMAGE: Before/after - Pore visibility improvement. Close-up showing refined skin texture. 2 weeks post.",
+            ].map((label, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="overflow-hidden rounded-xl border border-gray-100 shadow-sm"
+                className="group relative flex flex-col"
               >
-                <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <Sparkles className="w-8 h-8 text-gray-300 mx-auto mb-3" />
-                    <p className="text-xs text-gray-400 font-light">Before & After Photo</p>
-                  </div>
-                </div>
-                <div className="px-4 py-3 bg-white">
-                  <p className="text-xs text-gray-600 font-light">{item.label}</p>
-                </div>
+                <ImagePlaceholder label={label} aspect="aspect-[3/4]" className="rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300" />
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-8"
-          >
-            <motion.a
-              href="#booking-form"
-              onClick={scrollToForm}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
-            >
-              Book Your Treatment
-            </motion.a>
-          </motion.div>
+          {/* Trust Badges */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { icon: Award, text: "Qualified Aesthetic Practitioner" },
+              { icon: Sparkles, text: "Professional-Grade Products Only" },
+              { icon: Shield, text: "Fully Insured & Accredited" },
+              { icon: MapPin, text: "Located in Southampton" }
+            ].map((item, index) => (
+              <div key={index} className="group relative bg-gradient-to-br from-teal-50 to-white p-6 sm:p-8 rounded-2xl border border-teal-200 hover:border-teal-400 transition-all duration-300 text-center">
+                <div className="bg-teal-500 w-12 h-12 sm:w-14 sm:h-14 rounded-xl mx-auto flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-6 sm:w-7 h-6 sm:h-7 text-white" />
+                </div>
+                <p className="font-semibold text-xs sm:text-sm text-black/80">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ============================================ */}
-      {/* 5. HOW IT WORKS                              */}
+      {/* 7. TESTIMONIALS                              */}
       {/* ============================================ */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-[#FDF8F6]">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-12"
-          >
-            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light">What to Expect</p>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light">Here's Exactly What Happens</h2>
-          </motion.div>
-
-          <div className="space-y-6">
-            {[
-              {
-                title: "We start with a proper skin assessment",
-                description: "Before anything touches your face, I look at your skin closely, ask about your routine, any sensitivities, and what you're hoping to achieve. This isn't a one-size-fits-all treatment."
-              },
-              {
-                title: "Your skin is cleansed and prepped",
-                description: "I remove all makeup, oil, and buildup so the treatment can work on a completely clean surface. This step alone often reveals how much dead skin has been sitting there."
-              },
-              {
-                title: "Dermaplaning removes the dead layer",
-                description: "Using a medical-grade blade, I gently remove dead skin cells and peach fuzz. It feels like someone lightly shaving your face, nothing more. No cutting, no pain. Most women are surprised how much comes off and how smooth their skin feels immediately."
-              },
-              {
-                title: "The chemical peel goes to work",
-                description: "With the dead layer gone, a peel customised to your skin type penetrates much deeper than it could on its own. You might feel a mild tingle, but that's it. This is what gives you the lasting radiance that keeps developing over the next few days."
-              },
-              {
-                title: "You leave with a visible glow",
-                description: "No redness, no downtime, no hiding. You walk out with smoother, brighter skin. The full results develop over 1-2 days, and most clients say their makeup has never applied better."
-              },
-            ].map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex gap-4 sm:gap-6"
-              >
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-sm font-light mt-0.5">
-                  {i + 1}
-                </div>
-                <div>
-                  <h3 className="text-base text-gray-900 font-normal mb-1.5">{step.title}</h3>
-                  <p className="text-sm text-gray-600 font-light leading-relaxed">{step.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-10 p-5 bg-white border border-gray-100 rounded-xl"
-          >
-            <p className="text-sm text-gray-700 font-light leading-relaxed italic text-center">
-              "I was nervous as is to have a scalpel near me, but it was completely painless. I actually found the whole thing relaxing. And the results... my skin is still as smooth as a baby's bottom a week later."
+      <section id="reviews" className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-teal-50/30 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+              Testimonials
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
+              What My{' '}<br className="sm:hidden" />Clients Say
+            </h2>
+            <p className="text-lg sm:text-xl text-black/60 max-w-2xl mx-auto font-light">
+              Real feedback from real women in Southampton
             </p>
-            <p className="text-xs text-gray-500 font-normal text-center mt-2">- Emma L., 35</p>
-          </motion.div>
-        </div>
-      </section>
+          </div>
 
-      {/* ============================================ */}
-      {/* 6. TESTIMONIALS                              */}
-      {/* ============================================ */}
-      <section id="reviews" className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-12"
-          >
-            <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light">Real Stories</p>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light mb-5">What My Clients Say</h2>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
+                quote: "My husband of 10 years not only noticed a change but actually commented on it. That never happens. My skin genuinely looks like it's glowing, and my makeup sits so much better now. I wish I'd done this years ago instead of spending hundreds on serums that did nothing.",
                 name: "Sarah M.",
-                age: 42,
-                quote: "My husband of 10 years not only noticed a change but actually commented on it. That never happens. My skin genuinely looks like it's glowing, and my makeup sits so much better now. I wish I'd done this years ago instead of spending hundreds on serums.",
+                age: "42",
               },
               {
-                name: "Emma L.",
-                age: 35,
                 quote: "I was SO nervous about the scalpel bit, like I nearly cancelled twice. But honestly? It felt like someone gently shaving my face and that's it. And the results... my skin is still smooth as a baby's bottom a week later. Actually can't believe it.",
+                name: "Emma L.",
+                age: "35",
               },
               {
+                quote: "I've tried The Ordinary, Drunk Elephant, those expensive Sephora serums, regular facials, at-home peels. Nothing ever lasted more than a day or two. This is the first time I've looked in the mirror and actually liked what I saw. My foundation doesn't look cakey anymore it just sits right.",
                 name: "Lisa K.",
-                age: 48,
-                quote: "I've tried The Ordinary, Drunk Elephant, those expensive Sephora serums, regular facials, at-home peels. Nothing ever lasted more than a day or two. This is the first time I've looked in the mirror and actually liked what I saw. My foundation doesn't look cakey anymore, it just sits right.",
+                age: "48",
               },
               {
-                name: "Rachel P.",
-                age: 33,
                 quote: "ok so I was the biggest skeptic, I'd basically given up on my skin doing anything other than looking tired all the time. but after one session my colleagues kept asking what I'd done differently?? like actual unprompted compliments. definitely booking again",
+                name: "Rachel P.",
+                age: "33",
               },
               {
-                name: "Claire H.",
-                age: 44,
                 quote: "I'll be honest, £100 felt like a lot when I first saw it. But when I think about the amount I've spent on products that did absolutely nothing, this is actually worth every penny. My skin looks fresh and healthy, I don't need as much makeup now, and I just feel like myself again.",
+                name: "Claire H.",
+                age: "44",
               },
               {
+                quote: "The peach fuzz thing was honestly my biggest insecurity, I could see it in photos catching the light and it drove me mad. After the treatment it was just... gone. My skin felt so smooth and the glow lasted weeks. Rhia made the whole experience so comfortable too she talked me through everything.",
                 name: "Jade W.",
-                age: 37,
-                quote: "The peach fuzz thing was honestly my biggest insecurity, I could see it in photos catching the light and it drove me mad. After the treatment it was just... gone. My skin felt so smooth and the glow lasted weeks. Rhia made the whole experience so comfortable too, she talked me through everything.",
+                age: "37",
               },
               {
-                name: "Priya T.",
-                age: 40,
                 quote: "I'm someone who researches everything before I commit, read every review, watched every video, the lot. Finally booked it and I'm actually annoyed at myself for waiting so long. The treatment itself was relaxing and my skin has never looked this good. Even my sister noticed and she never notices anything.",
+                name: "Priya T.",
+                age: "40",
               },
               {
+                quote: "Look, I won't lie, I was terrified. The word scalpel doesn't exactly fill you with confidence does it? But Rhia was so gentle and explained every step. Zero pain. My skin felt like silk afterwards and my makeup actually glides on now instead of sitting on top of my face. Game changer for me.",
                 name: "Natalie D.",
-                age: 51,
-                quote: "Look, I won't lie, I was terrified. The word scalpel doesn't exactly fill you with confidence does it? But Rhia was so gentle and explained every step. Zero pain. My skin felt like silk afterwards and my makeup actually glides on now instead of sitting on top. Game changer for me.",
+                age: "51",
               },
               {
-                name: "Amy R.",
-                age: 39,
                 quote: "I really can't believe I waited this long to have a treatment like this. I used to wake up, look in the mirror, and just sigh at how dull and tired my skin looked even after 8 hours of sleep. Now I actually look forward to catching my reflection. Sounds silly but it's made such a difference to how I feel.",
+                name: "Amy R.",
+                age: "39",
               },
             ].map((story, index) => (
               <motion.div
@@ -661,54 +644,52 @@ function BrightenRenewPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.04 }}
-                className="bg-[#FDF8F6] border border-gray-100 rounded-xl sm:rounded-2xl p-5 sm:p-6 text-center"
+                transition={{ delay: index * 0.05, duration: 0.5 }}
+                className="bg-white rounded-2xl p-6 sm:p-8 border border-teal-200 hover:border-teal-400 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex justify-center gap-0.5 mb-3">
+                <div className="flex gap-0.5 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-sm text-gray-700 font-light leading-relaxed italic mb-3">"{story.quote}"</p>
-                <p className="text-xs text-gray-500 font-normal">- {story.name}, {story.age}</p>
+                <p className="text-sm sm:text-base text-black/70 leading-relaxed mb-4 italic">"{story.quote}"</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                  <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    {story.name[0]}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm text-black">{story.name}</p>
+                    <p className="text-xs text-black/40">Age {story.age}, Southampton</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-8 sm:mt-10"
-          >
-            <motion.a
-              href="#booking-form"
-              onClick={scrollToForm}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-block text-sm tracking-wider px-8 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
-            >
-              Book Your Treatment
-            </motion.a>
-          </motion.div>
+          <div className="text-center mt-12">
+            <a href="#booking-form" onClick={scrollToForm}
+              className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center gap-2">
+              Book Your Treatment <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </section>
 
       {/* ============================================ */}
-      {/* 7. FAQ                                       */}
+      {/* 8. FAQ                                       */}
       {/* ============================================ */}
-      <section id="faqs" className="py-16 sm:py-20 px-4 sm:px-6 bg-[#FDF8F6]">
+      <section id="faqs" className="py-16 sm:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-12"
-          >
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light">Common Questions</h2>
-          </motion.div>
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+              FAQ
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-black">
+              Common Questions
+            </h2>
+          </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -716,18 +697,15 @@ function BrightenRenewPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.03 }}
-                className="bg-white border border-gray-100 rounded-xl overflow-hidden hover:border-teal-200 transition-colors"
+                className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 rounded-2xl overflow-hidden hover:border-teal-400 transition-all duration-300"
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-teal-50/50 transition-colors"
                 >
-                  <span className="text-sm text-gray-900 pr-4 sm:pr-6 font-light">{faq.question}</span>
-                  <motion.div
-                    animate={{ rotate: openFaq === index ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronDown className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-black pr-6 font-medium">{faq.question}</span>
+                  <motion.div animate={{ rotate: openFaq === index ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                    <ChevronDown className="w-5 h-5 text-teal-600 flex-shrink-0" />
                   </motion.div>
                 </button>
                 <motion.div
@@ -736,7 +714,7 @@ function BrightenRenewPage() {
                   transition={{ duration: 0.2 }}
                   className="overflow-hidden"
                 >
-                  <div className="px-5 sm:px-6 pb-4 sm:pb-5 text-sm text-gray-600 leading-relaxed font-light border-t border-gray-100 pt-4">
+                  <div className="px-6 pb-5 text-sm sm:text-base text-black/60 leading-relaxed border-t border-teal-100 pt-4">
                     {faq.answer}
                   </div>
                 </motion.div>
@@ -747,92 +725,35 @@ function BrightenRenewPage() {
       </section>
 
       {/* ============================================ */}
-      {/* 8. ABOUT RHIA                                */}
-      {/* ============================================ */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-gray-100 max-w-sm mx-auto lg:mx-0">
-                <img
-                  src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
-                  alt="Rhia"
-                  className="w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-center lg:text-left"
-            >
-              <p className="text-xs tracking-[0.2em] text-teal-600 uppercase mb-3 font-light">Your Practitioner</p>
-              <h2 className="font-serif text-2xl sm:text-3xl text-gray-900 font-light mb-4">Hi, I'm Rhia</h2>
-              <div className="space-y-4 text-sm text-gray-600 font-light leading-relaxed">
-                <p>
-                  I know what it's like to spend money on skincare and feel like nothing actually works. That frustration is exactly why I trained in treatments that deliver real, visible results.
-                </p>
-                <p>
-                  The Brighten & Renew Facial is one of my favourite treatments to perform because the results are immediate. Clients see the difference the moment they look in the mirror, and that reaction is genuinely the best part of my job.
-                </p>
-                <p>
-                  I've helped hundreds of women in Southampton get glowing, smooth skin without needles or downtime. If you have any questions at all before booking, don't hesitate to message me.
-                </p>
-              </div>
-              <div className="flex items-center justify-center lg:justify-start gap-6 pt-6 mt-6 border-t border-gray-200">
-                <div>
-                  <p className="font-serif text-2xl text-teal-700 font-light">200+</p>
-                  <p className="text-xs text-gray-500 font-light">Happy Clients</p>
-                </div>
-                <div className="w-px h-10 bg-gray-200" />
-                <div>
-                  <p className="font-serif text-2xl text-teal-700 font-light">5.0</p>
-                  <p className="text-xs text-gray-500 font-light">Rating</p>
-                </div>
-                <div className="w-px h-10 bg-gray-200" />
-                <div>
-                  <p className="font-serif text-2xl text-teal-700 font-light">5+</p>
-                  <p className="text-xs text-gray-500 font-light">Years Exp.</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================ */}
       {/* 9. FINAL CTA                                 */}
       {/* ============================================ */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-[#FDF8F6]">
-        <div className="max-w-2xl mx-auto text-center">
+      <section className="relative py-24 sm:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-500/20 via-transparent to-transparent"></div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-5"
+            className="space-y-6"
           >
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-light">Ready to See What Your Skin Can Actually Look Like?</h2>
-            <p className="text-base text-gray-600 font-light leading-relaxed">
-              Join hundreds of women in Southampton who stopped spending money on products that don't work and got results they could actually see.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white leading-tight">
+              Ready to See What Your Skin<br />Can Actually Look Like?
+            </h2>
+            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+              Stop spending money on products that don't work. One treatment, two hours, and you'll finally have the glow you've been chasing.
             </p>
-            <motion.a
-              href="#booking-form"
-              onClick={scrollToForm}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-block text-sm tracking-wider px-10 py-4 bg-teal-600 text-white hover:bg-teal-700 transition-colors font-light uppercase rounded-md shadow-lg shadow-teal-500/15"
-            >
-              Book Your Treatment - £100
-            </motion.a>
-            <p className="text-xs text-gray-500 font-light pt-1">
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+              <a href="#booking-form" onClick={scrollToForm}
+                className="bg-teal-600 text-white px-10 py-4 rounded font-semibold hover:bg-teal-700 transition-all duration-300 uppercase text-sm tracking-wider shadow-lg hover:shadow-xl hover:scale-105">
+                Book Your Treatment - £100
+              </a>
+            </div>
+
+            <p className="text-sm text-white/40 font-light pt-2">
               No payment required. I'll text you within 2 hours to confirm your appointment.
             </p>
           </motion.div>
@@ -851,12 +772,8 @@ function BrightenRenewPage() {
               </div>
               <p className="text-sm text-gray-400 font-light">Professional skin treatments in Southampton</p>
               <div className="flex space-x-4">
-                <a href="https://www.instagram.com/rhi.aesthetics?igsh=MWhvMjFqb3Zscms0aw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61575636000105" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
+                <a href="https://www.instagram.com/rhi.aesthetics?igsh=MWhvMjFqb3Zscms0aw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+                <a href="https://www.facebook.com/profile.php?id=61575636000105" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
               </div>
             </div>
             <div>
