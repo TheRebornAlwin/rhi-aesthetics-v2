@@ -536,7 +536,9 @@ function BrightenRenewPage() {
               className="space-y-6"
             >
               {/* IMAGE NEEDED: Rhia performing treatment or client with glowing skin. Should feel warm and professional. */}
-              <ImagePlaceholder label="IMAGE: Rhia performing the treatment on a relaxed client. Warm lighting, professional setting, calming atmosphere." aspect="aspect-[4/3]" className="shadow-lg" />
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-200">
+                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg" alt="Rhia performing Brighten & Renew facial treatment" className="w-full h-full object-cover" loading="lazy" />
+              </div>
 
               <div className="bg-gradient-to-br from-teal-50 to-white border-2 border-teal-200 rounded-2xl p-6 sm:p-8 space-y-4">
                 <p className="font-bold text-black mb-2">Your appointment includes:</p>
