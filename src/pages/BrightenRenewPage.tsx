@@ -349,21 +349,24 @@ function BrightenRenewPage() {
                 title: "Dermaplaning",
                 description: "A medical-grade blade gently removes every layer of dead skin and peach fuzz. It feels like someone lightly shaving your face, nothing more. Most women are surprised at how much comes off and how smooth their skin feels immediately.",
                 number: "01",
-                imageLabel: "IMAGE: Close-up of dermaplaning being performed. Blade gliding gently across cheek. Clean, professional, calming."
+                image: null,
+                imageLabel: "IMAGE: Close-up of dermaplaning being performed. Blade gliding gently across cheek."
               },
               {
                 icon: Droplet,
                 title: "Chemical Peel",
                 description: "With the dead layer gone, a customised peel penetrates deeper than it ever could on its own. You might feel a mild tingle. This is what gives you the lasting radiance that keeps developing over the next few days.",
                 number: "02",
-                imageLabel: "IMAGE: Chemical peel being applied with a brush. Smooth, even application. Professional setting."
+                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansP4cxa3plansMeUbGIOLF6SBXiAE1CKD5xpJ0",
+                imageLabel: ""
               },
               {
                 icon: Layers,
                 title: "Instant Glow",
                 description: "You walk out with visibly smoother texture, a natural glow, and skin that your makeup will actually sit on properly. No redness, no hiding. Most clients go straight to dinner or back to work.",
                 number: "03",
-                imageLabel: "IMAGE: Client's face immediately after treatment - glowing, radiant skin. Natural lighting. No filter."
+                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansc6PzZqa4JTIOjNmkbGi5ScPRl97M4udQahKw",
+                imageLabel: ""
               }
             ].map((step, index) => (
               <motion.div
@@ -379,7 +382,13 @@ function BrightenRenewPage() {
                 </div>
 
                 <div className="relative z-10 space-y-4 sm:space-y-6 pt-16 sm:pt-20">
-                  <ImagePlaceholder label={step.imageLabel} aspect="aspect-video" />
+                  {step.image ? (
+                    <div className="aspect-video rounded-2xl overflow-hidden border-2 border-teal-200">
+                      <img src={step.image} alt={step.title} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder label={step.imageLabel} aspect="aspect-video" />
+                  )}
                   <h3 className="text-xl sm:text-2xl font-bold text-black">{step.title}</h3>
                   <p className="text-sm sm:text-base text-black/70 leading-relaxed">{step.description}</p>
                 </div>
