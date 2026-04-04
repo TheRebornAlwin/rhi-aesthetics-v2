@@ -349,8 +349,8 @@ function BrightenRenewPage() {
                 title: "Dermaplaning",
                 description: "A medical-grade blade gently removes every layer of dead skin and peach fuzz. It feels like someone lightly shaving your face, nothing more. Most women are surprised at how much comes off and how smooth their skin feels immediately.",
                 number: "01",
-                image: null,
-                imageLabel: "IMAGE: Close-up of dermaplaning being performed. Blade gliding gently across cheek."
+                image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansns1UjHeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg",
+                imageLabel: ""
               },
               {
                 icon: Droplet,
