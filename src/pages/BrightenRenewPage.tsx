@@ -586,13 +586,13 @@ function BrightenRenewPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
             {[
-              "Before/after - Dull skin to glowing radiance. Immediate post-treatment.",
-              "Before/after - Cakey makeup vs smooth application.",
-              "Before/after - Peach fuzz vs smooth, fuzz-free skin.",
-              "Before/after - Rough texture vs silky smooth. 1 week post.",
-              "Before/after - Tired complexion vs vibrant glow. 3 days post.",
-              "Before/after - Pore visibility improvement. 2 weeks post.",
-            ].map((label, index) => (
+              { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplanspzVaye9qI1imrJsTxKlZHRz3Vt25Gv4aoPnL", label: "Dull Skin to Glowing Radiance" },
+              { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLPRBz4cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw", label: "Cakey Makeup vs Smooth Application" },
+              { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansK3jNgyuVC1H7mIjaGYs4kS2vQxiO3zoXpD6c", label: "Peach Fuzz Removal" },
+              { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplans4bUt6KSZlV9LZ7rOzhpUH0MiuGACRPD3jNeQ", label: "Rough Texture to Silky Smooth" },
+              { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansMTwjx4fF60kipOZwxPDGShftogB23RYsQ9cU", label: "Tired Complexion to Vibrant Glow" },
+              { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansM9s6ssfF60kipOZwxPDGShftogB23RYsQ9cU", label: "Pore Refinement" },
+            ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -601,7 +601,10 @@ function BrightenRenewPage() {
                 viewport={{ once: true }}
                 className="group relative flex flex-col"
               >
-                <ImagePlaceholder label={label} aspect="aspect-[4/3] sm:aspect-[3/4]" className="rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300" />
+                <div className="aspect-[4/3] sm:aspect-[3/4] rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                  <img src={item.image} alt={item.label} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <p className="text-sm text-black/60 font-medium text-center mt-3">{item.label}</p>
               </motion.div>
             ))}
           </div>
