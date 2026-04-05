@@ -243,16 +243,15 @@ function BrightenRenewPage() {
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
-              className="hidden lg:block relative h-screen"
+              className="hidden lg:flex items-center justify-center py-28 pr-10"
             >
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt"
                 alt="Glowing, radiant skin after Brighten & Renew treatment"
-                className="w-full h-full object-cover object-[85%_center]"
+                className="w-full max-h-[75vh] object-cover object-center rounded-2xl shadow-2xl"
                 loading="eager"
                 fetchPriority="high"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent w-32"></div>
             </motion.div>
           </div>
         </div>
