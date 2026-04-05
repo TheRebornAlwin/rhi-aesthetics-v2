@@ -248,7 +248,7 @@ function BrightenRenewPage() {
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt"
                 alt="Glowing, radiant skin after Brighten & Renew treatment"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[30%_center]"
                 loading="eager"
                 fetchPriority="high"
               />
@@ -584,7 +584,7 @@ function BrightenRenewPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-16">
             {[
               { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplanspzVaye9qI1imrJsTxKlZHRz3Vt25Gv4aoPnL", label: "Dull Skin to Glowing Radiance" },
               { image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLPRBz4cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw", label: "Cakey Makeup vs Smooth Application" },
@@ -601,7 +601,7 @@ function BrightenRenewPage() {
                 viewport={{ once: true }}
                 className="group relative flex flex-col"
               >
-                <div className="aspect-[4/3] sm:aspect-[3/4] rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div className="aspect-[16/9] rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                   <img src={item.image} alt={item.label} className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <p className="text-sm text-black/60 font-medium text-center mt-3">{item.label}</p>
