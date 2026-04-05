@@ -248,7 +248,7 @@ function BrightenRenewPage() {
               <img
                 src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt"
                 alt="Glowing, radiant skin after Brighten & Renew treatment"
-                className="w-full h-full object-cover object-[30%_center]"
+                className="w-full h-full object-cover object-[65%_center]"
                 loading="eager"
                 fetchPriority="high"
               />
