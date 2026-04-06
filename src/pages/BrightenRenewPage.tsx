@@ -65,15 +65,46 @@ function BrightenRenewPage() {
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Professional dermaplaning + chemical peel in Southampton. 2-hour treatment for smooth, glowing skin. No needles, no downtime. £100. Book your Brighten & Renew Facial.');
     }
-    // Preload critical above-fold images
+    // Preload ALL images — critical ones as preload, rest as prefetch
     const criticalImages = [
       "https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI",
       "https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl",
     ];
+    const nearFoldImages = [
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansns1UjHeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansP4cxa3plansMeUbGIOLF6SBXiAE1CKD5xpJ0",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansc6PzZqa4JTIOjNmkbGi5ScPRl97M4udQahKw",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg",
+    ];
+    const belowFoldImages = [
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplanspzVaye9qI1imrJsTxKlZHRz3Vt25Gv4aoPnL",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLPRBz4cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansK3jNgyuVC1H7mIjaGYs4kS2vQxiO3zoXpD6c",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplans4bUt6KSZlV9LZ7rOzhpUH0MiuGACRPD3jNeQ",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansMTwjx4fF60kipOZwxPDGShftogB23RYsQ9cU",
+      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansM9s6ssfF60kipOZwxPDGShftogB23RYsQ9cU",
+    ];
+    // Preload critical (above fold) — highest priority
     criticalImages.forEach((src) => {
       const link = document.createElement('link');
       link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+    // Preload near-fold images — high priority, start fetching immediately
+    nearFoldImages.forEach((src) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+    // Prefetch below-fold images — low priority background fetch
+    belowFoldImages.forEach((src) => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
       link.as = 'image';
       link.href = src;
       document.head.appendChild(link);
@@ -280,6 +311,7 @@ function BrightenRenewPage() {
                 className="w-full h-full object-cover object-top"
                 loading="eager"
                 fetchPriority="high"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20"></div>
             </div>
@@ -383,7 +415,7 @@ function BrightenRenewPage() {
                 <div className="relative z-10 space-y-4 sm:space-y-6 pt-16 sm:pt-20">
                   {step.image ? (
                     <div className="aspect-video rounded-2xl overflow-hidden border-2 border-teal-200">
-                      <img src={step.image} alt={step.title} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={step.image} alt={step.title} className="w-full h-full object-cover" loading="eager" decoding="async" />
                     </div>
                   ) : (
                     <ImagePlaceholder label={step.imageLabel} aspect="aspect-video" />
@@ -536,7 +568,7 @@ function BrightenRenewPage() {
             >
               {/* IMAGE NEEDED: Rhia performing treatment or client with glowing skin. Should feel warm and professional. */}
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-200">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg" alt="Rhia performing Brighten & Renew facial treatment" className="w-full h-full object-cover" loading="lazy" />
+                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg" alt="Rhia performing Brighten & Renew facial treatment" className="w-full h-full object-cover" loading="eager" decoding="async" />
               </div>
 
               <div className="bg-gradient-to-br from-teal-50 to-white border-2 border-teal-200 rounded-2xl p-6 sm:p-8 space-y-4">
@@ -601,7 +633,7 @@ function BrightenRenewPage() {
                 className="group relative flex flex-col"
               >
                 <div className="aspect-[16/9] rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <img src={item.image} alt={item.label} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={item.image} alt={item.label} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <p className="text-sm text-black/60 font-medium text-center mt-3">{item.label}</p>
               </motion.div>
