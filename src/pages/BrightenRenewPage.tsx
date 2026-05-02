@@ -154,6 +154,14 @@ function BrightenRenewPage() {
     { question: "Is £100 worth it?", answer: "Think about how much you've spent on serums, creams, and facials that didn't last. This gives you 2-4 weeks of smooth, glowing skin and flawless makeup application. Most clients say they wish they'd stopped buying products and started here." },
     { question: "What if I have sensitive skin?", answer: "I customise the chemical peel strength to your skin type. During the treatment, I'll check in with you and adjust accordingly. Just let me know about any sensitivities beforehand." },
     { question: "Can I wear makeup afterwards?", answer: "I recommend waiting 24 hours before applying makeup to let your fresh skin breathe. After that, you'll notice your makeup applies better than it ever has. That's usually the moment clients message me saying they can't believe the difference." },
+    { question: "What's actually in the chemical peel?", answer: "Most are a combination of glycolic and lactic acid at a percentage I match to your skin type. They're professional-grade — far higher concentration than anything legally sold for home use, but applied carefully so they work without burning or visibly peeling you. If your skin is on the more sensitive side, I'll start lower and we'll build the strength up over future sessions." },
+    { question: "Can I have this if I'm on retinol or tretinoin?", answer: "You'll need to pause your retinol or tretinoin for 5-7 days before your treatment, otherwise your skin will be too reactive. I'll send a full prep checklist when you book so there are no surprises on the day." },
+    { question: "What if I have rosacea, melasma, or active acne?", answer: "Mention it when you book. For active acne we usually wait until it's calmed down. For melasma the treatment can actually help — we use a brightening peel. For mild rosacea I go gentle. Anything more serious and I'll be honest with you about whether it's the right fit. I won't sell you something that isn't." },
+    { question: "What's in the aftercare kit I'm taking home?", answer: "A travel-size SPF50 (essential for the next 7 days), a hydrating serum to support your skin while it recovers, and a printed aftercare card. The kit on its own retails around £25 — it's included so you're not running to Boots the next day wondering if your normal skincare is okay to use yet." },
+    { question: "How is this different from a normal spa facial?", answer: "A spa facial is mostly cleansing, exfoliation, and massage — relaxing, but the results fade in 1-2 days. This treatment uses a medical-grade blade and a professional peel together, which gives you a level of resurfacing that lasts 2-4 weeks and that you can actually see in the mirror, not just feel for an afternoon." },
+    { question: "What about those at-home dermaplaning kits I see on TikTok?", answer: "They use a much smaller, blunter blade designed not to cut you — but that also means they barely remove anything. The medical-grade tool I use is in a different league. If at-home kits worked, I wouldn't be doing this for a living." },
+    { question: "Will my face be red when I leave? I have to pick the kids up.", answer: "You'll have a slight pink flush for about 30-60 minutes — like you've been on a brisk walk in the cold. By the time you're back in the car it's usually gone. Most clients head straight to the school run, work, or out for dinner without anyone noticing anything except the glow." },
+    { question: "How many of these treatments have you actually done?", answer: "Hundreds. Brighten & Renew is one of my most-booked services and I do these multiple times every week. By the time you're on my chair, your skin is in genuinely practiced hands — not someone learning on you." },
   ];
 
   // Image placeholder component
@@ -446,6 +454,56 @@ function BrightenRenewPage() {
       </section>
 
       {/* ============================================ */}
+      {/* 3.5 MEET RHIA — Authority / Credentials      */}
+      {/* ============================================ */}
+      <section className="relative py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-teal-50/30 to-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-72 h-72 bg-teal-100/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-teal-100/30 rounded-full blur-3xl"></div>
+
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+            Meet Your Practitioner
+          </span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-black mb-4">
+            Hi, I'm Rhia
+          </h2>
+          <p className="text-base sm:text-lg text-teal-700 font-medium mb-6">
+            Fully qualified, fully insured aesthetic practitioner
+          </p>
+          <div className="w-16 h-px bg-teal-500 mx-auto mb-10"></div>
+
+          <div className="space-y-5 text-base sm:text-lg text-black/70 leading-relaxed font-light max-w-3xl mx-auto mb-12 text-left lg:text-center">
+            <p>
+              I trained as an aesthetic practitioner because I was tired of watching women like you spend hundreds on skincare that didn't work — only to walk out of spa facials with results that faded in 24 hours.
+            </p>
+            <p>
+              Brighten & Renew is one of my most-booked treatments. I've performed hundreds of these sessions and refined the technique on every single one — so the woman sitting on my chair next is in genuinely practiced hands, not someone learning on you. Every treatment starts with a proper skin assessment so you get the version that actually fits your skin, not a one-size-fits-all approach.
+            </p>
+            <p className="text-teal-700 font-medium italic">
+              Every Brighten & Renew session I do is the treatment I wished existed when I was throwing money at serums in my 20s.
+            </p>
+          </div>
+
+          <div className="flex items-center justify-center gap-4 sm:gap-12 pt-8 border-t border-teal-200/50 max-w-2xl mx-auto">
+            <div>
+              <p className="font-serif text-3xl sm:text-5xl text-teal-700 font-light">300<span className="text-2xl sm:text-3xl">+</span></p>
+              <p className="text-[10px] sm:text-xs tracking-wider text-black/50 mt-1 uppercase font-medium">Happy Clients</p>
+            </div>
+            <div className="w-px h-12 sm:h-14 bg-teal-200" />
+            <div>
+              <p className="font-serif text-3xl sm:text-5xl text-teal-700 font-light">5.0<span className="text-amber-400">★</span></p>
+              <p className="text-[10px] sm:text-xs tracking-wider text-black/50 mt-1 uppercase font-medium">Avg Rating</p>
+            </div>
+            <div className="w-px h-12 sm:h-14 bg-teal-200" />
+            <div>
+              <p className="font-serif text-3xl sm:text-5xl text-teal-700 font-light">5<span className="text-2xl sm:text-3xl">+</span></p>
+              <p className="text-[10px] sm:text-xs tracking-wider text-black/50 mt-1 uppercase font-medium">Years Exp.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* 4. PRICE CARD                                */}
       {/* ============================================ */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-teal-50/20 to-white">
@@ -648,8 +706,8 @@ function BrightenRenewPage() {
           {/* Trust Badges */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { icon: Award, text: "Qualified Aesthetic Practitioner" },
-              { icon: Sparkles, text: "Professional-Grade Products Only" },
+              { icon: Star, text: "5.0★ Average Rating" },
+              { icon: Award, text: "300+ Treatments Performed" },
               { icon: Shield, text: "Fully Insured & Accredited" },
               { icon: MapPin, text: "Located in Southampton" }
             ].map((item, index) => (
