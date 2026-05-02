@@ -21,6 +21,11 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
+// Image optimization via wsrv.nl free proxy: resize + WebP + compress on the fly.
+// Cuts ~3MB raw uploads down to ~150KB. Cached at the edge after first hit.
+const optimize = (url: string, w: number = 1200, q: number = 75) =>
+  `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&q=${q}&output=webp`;
+
 function BrightenRenewPage() {
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -67,23 +72,23 @@ function BrightenRenewPage() {
     }
     // Preload ALL images — critical ones as preload, rest as prefetch
     const criticalImages = [
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl",
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI", 200),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt", 1400),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl", 1200),
     ];
     const nearFoldImages = [
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansns1UjHeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansP4cxa3plansMeUbGIOLF6SBXiAE1CKD5xpJ0",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansc6PzZqa4JTIOjNmkbGi5ScPRl97M4udQahKw",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg",
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansns1UjHeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg", 800),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansP4cxa3plansMeUbGIOLF6SBXiAE1CKD5xpJ0", 800),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansc6PzZqa4JTIOjNmkbGi5ScPRl97M4udQahKw", 800),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg", 1000),
     ];
     const belowFoldImages = [
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplanspzVaye9qI1imrJsTxKlZHRz3Vt25Gv4aoPnL",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansLPRBz4cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansK3jNgyuVC1H7mIjaGYs4kS2vQxiO3zoXpD6c",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplans4bUt6KSZlV9LZ7rOzhpUH0MiuGACRPD3jNeQ",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansMTwjx4fF60kipOZwxPDGShftogB23RYsQ9cU",
-      "https://820i9wpaqi.ufs.sh/f/PwwcUidplansM9s6ssfF60kipOZwxPDGShftogB23RYsQ9cU",
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplanspzVaye9qI1imrJsTxKlZHRz3Vt25Gv4aoPnL", 1000),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansLPRBz4cEpuNyB4c5UP1OD9z8GXJlTsjiKSLw", 1000),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansK3jNgyuVC1H7mIjaGYs4kS2vQxiO3zoXpD6c", 1000),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplans4bUt6KSZlV9LZ7rOzhpUH0MiuGACRPD3jNeQ", 1000),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansMTwjx4fF60kipOZwxPDGShftogB23RYsQ9cU", 1000),
+      optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansM9s6ssfF60kipOZwxPDGShftogB23RYsQ9cU", 1000),
     ];
     // Preload critical (above fold) — highest priority
     criticalImages.forEach((src) => {
@@ -173,7 +178,7 @@ function BrightenRenewPage() {
           <div className="flex items-center justify-between">
             <Link to="/" className="group">
               <div className="w-12 h-12 lg:w-10 lg:h-10">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI" alt="RHI Aesthetics" className="w-full h-full object-contain" loading="eager" fetchPriority="high" />
+                <img src={optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansNiudZDCt2LsXhzqFT1ZQEalcB93Jpfx8wViI", 200)} alt="RHI Aesthetics" className="w-full h-full object-contain" loading="eager" fetchPriority="high" />
               </div>
             </Link>
             <div className="flex items-center space-x-4 sm:space-x-8">
@@ -211,7 +216,7 @@ function BrightenRenewPage() {
         {/* Mobile: image as background with overlay */}
         <div className="lg:hidden absolute inset-0 z-0">
           <img
-            src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt"
+            src={optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt", 900)}
             alt="Glowing, radiant skin"
             className="w-full h-full object-cover object-[70%_center]"
             loading="eager"
@@ -277,7 +282,7 @@ function BrightenRenewPage() {
               className="hidden lg:flex items-center justify-center py-28 pr-10"
             >
               <img
-                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt"
+                src={optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplans7EEIyR8MLZ8BjbFlapw42zWhdu7D1XryRQIt", 1400)}
                 alt="Glowing, radiant skin after Brighten & Renew treatment"
                 className="w-full max-h-[75vh] object-cover object-center rounded-2xl shadow-2xl"
                 loading="eager"
@@ -306,7 +311,7 @@ function BrightenRenewPage() {
             {/* IMAGE NEEDED: Professional photo of Rhia, warm and approachable. Same one used on other pages works, or a new one of her in the treatment room looking welcoming. */}
             <div className="relative h-[350px] sm:h-[500px] lg:h-[700px]">
               <img
-                src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl"
+                src={optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl", 1200)}
                 alt="Rhia - Aesthetic Practitioner"
                 className="w-full h-full object-cover object-top"
                 loading="eager"
@@ -415,7 +420,7 @@ function BrightenRenewPage() {
                 <div className="relative z-10 space-y-4 sm:space-y-6 pt-16 sm:pt-20">
                   {step.image ? (
                     <div className="aspect-video rounded-2xl overflow-hidden border-2 border-teal-200">
-                      <img src={step.image} alt={step.title} className="w-full h-full object-cover" loading="eager" decoding="async" />
+                      <img src={optimize(step.image, 800)} alt={step.title} className="w-full h-full object-cover" loading="eager" decoding="async" />
                     </div>
                   ) : (
                     <ImagePlaceholder label={step.imageLabel} aspect="aspect-video" />
@@ -568,7 +573,7 @@ function BrightenRenewPage() {
             >
               {/* IMAGE NEEDED: Rhia performing treatment or client with glowing skin. Should feel warm and professional. */}
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-200">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg" alt="Rhia performing Brighten & Renew facial treatment" className="w-full h-full object-cover" loading="eager" decoding="async" />
+                <img src={optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg", 1000)} alt="Rhia performing Brighten & Renew facial treatment" className="w-full h-full object-cover" loading="eager" decoding="async" />
               </div>
 
               <div className="bg-gradient-to-br from-teal-50 to-white border-2 border-teal-200 rounded-2xl p-6 sm:p-8 space-y-4">
@@ -633,7 +638,7 @@ function BrightenRenewPage() {
                 className="group relative flex flex-col"
               >
                 <div className="aspect-[16/9] rounded-lg shadow-md group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                  <img src={item.image} alt={item.label} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                  <img src={optimize(item.image, 1000)} alt={item.label} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <p className="text-sm text-black/60 font-medium text-center mt-3">{item.label}</p>
               </motion.div>
@@ -853,7 +858,7 @@ function BrightenRenewPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-12">
             <div className="col-span-2 sm:col-span-1 space-y-5">
               <div className="w-10 h-10">
-                <img src="https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl" alt="RHI Aesthetics" className="w-full h-full object-contain opacity-80" loading="lazy" />
+                <img src={optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansrKuIikggJMAWrzNy61nv7tqUuYLkCVcsZQHl", 200)} alt="RHI Aesthetics" className="w-full h-full object-contain opacity-80" loading="lazy" />
               </div>
               <p className="text-sm text-gray-400 font-light">Professional skin treatments in Southampton</p>
               <div className="flex space-x-4">
