@@ -153,14 +153,14 @@ function BrightenRenewPage() {
     { question: "Is £99 worth it?", answer: "Think about how much you've spent on serums, creams, and facials that didn't last. This gives you 2-4 weeks of smooth, glowing skin and flawless makeup application. Most clients say they wish they'd stopped buying products and started here." },
     { question: "What if I have sensitive skin?", answer: "I customise the chemical peel strength to your skin type. During the treatment, I'll check in with you and adjust accordingly. Just let me know about any sensitivities beforehand." },
     { question: "Can I wear makeup afterwards?", answer: "I recommend waiting 24 hours before applying makeup to let your fresh skin breathe. After that, you'll notice your makeup applies better than it ever has. That's usually the moment clients message me saying they can't believe the difference." },
-    { question: "What's actually in the chemical peel?", answer: "Most are a combination of glycolic and lactic acid at a percentage I match to your skin type. They're professional-grade — far higher concentration than anything legally sold for home use, but applied carefully so they work without burning or visibly peeling you. If your skin is on the more sensitive side, I'll start lower and we'll build the strength up over future sessions." },
+    { question: "What's actually in the chemical peel?", answer: "Most are a combination of glycolic and lactic acid at a percentage I match to your skin type. They're professional-grade, far higher concentration than anything legally sold for home use, but applied carefully so they work without burning or visibly peeling you. If your skin is on the more sensitive side, I'll start lower and we'll build the strength up over future sessions." },
     { question: "Can I have this if I'm on retinol or tretinoin?", answer: "You'll need to pause your retinol or tretinoin for 5-7 days before your treatment, otherwise your skin will be too reactive. I'll send a full prep checklist when you book so there are no surprises on the day." },
-    { question: "What if I have rosacea, melasma, or active acne?", answer: "Mention it when you book. For active acne we usually wait until it's calmed down. For melasma the treatment can actually help — we use a brightening peel. For mild rosacea I go gentle. Anything more serious and I'll be honest with you about whether it's the right fit. I won't sell you something that isn't." },
-    { question: "What's in the aftercare kit I'm taking home?", answer: "A travel-size SPF50 (essential for the next 7 days), a hydrating serum to support your skin while it recovers, and a printed aftercare card. The kit on its own retails around £25 — it's included so you're not running to Boots the next day wondering if your normal skincare is okay to use yet." },
-    { question: "How is this different from a normal spa facial?", answer: "A spa facial is mostly cleansing, exfoliation, and massage — relaxing, but the results fade in 1-2 days. This treatment uses a medical-grade blade and a professional peel together, which gives you a level of resurfacing that lasts 2-4 weeks and that you can actually see in the mirror, not just feel for an afternoon." },
-    { question: "What about those at-home dermaplaning kits I see on TikTok?", answer: "They use a much smaller, blunter blade designed not to cut you — but that also means they barely remove anything. The medical-grade tool I use is in a different league. If at-home kits worked, I wouldn't be doing this for a living." },
-    { question: "Will my face be red when I leave? I have to pick the kids up.", answer: "You'll have a slight pink flush for about 30-60 minutes — like you've been on a brisk walk in the cold. By the time you're back in the car it's usually gone. Most clients head straight to the school run, work, or out for dinner without anyone noticing anything except the glow." },
-    { question: "How many of these treatments have you actually done?", answer: "Hundreds. Brighten & Renew is one of my most-booked services and I do these multiple times every week. By the time you're on my chair, your skin is in genuinely practiced hands — not someone learning on you." },
+    { question: "What if I have rosacea, melasma, or active acne?", answer: "Mention it when you book. For active acne we usually wait until it's calmed down. For melasma the treatment can actually help. We use a brightening peel. For mild rosacea I go gentle. Anything more serious and I'll be honest with you about whether it's the right fit. I won't sell you something that isn't." },
+    { question: "What's in the aftercare kit I'm taking home?", answer: "A travel-size SPF50 (essential for the next 7 days), a hydrating serum to support your skin while it recovers, and a printed aftercare card. The kit on its own retails around £25. It's included so you're not running to Boots the next day wondering if your normal skincare is okay to use yet." },
+    { question: "How is this different from a normal spa facial?", answer: "A spa facial is mostly cleansing, exfoliation, and massage. It's relaxing, but the results fade in 1-2 days. This treatment uses a medical-grade blade and a professional peel together, which gives you a level of resurfacing that lasts 2-4 weeks and that you can actually see in the mirror, not just feel for an afternoon." },
+    { question: "What about those at-home dermaplaning kits I see on TikTok?", answer: "They use a much smaller, blunter blade designed not to cut you. But that also means they barely remove anything. The medical-grade tool I use is in a different league. If at-home kits worked, I wouldn't be doing this for a living." },
+    { question: "Will my face be red when I leave? I have to pick the kids up.", answer: "You'll have a slight pink flush for about 30-60 minutes, like you've been on a brisk walk in the cold. By the time you're back in the car it's usually gone. Most clients head straight to the school run, work, or out for dinner without anyone noticing anything except the glow." },
+    { question: "How many of these treatments have you actually done?", answer: "Hundreds. Brighten & Renew is one of my most-booked services and I do these multiple times every week. By the time you're on my chair, your skin is in genuinely practiced hands, not someone learning on you." },
   ];
 
   return (
@@ -330,13 +330,10 @@ function BrightenRenewPage() {
 
                 <div className="space-y-6 text-base sm:text-lg text-black/70 leading-relaxed mb-10">
                   <p>
-                    You've tried The Ordinary, Drunk Elephant, those £60 Sephora serums. You've watched every skincare routine on Instagram. You've done the multi-step routines, the retinol, the vitamin C.
-                  </p>
-                  <p>
-                    And still your foundation looks cakey by 3pm. Still your skin looks tired even when you're not. Still nobody notices.
+                    You've tried The Ordinary, Drunk Elephant, and those £60 Sephora serums. You've watched every skincare routine on Instagram, done the multi-step routines, the retinol, the vitamin C, and everything else there is to be tried, and still your foundation looks cakey by 3pm, your skin looks tired even when you're not, and nobody notices.
                   </p>
                   <p className="text-teal-700 font-medium">
-                    The problem isn't your products. It's that you have a layer of dead skin blocking everything from working. This treatment removes it.
+                    The problem isn't your products. It's that you have a layer of dead skin blocking everything from working, and this treatment removes it.
                   </p>
                 </div>
 
@@ -391,7 +388,7 @@ function BrightenRenewPage() {
               {
                 icon: Layers,
                 title: "Instant Glow",
-                description: "You walk out with visibly smoother texture, a natural glow, and skin that your makeup will actually sit on properly. No redness, no hiding. Most clients go straight to dinner or back to work.",
+                description: "You walk out with visibly smoother texture, a natural glow, and skin that your makeup will actually sit on properly. Most clients just head back to work and carry on with their day like normal.",
                 number: "03",
                 image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansc6PzZqa4JTIOjNmkbGi5ScPRl97M4udQahKw",
               }
@@ -443,10 +440,10 @@ function BrightenRenewPage() {
 
           <div className="space-y-5 text-base sm:text-lg text-black/70 leading-relaxed font-light max-w-3xl mx-auto mb-12 text-left lg:text-center">
             <p>
-              I trained as an aesthetic practitioner because I was tired of watching women like you spend hundreds on skincare that didn't work — only to walk out of spa facials with results that faded in 24 hours.
+              I trained as an aesthetic practitioner because I was tired of watching women like you spend hundreds on skincare that didn't work, only to walk out of spa facials with results that faded in 24 hours.
             </p>
             <p>
-              Brighten & Renew is one of my most-booked treatments. I've performed hundreds of these sessions and refined the technique on every single one — so the woman sitting on my chair next is in genuinely practiced hands, not someone learning on you. Every treatment starts with a proper skin assessment so you get the version that actually fits your skin, not a one-size-fits-all approach.
+              Brighten & Renew is one of my most-booked treatments. I've performed hundreds of these sessions and refined the technique on every single one, so the woman sitting on my chair next is in genuinely practiced hands, not someone learning on you. Every treatment starts with a proper skin assessment so you get the version that actually fits your skin, not a one-size-fits-all approach.
             </p>
             <p className="text-teal-700 font-medium italic">
               Every Brighten & Renew session I do is the treatment I wished existed when I was throwing money at serums in my 20s.
@@ -522,7 +519,7 @@ function BrightenRenewPage() {
                 Reserve My Spot
               </a>
 
-              <p className="text-xs text-black/40 mt-4 font-light">No payment required to book. I'll confirm within 2 hours.</p>
+              <p className="text-xs text-black/40 mt-4 font-light">No payment required to book.</p>
             </div>
           </div>
         </div>
@@ -546,7 +543,7 @@ function BrightenRenewPage() {
             >
               <h2 className="text-3xl sm:text-4xl font-light text-black mb-2 text-center lg:text-left">Book Your Treatment</h2>
               <p className="text-base text-black/60 font-light mb-8 text-center lg:text-left">
-                No payment needed. I'll text you within 2 hours to confirm.
+                No payment needed. I'll text you to confirm.
               </p>
 
               {formSubmitted ? (
@@ -560,7 +557,7 @@ function BrightenRenewPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-2">You're all set!</h3>
                   <p className="text-base text-black/60 leading-relaxed max-w-sm mx-auto">
-                    I'll text you within 2 hours to confirm your appointment. Questions? <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-teal-600 font-semibold underline underline-offset-2">WhatsApp me</a>.
+                    I'll text you to confirm your appointment. Questions? <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-teal-600 font-semibold underline underline-offset-2">WhatsApp me</a>.
                   </p>
                 </motion.div>
               ) : (
@@ -877,7 +874,7 @@ function BrightenRenewPage() {
             </div>
 
             <p className="text-sm text-white/40 font-light pt-2">
-              No payment required. I'll text you within 2 hours to confirm your appointment.
+              No payment required. I'll text you to confirm your appointment.
             </p>
           </motion.div>
         </div>
