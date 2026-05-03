@@ -27,6 +27,7 @@ const optimize = (url: string, w: number = 1200, q: number = 75) =>
 
 function BrightenRenewPage() {
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
+  const [showStickyCta, setShowStickyCta] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', preferredDate: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -125,7 +126,10 @@ function BrightenRenewPage() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => { setIsHeaderScrolled(window.scrollY > 50); };
+    const handleScroll = () => {
+      setIsHeaderScrolled(window.scrollY > 50);
+      setShowStickyCta(window.scrollY > 700);
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -164,7 +168,7 @@ function BrightenRenewPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-20 lg:pb-0">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isHeaderScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
@@ -634,6 +638,69 @@ function BrightenRenewPage() {
       </section>
 
       {/* ============================================ */}
+      {/* 5.5 BEFORE YOUR TREATMENT — prep checklist   */}
+      {/* ============================================ */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12">
+            <span className="inline-block px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-full text-teal-600 text-sm font-semibold uppercase tracking-wider mb-6">
+              Before You Come In
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-black mb-4">
+              How to Prep for Your Treatment
+            </h2>
+            <p className="text-base sm:text-lg text-black/60 font-light">
+              A quick checklist so you walk in ready for the best possible results.
+            </p>
+          </div>
+
+          <div className="space-y-3 sm:space-y-4">
+            {[
+              {
+                when: "5–7 days before",
+                detail: "Pause any retinol or tretinoin if you're using it. Everything else in your skincare routine can stay exactly as it is.",
+              },
+              {
+                when: "The day before",
+                detail: "Skip harsh exfoliants and acid serums. Drink plenty of water. That's it.",
+              },
+              {
+                when: "Morning of your appointment",
+                detail: "Come bare-faced if that's easier, or with makeup on if you've got somewhere to be after. I'll cleanse your skin properly either way.",
+              },
+              {
+                when: "What to bring",
+                detail: "Nothing. Just yourself. Your aftercare kit comes with the treatment.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="flex gap-4 sm:gap-5 p-5 sm:p-6 bg-gradient-to-br from-teal-50/50 to-white border border-teal-200 rounded-xl"
+              >
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 bg-teal-500 rounded-lg flex items-center justify-center shadow">
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs sm:text-sm font-semibold text-teal-700 uppercase tracking-wider mb-1">{item.when}</p>
+                  <p className="text-sm sm:text-base text-black/70 leading-relaxed">{item.detail}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-center text-sm text-black/50 mt-8 font-light">
+            Got a specific concern before you book? <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-teal-600 font-medium underline underline-offset-2 hover:text-teal-700">WhatsApp me</a>, no pressure.
+          </p>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* 6. BEFORE & AFTER GALLERY                    */}
       {/* ============================================ */}
       <section id="results" className="bg-white py-16 sm:py-24 px-4 sm:px-6">
@@ -942,6 +1009,21 @@ function BrightenRenewPage() {
           </div>
         </div>
       </footer>
+
+      {/* MOBILE STICKY CTA — slides in from bottom after hero */}
+      <div
+        className={`lg:hidden fixed bottom-0 left-0 right-0 z-40 px-4 py-3 bg-white/95 backdrop-blur-md border-t border-teal-200 shadow-2xl transition-transform duration-300 ${
+          showStickyCta ? 'translate-y-0' : 'translate-y-full'
+        }`}
+      >
+        <a
+          href="#booking-form"
+          onClick={scrollToForm}
+          className="block w-full py-4 bg-teal-600 text-white text-center text-sm font-semibold uppercase tracking-wider rounded-lg shadow hover:bg-teal-700 transition-colors"
+        >
+          Reserve My Spot
+        </a>
+      </div>
     </div>
   );
 }
