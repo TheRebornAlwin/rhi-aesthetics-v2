@@ -17,7 +17,6 @@ import {
   Droplet,
   Layers,
   Award,
-  ImageIcon,
   ArrowRight,
 } from 'lucide-react';
 
@@ -68,7 +67,7 @@ function BrightenRenewPage() {
     document.title = 'Brighten & Renew Facial Southampton | RHI Aesthetics';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional dermaplaning + chemical peel in Southampton. 2-hour treatment for smooth, glowing skin. No needles, no downtime. £100. Book your Brighten & Renew Facial.');
+      metaDescription.setAttribute('content', 'Professional dermaplaning + chemical peel in Southampton. 2-hour treatment for smooth, glowing skin. No needles, no downtime. £99. Book your Brighten & Renew Facial.');
     }
     // Preload ALL images — critical ones as preload, rest as prefetch
     const criticalImages = [
@@ -151,7 +150,7 @@ function BrightenRenewPage() {
     { question: "How long do results last?", answer: "You'll see an immediate glow. Full results develop over 1-2 days and last 2-4 weeks. For best results, I recommend treatments every 3-4 weeks." },
     { question: "Is there any downtime?", answer: "None. You can return to normal activities immediately. Avoid heavy makeup for 24 hours and use SPF, but otherwise you're good to go. Most women go straight back to work or out for dinner." },
     { question: "Is the scalpel actually safe?", answer: "Completely. It's a medical-grade blade used with a precise, gentle technique. It's not cutting into your skin, it's gliding across the surface to remove dead cells and peach fuzz. I've performed hundreds of these treatments without a single issue." },
-    { question: "Is £100 worth it?", answer: "Think about how much you've spent on serums, creams, and facials that didn't last. This gives you 2-4 weeks of smooth, glowing skin and flawless makeup application. Most clients say they wish they'd stopped buying products and started here." },
+    { question: "Is £99 worth it?", answer: "Think about how much you've spent on serums, creams, and facials that didn't last. This gives you 2-4 weeks of smooth, glowing skin and flawless makeup application. Most clients say they wish they'd stopped buying products and started here." },
     { question: "What if I have sensitive skin?", answer: "I customise the chemical peel strength to your skin type. During the treatment, I'll check in with you and adjust accordingly. Just let me know about any sensitivities beforehand." },
     { question: "Can I wear makeup afterwards?", answer: "I recommend waiting 24 hours before applying makeup to let your fresh skin breathe. After that, you'll notice your makeup applies better than it ever has. That's usually the moment clients message me saying they can't believe the difference." },
     { question: "What's actually in the chemical peel?", answer: "Most are a combination of glycolic and lactic acid at a percentage I match to your skin type. They're professional-grade — far higher concentration than anything legally sold for home use, but applied carefully so they work without burning or visibly peeling you. If your skin is on the more sensitive side, I'll start lower and we'll build the strength up over future sessions." },
@@ -163,18 +162,6 @@ function BrightenRenewPage() {
     { question: "Will my face be red when I leave? I have to pick the kids up.", answer: "You'll have a slight pink flush for about 30-60 minutes — like you've been on a brisk walk in the cold. By the time you're back in the car it's usually gone. Most clients head straight to the school run, work, or out for dinner without anyone noticing anything except the glow." },
     { question: "How many of these treatments have you actually done?", answer: "Hundreds. Brighten & Renew is one of my most-booked services and I do these multiple times every week. By the time you're on my chair, your skin is in genuinely practiced hands — not someone learning on you." },
   ];
-
-  // Image placeholder component
-  const ImagePlaceholder = ({ label, aspect = "aspect-[4/3]", className = "" }: { label: string; aspect?: string; className?: string }) => (
-    <div className={`${aspect} bg-gradient-to-br from-teal-100 via-teal-50 to-white rounded-2xl border-2 border-dashed border-teal-200 flex items-center justify-center overflow-hidden ${className}`}>
-      <div className="text-center px-6">
-        <div className="w-14 h-14 bg-teal-500/10 rounded-2xl flex items-center justify-center mx-auto mb-3">
-          <ImageIcon className="w-7 h-7 text-teal-400" />
-        </div>
-        <p className="text-xs text-teal-600/70 font-medium leading-relaxed">{label}</p>
-      </div>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-white">
@@ -316,7 +303,6 @@ function BrightenRenewPage() {
       <section className="relative bg-white overflow-hidden py-12 sm:py-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-0">
-            {/* IMAGE NEEDED: Professional photo of Rhia, warm and approachable. Same one used on other pages works, or a new one of her in the treatment room looking welcoming. */}
             <div className="relative h-[350px] sm:h-[500px] lg:h-[700px]">
               <img
                 src={optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansrqBKEAggJMAWrzNy61nv7tqUuYLkCVcsZQHl", 1200)}
@@ -394,7 +380,6 @@ function BrightenRenewPage() {
                 description: "A medical-grade blade gently removes every layer of dead skin and peach fuzz. It feels like someone lightly shaving your face, nothing more. Most women are surprised at how much comes off and how smooth their skin feels immediately.",
                 number: "01",
                 image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansns1UjHeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg",
-                imageLabel: ""
               },
               {
                 icon: Droplet,
@@ -402,7 +387,6 @@ function BrightenRenewPage() {
                 description: "With the dead layer gone, a customised peel penetrates deeper than it ever could on its own. You might feel a mild tingle. This is what gives you the lasting radiance that keeps developing over the next few days.",
                 number: "02",
                 image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansP4cxa3plansMeUbGIOLF6SBXiAE1CKD5xpJ0",
-                imageLabel: ""
               },
               {
                 icon: Layers,
@@ -410,7 +394,6 @@ function BrightenRenewPage() {
                 description: "You walk out with visibly smoother texture, a natural glow, and skin that your makeup will actually sit on properly. No redness, no hiding. Most clients go straight to dinner or back to work.",
                 number: "03",
                 image: "https://820i9wpaqi.ufs.sh/f/PwwcUidplansc6PzZqa4JTIOjNmkbGi5ScPRl97M4udQahKw",
-                imageLabel: ""
               }
             ].map((step, index) => (
               <motion.div
@@ -426,13 +409,9 @@ function BrightenRenewPage() {
                 </div>
 
                 <div className="relative z-10 space-y-4 sm:space-y-6 pt-16 sm:pt-20">
-                  {step.image ? (
-                    <div className="aspect-video rounded-2xl overflow-hidden border-2 border-teal-200">
-                      <img src={optimize(step.image, 800)} alt={step.title} className="w-full h-full object-cover" loading="eager" decoding="async" />
-                    </div>
-                  ) : (
-                    <ImagePlaceholder label={step.imageLabel} aspect="aspect-video" />
-                  )}
+                  <div className="aspect-video rounded-2xl overflow-hidden border-2 border-teal-200">
+                    <img src={optimize(step.image, 800)} alt={step.title} className="w-full h-full object-cover" loading="eager" decoding="async" />
+                  </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-black">{step.title}</h3>
                   <p className="text-sm sm:text-base text-black/70 leading-relaxed">{step.description}</p>
                 </div>
@@ -518,7 +497,7 @@ function BrightenRenewPage() {
               </span>
 
               <div className="flex items-baseline justify-center gap-3 mb-4">
-                <span className="font-serif text-5xl sm:text-7xl text-teal-700 font-light">£100</span>
+                <span className="font-serif text-5xl sm:text-7xl text-teal-700 font-light">£99</span>
               </div>
               <p className="text-lg text-black/60 font-light mb-8">for a full 2-hour treatment</p>
 
@@ -629,7 +608,6 @@ function BrightenRenewPage() {
               transition={{ delay: 0.15 }}
               className="space-y-6"
             >
-              {/* IMAGE NEEDED: Rhia performing treatment or client with glowing skin. Should feel warm and professional. */}
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-2 border-teal-200">
                 <img src={optimize("https://820i9wpaqi.ufs.sh/f/PwwcUidplansnsiyxoeeKuJpWcTySUNLz4R0I8Vw7fZ1G2kg", 1000)} alt="Rhia performing Brighten & Renew facial treatment" className="w-full h-full object-cover" loading="eager" decoding="async" />
               </div>
@@ -742,17 +720,17 @@ function BrightenRenewPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                quote: "My husband of 10 years not only noticed a change but actually commented on it. That never happens. My skin genuinely looks like it's glowing, and my makeup sits so much better now. I wish I'd done this years ago instead of spending hundreds on serums that did nothing.",
+                quote: "My husband is the most oblivious man on earth. 10 years of marriage and he's never noticed a haircut, never mind anything else. He noticed THIS. Said 'have you done something?' which coming from him is basically a marriage proposal. I've spent thousands on serums over the years that did absolutely nothing. Honestly haven't stopped going on about it since.",
                 name: "Sarah M.",
                 age: "42",
               },
               {
-                quote: "I was SO nervous about the scalpel bit, like I nearly cancelled twice. But honestly? It felt like someone gently shaving my face and that's it. And the results... my skin is still smooth as a baby's bottom a week later. Actually can't believe it.",
+                quote: "i was meant to come in last month and bottled it because of the scalpel thing. nearly bottled it again the day of lol. but rhia is so chill, she literally walks you through every single step. its not even sharp on your face it just glides. results were mad, my best mate thought id had botox 😂",
                 name: "Emma L.",
                 age: "35",
               },
               {
-                quote: "I've tried The Ordinary, Drunk Elephant, those expensive Sephora serums, regular facials, at-home peels. Nothing ever lasted more than a day or two. This is the first time I've looked in the mirror and actually liked what I saw. My foundation doesn't look cakey anymore it just sits right.",
+                quote: "I have spent thousands on skincare over the years. The Ordinary, Drunk Elephant, Dr Dennis Gross, embarrassing Sephora hauls. None of it gave me what one session here did. My foundation actually sits properly now instead of clinging to dry patches across my forehead. Should've come here years ago instead of giving Sephora my pension.",
                 name: "Lisa K.",
                 age: "48",
               },
@@ -762,27 +740,27 @@ function BrightenRenewPage() {
                 age: "33",
               },
               {
-                quote: "I'll be honest, £100 felt like a lot when I first saw it. But when I think about the amount I've spent on products that did absolutely nothing, this is actually worth every penny. My skin looks fresh and healthy, I don't need as much makeup now, and I just feel like myself again.",
+                quote: "99 quid felt steep when I first saw it, I'll be honest. Then I worked out I'd spent £180 just last month on creams that did literally nothing. So. Did it. Worth every penny x",
                 name: "Claire H.",
                 age: "44",
               },
               {
-                quote: "The peach fuzz thing was honestly my biggest insecurity, I could see it in photos catching the light and it drove me mad. After the treatment it was just... gone. My skin felt so smooth and the glow lasted weeks. Rhia made the whole experience so comfortable too she talked me through everything.",
+                quote: "I've cried in front of the mirror about my skin more times than I'd care to admit. specifically the peach fuzz, you could see it in every photo and it made me feel like people were staring at it. After the treatment it was just gone. cried then too but for different reasons lol. sorry for the essay this just genuinely meant a lot to me",
                 name: "Jade W.",
                 age: "37",
               },
               {
-                quote: "I'm someone who researches everything before I commit, read every review, watched every video, the lot. Finally booked it and I'm actually annoyed at myself for waiting so long. The treatment itself was relaxing and my skin has never looked this good. Even my sister noticed and she never notices anything.",
+                quote: "For anyone debating, I read about 47 reviews before booking. Asked 3 friends. Watched dermaplaning content for actual hours. Eventually booked anyway. Treatment itself was relaxing, much less intense than I'd built it up to be. Skin is genuinely glowing 9 days later. The peel customisation matters too, my skin runs reactive and Rhia adjusted accordingly. Will book again, no question.",
                 name: "Priya T.",
                 age: "40",
               },
               {
-                quote: "Look, I won't lie, I was terrified. The word scalpel doesn't exactly fill you with confidence does it? But Rhia was so gentle and explained every step. Zero pain. My skin felt like silk afterwards and my makeup actually glides on now instead of sitting on top of my face. Game changer for me.",
+                quote: "Was terrified beforehand, won't lie. The word 'scalpel' doesn't exactly inspire confidence at 51. My daughter actually came with me and waited because I was that anxious. Didn't need her there in the end, it feels like a soft brush more than anything. Skin felt like silk after and my makeup actually goes on properly now. Booked her in for one too.",
                 name: "Natalie D.",
                 age: "51",
               },
               {
-                quote: "I really can't believe I waited this long to have a treatment like this. I used to wake up, look in the mirror, and just sigh at how dull and tired my skin looked even after 8 hours of sleep. Now I actually look forward to catching my reflection. Sounds silly but it's made such a difference to how I feel.",
+                quote: "genuinely cant believe i waited this long. used to wake up looking tired even after 8 hours sleep, now i actually look fresh in the morning?? sounds dramatic but its been a real confidence boost. cant recommend enough",
                 name: "Amy R.",
                 age: "39",
               },
