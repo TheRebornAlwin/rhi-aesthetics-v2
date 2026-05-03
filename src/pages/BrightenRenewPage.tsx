@@ -419,16 +419,6 @@ function BrightenRenewPage() {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 sm:mt-16 bg-gradient-to-r from-teal-50 to-teal-100/50 border border-teal-500/20 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-center"
-          >
-            <p className="text-lg sm:text-xl text-black">
-              <strong className="text-teal-600 font-bold">No pain, no needles, no downtime</strong> — just a gentle treatment that feels like a professional facial, with results that actually last.
-            </p>
-          </motion.div>
         </div>
       </section>
 
@@ -501,7 +491,7 @@ function BrightenRenewPage() {
               </div>
               <p className="text-lg text-black/60 font-light mb-8">for a full 2-hour treatment</p>
 
-              <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-10 text-left">
+              <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto mb-8 text-left">
                 {[
                   'Professional dermaplaning',
                   'Customised chemical peel',
@@ -515,6 +505,13 @@ function BrightenRenewPage() {
                     <span className="text-sm text-black/70">{item}</span>
                   </div>
                 ))}
+              </div>
+
+              <div className="flex items-start gap-3 max-w-lg mx-auto bg-teal-50/70 border border-teal-200 rounded-xl px-5 py-4 mb-8 text-left">
+                <Shield className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
+                <p className="text-xs sm:text-sm text-black/75 leading-relaxed">
+                  <strong className="text-black/90">My promise to you:</strong> if you don't walk out with visibly smoother, brighter skin, your follow-up treatment is on me. No catches.
+                </p>
               </div>
 
               <a
